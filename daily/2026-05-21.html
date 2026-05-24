@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 App Store 限免速报 - 2026.05.21</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  line-height: 1.6;
+}
+.container { max-width: 680px; margin: 0 auto; padding: 0 16px 32px; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 32px 16px 28px;
+  text-align: center;
+  border-radius: 0 0 24px 24px;
+  margin-bottom: 20px;
+}
+.header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.header .date { font-size: 15px; opacity: 0.9; }
+.header .stats { 
+  display: flex; justify-content: center; gap: 16px; margin-top: 14px; flex-wrap: wrap;
+}
+.header .stat { 
+  background: rgba(255,255,255,0.2); 
+  border-radius: 12px; padding: 6px 14px; font-size: 13px; 
+}
+
+/* Section */
+.section { margin-bottom: 20px; }
+.section-title {
+  font-size: 18px; font-weight: 700; padding: 10px 0 8px;
+  border-bottom: 2px solid #e0e0e0; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-title .icon { font-size: 22px; }
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+.card-name { font-size: 16px; font-weight: 600; color: #1d1d1f; }
+.card-price { font-size: 13px; font-weight: 600; }
+.card-price .original { text-decoration: line-through; color: #999; margin-right: 6px; }
+.card-price .now { color: #34c759; }
+.card-desc { font-size: 13px; color: #666; margin-bottom: 10px; }
+.card-meta { font-size: 12px; color: #999; margin-bottom: 8px; }
+.card-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.card-links a {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: #007aff; color: #fff; text-decoration: none;
+  font-size: 13px; padding: 7px 14px; border-radius: 20px;
+  font-weight: 500;
+}
+.card-links a.iap-link { background: #ff9500; }
+.card-links img.qr { width: 70px; height: 70px; border-radius: 8px; border: 1px solid #eee; }
+
+/* IAP highlight card */
+.card.iap { border-left: 4px solid #ff9500; }
+
+/* Code box */
+.code-box {
+  background: #1d1d1f; color: #34c759; 
+  font-family: "SF Mono", "Menlo", "Monaco", monospace;
+  padding: 10px 14px; border-radius: 8px;
+  font-size: 14px; letter-spacing: 1px;
+  display: inline-block; margin: 4px 0; user-select: all;
+}
+.code-label { font-size: 12px; color: #999; margin-bottom: 2px; }
+
+/* Badge */
+.badge {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  padding: 2px 8px; border-radius: 10px; margin-left: 6px;
+}
+.badge.iap-badge { background: #fff3e0; color: #ff9500; }
+.badge.free-badge { background: #e8f5e9; color: #34c759; }
+.badge.discount-badge { background: #e3f2fd; color: #1976d2; }
+.badge.code-badge { background: #fce4ec; color: #d81b60; }
+.badge.hot { background: #ffebee; color: #e53935; }
+
+/* Footer */
+.footer {
+  background: #fff; border-radius: 14px; padding: 20px;
+  margin-top: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.footer h3 { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+.footer .source-list { font-size: 12px; color: #666; line-height: 2; }
+.footer .source-list .ok { color: #34c759; }
+.footer .source-list .fail { color: #ff3b30; }
+.footer .source-list .warn { color: #ff9500; }
+.footer .time { font-size: 12px; color: #999; margin-top: 12px; }
+.footer .note { font-size: 12px; color: #999; margin-top: 8px; font-style: italic; }
+
+/* Rate info */
+.rate { font-size: 12px; color: #f5a623; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📱 每日 App Store 限免速报</h1>
+  <div class="date">2026 年 5 月 21 日（周四）</div>
+  <div class="stats">
+    <span class="stat">🔥 内购免 8 款</span>
+    <span class="stat">🆓 本体限免 ~20 款</span>
+    <span class="stat">💰 折扣 7 款</span>
+    <span class="stat">🔑 兑换码 4 组</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ====== 第一部分：内购限免 ====== -->
+<div class="section">
+  <div class="section-title">
+    <span class="icon">🔥</span> 内购免 · 重点推荐
+  </div>
+  <p style="font-size:12px;color:#999;margin-bottom:10px;">数据来源：OODATA（05/19 最新文章 #1324，今日新文章尚未发布）<br>部分内购仍需手动通过兑换码激活，请尽快操作。</p>
+
+  <!-- App 1 -->
+  <div class="card iap">
+    <div class="card-header">
+      <span class="card-name">daily reflections : Void</span>
+      <span class="badge iap-badge">内购免</span>
+    </div>
+    <div class="card-desc">引导式反思日记应用，帮助你养成每日书写习惯，发掘内心真实感受。</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id6759899958" target="_blank">📥 App Store</a>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6759899958" alt="QR">
+    </div>
+  </div>
+
+  <!-- App 2 -->
+  <div class="card iap">
+    <div class="card-header">
+      <span class="card-name">Remote Control For Smart TV</span>
+      <span class="badge iap-badge">内购免</span>
+    </div>
+    <div class="card-desc">智能电视遥控器应用，将 iPhone 变成万能遥控器，支持多品牌电视操控。</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id6759893388" target="_blank">📥 App Store</a>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6759893388" alt="QR">
+    </div>
+  </div>
+
+  <!-- App 3 -->
+  <div class="card iap">
+    <div class="card-header">
+      <span class="card-name">Mealify 2.0</span>
+      <span class="badge iap-badge">内购免</span>
+    </div>
+    <div class="card-desc">食谱规划与烹饪助手，智能推荐每日菜单，轻松管理家庭饮食。</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id6746368726" target="_blank">📥 App Store</a>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6746368726" alt="QR">
+    </div>
+  </div>
+
+  <!-- App 4 -->
+  <div class="card iap">
+    <div class="card-header">
+      <span class="card-name">Auto Photo: Clap Camera Timer</span>
+      <span class="badge code-badge">需兑换</span>
+    </div>
+    <div class="card-desc">拍手定时拍摄相机，通过鼓掌声音触发拍照，解放双手完成自拍与合影。</div>
+    <div class="code-label">兑换码（限量）</div>
+    <div class="code-box">CLAPLIFETIME</div>
+    <div class="card-links" style="margin-top:8px;">
+      <a href="https://apps.apple.com/redeem/?ctx=offercodes&id=6760372611&code=CLAPLIFETIME" class="iap-link" target="_blank">🎁 一键兑换</a>
+      <a href="https://apps.apple.com/app/id6760372611" target="_blank">📥 App Store</a>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6760372611" alt="QR">
+    </div>
+  </div>
+
+  <!-- App 5 -->
+  <div class="card iap">
+    <div class="card-header">
+      <span class="card-name">Silo: Offline Case Manager</span>
+      <span class="badge code-badge">需兑换</span>
+    </div>
+    <div class="card-desc">离线项目案例管理器，适合管理法律案件、项目资料等结构化信息，完全离线安全可靠。</div>
+    <div class="code-label">兑换码（限量 48H）</div>
+    <div class="code-box">SILO48H</div>
+    <div class="card-links" style="margin-top:8px;">
+      <a href="https://apps.apple.com/redeem/?ctx=offercodes&id=6768518491&code=SILO48H" class="iap-link" target="_blank">🎁 一键兑换</a>
+      <a href="https://apps.apple.com/app/id6768518491" target="_blank">📥 App Store</a>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6768518491" alt="QR">
+    </div>
+  </div>
+
+  <!-- App 6 -->
+  <div class="card iap">
+    <div class="card-header">
+      <span class="card-name">Cadence – Medication Reminders</span>
+      <span class="badge code-badge">需兑换</span>
+    </div>
+    <div class="card-desc">用药提醒追踪器，科学管理服药计划，按时提醒，不错过每次用药。</div>
+    <div class="code-label">需通过 Promies 页面获取兑换码</div>
+    <div class="card-links">
+      <a href="https://www.promies.net/promotion/ee35c799-b2ef-4da0-a70f-37081762b36f" class="iap-link" target="_blank">🎁 获取兑换码</a>
+      <a href="https://apps.apple.com/app/id6758649306" target="_blank">📥 App Store</a>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6758649306" alt="QR">
+    </div>
+  </div>
+
+  <!-- App 7 -->
+  <div class="card iap">
+    <div class="card-header">
+      <span class="card-name">Fasted – Intermittent fasting</span>
+      <span class="badge code-badge">需兑换</span>
+    </div>
+    <div class="card-desc">间歇性禁食追踪应用，科学管理禁食周期，记录进展，助力健康减重。</div>
+    <div class="code-label">打开网站输入兑换码</div>
+    <div class="code-box">SUMMER</div>
+    <div class="card-links" style="margin-top:8px;">
+      <a href="https://getfasted.app/code" class="iap-link" target="_blank">🎁 兑换页面</a>
+      <a href="https://apps.apple.com/app/id6759612435" target="_blank">📥 App Store</a>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6759612435" alt="QR">
+    </div>
+  </div>
+
+  <!-- App 8 -->
+  <div class="card iap">
+    <div class="card-header">
+      <span class="card-name">JPEG Jackal Lite</span>
+      <span class="badge iap-badge">内购免</span>
+    </div>
+    <div class="card-desc">专业 JPEG 图像压缩工具，无损优化图片体积，适合网页与存储管理。🖥 macOS</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id1169525771" target="_blank">📥 Mac App Store</a>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id1169525771" alt="QR">
+    </div>
+  </div>
+</div>
+
+<!-- ====== 第二部分：本体限免 ====== -->
+<div class="section">
+  <div class="section-title">
+    <span class="icon">🆓</span> 本体限免
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">NASA</span>
+      <span class="card-price"><span class="original">¥68</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">NASA官方应用，提供NASA+视频流、最新图片、新闻、任务信息、播客和AR体验。</div>
+    <div class="card-meta"><span class="rate">⭐4.8</span> · 7499评 · 教育</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id334325516" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">书法消除大师</span>
+      <span class="card-price"><span class="original">¥1</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">将中国书法融入三消玩法的休闲游戏，收录楷行草隶篆五种书体，在娱乐中提升书法审美。</div>
+    <div class="card-meta"><span class="rate">⭐4.9</span> · 11评 · 娱乐/游戏</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id6756714413" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">记办猫</span>
+      <span class="card-price"><span class="original">¥8</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">萌萌哒待办清单应用，卡通风格让日常任务管理变得有趣，支持工作、个人、学习计划。</div>
+    <div class="card-meta"><span class="rate">⭐4.5</span> · 44评 · 生活/效率</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id1590485332" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Unit Plus Converter</span>
+      <span class="card-price"><span class="original">¥15</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">全能单位转换器，涵盖100+常用单位，简洁美观的界面，支持多种类别。</div>
+    <div class="card-meta"><span class="rate">⭐4.8</span> · 16评 · 工具</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id593306620" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">精灵扫描仪 - OCR拍照识字朗读</span>
+      <span class="card-price"><span class="original">¥3</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">AI加持的OCR扫描工具，即时拍图识字，识别精准可编辑，支持多种语言与发音转换。</div>
+    <div class="card-meta"><span class="rate">⭐4.8</span> · 工具</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id1435857951" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Cutimer: 魔方计时器</span>
+      <span class="card-price"><span class="original">¥15</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">最专业的魔方计时器，支持强大的统计系统和全屏计时，WCA标准兼容。</div>
+    <div class="card-meta"><span class="rate">⭐4.3</span> · 106评 · 工具</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id1218696587" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Calculator⁷ - 语音计算器</span>
+      <span class="card-price"><span class="original">¥12</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">创新的语音计算器，支持语音输入计算，界面精美实用。</div>
+    <div class="card-meta"><span class="rate">⭐4.8</span> · 27评 · 财务</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id6670785680" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Fogstar Drift</span>
+      <span class="card-price"><span class="original">¥15</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">Fogstar Drift 智能电池管理系统伴侣，通过蓝牙实时监控电池状态与数据。</div>
+    <div class="card-meta">工具 · 电池管理</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id1642643324" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Dad Jokes Daily Puzzle</span>
+      <span class="card-price"><span class="original">¥8</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">每日冷笑话解谜游戏，一年份新笑话等你来解，锻炼脑力又开怀一笑。</div>
+    <div class="card-meta">游戏 · 文字</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id6739435697" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Tweakbench Studio</span>
+      <span class="card-price"><span class="original">$69.99</span><span class="now">免费</span></span>
+      <span class="badge hot">高价值</span>
+    </div>
+    <div class="card-desc">包含完整 Tweakbench 乐器合集的音乐制作工具，今日最高价值限免！</div>
+    <div class="card-meta">音乐制作 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://iphone.giveawayoftheday.com/tweakbench-studio/" target="_blank">📥 下载页面</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">RFS - Real Flight Simulator</span>
+      <span class="card-price"><span class="original">$0.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">真实飞行模拟器，在世界任何地方体验飞行的刺激与挑战。</div>
+    <div class="card-meta">模拟 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://iphone.giveawayoftheday.com/rfs-real-flight-simulator/" target="_blank">📥 下载页面</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Two Player Chess (2P Chess)</span>
+      <span class="card-price"><span class="original">$3.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">将手机变成双人国际象棋棋盘，随时随地与朋友对弈。</div>
+    <div class="card-meta">游戏 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://iphone.giveawayoftheday.com/two-player-chess-2p-chess/" target="_blank">📥 下载页面</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Blaze: Browser & File Manager</span>
+      <span class="card-price"><span class="original">$0.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">iOS 终极文件管理器，支持多种文件类型管理与浏览。</div>
+    <div class="card-meta">工具 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id1227271239" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">The Lost Treasure</span>
+      <span class="card-price"><span class="original">付费</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">寻找遗失宝藏的解谜冒险游戏，探索神秘世界。</div>
+    <div class="card-meta">游戏 · 来源：OODATA</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id1033049991" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">JPEG Convert – HEIC to JPG</span>
+      <span class="card-price"><span class="original">付费</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">图片格式转换器，轻松将 HEIC 转为 JPG 格式。</div>
+    <div class="card-meta">工具 · 来源：OODATA</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id6475955513" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">FormatX - All Media Converter</span>
+      <span class="card-price"><span class="original">$0.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">全能媒体格式转换工具，轻松转换各种媒体格式。</div>
+    <div class="card-meta">工具 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://iphone.giveawayoftheday.com/formatx-all-media-converter/" target="_blank">📥 下载页面</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Time Note - record time</span>
+      <span class="card-price"><span class="original">$2.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">用时间管理你的事件和活动，轻松记录时间轨迹。</div>
+    <div class="card-meta">效率 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://iphone.giveawayoftheday.com/time-note-record-time/" target="_blank">📥 下载页面</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Planetary Hours + Widget</span>
+      <span class="card-price"><span class="original">$1.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">帮助你将日常生活与星球节律对齐，提供小组件支持。</div>
+    <div class="card-meta">生活 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://iphone.giveawayoftheday.com/planetary-hours-widget/" target="_blank">📥 下载页面</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Shot Counter - Shooting Diary</span>
+      <span class="card-price"><span class="original">$4.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">简单易用的射击日记应用，记录每次射击训练数据。</div>
+    <div class="card-meta">体育 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://iphone.giveawayoftheday.com/shot-counter-shooting-diary/" target="_blank">📥 下载页面</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">ImgRef</span>
+      <span class="card-price"><span class="original">$1.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">一次性购买无需订阅的图片参考工具，创意工作者的好帮手。</div>
+    <div class="card-meta">创意 · 来源：iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://iphone.giveawayoftheday.com/imgref/" target="_blank">📥 下载页面</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">Military Retire Pay</span>
+      <span class="card-price"><span class="original">$1.99</span><span class="now">免费</span></span>
+    </div>
+    <div class="card-desc">查看现在、过去及未来军人退休薪资的应用。</div>
+    <div class="card-meta">财务 · 来源：OODATA / iPhone Giveaway</div>
+    <div class="card-links">
+      <a href="https://apps.apple.com/app/id1515083854" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:#999;margin-top:4px;">另有 My Mushroom Spots / Freight Note / My Records · Offline Vault 等 iPhone Giveaway 应用同步限免中，可访问 <a href="https://iphone.giveawayoftheday.com/" target="_blank">iPhone Giveaway of the Day</a> 查看完整列表。</p>
+</div>
+
+<!-- ====== 第三部分：折扣精选 ====== -->
+<div class="section">
+  <div class="section-title">
+    <span class="icon">💰</span> 限时折扣精选
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">叮咚AI记账</span>
+      <span class="card-price"><span class="original">¥298</span><span class="now">¥98</span></span>
+      <span class="badge discount-badge">-67%</span>
+    </div>
+    <div class="card-desc">AI 智能记账应用，自动分类收支、生成报表。</div>
+    <div class="card-meta"><span class="rate">⭐4.6</span> · 170评 · 财务</div>
+    <div class="card-links">
+      <a href="https://mergeek.com/free/apps" target="_blank">📥 查看详情</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">水球清单</span>
+      <span class="card-price"><span class="original">¥63</span><span class="now">¥35</span></span>
+      <span class="badge discount-badge">-44%</span>
+    </div>
+    <div class="card-desc">高人气待办清单应用，4732条好评的口碑之作。</div>
+    <div class="card-meta"><span class="rate">⭐4.7</span> · 4732评 · 效率</div>
+    <div class="card-links">
+      <a href="https://mergeek.com/free/apps" target="_blank">📥 查看详情</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">牛油果轻断食</span>
+      <span class="card-price"><span class="original">¥128</span><span class="now">¥68</span></span>
+      <span class="badge discount-badge">-47%</span>
+    </div>
+    <div class="card-desc">科学轻断食管理工具，健康饮食计划制定。</div>
+    <div class="card-meta">健康 · 饮食</div>
+    <div class="card-links">
+      <a href="https://mergeek.com/free/apps" target="_blank">📥 查看详情</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">时间荚</span>
+      <span class="card-price"><span class="original">¥68</span><span class="now">¥28</span></span>
+      <span class="badge discount-badge">-59%</span>
+    </div>
+    <div class="card-desc">创新的时间管理工具，高效规划每一天。</div>
+    <div class="card-meta"><span class="rate">⭐4.9</span> · 12评 · 效率</div>
+    <div class="card-links">
+      <a href="https://mergeek.com/free/apps" target="_blank">📥 查看详情</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">木鱼专注</span>
+      <span class="card-price"><span class="original">¥58</span><span class="now">¥29</span></span>
+      <span class="badge discount-badge">-50%</span>
+    </div>
+    <div class="card-desc">专注效率工具，以禅意木鱼陪伴你的专注时光。</div>
+    <div class="card-meta"><span class="rate">⭐4.8</span> · 76评 · 效率</div>
+    <div class="card-links">
+      <a href="https://mergeek.com/free/apps" target="_blank">📥 查看详情</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">火爆台词卡</span>
+      <span class="card-price"><span class="original">¥68</span><span class="now">¥29</span></span>
+      <span class="badge discount-badge">-57%</span>
+    </div>
+    <div class="card-desc">创意台词卡片制作工具，让你的表达更有力量。</div>
+    <div class="card-meta"><span class="rate">⭐5.0</span> · 6评 · 创意</div>
+    <div class="card-links">
+      <a href="https://mergeek.com/free/apps" target="_blank">📥 查看详情</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-name">尺子应用：照片卷尺测量</span>
+      <span class="card-price"><span class="original">¥15</span><span class="now">¥8</span></span>
+      <span class="badge discount-badge">-47%</span>
+    </div>
+    <div class="card-desc">无需LiDAR，用标准卡片作参照即可从照片中测量真实尺寸。</div>
+    <div class="card-meta">工具 · 来源：GoFans</div>
+    <div class="card-links">
+      <a href="https://gofans.cn/app/ac04513d-1582-4d22-b96d-d82798c45894" target="_blank">📥 查看详情</a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== 第四部分：兑换码/链接 ====== -->
+<div class="section">
+  <div class="section-title">
+    <span class="icon">🔑</span> 兑换码 / 兑换链接汇总
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="card-name">Auto Photo: Clap Camera Timer</span></div>
+    <div class="card-desc">定时拍摄相机 - 解锁终身会员</div>
+    <div class="code-label">限量兑换码</div>
+    <div class="code-box">CLAPLIFETIME</div>
+    <div class="card-links" style="margin-top:8px;">
+      <a href="https://apps.apple.com/redeem/?ctx=offercodes&id=6760372611&code=CLAPLIFETIME" class="iap-link" target="_blank">🎁 一键兑换</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="card-name">Silo: Offline Case Manager</span></div>
+    <div class="card-desc">离线案例管理器 - 解锁高级功能（48H有效）</div>
+    <div class="code-label">限量兑换码</div>
+    <div class="code-box">SILO48H</div>
+    <div class="card-links" style="margin-top:8px;">
+      <a href="https://apps.apple.com/redeem/?ctx=offercodes&id=6768518491&code=SILO48H" class="iap-link" target="_blank">🎁 一键兑换</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="card-name">Cadence – Medication Reminders</span></div>
+    <div class="card-desc">用药提醒 - 通过 Promies 平台获取兑换码</div>
+    <div class="card-links">
+      <a href="https://www.promies.net/promotion/ee35c799-b2ef-4da0-a70f-37081762b36f" class="iap-link" target="_blank">🎁 前往获取</a>
+      <a href="https://apps.apple.com/app/id6758649306" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="card-name">Fasted – Intermittent fasting</span></div>
+    <div class="card-desc">间歇性禁食 - 在网站上输入兑换码解锁</div>
+    <div class="code-label">兑换码</div>
+    <div class="code-box">SUMMER</div>
+    <div class="card-links" style="margin-top:8px;">
+      <a href="https://getfasted.app/code" class="iap-link" target="_blank">🎁 前往兑换</a>
+      <a href="https://apps.apple.com/app/id6759612435" target="_blank">📥 App Store</a>
+    </div>
+  </div>
+
+  <div class="card" style="background:#fff8e1;border:1px solid #ffe082;">
+    <div class="card-header"><span class="card-name">📌 什么值得买 · 内购免费帖子</span></div>
+    <div class="card-desc">
+      发现一篇什么值得买内购限免帖子，但正文无法直接抓取（JS渲染页面）。帖子标题：《￥1022→0，iOS内购限免｜解锁Pro永久会员》
+    </div>
+    <div class="card-links" style="margin-top:8px;">
+      <a href="https://post.m.smzdm.com/zz/p/anml7re2/" target="_blank">🔗 查看帖子（需手动浏览）</a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <h3>📊 数据来源状态</h3>
+  <div class="source-list">
+    <span class="ok">✅ OODATA</span> — 05/19 文章 #1324（今日新文章 #1325 尚未发布）<br>
+    <span class="ok">✅ Mergeek</span> — 本体限免 10 款 + 折扣 6 款<br>
+    <span class="ok">✅ iPhone Giveaway of the Day</span> — 本体限免 13 款<br>
+    <span class="ok">✅ GoFans</span> — 本体限免 1 款 + 折扣 1 款<br>
+    <span class="fail">✗ 极简限免</span> — 无数据（示例占位）<br>
+    <span class="fail">✗ 反斗限免</span> — 无法访问<br>
+    <span class="fail">✗ Appwall</span> — 无法访问<br>
+    <span class="warn">⚠ IT之家</span> — 今日无新数据<br>
+    <span class="warn">⚠ APPSO 鲜面连线</span> — JS渲染无法抓取<br>
+    <span class="warn">⚠ 什么值得买</span> — 发现帖子但正文无法抓取（附链接）
+  </div>
+  <div class="time">🕐 生成时间：2026年5月21日 14:30（北京时间）</div>
+  <div class="note">⚠️ 注意：内购限免数据来自 OODATA 05/19 最新文章，部分兑换码可能已过期，请尽快尝试。限免价格随时可能恢复，请尽快下载。</div>
+</div>
+
+</div>
+</body>
+</html>
