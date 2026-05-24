@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日 App Store 限免速报 - 2026.05.23</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --card-bg: #ffffff;
+    --text: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --tag-iap: #ff3b30;
+    --tag-free: #34c759;
+    --tag-discount: #ff9500;
+    --border: #e5e5ea;
+    --link: #0071e3;
+    --gradient-start: #ff6b35;
+    --gradient-end: #f7931e;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 32px 20px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -20%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .date {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .stat {
+    text-align: center;
+  }
+  .header .stat-num {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+  .header .stat-label {
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  /* Container */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 16px 14px 40px;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 16px;
+    border-radius: 14px 14px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { font-size: 22px; }
+  .section-iap .section-title { background: #fff2f0; color: #d63031; }
+  .section-free .section-title { background: #e8f8ed; color: #0b7d38; }
+  .section-discount .section-title { background: #fff6e8; color: #c47a00; }
+  .section-code .section-title { background: #f0e6ff; color: #6b2fa0; }
+
+  /* Card */
+  .card-list {
+    background: var(--card-bg);
+    border-radius: 0 0 14px 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .card {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    transition: background 0.15s;
+  }
+  .card:last-child { border-bottom: none; }
+  .card:active { background: #f9f9fb; }
+
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .card-icon.iap { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+  .card-icon.free { background: linear-gradient(135deg, #20bf6b, #0fb9b1); }
+  .card-icon.discount { background: linear-gradient(135deg, #fa8231, #f7b731); }
+
+  .card-content { flex: 1; min-width: 0; }
+  .card-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    letter-spacing: -0.2px;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .badge-iap { background: #ffe5e5; color: #c0392b; }
+  .badge-free { background: #d4f5e0; color: #0b7d38; }
+  .badge-discount { background: #fff0d4; color: #b37400; }
+  .badge-price-old {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 12px;
+  }
+  .badge-price-new {
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .badge-price-new.free { color: #34c759; }
+  .badge-price-new.discount-price { color: #ff9500; }
+
+  .card-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .btn-appstore {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--link);
+    color: white;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .btn-appstore:hover { opacity: 0.85; }
+  .qr-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  /* Code box */
+  .code-box {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-family: "SF Mono", "Menlo", "Monaco", monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    word-break: break-all;
+    margin: 8px 0;
+    position: relative;
+  }
+  .code-box .code-label {
+    color: #a6adc8;
+    font-size: 11px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .code-box .code-value {
+    color: #f5c2e7;
+    font-weight: 600;
+  }
+
+  /* No data */
+  .no-data {
+    background: var(--card-bg);
+    border-radius: 0 0 14px 14px;
+    padding: 24px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px 14px 40px;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.8;
+  }
+  .footer .sources { margin-top: 8px; }
+  .footer .source-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin: 2px;
+  }
+  .source-ok { background: #e8f8ed; color: #0b7d38; }
+  .source-fail { background: #fff2f0; color: #d63031; }
+  .source-warn { background: #fff6e8; color: #c47a00; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>App Store 限免速报</h1>
+  <div class="date">2026 年 5 月 23 日 · 星期六</div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">7</div>
+      <div class="stat-label">内购限免</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">28+</div>
+      <div class="stat-label">本体限免</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7</div>
+      <div class="stat-label">折扣精选</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ============ IAP FREE ============ -->
+  <div class="section section-iap">
+    <div class="section-title">
+      <span class="icon">🔥</span> 内购限免 · 重点推荐
+    </div>
+    <div class="card-list">
+
+      <!-- Card 1: Mockup Frame -->
+      <div class="card">
+        <div class="card-icon iap">MF</div>
+        <div class="card-content">
+          <div class="card-name">Mockup Frame - Screenshot Bezel</div>
+          <div class="card-desc">带壳截图工具，为截图添加精美的设备边框，支持多种 iPhone/iPad 型号</div>
+          <div class="card-meta">
+            <span class="badge badge-iap">内购限免</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/app/id6468902504" target="_blank">App Store</a>
+            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6468902504" alt="QR">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Launch Canvas -->
+      <div class="card">
+        <div class="card-icon iap">LC</div>
+        <div class="card-content">
+          <div class="card-name">Launch Canvas</div>
+          <div class="card-desc">App Store 应用截图设计工具，轻松制作精美的应用展示图</div>
+          <div class="card-meta">
+            <span class="badge badge-iap">内购限免</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/app/id6763953866" target="_blank">App Store</a>
+            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6763953866" alt="QR">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: VinylVibes -->
+      <div class="card">
+        <div class="card-icon iap">VV</div>
+        <div class="card-content">
+          <div class="card-name">VinylVibes</div>
+          <div class="card-desc">Spotify 视觉效果音乐播放器，带来黑胶唱片般的沉浸式音乐体验</div>
+          <div class="card-meta">
+            <span class="badge badge-iap">内购限免</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/app/id6757410893" target="_blank">App Store</a>
+            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6757410893" alt="QR">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Word & Logic -->
+      <div class="card">
+        <div class="card-icon iap">WL</div>
+        <div class="card-content">
+          <div class="card-name">Word &amp; Logic Mini Puzzle Games</div>
+          <div class="card-desc">单词与逻辑迷你益智游戏合集，锻炼脑力的趣味挑战</div>
+          <div class="card-meta">
+            <span class="badge badge-iap">内购限免</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/app/id6761820736" target="_blank">App Store</a>
+            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6761820736" alt="QR">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Spiriguide -->
+      <div class="card">
+        <div class="card-icon iap">SG</div>
+        <div class="card-content">
+          <div class="card-name">Spiriguide Spiritual Awakening</div>
+          <div class="card-desc">灵性觉醒指南，帮助你在冥想和探索中找到内心的平静与方向</div>
+          <div class="card-meta">
+            <span class="badge badge-iap">内购限免</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/app/id6739027599" target="_blank">App Store</a>
+            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6739027599" alt="QR">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: 一饮 -->
+      <div class="card">
+        <div class="card-icon iap">一</div>
+        <div class="card-content">
+          <div class="card-name">一饮 - 咖啡记录</div>
+          <div class="card-desc">专注咖啡记录，贴纸式记录+分享卡片，查看口味偏好趋势。进入App后点"升级会员"即可0元领取终身会员</div>
+          <div class="card-meta">
+            <span class="badge badge-iap">内购限免</span>
+            <span class="badge-price-new free">终身会员 0元</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/cn/app/id6761892104" target="_blank">App Store</a>
+            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/cn/app/id6761892104" alt="QR">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7: 西瓜备份 -->
+      <div class="card">
+        <div class="card-icon iap">西</div>
+        <div class="card-content">
+          <div class="card-name">西瓜备份 - 照片备份到外接硬盘/SMB/WebDAV</div>
+          <div class="card-desc">将 iPhone 相册备份到自己的 NAS 或外接存储，支持 SMB/WebDAV，按月对比本地与远端。进入App后点"升级到 Pro"即可0元领取</div>
+          <div class="card-meta">
+            <span class="badge badge-iap">内购限免</span>
+            <span class="badge-price-new free">Pro 0元</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/cn/app/id6762260596" target="_blank">App Store</a>
+            <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/cn/app/id6762260596" alt="QR">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ FREE ============ -->
+  <div class="section section-free">
+    <div class="section-title">
+      <span class="icon">🆓</span> 本体限免 · 今日必收
+    </div>
+    <div class="card-list">
+
+      <!-- Artemis -->
+      <div class="card">
+        <div class="card-icon free">AD</div>
+        <div class="card-content">
+          <div class="card-name">Artemis Director's Viewfinder</div>
+          <div class="card-desc">奥斯卡获奖摄影师推荐的电影取景器，专业相机与镜头综合数据库，支持自定义格式</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥198</span>
+            <span class="badge-price-new free">免费</span>
+            <span class="badge badge-free">⭐4.0</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/cn/app/id1164523253" target="_blank">App Store</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earplug -->
+      <div class="card">
+        <div class="card-icon free">EP</div>
+        <div class="card-content">
+          <div class="card-name">Earplug</div>
+          <div class="card-desc">极简放松助眠应用，丝滑的"遮蔽"音轨帮助隐藏鼾声、噪音等干扰，适用于睡眠和冥想</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥58</span>
+            <span class="badge-price-new free">免费</span>
+            <span class="badge badge-free">⭐5.0</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/app/id962141384" target="_blank">App Store</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transcorder -->
+      <div class="card">
+        <div class="card-icon free">TR</div>
+        <div class="card-content">
+          <div class="card-name">Transcorder - Voice Recorder</div>
+          <div class="card-desc">实时离线语音转录录音，支持多语言，可点击单词跳转对应音频位置</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥38</span>
+            <span class="badge-price-new free">免费</span>
+            <span class="badge badge-free">⭐5.0</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/app/id1494633807" target="_blank">App Store</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 修图神器 -->
+      <div class="card">
+        <div class="card-icon free">修</div>
+        <div class="card-content">
+          <div class="card-name">修图神器 - 去水印·除瑕疵·修复照片</div>
+          <div class="card-desc">一键去除照片水印、消除瑕疵、智能修复老照片，功能强大的全能修图工具</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥28</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/free/apps/az5PdmOrNwWZ6BOy" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HabitDog -->
+      <div class="card">
+        <div class="card-icon free">HD</div>
+        <div class="card-content">
+          <div class="card-name">HabitDog: 习惯养成与记录</div>
+          <div class="card-desc">可爱风格的习惯追踪应用，帮你养成好习惯，告别坏习惯</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥22</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/free/apps/32NwznaRNqA0LQ5V" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 邮件 -->
+      <div class="card">
+        <div class="card-icon free">邮</div>
+        <div class="card-content">
+          <div class="card-name">邮件 - 集中管理所有邮箱</div>
+          <div class="card-desc">在一个应用中管理所有电子邮件账户，支持添加图像、扫描文档等丰富功能</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥22</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/free/apps/eg5j9nPrZpWKwdDE" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transcorder already done -->
+      <!-- Wake Up -->
+      <div class="card">
+        <div class="card-icon free">WU</div>
+        <div class="card-content">
+          <div class="card-name">Wake Up - Fajr Alarm</div>
+          <div class="card-desc">智能闹钟应用，帮助准时起床，界面简洁清新</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥22</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/free/apps/d1BojmjqKxW2KzQq" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apps Wishlist -->
+      <div class="card">
+        <div class="card-icon free">AW</div>
+        <div class="card-content">
+          <div class="card-name">Apps Wishlist</div>
+          <div class="card-desc">应用收藏与降价提醒，再也不会错过心仪应用的降价</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥22</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/free/apps/37y9Pm5kqKA4wZjG" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 随口记账 -->
+      <div class="card">
+        <div class="card-icon free">记</div>
+        <div class="card-content">
+          <div class="card-name">随口记账 - 语音识别快捷记账</div>
+          <div class="card-desc">智能语音记账，3秒语音识别自动归类，轻松管理收支告别月光族</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥18</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/cn/app/id1640044469" target="_blank">App Store</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregnancy -->
+      <div class="card">
+        <div class="card-icon free">PC</div>
+        <div class="card-content">
+          <div class="card-name">Pregnancy and Cycle Tracker</div>
+          <div class="card-desc">孕期与生理周期追踪应用，帮助记录和了解身体周期变化</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥15</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/free/apps/VjvLrnERp3A4B9aG" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 精灵扫描仪 -->
+      <div class="card">
+        <div class="card-icon free">扫</div>
+        <div class="card-content">
+          <div class="card-name">精灵扫描仪 - OCR拍照识字朗读</div>
+          <div class="card-desc">AI加持拍图识字，可编辑易校对，支持语音朗读，多语言识别精准</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥3</span>
+            <span class="badge-price-new free">免费</span>
+            <span class="badge badge-free">⭐4.8</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/cn/app/id1435857951" target="_blank">App Store</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mockup Screenshot -->
+      <div class="card">
+        <div class="card-icon free">MS</div>
+        <div class="card-content">
+          <div class="card-name">Mockup Screenshot</div>
+          <div class="card-desc">App Store 应用截图制作工具，内置多设备边框模板，支持 Mac 和 iOS</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥8</span>
+            <span class="badge-price-new free">免费</span>
+            <span class="badge badge-free">⭐5.0</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://gofans.cn/app/e424518f-859d-4feb-9113-c752efc43702" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NotifiNote -->
+      <div class="card">
+        <div class="card-icon free">NN</div>
+        <div class="card-content">
+          <div class="card-name">NotifiNote: Notification Notes</div>
+          <div class="card-desc">将笔记以通知形式保存，方便快速查看备忘内容，简单实用的通知笔记工具</div>
+          <div class="card-meta">
+            <span class="badge badge-free">本体限免</span>
+            <span class="badge-price-old">¥8</span>
+            <span class="badge-price-new free">免费</span>
+            <span class="badge badge-free">⭐4.9</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://apps.apple.com/cn/app/id1577062674" target="_blank">App Store</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ MORE FREE (compact) ============ -->
+  <div class="section section-free">
+    <div class="section-title">
+      <span class="icon">📦</span> 更多限免 · 快速一览
+    </div>
+    <div class="card-list">
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">Plant Light Meter</div>
+          <div class="card-desc">植物光照计，科学测量光照避免室内植物因光照不足死亡</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+            <span class="badge-price-old">$2.99</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id1213431133" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">Math Land: Arithmetic for kids</div>
+          <div class="card-desc">儿童算术教育游戏，寓教于乐的趣味数学冒险</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+            <span class="badge-price-old">$3.99</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id1333069552" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">Habit Tracker Widget</div>
+          <div class="card-desc">习惯追踪与小组件，可视化你的日常习惯完成进度</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id6470886117" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">Text Scanner AI: OCR &amp; Scan</div>
+          <div class="card-desc">AI文档扫描器，智能OCR文字识别与文档扫描</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id6748146382" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">Keyboard Shortcuts – Swiftly</div>
+          <div class="card-desc">重新定义iOS键盘体验，快捷操作尽在指尖</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+            <span class="badge-price-old">$0.99</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id6478379763" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">Point Five</div>
+          <div class="card-desc">颜色形状过门休闲游戏，简单有趣的反应挑战</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+            <span class="badge-price-old">$0.99</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id1304298549" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">BL1NK</div>
+          <div class="card-desc">传感器穿梭小游戏，考验反应速度</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+            <span class="badge-price-old">$0.99</span>
+            <span class="badge-price-new free">免费</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id1025073240" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">World Of Chess 3D (Pro)</div>
+          <div class="card-desc">3D国际象棋游戏，精美的立体棋盘与动画效果</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id1114381452" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">Beautiful Compass Pro</div>
+          <div class="card-desc">拟物风格指南针，精致复古的界面设计</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id1120591899" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">CalUnity - AI 日历助手</div>
+          <div class="card-desc">AI驱动的智能日历，帮你高效管理日程安排</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免[早鸟]</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id6760173746" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">Cosmo Smash</div>
+          <div class="card-desc">打砖块类太空游戏，支持 iOS 和 Apple Watch</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id6760900604" target="_blank">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div class="card-name">snoo events - 社交活动规划</div>
+          <div class="card-desc">社交活动规划与追踪工具，轻松组织聚会和活动</div>
+          <div class="card-meta">
+            <span class="badge badge-free">限免</span>
+          </div>
+          <a class="btn-appstore" href="https://apps.apple.com/app/id1286974480" target="_blank">App Store</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ DISCOUNT ============ -->
+  <div class="section section-discount">
+    <div class="section-title">
+      <span class="icon">💰</span> 限时折扣精选
+    </div>
+    <div class="card-list">
+
+      <div class="card">
+        <div class="card-icon discount">DL</div>
+        <div class="card-content">
+          <div class="card-name">DayLog</div>
+          <div class="card-desc">精致日记/日志应用，记录生活点滴</div>
+          <div class="card-meta">
+            <span class="badge badge-discount">折扣</span>
+            <span class="badge-price-old">¥58</span>
+            <span class="badge-price-new discount-price">¥19</span>
+            <span style="font-size:12px;color:#c47a00;">67% off</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/a/PR16XGn0o1mDyozB" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon discount">CL</div>
+        <div class="card-content">
+          <div class="card-name">CLocker</div>
+          <div class="card-desc">桌面时钟锁屏应用，精美的时钟小组件</div>
+          <div class="card-meta">
+            <span class="badge badge-discount">折扣</span>
+            <span class="badge-price-old">¥58</span>
+            <span class="badge-price-new discount-price">¥29</span>
+            <span style="font-size:12px;color:#c47a00;">50% off</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/a/lorvEDA4vvmzp0ya" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon discount">TW</div>
+        <div class="card-content">
+          <div class="card-name">TimeWeave+</div>
+          <div class="card-desc">时间管理与计划工具，编织你的一天</div>
+          <div class="card-meta">
+            <span class="badge badge-discount">折扣</span>
+            <span class="badge-price-old">¥38</span>
+            <span class="badge-price-new discount-price">¥19.9</span>
+            <span style="font-size:12px;color:#c47a00;">48% off</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/a/MK5lYgAML9n1wx2k" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon discount">TK</div>
+        <div class="card-content">
+          <div class="card-name">Tracck!</div>
+          <div class="card-desc">多维度追踪工具，记录和管理你的各种数据</div>
+          <div class="card-meta">
+            <span class="badge badge-discount">折扣</span>
+            <span class="badge-price-old">¥48</span>
+            <span class="badge-price-new discount-price">¥19.9</span>
+            <span style="font-size:12px;color:#c47a00;">59% off</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/a/3DkYlemewrAd9VPJ" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon discount">尺</div>
+        <div class="card-content">
+          <div class="card-name">尺子应用: 照片卷尺测量</div>
+          <div class="card-desc">利用银行卡等标准卡片作为参照物，直接从照片中测量真实尺寸</div>
+          <div class="card-meta">
+            <span class="badge badge-discount">折扣</span>
+            <span class="badge-price-old">¥15</span>
+            <span class="badge-price-new discount-price">¥8</span>
+            <span style="font-size:12px;color:#c47a00;">47% off</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://gofans.cn/app/ac04513d-1582-4d22-b96d-d82798c45894" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon discount">氢</div>
+        <div class="card-content">
+          <div class="card-name">氢刻</div>
+          <div class="card-desc">卡片式知识管理工具，快速记录和整理灵感</div>
+          <div class="card-meta">
+            <span class="badge badge-discount">折扣</span>
+            <span class="badge-price-old">¥198</span>
+            <span class="badge-price-new discount-price">¥148</span>
+            <span style="font-size:12px;color:#c47a00;">25% off</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/a/932Nwznav9A0LQ5V" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon discount">UP</div>
+        <div class="card-content">
+          <div class="card-name">UPDF</div>
+          <div class="card-desc">全能PDF编辑器，支持编辑、批注、转换、签名等功能</div>
+          <div class="card-meta">
+            <span class="badge badge-discount">折扣</span>
+            <span class="badge-price-old">¥268</span>
+            <span class="badge-price-new discount-price">¥218</span>
+            <span style="font-size:12px;color:#c47a00;">19% off</span>
+          </div>
+          <div class="card-actions">
+            <a class="btn-appstore" href="https://mergeek.com/a/0az5PdmOrbWZ6BOy" target="_blank">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ REDEMPTION CODES ============ -->
+  <div class="section section-code">
+    <div class="section-title">
+      <span class="icon">🔑</span> 兑换码 / 兑换链接
+    </div>
+    <div class="card-list">
+      <div class="card">
+        <div class="card-content" style="flex:1">
+          <div style="color: var(--text-secondary); font-size: 14px; line-height: 1.8;">
+            <p>本期内购限免均需在应用内手动操作领取（下载后进入 App 找到升级/Pro/会员入口，价格为 0 元即为有效），无需输入兑换码。</p>
+            <p style="margin-top: 8px;"><strong>什么值得买</strong> 相关帖子因页面 JS 动态渲染无法直接抓取正文。以下为近期可能相关的帖子，建议手动查看：</p>
+            <ul style="margin-top: 8px; padding-left: 18px;">
+              <li style="margin-bottom: 6px;"><a href="https://post.smzdm.com/p/arzgk9ez/" target="_blank" style="color: var(--link);">Apple App Store 限免 | 5月15日 - 24款App免费领！</a></li>
+              <li style="margin-bottom: 6px;"><a href="https://post.smzdm.com/p/a2689zln/" target="_blank" style="color: var(--link);">¥2184→0，iOS内购限免｜解锁Pro永久会员</a>（2025-11-27，参考）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div style="font-weight:600;margin-bottom:8px;font-size:14px;color:#555;">数据来源</div>
+    <div class="sources">
+      <span class="source-tag source-ok">OODATA ✓</span>
+      <span class="source-tag source-ok">Mergeek ✓</span>
+      <span class="source-tag source-ok">GoFans ✓</span>
+      <span class="source-tag source-ok">iPhone Giveaway ✓</span>
+      <span class="source-tag source-ok">反斗限免 ✓</span>
+      <span class="source-tag source-fail">极简限免 ✗</span>
+      <span class="source-tag source-fail">IT之家 ✗</span>
+      <span class="source-tag source-fail">Appwall ✗</span>
+      <span class="source-tag source-fail">APPSO ✗</span>
+      <span class="source-tag source-warn">什么值得买 ⚠</span>
+    </div>
+    <div style="margin-top:12px;">
+      生成时间：2026-05-23 15:16 · 限免具有时效性，请尽快下载<br>
+      OODATA 最新文章 1333（05/22发布）· 今日无新文章
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
