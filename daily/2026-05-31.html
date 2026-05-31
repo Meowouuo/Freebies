@@ -111,6 +111,43 @@
       padding: 8px 14px;
       font-size: 12px;
       font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .stat-item:hover {
+      background: rgba(255,255,255,0.35);
+      transform: translateY(-1px);
+    }
+    .stat-item:active {
+      transform: scale(0.96);
+    }
+    .header-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .header-btn {
+      display: inline-block;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 13px;
+      padding: 6px 16px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+    }
+    .header-btn:hover {
+      background: rgba(255,255,255,0.28);
     }
     .stat-item span {
       font-size: 18px;
@@ -348,12 +385,15 @@
       <!-- 占位符: 统计数字，每项一个 .stat-item -->
       <!-- 格式: <div class="stat-item"><span>{数字}</span>{标签}</div> -->
       <div class="stats">
-        <div class="stat-item"><span>11</span>内购免</div>
-        <div class="stat-item"><span>20</span>本体免</div>
-        <div class="stat-item"><span>6</span>折扣</div>
-        <div class="stat-item"><span>6</span>兑换码</div>
+        <a class="stat-item" href="#section-iap"><span>11</span>内购免</a>
+        <a class="stat-item" href="#section-free"><span>20</span>本体免</a>
+        <a class="stat-item" href="#section-deal"><span>6</span>折扣</a>
+        <a class="stat-item" href="#section-code"><span>6</span>兑换码</a>
       </div>
-      <a href="../index.html" style="display:inline-block;margin-top:12px;color:rgba(255,255,255,0.9);text-decoration:none;font-size:13px;position:relative;z-index:1;padding:6px 16px;background:rgba(255,255,255,0.15);border-radius:20px;backdrop-filter:blur(10px);">🏠 返回首页</a>
+      <div class="header-buttons">
+        <a href="../index.html" class="header-btn">🏠 返回首页</a>
+        <a class="header-btn" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;" href="#">🔄 强制刷新</a>
+      </div>
     </div>
 
     <div class="iframe-note" id="iframeNote">
@@ -361,7 +401,7 @@
     </div>
 
     <!-- ===== 🔥 内购限免 · 重点推荐 ===== -->
-    <div class="section">
+    <div class="section" id="section-iap">
       <div class="section-header">
         <span class="icon">🔥</span>
         <h2>内购限免 · 重点推荐</h2>
@@ -472,7 +512,7 @@
     </div>
 
     <!-- ===== 🔑 兑换码 / 兑换链接 ===== -->
-    <div class="section">
+    <div class="section" id="section-code">
       <div class="section-header">
         <span class="icon">🔑</span>
         <h2>兑换码 / 兑换链接</h2>
@@ -532,7 +572,7 @@
     </div>
 
     <!-- ===== 🆓 本体限免 ===== -->
-    <div class="section">
+    <div class="section" id="section-free">
       <div class="section-header">
         <span class="icon">🆓</span>
         <h2>本体限免</h2>
@@ -706,7 +746,7 @@
     </div>
 
     <!-- ===== 💰 限时折扣精选 ===== -->
-    <div class="section">
+    <div class="section" id="section-deal">
       <div class="section-header">
         <span class="icon">💰</span>
         <h2>限时折扣精选</h2>
