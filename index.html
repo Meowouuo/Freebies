@@ -94,6 +94,29 @@ body {
   color: #8e8e93;
 }
 .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+.header-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.3s;
+  position: relative;
+  z-index: 1;
+}
+.header-refresh:hover {
+  background: rgba(255,255,255,0.28);
+  transform: rotate(180deg);
+}
+.header-refresh:active {
+  transform: rotate(360deg) scale(0.9);
+}
 </style>
 </head>
 <body>
@@ -101,6 +124,9 @@ body {
 <div class="header">
   <h1>📱 每日 App Store 限免速报</h1>
   <p>内购限免 · 本体限免 · 折扣精选 · 兑换码</p>
+  <div style="margin-top:12px;position:relative;z-index:1;">
+    <a class="header-refresh" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;" href="#">🔄</a>
+  </div>
 </div>
 
 <div class="container">
