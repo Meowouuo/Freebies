@@ -104,18 +104,23 @@ body {
   background: rgba(255,255,255,0.15);
   color: rgba(255,255,255,0.9);
   text-decoration: none;
-  font-size: 16px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.3s;
+  transition: background 0.2s, transform 0.2s;
   position: relative;
   z-index: 1;
 }
+.header-refresh svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+}
 .header-refresh:hover {
   background: rgba(255,255,255,0.28);
-  transform: rotate(180deg);
+  transform: scale(1.1);
 }
 .header-refresh:active {
-  transform: rotate(360deg) scale(0.9);
+  transform: scale(0.9);
 }
 </style>
 </head>
@@ -125,7 +130,7 @@ body {
   <h1>📱 每日 App Store 限免速报</h1>
   <p>内购限免 · 本体限免 · 折扣精选 · 兑换码</p>
   <div style="margin-top:12px;position:relative;z-index:1;">
-    <a class="header-refresh" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;" href="#">🔄</a>
+    <a class="header-refresh" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;" href="#"><svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></a>
   </div>
 </div>
 
