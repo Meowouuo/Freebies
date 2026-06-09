@@ -42,6 +42,30 @@ body {
 .header h1 { font-size: 26px; font-weight: 700; position: relative; z-index: 1; }
 .header p { font-size: 14px; opacity: 0.85; margin-top: 8px; position: relative; z-index: 1; }
 .container { max-width: 600px; margin: 0 auto; padding: 20px 16px; }
+
+/* ── 月份分组 ── */
+.month-group { margin-bottom: 24px; }
+.month-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px 8px;
+  cursor: default;
+}
+.month-header .month-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1f;
+}
+.month-header .month-count {
+  font-size: 12px;
+  color: #8e8e93;
+  background: #f0f2f5;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+/* ── 卡片 ── */
 .card {
   background: white;
   border-radius: 16px;
@@ -80,6 +104,79 @@ body {
   margin-left: 8px;
   font-weight: 600;
 }
+
+/* ── 加载更多 / 展开月份 ── */
+.load-more-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  background: white;
+  border: 1.5px dashed #d1d1d6;
+  border-radius: 14px;
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.load-more-btn:hover { background: #f5f5f7; border-color: #667eea; }
+.load-more-btn:active { transform: scale(0.98); }
+
+.month-expand-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 14px;
+  color: #667eea;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.month-expand-btn:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.month-expand-btn:active { transform: scale(0.98); }
+.month-expand-btn .arrow-icon {
+  display: inline-block;
+  transition: transform 0.3s;
+  font-size: 14px;
+}
+.month-expand-btn.expanded .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* ── 隐藏卡片（懒加载） ── */
+.card-hidden { display: none; }
+.cards-hidden { display: none; }
+
+/* ── 刷新按钮 ── */
+.refresh-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 2;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.refresh-btn:active { background: rgba(255,255,255,0.35); }
+
+/* ── Footer ── */
 .footer {
   text-align: center;
   padding: 30px 20px;
@@ -87,255 +184,233 @@ body {
   color: #8e8e93;
   line-height: 2;
 }
-.footer a { color: #007aff; text-decoration: none; }
-.empty-state {
-  text-align: center;
-  padding: 40px 20px;
-  color: #8e8e93;
-}
-.empty-state .icon { font-size: 48px; margin-bottom: 12px; }
-.header-refresh {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.9);
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  position: relative;
-  z-index: 1;
-}
-.header-refresh svg {
-  width: 18px;
-  height: 18px;
-  stroke: currentColor;
-  fill: none;
-}
-.header-refresh:hover {
-  background: rgba(255,255,255,0.28);
-  transform: scale(1.1);
-}
-.header-refresh:active {
-  transform: scale(0.9);
-}
 </style>
 </head>
 <body>
 
 <div class="header">
+  <button class="refresh-btn" onclick="location.reload(true)" title="强制刷新">🔄</button>
   <h1>📱 每日 App Store 限免速报</h1>
   <p>内购限免 · 本体限免 · 折扣精选 · 兑换码</p>
-  <div style="margin-top:12px;position:relative;z-index:1;">
-    <a class="header-refresh" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;" href="#"><svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></a>
-  </div>
 </div>
 
-<div class="container">
-                    <a class="card" href="daily/2026-06-09.html" target="_self">
-    <div class="date-icon">6月<br>9日</div>
-    <div class="info">
-      <div class="title">2026.06.09 限免速报 <span class="latest-badge">最新</span></div>
-      <div class="meta">内购限免15 · 本体限免36 · 折扣6 · 兑换码10</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-
-<a class="card" href="daily/2026-06-08.html" target="_self">
-    <div class="date-icon">6月<br>8日</div>
-    <div class="info">
-      <div class="title">2026.06.08 限免速报 </div>
-      <div class="meta">内购免3 · 本体免26 · 折扣7 · 兑换码3</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-06-07.html" target="_self">
-    <div class="date-icon">6月<br>7日</div>
-    <div class="info">
-      <div class="title">2026.06.07 限免速报 </div>
-      <div class="meta">内购限免21 · 本体限免31 · 折扣8 · 兑换码9</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-06-06.html" target="_self">
-    <div class="date-icon">6月<br>6日</div>
-    <div class="info">
-      <div class="title">2026.06.06 限免速报 </div>
-      <div class="meta">内购限免21 · 本体限免29 · 折扣7 · 兑换码7</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-06-05.html" target="_self">
-    <div class="date-icon">6月<br>5日</div>
-    <div class="info">
-      <div class="title">2026.06.05 限免速报 </div>
-      <div class="meta">内购限免18 · 本体限免32 · 折扣6 · 兑换码6</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-06-04.html" target="_self">
-    <div class="date-icon">6月<br>4日</div>
-    <div class="info">
-      <div class="title">2026.06.04 限免速报 </div>
-      <div class="meta">内购限免12 · 本体限免23 · 折扣4 · 兑换码5</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-06-03.html" target="_self">
-    <div class="date-icon">6月<br>3日</div>
-    <div class="info">
-      <div class="title">2026.06.03 限免速报 </div>
-      <div class="meta">内购限免8 · 本体限免38 · 折扣6 · 兑换码7</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-06-02.html" target="_self">
-    <div class="date-icon">6月<br>2日</div>
-    <div class="info">
-      <div class="title">2026.06.02 限免速报 </div>
-      <div class="meta">内购限免11 · 本体限免30 · 折扣6 · 兑换码5</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-06-01.html" target="_self">
-    <div class="date-icon">6月<br>1日</div>
-    <div class="info">
-      <div class="title">2026.06.01 限免速报 </div>
-      <div class="meta">内购限免5 · 本体限免26 · 折扣6 · 兑换码6</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-31.html" target="_self">
-    <div class="date-icon">5月<br>31日</div>
-    <div class="info">
-      <div class="title">2026.05.31 限免速报 </div>
-      <div class="meta">内购限免11 · 本体限免20 · 折扣6 · 兑换码6</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-30.html" target="_self">
-    <div class="date-icon">5月<br>30日</div>
-    <div class="info">
-      <div class="title">2026.05.30 限免速报 </div>
-      <div class="meta">内购限免7 · 本体限免37 · 折扣7 · 兑换码3 [图标已修复]</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-29.html" target="_self">
-    <div class="date-icon">5月<br>29日</div>
-    <div class="info">
-      <div class="title">2026.05.29 限免速报 </div>
-      <div class="meta">内购限免4 · 本体限免24 · 折扣9 · 兑换码3</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-28.html" target="_self">
-    <div class="date-icon">5月<br>28日</div>
-    <div class="info">
-      <div class="title">2026.05.28 限免速报 </div>
-      <div class="meta">内购限免11 · 本体限免24 · 折扣7 · 兑换码6</div>
-     </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-27.html" target="_self">
-    <div class="date-icon">5月<br>27日</div>
-    <div class="info">
-      <div class="title">2026.05.27 限免速报 </div>
-      <div class="meta">8 内购免 · 24 本体免 · 7 折扣 · 5 兑换码</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-26.html" target="_self">
-    <div class="date-icon">5月<br>26日</div>
-    <div class="info">
-      <div class="title">2026.05.26 限免速报</div>
-      <div class="meta">9 款内购限免 · 31 款本体限免 · 6 款折扣 · 8 个兑换码</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-25.html" target="_self">
-    <div class="date-icon">5月<br>25日</div>
-    <div class="info">
-      <div class="title">2026.05.25 限免速报</div>
-      <div class="meta">8 款内购限免 · 21 款本体限免 · 5 款折扣 · 8 个兑换码</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-24.html" target="_self">
-    <div class="date-icon">5月<br>24日</div>
-    <div class="info">
-      <div class="title">2026.05.24 限免速报</div>
-      <div class="meta">8 款内购限免 · 26 款本体限免 · 3 个兑换码</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-23.html" target="_self">
-    <div class="date-icon">5月<br>23日</div>
-    <div class="info">
-      <div class="title">2026.05.23 限免速报</div>
-      <div class="meta">24 款限免应用</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-22.html" target="_self">
-    <div class="date-icon">5月<br>22日</div>
-    <div class="info">
-      <div class="title">2026.05.22 限免速报</div>
-      <div class="meta">46 款限免应用</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-21.html" target="_self">
-    <div class="date-icon">5月<br>21日</div>
-    <div class="info">
-      <div class="title">2026.05.21 限免速报</div>
-      <div class="meta">31 款限免应用</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-<a class="card" href="daily/2026-05-20.html" target="_self">
-    <div class="date-icon">5月<br>20日</div>
-    <div class="info">
-      <div class="title">2026.05.20 限免速报</div>
-      <div class="meta">27 款限免应用</div>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="container" id="app">
+  <!-- JS will render content here -->
+</div>
 
 <div class="footer">
   <p>数据来源：OODATA · Mergeek · GoFans · 反斗限免 · 更多</p>
   <p style="margin-top:8px;">⚠️ 限免价格随时可能恢复，请尽快下载</p>
 </div>
 
+<script>
+// ── 卡片数据（由 push_to_github.py 生成） ──
+const CARDS_DATA = [
+  {
+    "date": "2026-06-09",
+    "stats": "内购限免15 · 本体限免36 · 折扣6 · 兑换码10",
+    "isLatest": true
+  },
+  {
+    "date": "2026-06-08",
+    "stats": "内购免3 · 本体免26 · 折扣7 · 兑换码3"
+  },
+  {
+    "date": "2026-06-07",
+    "stats": "内购限免21 · 本体限免31 · 折扣8 · 兑换码9"
+  },
+  {
+    "date": "2026-06-06",
+    "stats": "内购限免21 · 本体限免29 · 折扣7 · 兑换码7"
+  },
+  {
+    "date": "2026-06-05",
+    "stats": "内购限免18 · 本体限免32 · 折扣6 · 兑换码6"
+  },
+  {
+    "date": "2026-06-04",
+    "stats": "内购限免12 · 本体限免23 · 折扣4 · 兑换码5"
+  },
+  {
+    "date": "2026-06-03",
+    "stats": "内购限免8 · 本体限免38 · 折扣6 · 兑换码7"
+  },
+  {
+    "date": "2026-06-02",
+    "stats": "内购限免11 · 本体限免30 · 折扣6 · 兑换码5"
+  },
+  {
+    "date": "2026-06-01",
+    "stats": "内购限免5 · 本体限免26 · 折扣6 · 兑换码6"
+  },
+  {
+    "date": "2026-05-31",
+    "stats": "内购限免11 · 本体限免20 · 折扣6 · 兑换码6"
+  },
+  {
+    "date": "2026-05-30",
+    "stats": "内购限免7 · 本体限免37 · 折扣7 · 兑换码3 [图标已修复]"
+  },
+  {
+    "date": "2026-05-29",
+    "stats": "内购限免4 · 本体限免24 · 折扣9 · 兑换码3"
+  },
+  {
+    "date": "2026-05-28",
+    "stats": "内购限免11 · 本体限免24 · 折扣7 · 兑换码6"
+  },
+  {
+    "date": "2026-05-27",
+    "stats": "8 内购免 · 24 本体免 · 7 折扣 · 5 兑换码"
+  },
+  {
+    "date": "2026-05-26",
+    "stats": "9 款内购限免 · 31 款本体限免 · 6 款折扣 · 8 个兑换码"
+  },
+  {
+    "date": "2026-05-25",
+    "stats": "8 款内购限免 · 21 款本体限免 · 5 款折扣 · 8 个兑换码"
+  },
+  {
+    "date": "2026-05-24",
+    "stats": "8 款内购限免 · 26 款本体限免 · 3 个兑换码"
+  },
+  {
+    "date": "2026-05-23",
+    "stats": "24 款限免应用"
+  },
+  {
+    "date": "2026-05-22",
+    "stats": "46 款限免应用"
+  },
+  {
+    "date": "2026-05-21",
+    "stats": "31 款限免应用"
+  },
+  {
+    "date": "2026-05-20",
+    "stats": "27 款限免应用"
+  }
+];
+
+const MONTH_NAMES = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+const VISIBLE_COUNT = 7; // 每组初始显示数量
+
+// 按月份分组
+function groupByMonth(cards) {
+  const groups = {};
+  cards.forEach(card => {
+    const y = card.date.slice(0, 4);
+    const m = parseInt(card.date.slice(5, 7));
+    const key = `${y}-${m}`;
+    if (!groups[key]) groups[key] = { year: y, month: m, cards: [] };
+    groups[key].cards.push(card);
+  });
+  // 按年月降序排列
+  return Object.values(groups).sort((a, b) => {
+    if (a.year !== b.year) return b.year - a.year;
+    return b.month - a.month;
+  });
+}
+
+function renderCard(card) {
+  const m = parseInt(card.date.slice(5, 7));
+  const d = parseInt(card.date.slice(8, 10));
+  const dateDisplay = card.date.replace(/-/g, '.');
+  const badge = card.isLatest ? ' <span class="latest-badge">最新</span>' : '';
+  return `<a class="card" href="daily/${card.date}.html" target="_self">
+    <div class="date-icon">${m}月<br>${d}日</div>
+    <div class="info">
+      <div class="title">${dateDisplay} 限免速报${badge}</div>
+      <div class="meta">${card.stats}</div>
+    </div>
+    <div class="arrow">›</div>
+  </a>`;
+}
+
+function render() {
+  const container = document.getElementById('app');
+  const groups = groupByMonth(CARDS_DATA);
+
+  let html = '';
+  groups.forEach((group, gi) => {
+    const key = `${group.year}-${group.month}`;
+    const total = group.cards.length;
+    const label = `${group.year}年${MONTH_NAMES[group.month - 1]}`;
+
+    html += `<div class="month-group" data-month="${key}">`;
+    html += `<div class="month-header">`;
+    html += `<span class="month-label">${label}</span>`;
+    html += `<span class="month-count">${total} 篇</span>`;
+    html += `</div>`;
+
+    // 所有月份统一处理：默认折叠，点击展开后显示最多 VISIBLE_COUNT 个
+    html += `<div class="month-collapsed">`;
+    html += `<button class="month-expand-btn" onclick="expandMonth(this, '${key}')">`;
+    html += `📂 查看${label}全部限免（${total} 篇）`;
+    html += `<span class="arrow-icon">▼</span>`;
+    html += `</button>`;
+    html += `</div>`;
+    html += `<div class="month-detail cards-hidden" data-month="${key}">`;
+    group.cards.forEach((card, ci) => {
+      const hidden = ci >= VISIBLE_COUNT ? ' card-hidden' : '';
+      html += `<div class="card-item${hidden}" data-idx="${ci}">${renderCard(card)}</div>`;
+    });
+    if (total > VISIBLE_COUNT) {
+      html += `<button class="load-more-btn" data-month="${key}" data-loaded="${VISIBLE_COUNT}" data-total="${total}" onclick="loadMore(this)">加载更多（还有 ${total - VISIBLE_COUNT} 篇）</button>`;
+    }
+    html += `</div>`;
+
+    html += `</div>`;
+  });
+
+  container.innerHTML = html;
+}
+
+// 加载更多卡片
+function loadMore(btn) {
+  const month = btn.getAttribute('data-month');
+  const loaded = parseInt(btn.getAttribute('data-loaded'));
+  const total = parseInt(btn.getAttribute('data-total'));
+  const nextBatch = Math.min(loaded + VISIBLE_COUNT, total);
+
+  // 显示下一批卡片
+  const container = btn.closest('.month-group');
+  const hiddenCards = container.querySelectorAll('.card-item.card-hidden');
+  let shown = 0;
+  for (let i = 0; i < hiddenCards.length && shown < VISIBLE_COUNT; i++) {
+    hiddenCards[i].classList.remove('card-hidden');
+    shown++;
+  }
+
+  // 更新按钮
+  const remaining = total - nextBatch;
+  if (remaining <= 0) {
+    btn.style.display = 'none';
+  } else {
+    btn.setAttribute('data-loaded', nextBatch);
+    btn.textContent = `加载更多（还有 ${remaining} 篇）`;
+  }
+}
+
+// 展开历史月份
+function expandMonth(btn, monthKey) {
+  const detail = btn.closest('.month-group').querySelector(`.month-detail[data-month="${monthKey}"]`);
+  const isExpanded = btn.classList.contains('expanded');
+
+  if (isExpanded) {
+    detail.classList.add('cards-hidden');
+    btn.classList.remove('expanded');
+    btn.innerHTML = `📂 查看${btn.closest('.month-group').querySelector('.month-label').textContent}全部限免（${detail.querySelectorAll('.card-item').length} 篇）<span class="arrow-icon">▼</span>`;
+  } else {
+    detail.classList.remove('cards-hidden');
+    btn.classList.add('expanded');
+    btn.innerHTML = `📂 收起${btn.closest('.month-group').querySelector('.month-label').textContent}限免 <span class="arrow-icon">▲</span>`;
+  }
+}
+
+// 初始化
+render();
+</script>
 </body>
 </html>
