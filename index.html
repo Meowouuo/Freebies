@@ -40,11 +40,59 @@ body {
 }
 @keyframes float { to { transform: translateY(-24px); } }
 .header h1 { font-size: 26px; font-weight: 700; position: relative; z-index: 1; }
-.header p { font-size: 14px; opacity: 0.85; margin-top: 8px; position: relative; z-index: 1; }
+
+/* ── 副标题行：分类文字 + 刷新按钮（与内页一致） ── */
+.subtitle-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+.subtitle-row p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ── 圆形功能按钮（与内页 .header-btn 样式一致） ── */
+.header-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+.header-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+}
+.header-btn:hover {
+  background: rgba(255,255,255,0.28);
+  transform: scale(1.1);
+}
+.header-btn:active {
+  transform: scale(0.9);
+}
+
 .container { max-width: 600px; margin: 0 auto; padding: 20px 16px; }
 
 /* ── 月份分组 ── */
 .month-group { margin-bottom: 24px; }
+.month-hidden { display: none; }
 .month-header {
   display: flex;
   align-items: center;
@@ -159,23 +207,6 @@ body {
 .card-hidden { display: none; }
 .cards-hidden { display: none; }
 
-/* ── 刷新按钮 ── */
-.refresh-btn {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  z-index: 2;
-  background: rgba(255,255,255,0.2);
-  border: none;
-  border-radius: 10px;
-  padding: 8px 12px;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-.refresh-btn:active { background: rgba(255,255,255,0.35); }
-
 /* ── Footer ── */
 .footer {
   text-align: center;
@@ -189,9 +220,13 @@ body {
 <body>
 
 <div class="header">
-  <button class="refresh-btn" onclick="location.reload(true)" title="强制刷新">🔄</button>
   <h1>📱 每日 App Store 限免速报</h1>
-  <p>内购限免 · 本体限免 · 折扣精选 · 兑换码</p>
+  <div class="subtitle-row">
+    <p>内购限免 · 本体限免 · 折扣精选 · 兑换码</p>
+    <button class="header-btn" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;">
+      <svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+    </button>
+  </div>
 </div>
 
 <div class="container" id="app">
@@ -213,88 +248,114 @@ const CARDS_DATA = [
   },
   {
     "date": "2026-06-08",
-    "stats": "内购免3 · 本体免26 · 折扣7 · 兑换码3"
+    "stats": "内购免3 · 本体免26 · 折扣7 · 兑换码3",
+    "isLatest": false
   },
   {
     "date": "2026-06-07",
-    "stats": "内购限免21 · 本体限免31 · 折扣8 · 兑换码9"
+    "stats": "内购限免21 · 本体限免31 · 折扣8 · 兑换码9",
+    "isLatest": false
   },
   {
     "date": "2026-06-06",
-    "stats": "内购限免21 · 本体限免29 · 折扣7 · 兑换码7"
+    "stats": "内购限免21 · 本体限免29 · 折扣7 · 兑换码7",
+    "isLatest": false
   },
   {
     "date": "2026-06-05",
-    "stats": "内购限免18 · 本体限免32 · 折扣6 · 兑换码6"
+    "stats": "内购限免18 · 本体限免32 · 折扣6 · 兑换码6",
+    "isLatest": false
   },
   {
     "date": "2026-06-04",
-    "stats": "内购限免12 · 本体限免23 · 折扣4 · 兑换码5"
+    "stats": "内购限免12 · 本体限免23 · 折扣4 · 兑换码5",
+    "isLatest": false
   },
   {
     "date": "2026-06-03",
-    "stats": "内购限免8 · 本体限免38 · 折扣6 · 兑换码7"
+    "stats": "内购限免8 · 本体限免38 · 折扣6 · 兑换码7",
+    "isLatest": false
   },
   {
     "date": "2026-06-02",
-    "stats": "内购限免11 · 本体限免30 · 折扣6 · 兑换码5"
+    "stats": "内购限免11 · 本体限免30 · 折扣6 · 兑换码5",
+    "isLatest": false
   },
   {
     "date": "2026-06-01",
-    "stats": "内购限免5 · 本体限免26 · 折扣6 · 兑换码6"
+    "stats": "内购限免5 · 本体限免26 · 折扣6 · 兑换码6",
+    "isLatest": false
   },
   {
     "date": "2026-05-31",
-    "stats": "内购限免11 · 本体限免20 · 折扣6 · 兑换码6"
+    "stats": "内购限免11 · 本体限免20 · 折扣6 · 兑换码6",
+    "isLatest": false
   },
   {
     "date": "2026-05-30",
-    "stats": "内购限免7 · 本体限免37 · 折扣7 · 兑换码3 [图标已修复]"
+    "stats": "内购限免7 · 本体限免37 · 折扣7 · 兑换码3 [图标已修复]",
+    "isLatest": false
   },
   {
     "date": "2026-05-29",
-    "stats": "内购限免4 · 本体限免24 · 折扣9 · 兑换码3"
+    "stats": "内购限免4 · 本体限免24 · 折扣9 · 兑换码3",
+    "isLatest": false
   },
   {
     "date": "2026-05-28",
-    "stats": "内购限免11 · 本体限免24 · 折扣7 · 兑换码6"
+    "stats": "内购限免11 · 本体限免24 · 折扣7 · 兑换码6",
+    "isLatest": false
   },
   {
     "date": "2026-05-27",
-    "stats": "8 内购免 · 24 本体免 · 7 折扣 · 5 兑换码"
+    "stats": "8 内购免 · 24 本体免 · 7 折扣 · 5 兑换码",
+    "isLatest": false
   },
   {
     "date": "2026-05-26",
-    "stats": "9 款内购限免 · 31 款本体限免 · 6 款折扣 · 8 个兑换码"
+    "stats": "9 款内购限免 · 31 款本体限免 · 6 款折扣 · 8 个兑换码",
+    "isLatest": false
   },
   {
     "date": "2026-05-25",
-    "stats": "8 款内购限免 · 21 款本体限免 · 5 款折扣 · 8 个兑换码"
+    "stats": "8 款内购限免 · 21 款本体限免 · 5 款折扣 · 8 个兑换码",
+    "isLatest": false
   },
   {
     "date": "2026-05-24",
-    "stats": "8 款内购限免 · 26 款本体限免 · 3 个兑换码"
+    "stats": "8 款内购限免 · 26 款本体限免 · 3 个兑换码",
+    "isLatest": false
   },
   {
     "date": "2026-05-23",
-    "stats": "24 款限免应用"
+    "stats": "24 款限免应用",
+    "isLatest": false
   },
   {
     "date": "2026-05-22",
-    "stats": "46 款限免应用"
+    "stats": "46 款限免应用",
+    "isLatest": false
   },
   {
     "date": "2026-05-21",
-    "stats": "31 款限免应用"
+    "stats": "31 款限免应用",
+    "isLatest": false
   },
   {
     "date": "2026-05-20",
-    "stats": "27 款限免应用"
+    "stats": "27 款限免应用",
+    "isLatest": false
   }
 ];
 
 const MONTH_NAMES = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-const VISIBLE_COUNT = 7; // 每组初始显示数量
+const VISIBLE_COUNT = 7;   // 每组初始显示卡片数量
+const VISIBLE_MONTHS = 7;  // 初始显示月份数量
+
+// 获取当前年月（用于自动展开本月）
+const _now = new Date();
+const CURRENT_YEAR = _now.getFullYear();
+const CURRENT_MONTH = _now.getMonth() + 1;
 
 // 按月份分组
 function groupByMonth(cards) {
@@ -338,38 +399,63 @@ function render() {
     const total = group.cards.length;
     const label = `${group.year}年${MONTH_NAMES[group.month - 1]}`;
 
-    html += `<div class="month-group" data-month="${key}">`;
+    // 判断是否为当前月份 → 自动展开
+    const isCurrentMonth = (parseInt(group.year) === CURRENT_YEAR && group.month === CURRENT_MONTH);
+    // 判断是否超出初始显示月份数 → 月份懒加载隐藏
+    const isMonthHidden = gi >= VISIBLE_MONTHS;
+
+    html += `<div class="month-group${isMonthHidden ? ' month-hidden' : ''}" data-month="${key}">`;
     html += `<div class="month-header">`;
     html += `<span class="month-label">${label}</span>`;
     html += `<span class="month-count">${total} 篇</span>`;
     html += `</div>`;
 
-    // 所有月份统一处理：默认折叠，点击展开后显示最多 VISIBLE_COUNT 个
-    html += `<div class="month-collapsed">`;
-    html += `<button class="month-expand-btn" onclick="expandMonth(this, '${key}')">`;
-    html += `📂 查看${label}全部限免（${total} 篇）`;
-    html += `<span class="arrow-icon">▼</span>`;
-    html += `</button>`;
-    html += `</div>`;
-    html += `<div class="month-detail cards-hidden" data-month="${key}">`;
-    group.cards.forEach((card, ci) => {
-      const hidden = ci >= VISIBLE_COUNT ? ' card-hidden' : '';
-      html += `<div class="card-item${hidden}" data-idx="${ci}">${renderCard(card)}</div>`;
-    });
-    if (total > VISIBLE_COUNT) {
-      html += `<button class="load-more-btn" data-month="${key}" data-loaded="${VISIBLE_COUNT}" data-total="${total}" onclick="loadMore(this)">加载更多（还有 ${total - VISIBLE_COUNT} 篇）</button>`;
+    if (isCurrentMonth) {
+      // 当前月份：直接展开，无需折叠按钮
+      html += `<div class="month-detail" data-month="${key}">`;
+      group.cards.forEach((card, ci) => {
+        const hidden = ci >= VISIBLE_COUNT ? ' card-hidden' : '';
+        html += `<div class="card-item${hidden}" data-idx="${ci}">${renderCard(card)}</div>`;
+      });
+      if (total > VISIBLE_COUNT) {
+        html += `<button class="load-more-btn" data-month="${key}" data-loaded="${VISIBLE_COUNT}" data-total="${total}" onclick="loadMore(this)">加载更多（还有 ${total - VISIBLE_COUNT} 篇）</button>`;
+      }
+      // 收起按钮（当前月份展开后可收起）
+      html += `<button class="month-expand-btn" onclick="collapseMonth(this, '${key}')" style="background:transparent;border:1px solid #d1d1d6;box-shadow:none;color:#8e8e93;font-size:13px;padding:10px;">📂 收起${label}限免</button>`;
+      html += `</div>`;
+    } else {
+      // 非当前月份：默认折叠，点击展开
+      html += `<div class="month-collapsed">`;
+      html += `<button class="month-expand-btn" onclick="expandMonth(this, '${key}')">`;
+      html += `📂 查看${label}全部限免（${total} 篇）`;
+      html += `<span class="arrow-icon">▼</span>`;
+      html += `</button>`;
+      html += `</div>`;
+      html += `<div class="month-detail cards-hidden" data-month="${key}">`;
+      group.cards.forEach((card, ci) => {
+        const hidden = ci >= VISIBLE_COUNT ? ' card-hidden' : '';
+        html += `<div class="card-item${hidden}" data-idx="${ci}">${renderCard(card)}</div>`;
+      });
+      if (total > VISIBLE_COUNT) {
+        html += `<button class="load-more-btn" data-month="${key}" data-loaded="${VISIBLE_COUNT}" data-total="${total}" onclick="loadMore(this)">加载更多（还有 ${total - VISIBLE_COUNT} 篇）</button>`;
+      }
+      html += `</div>`;
     }
-    html += `</div>`;
 
     html += `</div>`;
   });
 
+  // 月份懒加载按钮：如果月份总数超过 VISIBLE_MONTHS，显示"加载更多月份"
+  if (groups.length > VISIBLE_MONTHS) {
+    const remainingMonths = groups.length - VISIBLE_MONTHS;
+    html += `<button class="load-more-btn" id="loadMoreMonthsBtn" data-loaded="${VISIBLE_MONTHS}" data-total="${groups.length}" onclick="loadMoreMonths(this)" style="margin-top:12px;">加载更多月份（还有 ${remainingMonths} 个月）</button>`;
+  }
+
   container.innerHTML = html;
 }
 
-// 加载更多卡片
+// 加载更多卡片（月内）
 function loadMore(btn) {
-  const month = btn.getAttribute('data-month');
   const loaded = parseInt(btn.getAttribute('data-loaded'));
   const total = parseInt(btn.getAttribute('data-total'));
   const nextBatch = Math.min(loaded + VISIBLE_COUNT, total);
@@ -396,16 +482,64 @@ function loadMore(btn) {
 // 展开历史月份
 function expandMonth(btn, monthKey) {
   const detail = btn.closest('.month-group').querySelector(`.month-detail[data-month="${monthKey}"]`);
+  const collapsed = btn.closest('.month-group').querySelector(`.month-collapsed`);
   const isExpanded = btn.classList.contains('expanded');
 
   if (isExpanded) {
+    // 收起
     detail.classList.add('cards-hidden');
+    collapsed.style.display = '';
     btn.classList.remove('expanded');
-    btn.innerHTML = `📂 查看${btn.closest('.month-group').querySelector('.month-label').textContent}全部限免（${detail.querySelectorAll('.card-item').length} 篇）<span class="arrow-icon">▼</span>`;
   } else {
+    // 展开
     detail.classList.remove('cards-hidden');
+    collapsed.style.display = 'none';
     btn.classList.add('expanded');
-    btn.innerHTML = `📂 收起${btn.closest('.month-group').querySelector('.month-label').textContent}限免 <span class="arrow-icon">▲</span>`;
+    // 替换按钮文字为"收起"
+    const label = btn.closest('.month-group').querySelector('.month-label').textContent;
+    const count = detail.querySelectorAll('.card-item').length;
+    btn.innerHTML = `📂 收起${label}限免 <span class="arrow-icon">▲</span>`;
+  }
+}
+
+// 收起当前月份（当前月份默认展开后的收起功能）
+function collapseMonth(btn, monthKey) {
+  const detail = btn.closest('.month-group').querySelector(`.month-detail[data-month="${monthKey}"]`);
+  const label = btn.closest('.month-group').querySelector('.month-label').textContent;
+  const count = detail.querySelectorAll('.card-item').length;
+
+  // 隐藏详情，显示折叠按钮
+  detail.classList.add('cards-hidden');
+  // 在 month-header 后面插入折叠按钮
+  const collapsedDiv = document.createElement('div');
+  collapsedDiv.className = 'month-collapsed';
+  collapsedDiv.innerHTML = `<button class="month-expand-btn" onclick="expandMonth(this, '${monthKey}')">📂 查看${label}全部限免（${count} 篇）<span class="arrow-icon">▼</span></button>`;
+  btn.closest('.month-group').insertBefore(collapsedDiv, detail);
+  // 移除收起按钮
+  btn.remove();
+}
+
+// 加载更多月份
+function loadMoreMonths(btn) {
+  const loaded = parseInt(btn.getAttribute('data-loaded'));
+  const total = parseInt(btn.getAttribute('data-total'));
+  const nextBatch = Math.min(loaded + VISIBLE_MONTHS, total);
+
+  // 显示下一批月份
+  const allMonths = document.querySelectorAll('.month-group.month-hidden');
+  let shown = 0;
+  for (let i = 0; i < allMonths.length && shown < VISIBLE_MONTHS; i++) {
+    allMonths[i].classList.remove('month-hidden');
+    shown++;
+  }
+
+  // 更新按钮
+  const remaining = total - nextBatch;
+  if (remaining <= 0) {
+    btn.style.display = 'none';
+  } else {
+    btn.setAttribute('data-loaded', nextBatch);
+    btn.textContent = `加载更多月份（还有 ${remaining} 个月）`;
   }
 }
 
