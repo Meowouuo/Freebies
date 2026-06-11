@@ -267,7 +267,72 @@ body {
   color: #8e8e93;
   line-height: 2;
 }
-</style>
+
+    /* 搜索功能 */
+    .header .search-wrap {
+      position: relative;
+      max-width: 320px;
+      margin: 16px auto 0;
+    }
+    .header .search-input {
+      width: 100%;
+      padding: 10px 16px 10px 38px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+    }
+    .header .search-input::placeholder { color: rgba(255,255,255,0.7); }
+    .header .search-input:focus {
+      background: rgba(255,255,255,0.35);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
+    }
+    .header .search-wrap::before {
+      content: '🔍';
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      pointer-events: none;
+    }
+    .header .search-results {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      max-height: 320px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .header .search-results.show { display: block; }
+    .header .search-result-item {
+      display: block;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .header .search-result-item:last-child { border-bottom: none; }
+    .header .search-result-item:hover { background: #f7f7ff; }
+    .header .search-result-item .result-name { font-weight: 600; color: #2d3748; }
+    .header .search-result-item .result-section { font-size: 11px; color: #999; margin-top: 2px; }
+    .header .search-result-item .result-match { color: #667eea; font-weight: 700; }
+    .header .search-no-results { padding: 14px; font-size: 13px; color: #999; text-align: center; }
+
+  </style>
 </head>
 <body>
 
