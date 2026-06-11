@@ -1,0 +1,157 @@
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  搜索结果页 · 每日 App Store 限免速报                ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+  <link rel="shortcut icon" href="./icons/favicon.ico">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="manifest" href="./icons/site.webmanifest">
+  <meta name="theme-color" content="#667eea">
+  <title>搜索结果 - 每日 App Store 限免速报</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', sans-serif;
+      background: #f0f2f5;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px 20px 24px;
+      text-align: center;
+    }
+    .header h1 { font-size: 22px; font-weight: 700; }
+    .header .back-link {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+    .search-bar {
+      max-width: 400px;
+      margin: 16px auto 0;
+      position: relative;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 10px 16px 10px 38px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    .search-bar input::placeholder { color: rgba(255,255,255,0.7); }
+    .search-bar::before {
+      content: '🔍';
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      pointer-events: none;
+    }
+    .container { max-width: 680px; margin: 0 auto; padding: 20px 12px; }
+    .result-count { font-size: 14px; color: #666; margin-bottom: 16px; }
+    .result-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.15s;
+    }
+    .result-card:hover { transform: translateY(-2px); }
+    .result-card .app-name { font-size: 15px; font-weight: 600; color: #2d3748; }
+    .result-card .app-desc { font-size: 13px; color: #718096; margin: 4px 0 8px; line-height: 1.5; }
+    .result-card .app-meta { font-size: 12px; color: #999; }
+    .result-card .app-meta a { color: #667eea; text-decoration: none; }
+    .no-results { text-align: center; padding: 40px; color: #999; font-size: 15px; }
+    .highlight { background: #fef08a; border-radius: 3px; padding: 0 2px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>搜索结果</h1>
+    <a href="./index.html" class="back-link">← 返回首页</a>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="搜索 App 名称或描述..." />
+    </div>
+  </div>
+  <div class="container">
+    <div class="result-count" id="resultCount"></div>
+    <div id="results"></div>
+  </div>
+
+  <script>
+    // 从 URL 获取搜索词
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q') || '';
+    document.getElementById('searchInput').value = q;
+
+    // 加载 apps.json 并搜索
+    var resultsEl = document.getElementById('results');
+    var countEl = document.getElementById('resultCount');
+
+    function highlightMatch(text, q) {
+      if (!q) return text;
+      var idx = text.toLowerCase().indexOf(q.toLowerCase());
+      if (idx === -1) return text;
+      return text.slice(0, idx) + '<span class="highlight">' + text.slice(idx, idx + q.length) + '</span>' + text.slice(idx + q.length);
+    }
+
+    if (!q) {
+      countEl.textContent = '请输入搜索词';
+    } else {
+      countEl.textContent = '搜索中...';
+      fetch('./apps.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(apps) {
+          var lowerQ = q.toLowerCase();
+          var matched = apps.filter(function(a) {
+            return a.name.toLowerCase().indexOf(lowerQ) !== -1 ||
+                   a.desc.toLowerCase().indexOf(lowerQ) !== -1;
+          });
+          countEl.textContent = '找到 ' + matched.length + ' 个结果：「' + q + '」';
+          if (matched.length === 0) {
+            resultsEl.innerHTML = '<div class="no-results">未找到匹配的 App，换个关键词试试？</div>';
+            return;
+          }
+          resultsEl.innerHTML = matched.map(function(app) {
+            return '<div class="result-card">' +
+              '<div class="app-name">' + highlightMatch(app.name, q) + '</div>' +
+              '<div class="app-desc">' + highlightMatch(app.desc, q) + '</div>' +
+              '<div class="app-meta">' + app.section + ' · ' +
+              '<a href="' + app.url + '">' + app.date + ' →</a></div>' +
+            '</div>';
+          }).join('');
+        })
+        .catch(function() {
+          countEl.textContent = '加载数据失败，请刷新重试';
+        });
+    }
+
+    // 搜索框回车跳转
+    document.getElementById('searchInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        var val = this.value.trim();
+        if (val) {
+          window.location.href = './search.html?q=' + encodeURIComponent(val);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
