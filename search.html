@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#667eea">
   <title>搜索结果 - 每日 App Store 限免速报</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', sans-serif;
       background: #f0f2f5;
@@ -23,7 +23,6 @@
       color: white;
       padding: 30px 20px 24px;
       text-align: center;
-      /* overflow: visible 确保下拉框能溢出显示 */
       overflow: visible;
     }
     .header h1 { font-size: 22px; font-weight: 700; }
@@ -34,7 +33,6 @@
       display: inline-block;
       margin-top: 8px;
     }
-
     /* 搜索框 - 简洁白底风格（与内页、首页完全一致） */
     .header .search-wrap {
       overflow: visible;
@@ -68,53 +66,6 @@
       pointer-events: none;
       z-index: 2;
     }
-    .header .search-results {
-      display: none;
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      right: 0;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-      max-height: 320px;
-      overflow-y: auto;
-      z-index: 9999;
-      border: 1px solid #f0f0f0;
-    }
-    .header .search-results.show { display: block; }
-    .header .search-result-item {
-      display: block;
-      padding: 12px 16px;
-      font-size: 14px;
-      color: #333;
-      text-decoration: none;
-      border-bottom: 1px solid #f8f8f8;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .header .search-result-item:last-child { border-bottom: none; }
-    .header .search-result-item:hover { background: #f8f9fa; }
-    .header .search-result-item .result-name {
-      font-weight: 600;
-      color: #1a1a1a;
-      margin-bottom: 2px;
-    }
-    .header .search-result-item .result-section {
-      font-size: 12px;
-      color: #999;
-    }
-    .header .search-result-item .result-match {
-      color: #4285f4;
-      font-weight: 700;
-    }
-    .header .search-no-results {
-      padding: 16px;
-      font-size: 14px;
-      color: #999;
-      text-align: center;
-    }
-
     .container { max-width: 680px; margin: 0 auto; padding: 20px 12px; }
     .result-count { font-size: 14px; color: #666; margin-bottom: 16px; }
     .result-card {
@@ -145,7 +96,6 @@
         <line x1="21" y1="21" x2="16.65" y2="16.65"/>
       </svg>
       <input type="text" class="search-input" id="searchInput" placeholder="搜索 App 名称或描述..." autofocus />
-      <div class="search-results" id="searchResults"></div>
     </div>
   </div>
   <div class="container">
@@ -162,7 +112,6 @@
     var resultsEl = document.getElementById('results');
     var countEl = document.getElementById('resultCount');
     var input = document.getElementById('searchInput');
-    var dropdownEl = document.getElementById('searchResults');
 
     input.value = q;
 
@@ -174,7 +123,7 @@
       return text.slice(0, idx) + '<span class="highlight">' + text.slice(idx, idx + q.length) + '</span>' + text.slice(idx + q.length);
     }
 
-    // 渲染主结果区域（实时更新）
+    // 渲染主结果区域（输入时实时更新）
     function renderResults(q) {
       if (!q) {
         countEl.textContent = '请输入搜索词';
@@ -205,45 +154,6 @@
       }).join('');
     }
 
-    // 渲染下拉列表（输入时实时显示）
-    function showDropdown(q) {
-      dropdownEl.innerHTML = '';
-      if (!q || !allApps.length) {
-        dropdownEl.classList.remove('show');
-        return;
-      }
-      var lowerQ = q.toLowerCase();
-      var matched = allApps.filter(function(a) {
-        return a.name.toLowerCase().indexOf(lowerQ) !== -1 ||
-               a.desc.toLowerCase().indexOf(lowerQ) !== -1;
-      });
-      if (matched.length === 0) {
-        dropdownEl.innerHTML = '<div class="search-no-results">未找到匹配的 App</div>';
-        dropdownEl.classList.add('show');
-        return;
-      }
-      // 下拉列表最多显示 8 条
-      matched.slice(0, 8).forEach(function(app) {
-        var item = document.createElement('div');
-        item.className = 'search-result-item';
-        item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
-                         '<div class="result-section">' + app.section + ' · ' + app.date + '</div>';
-        item.addEventListener('click', function() {
-          window.open('./' + app.url, '_blank');
-          input.value = '';
-          dropdownEl.classList.remove('show');
-        });
-        dropdownEl.appendChild(item);
-      });
-      if (matched.length > 8) {
-        var more = document.createElement('div');
-        more.className = 'search-no-results';
-        more.textContent = '还有 ' + (matched.length - 8) + ' 个结果，继续输入以筛选';
-        dropdownEl.appendChild(more);
-      }
-      dropdownEl.classList.add('show');
-    }
-
     // 加载 apps.json 并初始化
     fetch('./apps.json?t=' + Date.now())
       .then(function(r) { return r.json(); })
@@ -251,26 +161,13 @@
         allApps = apps;
         // 如果 URL 中有搜索词，立即渲染结果
         if (q) renderResults(q);
-        // 绑定输入事件：实时搜索
+        // 绑定输入事件：实时搜索（无需按回车）
         input.addEventListener('input', function() {
           var val = this.value.trim();
           renderResults(val);
-          showDropdown(val);
           // 同步更新 URL（不刷新页面）
           var newUrl = './search.html' + (val ? '?q=' + encodeURIComponent(val) : '');
           history.replaceState(null, '', newUrl);
-        });
-        // Esc 关闭下拉
-        input.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            dropdownEl.classList.remove('show');
-          }
-        });
-        // 点击页面其他区域关闭下拉
-        document.addEventListener('click', function(e) {
-          if (!input.contains(e.target) && !dropdownEl.contains(e.target)) {
-            dropdownEl.classList.remove('show');
-          }
         });
       })
       .catch(function() {
