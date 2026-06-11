@@ -752,7 +752,7 @@ render();
           item.className = 'search-result-item';
           item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
                            '<div class="result-section">' + app.section + ' · ' + app.date + '</div>';
-          item.addEventListener('click', function() { window.location.href = './' + app.url; });
+          item.addEventListener('click', function() { window.open('./' + app.url, '_blank'); });
           resultsEl.appendChild(item);
         });
         if (matched.length > 15) {
@@ -770,7 +770,7 @@ render();
       input.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
           var q = input.value.trim();
-          if (q) window.location.href = './search.html?q=' + encodeURIComponent(q);
+          if (q) window.open('./search.html?q=' + encodeURIComponent(q), '_blank');
         }
         if (e.key === 'Escape') resultsEl.classList.remove('show');
       });
