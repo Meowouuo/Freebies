@@ -26,7 +26,7 @@ body {
   padding: 40px 20px 36px;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden removed */
 }
 .header::before {
   content: '';
@@ -268,69 +268,106 @@ body {
   line-height: 2;
 }
 
-    /* 搜索功能 */
+    
+    /* 搜索功能 - 简洁白底风格 */
     .header .search-wrap {
+      overflow: visible;
       position: relative;
-      max-width: 320px;
+      max-width: 600px;
       margin: 16px auto 0;
     }
     .header .search-input {
       width: 100%;
-      padding: 10px 16px 10px 38px;
-      border: none;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.25);
-      backdrop-filter: blur(10px);
-      color: #fff;
-      font-size: 14px;
+      padding: 12px 16px 12px 42px;
+      border: 1px solid #e0e0e0;
+      border-radius: 24px;
+      background: #fff;
+      color: #333;
+      font-size: 15px;
       outline: none;
-      transition: background 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
       box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .header .search-input::placeholder { color: rgba(255,255,255,0.7); }
+    .header .search-input::placeholder {
+      color: #999;
+    }
     .header .search-input:focus {
-      background: rgba(255,255,255,0.35);
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
+      border-color: #4285f4;
+      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
     }
     .header .search-wrap::before {
       content: '🔍';
       position: absolute;
-      left: 12px;
+      left: 16px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 14px;
+      font-size: 15px;
       pointer-events: none;
+      color: #999;
     }
     .header .search-results {
       display: none;
       position: absolute;
-      top: calc(100% + 6px);
+      top: calc(100% + 8px);
       left: 0;
       right: 0;
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-      max-height: 320px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      max-height: 360px;
       overflow-y: auto;
-      z-index: 1000;
+      z-index: 9999;
+      border: 1px solid #f0f0f0;
     }
-    .header .search-results.show { display: block; }
+    .header .search-results.show {
+      display: block;
+    }
     .header .search-result-item {
       display: block;
-      padding: 10px 14px;
-      font-size: 13px;
+      padding: 12px 16px;
+      font-size: 14px;
       color: #333;
       text-decoration: none;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f8f8f8;
       cursor: pointer;
       transition: background 0.15s;
     }
-    .header .search-result-item:last-child { border-bottom: none; }
-    .header .search-result-item:hover { background: #f7f7ff; }
-    .header .search-result-item .result-name { font-weight: 600; color: #2d3748; }
-    .header .search-result-item .result-section { font-size: 11px; color: #999; margin-top: 2px; }
-    .header .search-result-item .result-match { color: #667eea; font-weight: 700; }
-    .header .search-no-results { padding: 14px; font-size: 13px; color: #999; text-align: center; }
+    .header .search-result-item:last-child {
+      border-bottom: none;
+    }
+    .header .search-result-item:hover {
+      background: #f8f9fa;
+    }
+    .header .search-result-item .result-name {
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .header .search-result-item .result-section {
+      font-size: 12px;
+      color: #999;
+    }
+    .header .search-result-item .result-match {
+      color: #4285f4;
+      font-weight: 700;
+    }
+    .header .search-no-results {
+      padding: 16px;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+    .highlight-card {
+      animation: highlightPulse 1.2s ease-in-out 2;
+    }
+    @keyframes highlightPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(66,133,244,0.6); }
+      70%  { box-shadow: 0 0 0 8px rgba(66,133,244,0); }
+      100% { box-shadow: 0 0 0 0 rgba(66,133,244,0); }
+    }
+
+
 
   </style>
 </head>
