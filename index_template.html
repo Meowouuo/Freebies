@@ -271,7 +271,7 @@ body {
 /* 搜索功能 */
 .header .search-wrap {
     position: relative;
-    max-width: 340px;
+    max-width: 320px;
     margin: 16px auto 0;
 }
 .header .search-input {
@@ -310,7 +310,7 @@ body {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    max-height: 360px;
+    max-height: 320px;
     overflow-y: auto;
     z-index: 1000;
 }
@@ -328,7 +328,7 @@ body {
 .header .search-result-item:last-child { border-bottom: none; }
 .header .search-result-item:hover { background: #f7f7ff; }
 .header .search-result-item .result-name { font-weight: 600; color: #2d3748; }
-.header .search-result-item .result-meta { font-size: 11px; color: #999; margin-top: 2px; }
+.header .search-result-item .result-section { font-size: 11px; color: #999; margin-top: 2px; }
 .header .search-result-item .result-match { color: #667eea; font-weight: 700; }
 .header .search-no-results { padding: 14px; font-size: 13px; color: #999; text-align: center; }
 
@@ -600,7 +600,7 @@ render();
           var item = document.createElement('div');
           item.className = 'search-result-item';
           item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
-                           '<div class="result-meta">' + app.section + ' · ' + app.date + '</div>';
+                           '<div class="result-section">' + app.section + ' · ' + app.date + '</div>';
           item.addEventListener('click', function() { window.location.href = './' + app.url; });
           resultsEl.appendChild(item);
         });
