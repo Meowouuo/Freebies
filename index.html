@@ -603,6 +603,63 @@ function loadMoreMonths(btn) {
 
 // 初始化
 render();
-</script>
+
+    // 首页搜索功能（全局搜索 apps.json）
+    (function() {
+      var input = document.getElementById('searchInput');
+      var resultsEl = document.getElementById('searchResults');
+      if (!input || !resultsEl) return;
+      var allApps = [];
+      fetch('./apps.json?t=' + Date.now()).then(function(r) { return r.json(); })
+        .then(function(apps) { allApps = apps; }).catch(function() {});
+      function highlightMatch(text, q) {
+        if (!q) return text;
+        var idx = text.toLowerCase().indexOf(q.toLowerCase());
+        if (idx === -1) return text;
+        return text.slice(0, idx) + '<span class="result-match">' + text.slice(idx, idx + q.length) + '</span>' + text.slice(idx + q.length);
+      }
+      function showResults() {
+        var q = input.value.trim();
+        resultsEl.innerHTML = '';
+        if (!q) { resultsEl.classList.remove('show'); return; }
+        if (!allApps.length) return;
+        var matched = allApps.filter(function(a) {
+          return a.name.toLowerCase().indexOf(q.toLowerCase()) !== -1 ||
+                 a.desc.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+        });
+        if (matched.length === 0) {
+          resultsEl.innerHTML = '<div class="search-no-results">未找到匹配的 App</div>';
+          resultsEl.classList.add('show'); return;
+        }
+        matched.slice(0, 15).forEach(function(app) {
+          var item = document.createElement('div');
+          item.className = 'search-result-item';
+          item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
+                           '<div class="result-meta">' + app.section + ' · ' + app.date + '</div>';
+          item.addEventListener('click', function() { window.location.href = './' + app.url; });
+          resultsEl.appendChild(item);
+        });
+        if (matched.length > 15) {
+          var more = document.createElement('div');
+          more.className = 'search-no-results';
+          more.textContent = '还有 ' + (matched.length - 15) + ' 个结果，按 Enter 查看全部';
+          resultsEl.appendChild(more);
+        }
+        resultsEl.classList.add('show');
+      }
+      input.addEventListener('input', showResults);
+      document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !resultsEl.contains(e.target)) resultsEl.classList.remove('show');
+      });
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          var q = input.value.trim();
+          if (q) window.location.href = './search.html?q=' + encodeURIComponent(q);
+        }
+        if (e.key === 'Escape') resultsEl.classList.remove('show');
+      });
+    })();
+
+  </script>
 </body>
 </html>
