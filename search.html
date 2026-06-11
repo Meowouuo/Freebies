@@ -1,8 +1,3 @@
-<!--
-  ╔══════════════════════════════════════════════════════════╗
-  ║  搜索结果页 · 每日 App Store 限免速报                ║
-  ╚══════════════════════════════════════════════════════════╝
--->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -28,6 +23,8 @@
       color: white;
       padding: 30px 20px 24px;
       text-align: center;
+      /* overflow: visible 确保下拉框能溢出显示 */
+      overflow: visible;
     }
     .header h1 { font-size: 22px; font-weight: 700; }
     .header .back-link {
@@ -37,32 +34,87 @@
       display: inline-block;
       margin-top: 8px;
     }
-    .search-bar {
-      max-width: 400px;
-      margin: 16px auto 0;
+
+    /* 搜索框 - 简洁白底风格（与内页、首页完全一致） */
+    .header .search-wrap {
+      overflow: visible;
       position: relative;
+      max-width: 600px;
+      margin: 16px auto 0;
     }
-    .search-bar input {
+    .header .search-input {
       width: 100%;
-      padding: 10px 16px 10px 38px;
-      border: none;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.25);
-      backdrop-filter: blur(10px);
-      color: #fff;
-      font-size: 14px;
+      padding: 12px 16px 12px 42px;
+      border: 1px solid #e0e0e0;
+      border-radius: 24px;
+      background: #fff;
+      color: #333;
+      font-size: 15px;
       outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .search-bar input::placeholder { color: rgba(255,255,255,0.7); }
-    .search-bar::before {
-      content: '';
+    .header .search-input::placeholder { color: #999; }
+    .header .search-input:focus {
+      border-color: #4285f4;
+      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
+    }
+    .header .search-wrap .search-icon {
       position: absolute;
-      left: 12px;
+      left: 14px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 14px;
       pointer-events: none;
+      z-index: 2;
     }
+    .header .search-results {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      max-height: 320px;
+      overflow-y: auto;
+      z-index: 9999;
+      border: 1px solid #f0f0f0;
+    }
+    .header .search-results.show { display: block; }
+    .header .search-result-item {
+      display: block;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #f8f8f8;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .header .search-result-item:last-child { border-bottom: none; }
+    .header .search-result-item:hover { background: #f8f9fa; }
+    .header .search-result-item .result-name {
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .header .search-result-item .result-section {
+      font-size: 12px;
+      color: #999;
+    }
+    .header .search-result-item .result-match {
+      color: #4285f4;
+      font-weight: 700;
+    }
+    .header .search-no-results {
+      padding: 16px;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+
     .container { max-width: 680px; margin: 0 auto; padding: 20px 12px; }
     .result-count { font-size: 14px; color: #666; margin-bottom: 16px; }
     .result-card {
@@ -84,10 +136,16 @@
 </head>
 <body>
   <div class="header">
-    <h1>搜索结果</h1>
+    <h1>🔍 搜索结果</h1>
     <a href="./index.html" class="back-link">← 返回首页</a>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="搜索 App 名称或描述..." />
+    <!-- 搜索框 - 白底风格，实时搜索 -->
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="搜索 App 名称或描述..." autofocus />
+      <div class="search-results" id="searchResults"></div>
     </div>
   </div>
   <div class="container">
@@ -96,15 +154,19 @@
   </div>
 
   <script>
-    // 从 URL 获取搜索词
+    // 从 URL 获取初始搜索词
     var params = new URLSearchParams(window.location.search);
     var q = params.get('q') || '';
-    document.getElementById('searchInput').value = q;
+    var allApps = [];
 
-    // 加载 apps.json 并搜索
     var resultsEl = document.getElementById('results');
     var countEl = document.getElementById('resultCount');
+    var input = document.getElementById('searchInput');
+    var dropdownEl = document.getElementById('searchResults');
 
+    input.value = q;
+
+    // 高亮匹配文字
     function highlightMatch(text, q) {
       if (!q) return text;
       var idx = text.toLowerCase().indexOf(q.toLowerCase());
@@ -112,46 +174,108 @@
       return text.slice(0, idx) + '<span class="highlight">' + text.slice(idx, idx + q.length) + '</span>' + text.slice(idx + q.length);
     }
 
-    if (!q) {
-      countEl.textContent = '请输入搜索词';
-    } else {
-      countEl.textContent = '搜索中...';
-      fetch('./apps.json?t=' + Date.now())
-        .then(function(r) { return r.json(); })
-        .then(function(apps) {
-          var lowerQ = q.toLowerCase();
-          var matched = apps.filter(function(a) {
-            return a.name.toLowerCase().indexOf(lowerQ) !== -1 ||
-                   a.desc.toLowerCase().indexOf(lowerQ) !== -1;
-          });
-          countEl.textContent = '找到 ' + matched.length + ' 个结果：「' + q + '」';
-          if (matched.length === 0) {
-            resultsEl.innerHTML = '<div class="no-results">未找到匹配的 App，换个关键词试试？</div>';
-            return;
-          }
-          resultsEl.innerHTML = matched.map(function(app) {
-            return '<div class="result-card">' +
-              '<div class="app-name">' + highlightMatch(app.name, q) + '</div>' +
-              '<div class="app-desc">' + highlightMatch(app.desc, q) + '</div>' +
-              '<div class="app-meta">' + app.section + ' · ' +
-              '<a href="' + app.url + '" target="_blank">' + app.date + ' →</a></div>' +
-            '</div>';
-          }).join('');
-        })
-        .catch(function() {
-          countEl.textContent = '加载数据失败，请刷新重试';
-        });
+    // 渲染主结果区域（实时更新）
+    function renderResults(q) {
+      if (!q) {
+        countEl.textContent = '请输入搜索词';
+        resultsEl.innerHTML = '';
+        return;
+      }
+      if (!allApps.length) {
+        countEl.textContent = '搜索中...';
+        return;
+      }
+      var lowerQ = q.toLowerCase();
+      var matched = allApps.filter(function(a) {
+        return a.name.toLowerCase().indexOf(lowerQ) !== -1 ||
+               a.desc.toLowerCase().indexOf(lowerQ) !== -1;
+      });
+      countEl.textContent = '找到 ' + matched.length + ' 个结果：「' + q + '」';
+      if (matched.length === 0) {
+        resultsEl.innerHTML = '<div class="no-results">未找到匹配的 App，换个关键词试试？</div>';
+        return;
+      }
+      resultsEl.innerHTML = matched.map(function(app) {
+        return '<div class="result-card">' +
+          '<div class="app-name">' + highlightMatch(app.name, q) + '</div>' +
+          '<div class="app-desc">' + highlightMatch(app.desc, q) + '</div>' +
+          '<div class="app-meta">' + app.section + ' · ' +
+          '<a href="./' + app.url + '" target="_blank">' + app.date + ' →</a></div>' +
+        '</div>';
+      }).join('');
     }
 
-    // 搜索框回车跳转
-    document.getElementById('searchInput').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        var val = this.value.trim();
-        if (val) {
-          window.location.href = './search.html?q=' + encodeURIComponent(val);
-        }
+    // 渲染下拉列表（输入时实时显示）
+    function showDropdown(q) {
+      dropdownEl.innerHTML = '';
+      if (!q || !allApps.length) {
+        dropdownEl.classList.remove('show');
+        return;
       }
-    });
+      var lowerQ = q.toLowerCase();
+      var matched = allApps.filter(function(a) {
+        return a.name.toLowerCase().indexOf(lowerQ) !== -1 ||
+               a.desc.toLowerCase().indexOf(lowerQ) !== -1;
+      });
+      if (matched.length === 0) {
+        dropdownEl.innerHTML = '<div class="search-no-results">未找到匹配的 App</div>';
+        dropdownEl.classList.add('show');
+        return;
+      }
+      // 下拉列表最多显示 8 条
+      matched.slice(0, 8).forEach(function(app) {
+        var item = document.createElement('div');
+        item.className = 'search-result-item';
+        item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
+                         '<div class="result-section">' + app.section + ' · ' + app.date + '</div>';
+        item.addEventListener('click', function() {
+          window.open('./' + app.url, '_blank');
+          input.value = '';
+          dropdownEl.classList.remove('show');
+        });
+        dropdownEl.appendChild(item);
+      });
+      if (matched.length > 8) {
+        var more = document.createElement('div');
+        more.className = 'search-no-results';
+        more.textContent = '还有 ' + (matched.length - 8) + ' 个结果，继续输入以筛选';
+        dropdownEl.appendChild(more);
+      }
+      dropdownEl.classList.add('show');
+    }
+
+    // 加载 apps.json 并初始化
+    fetch('./apps.json?t=' + Date.now())
+      .then(function(r) { return r.json(); })
+      .then(function(apps) {
+        allApps = apps;
+        // 如果 URL 中有搜索词，立即渲染结果
+        if (q) renderResults(q);
+        // 绑定输入事件：实时搜索
+        input.addEventListener('input', function() {
+          var val = this.value.trim();
+          renderResults(val);
+          showDropdown(val);
+          // 同步更新 URL（不刷新页面）
+          var newUrl = './search.html' + (val ? '?q=' + encodeURIComponent(val) : '');
+          history.replaceState(null, '', newUrl);
+        });
+        // Esc 关闭下拉
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            dropdownEl.classList.remove('show');
+          }
+        });
+        // 点击页面其他区域关闭下拉
+        document.addEventListener('click', function(e) {
+          if (!input.contains(e.target) && !dropdownEl.contains(e.target)) {
+            dropdownEl.classList.remove('show');
+          }
+        });
+      })
+      .catch(function() {
+        countEl.textContent = '加载数据失败，请刷新重试';
+      });
   </script>
 </body>
 </html>
