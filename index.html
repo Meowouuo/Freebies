@@ -635,7 +635,7 @@ render();
           var item = document.createElement('div');
           item.className = 'search-result-item';
           item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
-                           '<div class="result-meta">' + app.section + ' · ' + app.date + '</div>';
+                           '<div class="result-section">' + app.section + ' · ' + app.date + '</div>';
           item.addEventListener('click', function() { window.location.href = './' + app.url; });
           resultsEl.appendChild(item);
         });
