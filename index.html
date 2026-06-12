@@ -268,7 +268,7 @@ body {
   line-height: 2;
 }
 
-    
+
     /* 搜索功能 - 简洁白底风格 */
     .header .search-wrap {
       overflow: visible;
@@ -297,7 +297,7 @@ body {
       box-shadow: 0 2px 12px rgba(66,133,244,0.2);
     }
     .header .search-wrap::before {
-      content: '';
+      content: '🔍';
       position: absolute;
       left: 16px;
       top: 50%;
@@ -369,19 +369,6 @@ body {
 
 
 
-  
-    /* 搜索图标 */
-    .header .search-wrap .search-icon {
-        position: absolute;
-        left: 14px;
-        top: 50%;
-        transform: translateY(-50%);
-        pointer-events: none;
-        z-index: 2;
-    }
-    .header .search-input {
-        padding-left: 40px;
-    }
 </style>
 </head>
 <body>
@@ -394,13 +381,6 @@ body {
       <svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
     </button>
   </div>
-
-      <!-- 搜索框 -->
-      <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
-        <div class="search-results" id="searchResults"></div>
-      </div>
 </div>
 
 <div class="container" id="app">
@@ -421,9 +401,13 @@ body {
 // ── 卡片数据（由 push_to_github.py 生成） ──
 const CARDS_DATA = [
   {
-    "date": "2026-06-11",
-    "stats": "内购限免7 · 本体限免27 · 折扣5 · 兑换码7",
+    "date": "2026-06-12",
+    "stats": "内购限免13 · 本体限免10 · 折扣4 · 兑换码6",
     "isLatest": true
+  },
+  {
+    "date": "2026-06-11",
+    "stats": "内购限免7 · 本体限免27 · 折扣5 · 兑换码7"
   },
   {
     "date": "2026-06-10",
@@ -776,6 +760,6 @@ render();
       });
     })();
 
-  </script>
+</script>
 </body>
 </html>
