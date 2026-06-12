@@ -44,9 +44,9 @@ body {
 /* ── 副标题行：分类文字 + 刷新按钮（与内页一致） ── */
 .subtitle-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
   margin-top: 10px;
   position: relative;
   z-index: 1;
@@ -387,12 +387,13 @@ body {
         <svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
       </button>
     </div>
-    <div class="search-wrap">
-      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
-      <div class="search-results" id="searchResults"></div>
-    </div>
   </div>
+      <!-- 搜索框 -->
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+        <div class="search-results" id="searchResults"></div>
+      </div>
 </div>
 
 <div class="container" id="app">
