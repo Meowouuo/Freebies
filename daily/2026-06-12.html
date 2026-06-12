@@ -1132,7 +1132,7 @@ Meet Twos – the AI-powered productivity app that organizes all your note...</d
           window.open(active.dataset.url, '_blank');
         } else if (e.key === 'Enter' && !active && input.value.trim()) {
           e.preventDefault();
-          window.open('search.html?q=' + encodeURIComponent(input.value.trim()), '_blank');
+          window.open('../search.html?q=' + encodeURIComponent(input.value.trim()), '_blank');
         } else if (e.key === 'Escape') {
           resultsEl.classList.remove('show');
         }
