@@ -829,7 +829,10 @@
           items[prev].scrollIntoView({ block: 'nearest' });
         } else if (e.key === 'Enter' && active) {
           e.preventDefault();
-          active.click();
+          window.open(active.dataset.url, '_blank');
+        } else if (e.key === 'Enter' && !active && input.value.trim()) {
+          e.preventDefault();
+          window.open('search.html?q=' + encodeURIComponent(input.value.trim()), '_blank');
         } else if (e.key === 'Escape') {
           resultsEl.classList.remove('show');
         }
