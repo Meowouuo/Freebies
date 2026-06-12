@@ -201,13 +201,12 @@ body {
 }
 .month-toggle-btn:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 .month-toggle-btn:active { transform: scale(0.98); }
-.month-toggle-btn .arrow-icon {
+.month-toggle-btn svg {
   display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
   transition: transform 0.3s;
-  font-size: 12px;
-}
-.month-toggle-btn.expanded .arrow-icon {
-  transform: rotate(180deg);
+  flex-shrink: 0;
 }
 /* 收起状态样式（更轻量） */
 .month-toggle-btn.collapsed-style {
@@ -496,8 +495,7 @@ function render() {
       // 当前月份：默认展开，上方显示"收起"按钮
       html += `<div class="month-toggle-wrap">`;
       html += `<button class="month-toggle-btn expanded" data-month="${key}" data-action="collapse" onclick="toggleMonth(this, '${key}')">`;
-      html += `📂 收起${label}限免`;
-      html += `<span class="arrow-icon">▲</span>`;
+      html += `<svg class="panel-top-close" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18,15 12,9 6,15"/></svg> 收起${label}限免`;
       html += `</button>`;
       html += `</div>`;
       // 卡片区域：直接展开
@@ -514,8 +512,7 @@ function render() {
       // 往期月份：默认收起，上方显示"展开"按钮
       html += `<div class="month-toggle-wrap">`;
       html += `<button class="month-toggle-btn collapsed-style" data-month="${key}" data-action="expand" onclick="toggleMonth(this, '${key}')">`;
-      html += `📂 查看${label}全部限免（${total} 篇）`;
-      html += `<span class="arrow-icon">▼</span>`;
+      html += `<svg class="panel-top-open" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg> 查看${label}全部限免（${total} 篇）`;
       html += `</button>`;
       html += `</div>`;
       // 卡片区域：默认隐藏
