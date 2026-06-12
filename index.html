@@ -26,7 +26,7 @@ body {
   padding: 40px 20px 36px;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden removed */
 }
 .header::before {
   content: '';
@@ -267,6 +267,108 @@ body {
   color: #8e8e93;
   line-height: 2;
 }
+
+
+    /* 搜索功能 - 简洁白底风格 */
+    .header .search-wrap {
+      overflow: visible;
+      position: relative;
+      max-width: 600px;
+      margin: 16px auto 0;
+    }
+    .header .search-input {
+      width: 100%;
+      padding: 12px 16px 12px 42px;
+      border: 1px solid #e0e0e0;
+      border-radius: 24px;
+      background: #fff;
+      color: #333;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .header .search-input::placeholder {
+      color: #999;
+    }
+    .header .search-input:focus {
+      border-color: #4285f4;
+      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
+    }
+    .header .search-wrap::before {
+      content: '🔍';
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 15px;
+      pointer-events: none;
+      color: #999;
+    }
+    .header .search-results {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      max-height: 360px;
+      overflow-y: auto;
+      z-index: 9999;
+      border: 1px solid #f0f0f0;
+    }
+    .header .search-results.show {
+      display: block;
+    }
+    .header .search-result-item {
+      display: block;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #f8f8f8;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .header .search-result-item:last-child {
+      border-bottom: none;
+    }
+    .header .search-result-item:hover {
+      background: #f8f9fa;
+    }
+    .header .search-result-item .result-name {
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .header .search-result-item .result-section {
+      font-size: 12px;
+      color: #999;
+    }
+    .header .search-result-item .result-match {
+      color: #4285f4;
+      font-weight: 700;
+    }
+    .header .search-no-results {
+      padding: 16px;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+    .highlight-card {
+      animation: highlightPulse 1.2s ease-in-out 2;
+    }
+    @keyframes highlightPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(66,133,244,0.6); }
+      70%  { box-shadow: 0 0 0 8px rgba(66,133,244,0); }
+      100% { box-shadow: 0 0 0 0 rgba(66,133,244,0); }
+    }
+
+
+
 </style>
 </head>
 <body>
@@ -300,8 +402,7 @@ body {
 const CARDS_DATA = [
   {
     "date": "2026-06-11",
-    "stats": "内购限免7 · 本体限免27 · 折扣5 · 兑换码7",
-    "isLatest": true
+    "stats": "内购限免7 · 本体限免27 · 折扣5 · 兑换码7"
   },
   {
     "date": "2026-06-10",
@@ -361,7 +462,8 @@ const CARDS_DATA = [
   },
   {
     "date": "2026-05-27",
-    "stats": "8 内购免 · 24 本体免 · 7 折扣 · 5 兑换码"
+    "stats": "限免应用集合 · 每日更新",
+    "isLatest": true
   },
   {
     "date": "2026-05-26",
@@ -597,6 +699,63 @@ function loadMoreMonths(btn) {
 
 // 初始化
 render();
+
+    // 首页搜索功能（全局搜索 apps.json）
+    (function() {
+      var input = document.getElementById('searchInput');
+      var resultsEl = document.getElementById('searchResults');
+      if (!input || !resultsEl) return;
+      var allApps = [];
+      fetch('./apps.json?t=' + Date.now()).then(function(r) { return r.json(); })
+        .then(function(apps) { allApps = apps; }).catch(function() {});
+      function highlightMatch(text, q) {
+        if (!q) return text;
+        var idx = text.toLowerCase().indexOf(q.toLowerCase());
+        if (idx === -1) return text;
+        return text.slice(0, idx) + '<span class="result-match">' + text.slice(idx, idx + q.length) + '</span>' + text.slice(idx + q.length);
+      }
+      function showResults() {
+        var q = input.value.trim();
+        resultsEl.innerHTML = '';
+        if (!q) { resultsEl.classList.remove('show'); return; }
+        if (!allApps.length) return;
+        var matched = allApps.filter(function(a) {
+          return a.name.toLowerCase().indexOf(q.toLowerCase()) !== -1 ||
+                 a.desc.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+        });
+        if (matched.length === 0) {
+          resultsEl.innerHTML = '<div class="search-no-results">未找到匹配的 App</div>';
+          resultsEl.classList.add('show'); return;
+        }
+        matched.slice(0, 15).forEach(function(app) {
+          var item = document.createElement('div');
+          item.className = 'search-result-item';
+          item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
+                           '<div class="result-section">' + app.section + ' · ' + app.date + '</div>';
+          item.addEventListener('click', function() { window.open('./' + app.url, '_blank'); });
+          resultsEl.appendChild(item);
+        });
+        if (matched.length > 15) {
+          var more = document.createElement('div');
+          more.className = 'search-no-results';
+          more.textContent = '还有 ' + (matched.length - 15) + ' 个结果，按 Enter 查看全部';
+          resultsEl.appendChild(more);
+        }
+        resultsEl.classList.add('show');
+      }
+      input.addEventListener('input', showResults);
+      document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !resultsEl.contains(e.target)) resultsEl.classList.remove('show');
+      });
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          var q = input.value.trim();
+          if (q) window.open('./search.html?q=' + encodeURIComponent(q), '_blank');
+        }
+        if (e.key === 'Escape') resultsEl.classList.remove('show');
+      });
+    })();
+
 </script>
 </body>
 </html>
