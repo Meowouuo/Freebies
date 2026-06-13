@@ -51,12 +51,6 @@ body {
   position: relative;
   z-index: 1;
 }
-.subtitle-row p {
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-
 .subtitle-top {
   display: flex;
   align-items: center;
@@ -64,6 +58,11 @@ body {
   gap: 10px;
   width: 100%;
 }
+.subtitle-row p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
 /* ── 圆形功能按钮（与内页 .header-btn 样式一致） ── */
 .header-btn {
   display: inline-flex;
@@ -311,7 +310,6 @@ body {
       pointer-events: none;
       z-index: 2;
     }
-
     .header .search-results {
       display: none;
       position: absolute;
@@ -413,105 +411,7 @@ body {
 
 <script>
 // ── 卡片数据（由 push_to_github.py 生成） ──
-const CARDS_DATA = [
-  {
-    "date": "2026-06-12",
-    "stats": "内购限免13 · 本体限免10 · 折扣4 · 兑换码6",
-    "isLatest": true
-  },
-  {
-    "date": "2026-06-11",
-    "stats": "内购限免7 · 本体限免27 · 折扣5 · 兑换码7"
-  },
-  {
-    "date": "2026-06-10",
-    "stats": "内购限免10 · 本体限免51 · 折扣10 · 兑换码6"
-  },
-  {
-    "date": "2026-06-09",
-    "stats": "内购限免15 · 本体限免36 · 折扣6 · 兑换码10"
-  },
-  {
-    "date": "2026-06-08",
-    "stats": "内购免3 · 本体免26 · 折扣7 · 兑换码3"
-  },
-  {
-    "date": "2026-06-07",
-    "stats": "内购限免21 · 本体限免31 · 折扣8 · 兑换码9"
-  },
-  {
-    "date": "2026-06-06",
-    "stats": "内购限免21 · 本体限免29 · 折扣7 · 兑换码7"
-  },
-  {
-    "date": "2026-06-05",
-    "stats": "内购限免18 · 本体限免32 · 折扣6 · 兑换码6"
-  },
-  {
-    "date": "2026-06-04",
-    "stats": "内购限免12 · 本体限免23 · 折扣4 · 兑换码5"
-  },
-  {
-    "date": "2026-06-03",
-    "stats": "内购限免8 · 本体限免38 · 折扣6 · 兑换码7"
-  },
-  {
-    "date": "2026-06-02",
-    "stats": "内购限免11 · 本体限免30 · 折扣6 · 兑换码5"
-  },
-  {
-    "date": "2026-06-01",
-    "stats": "内购限免5 · 本体限免26 · 折扣6 · 兑换码6"
-  },
-  {
-    "date": "2026-05-31",
-    "stats": "内购限免11 · 本体限免20 · 折扣6 · 兑换码6"
-  },
-  {
-    "date": "2026-05-30",
-    "stats": "内购限免7 · 本体限免37 · 折扣7 · 兑换码3 [图标已修复]"
-  },
-  {
-    "date": "2026-05-29",
-    "stats": "内购限免4 · 本体限免24 · 折扣9 · 兑换码3"
-  },
-  {
-    "date": "2026-05-28",
-    "stats": "内购限免11 · 本体限免24 · 折扣7 · 兑换码6"
-  },
-  {
-    "date": "2026-05-27",
-    "stats": "8 内购免 · 24 本体免 · 7 折扣 · 5 兑换码"
-  },
-  {
-    "date": "2026-05-26",
-    "stats": "9 款内购限免 · 31 款本体限免 · 6 款折扣 · 8 个兑换码"
-  },
-  {
-    "date": "2026-05-25",
-    "stats": "8 款内购限免 · 21 款本体限免 · 5 款折扣 · 8 个兑换码"
-  },
-  {
-    "date": "2026-05-24",
-    "stats": "8 款内购限免 · 26 款本体限免 · 3 个兑换码"
-  },
-  {
-    "date": "2026-05-23",
-    "stats": "24 款限免应用"
-  },
-  {
-    "date": "2026-05-22",
-    "stats": "46 款限免应用"
-  },
-  {
-    "date": "2026-05-21",
-    "stats": "31 款限免应用"
-  },
-  {
-    "date": "2026-05-20",
-    "stats": "27 款限免应用"
-  }
-];
+const CARDS = CARDS_DATA;
 
 const MONTH_NAMES = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
 const VISIBLE_COUNT = 7;   // 每组初始显示卡片数量
@@ -596,7 +496,6 @@ function render() {
       html += `<div class="month-toggle-wrap">`;
       html += `<button class="month-toggle-btn expanded" data-month="${key}" data-action="collapse" onclick="toggleMonth(this, '${key}')">`;
       html += `<svg class="panel-top-close" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18,15 12,9 6,15"/></svg> 收起${label}限免`;
-      html += ``;
       html += `</button>`;
       html += `</div>`;
       // 卡片区域：直接展开
@@ -614,7 +513,6 @@ function render() {
       html += `<div class="month-toggle-wrap">`;
       html += `<button class="month-toggle-btn collapsed-style" data-month="${key}" data-action="expand" onclick="toggleMonth(this, '${key}')">`;
       html += `<svg class="panel-top-open" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg> 查看${label}全部限免（${total} 篇）`;
-      html += ``;
       html += `</button>`;
       html += `</div>`;
       // 卡片区域：默认隐藏
@@ -680,14 +578,14 @@ function toggleMonth(btn, monthKey) {
     btn.classList.remove('expanded');
     btn.classList.add('collapsed-style');
     btn.setAttribute('data-action', 'expand');
-    btn.innerHTML = `<svg class="panel-top-open" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg> 查看${label}全部限免（${totalCount} 篇）`;
+    btn.innerHTML = `📂 查看${label}全部限免（${totalCount} 篇）<span class="arrow-icon">▼</span>`;
   } else {
     // 展开
     detail.classList.remove('cards-hidden');
     btn.classList.add('expanded');
     btn.classList.remove('collapsed-style');
     btn.setAttribute('data-action', 'collapse');
-    btn.innerHTML = `<svg class="panel-top-close" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18,15 12,9 6,15"/></svg> 收起${label}限免`;
+    btn.innerHTML = `📂 收起${label}限免<span class="arrow-icon">▲</span>`;
   }
 }
 
