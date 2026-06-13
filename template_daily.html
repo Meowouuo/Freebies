@@ -548,13 +548,13 @@
         <a class="header-btn" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;" href="#"><svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></a>
       </div>
 
-      <!-- 搜索框 -->
-      <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
-        <div class="search-results" id="searchResults"></div>
-      </div>
+    </div>
 
+    <!-- 搜索框（放在 header 外部，避免 overflow:hidden 裁剪下拉框） -->
+    <div class="search-wrap" style="padding: 0 16px; margin-top: -8px;">
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+      <div class="search-results" id="searchResults"></div>
     </div>
 
     <div class="iframe-note" id="iframeNote">
