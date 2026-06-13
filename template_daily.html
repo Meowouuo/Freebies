@@ -409,37 +409,40 @@
       position: relative;
       max-width: 600px;
       margin: 16px auto 0;
+      padding: 0 16px;
     }
-    .search-input {
-      width: 100%;
-      padding: 12px 16px 12px 40px;
+    .search-inner {
+      display: flex;
+      align-items: center;
+      background: #fff;
       border: 1px solid #e0e0e0;
       border-radius: 24px;
-      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-inner:focus-within {
+      border-color: #4285f4;
+      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
+    }
+    .search-input {
+      flex: 1;
+      padding: 12px 16px 12px 6px;
+      border: none;
+      background: transparent;
       color: #333;
       font-size: 15px;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
       box-sizing: border-box;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      min-width: 0;
     }
     .search-input::placeholder {
       color: #999;
     }
-    .search-input:focus {
-      border-color: #4285f4;
-      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
-    }
     .search-wrap .search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
+      flex-shrink: 0;
+      margin-left: 14px;
       pointer-events: none;
-      z-index: 2;
-    }
-    .search-input {
-      padding-left: 40px;
+      display: block;
     }
     .search-results {
       display: none;
@@ -551,9 +554,11 @@
     </div>
 
     <!-- 搜索框（放在 header 外部，避免 overflow:hidden 裁剪下拉框） -->
-    <div class="search-wrap" style="padding: 0 16px; margin-top: -8px;">
-      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+    <div class="search-wrap">
+      <div class="search-inner">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+      </div>
       <div class="search-results" id="searchResults"></div>
     </div>
 
