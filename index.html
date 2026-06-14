@@ -281,34 +281,39 @@ body {
       position: relative;
       max-width: 600px;
       margin: 16px auto 0;
+      padding: 0 16px;
     }
-    .header .search-input {
-      width: 100%;
-      padding: 12px 16px 12px 40px;
+    .header .search-inner {
+      display: flex;
+      align-items: center;
+      background: #fff;
       border: 1px solid #e0e0e0;
       border-radius: 24px;
-      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .header .search-inner:focus-within {
+      border-color: #4285f4;
+      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
+    }
+    .header .search-input {
+      flex: 1;
+      padding: 12px 16px 12px 6px;
+      border: none;
+      background: transparent;
       color: #333;
       font-size: 15px;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      box-sizing: border-box;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      min-width: 0;
     }
     .header .search-input::placeholder {
       color: #999;
     }
-    .header .search-input:focus {
-      border-color: #4285f4;
-      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
-    }
     .header .search-wrap .search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
+      flex-shrink: 0;
+      margin-left: 14px;
       pointer-events: none;
-      z-index: 2;
+      display: block;
     }
     .header .search-results {
       display: none;
@@ -389,8 +394,9 @@ body {
   </div>
       <!-- 搜索框 -->
       <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+        <div class="search-inner">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
         <div class="search-results" id="searchResults"></div>
       </div>
 </div>
@@ -411,7 +417,113 @@ body {
 
 <script>
 // ── 卡片数据（由 push_to_github.py 生成） ──
-const CARDS_DATA = [{"date": "2026-06-13", "title": "内购限免7 · 本体限免25 · 折扣5 · 兑换码4", "meta": "内购限免 · 本体限免 · 折扣 · 兑换码", "file": "2026-06-13.html", "isLatest": true, "stats": "内购限免7 · 本体限免25 · 折扣5 · 兑换码4"}, {"date": "2026-06-12", "stats": "内购限免13 · 本体限免10 · 折扣4 · 兑换码6", "isLatest": false}, {"date": "2026-06-11", "stats": "内购限免7 · 本体限免27 · 折扣5 · 兑换码7", "isLatest": false}, {"date": "2026-06-10", "stats": "内购限免10 · 本体限免51 · 折扣10 · 兑换码6", "isLatest": false}, {"date": "2026-06-09", "stats": "内购限免15 · 本体限免36 · 折扣6 · 兑换码10", "isLatest": false}, {"date": "2026-06-08", "stats": "内购免3 · 本体免26 · 折扣7 · 兑换码3", "isLatest": false}, {"date": "2026-06-07", "stats": "内购限免21 · 本体限免31 · 折扣8 · 兑换码9", "isLatest": false}, {"date": "2026-06-06", "stats": "内购限免21 · 本体限免29 · 折扣7 · 兑换码7", "isLatest": false}, {"date": "2026-06-05", "stats": "内购限免18 · 本体限免32 · 折扣6 · 兑换码6", "isLatest": false}, {"date": "2026-06-04", "stats": "内购限免12 · 本体限免23 · 折扣4 · 兑换码5", "isLatest": false}, {"date": "2026-06-03", "stats": "内购限免8 · 本体限免38 · 折扣6 · 兑换码7", "isLatest": false}, {"date": "2026-06-02", "stats": "内购限免11 · 本体限免30 · 折扣6 · 兑换码5", "isLatest": false}, {"date": "2026-06-01", "stats": "内购限免5 · 本体限免26 · 折扣6 · 兑换码6", "isLatest": false}, {"date": "2026-05-31", "stats": "内购限免11 · 本体限免20 · 折扣6 · 兑换码6", "isLatest": false}, {"date": "2026-05-30", "stats": "内购限免7 · 本体限免37 · 折扣7 · 兑换码3 [图标已修复]", "isLatest": false}, {"date": "2026-05-29", "stats": "内购限免4 · 本体限免24 · 折扣9 · 兑换码3", "isLatest": false}, {"date": "2026-05-28", "stats": "内购限免11 · 本体限免24 · 折扣7 · 兑换码6", "isLatest": false}, {"date": "2026-05-27", "stats": "8 内购免 · 24 本体免 · 7 折扣 · 5 兑换码", "isLatest": false}, {"date": "2026-05-26", "stats": "9 款内购限免 · 31 款本体限免 · 6 款折扣 · 8 个兑换码", "isLatest": false}, {"date": "2026-05-25", "stats": "8 款内购限免 · 21 款本体限免 · 5 款折扣 · 8 个兑换码", "isLatest": false}, {"date": "2026-05-24", "stats": "8 款内购限免 · 26 款本体限免 · 3 个兑换码", "isLatest": false}, {"date": "2026-05-23", "stats": "24 款限免应用", "isLatest": false}, {"date": "2026-05-22", "stats": "46 款限免应用", "isLatest": false}, {"date": "2026-05-21", "stats": "31 款限免应用", "isLatest": false}, {"date": "2026-05-20", "stats": "27 款限免应用", "isLatest": false}];
+const CARDS_DATA = [
+  {
+    "date": "2026-06-14",
+    "stats": "内购限免11 · 本体限免25 · 折扣4 · 兑换码6",
+    "isLatest": true
+  },
+  {
+    "date": "2026-06-13",
+    "stats": "内购限免7 · 本体限免25 · 折扣5 · 兑换码4"
+  },
+  {
+    "date": "2026-06-12",
+    "stats": "内购限免13 · 本体限免10 · 折扣4 · 兑换码6"
+  },
+  {
+    "date": "2026-06-11",
+    "stats": "内购限免7 · 本体限免27 · 折扣5 · 兑换码7"
+  },
+  {
+    "date": "2026-06-10",
+    "stats": "内购限免10 · 本体限免51 · 折扣10 · 兑换码6"
+  },
+  {
+    "date": "2026-06-09",
+    "stats": "内购限免15 · 本体限免36 · 折扣6 · 兑换码10"
+  },
+  {
+    "date": "2026-06-08",
+    "stats": "内购免3 · 本体免26 · 折扣7 · 兑换码3"
+  },
+  {
+    "date": "2026-06-07",
+    "stats": "内购限免21 · 本体限免31 · 折扣8 · 兑换码9"
+  },
+  {
+    "date": "2026-06-06",
+    "stats": "内购限免21 · 本体限免29 · 折扣7 · 兑换码7"
+  },
+  {
+    "date": "2026-06-05",
+    "stats": "内购限免18 · 本体限免32 · 折扣6 · 兑换码6"
+  },
+  {
+    "date": "2026-06-04",
+    "stats": "内购限免12 · 本体限免23 · 折扣4 · 兑换码5"
+  },
+  {
+    "date": "2026-06-03",
+    "stats": "内购限免8 · 本体限免38 · 折扣6 · 兑换码7"
+  },
+  {
+    "date": "2026-06-02",
+    "stats": "内购限免11 · 本体限免30 · 折扣6 · 兑换码5"
+  },
+  {
+    "date": "2026-06-01",
+    "stats": "内购限免5 · 本体限免26 · 折扣6 · 兑换码6"
+  },
+  {
+    "date": "2026-05-31",
+    "stats": "内购限免11 · 本体限免20 · 折扣6 · 兑换码6"
+  },
+  {
+    "date": "2026-05-30",
+    "stats": "内购限免7 · 本体限免37 · 折扣7 · 兑换码3 [图标已修复]"
+  },
+  {
+    "date": "2026-05-29",
+    "stats": "内购限免4 · 本体限免24 · 折扣9 · 兑换码3"
+  },
+  {
+    "date": "2026-05-28",
+    "stats": "内购限免11 · 本体限免24 · 折扣7 · 兑换码6"
+  },
+  {
+    "date": "2026-05-27",
+    "stats": "8 内购免 · 24 本体免 · 7 折扣 · 5 兑换码"
+  },
+  {
+    "date": "2026-05-26",
+    "stats": "9 款内购限免 · 31 款本体限免 · 6 款折扣 · 8 个兑换码"
+  },
+  {
+    "date": "2026-05-25",
+    "stats": "8 款内购限免 · 21 款本体限免 · 5 款折扣 · 8 个兑换码"
+  },
+  {
+    "date": "2026-05-24",
+    "stats": "8 款内购限免 · 26 款本体限免 · 3 个兑换码"
+  },
+  {
+    "date": "2026-05-23",
+    "stats": "24 款限免应用"
+  },
+  {
+    "date": "2026-05-22",
+    "stats": "46 款限免应用"
+  },
+  {
+    "date": "2026-05-21",
+    "stats": "31 款限免应用"
+  },
+  {
+    "date": "2026-05-20",
+    "stats": "27 款限免应用"
+  }
+];
 
 const MONTH_NAMES = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
 const VISIBLE_COUNT = 7;   // 每组初始显示卡片数量
