@@ -1,24 +1,904 @@
 [
   {
-    "name": "{APP_NAME}",
-    "desc": "{DESCRIPTION}",
+    "name": "Countdown: 倒数日小组件",
+    "desc": "每一个重要时刻都值得一个美丽的倒数。将你最重要的日子精美地呈现在主屏幕和锁屏界面上。",
+    "id": "6772236024",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Habit Tracker - Rise",
+    "desc": "Rise is a beautifully designed habit tracker that helps you build lasting habits through the power of consistency and visual progress. 习惯养成与打卡追踪，帮你建立持久习惯。",
+    "id": "6757360737",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Tap Edit Image Text - ForgeIT",
+    "desc": "在图片上添加/编辑文本。Forge-IT lets you modify text inside screenshots quickly and easily.（需点 Start Tutorial 获取终身版）",
+    "id": "6778315973",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "StampAnytime-拍照集邮",
+    "desc": "拍照取景，随时随地制作邮票。把日常瞬间打造成精彩的邮票大片，多种邮票相框任您选择。",
+    "id": "6761329586",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Medicine Pill Reminder Tracker",
+    "desc": "Never Miss Another Dose with MedTracker. 服药提醒与追踪应用。（需在内购页面点 Lifetime offer）",
+    "id": "6753197960",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Planner & Journal - Daisy",
+    "desc": "一款精美的全功能自我关怀规划工具，帮你组织日程、养成习惯、反思人生旅程。",
+    "id": "6755971238",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Camera Organizer: Photos Video",
+    "desc": "拍照/录像时直接分类到相册，从拍摄一刻就保持照片有序。",
+    "id": "6780253746",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Photos: Fast Photo Organizer",
+    "desc": "快速整理照片工具，让你的照片库变得简单快速易用。",
+    "id": "6761430805",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Found It: 收纳整理断舍离",
+    "desc": "一次拍照，永远找得到。专为家庭设计的物品管理 App，AI 自动识别物品名称和分类。",
+    "id": "6758232814",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "zZz Widgets: Sleep Tracker",
+    "desc": "zZz Widgets is a simple sleep tracker built around widgets. 睡眠追踪器小组件，一键记录睡眠。",
+    "id": "6772411346",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "马到成功 - 鞭炮烟花模拟器",
+    "desc": "鞭炮与烟花模拟器，实景录制和专业音效，马年专属喜庆设计风格。",
+    "id": "6758988996",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "TheirTime",
+    "desc": "TheirTime helps you stay connected with friends and family across timezones. 跨时区与亲友保持联系。",
     "id": "",
+    "section": "兑换码 / 兑换链接",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Monymo: Income Time Tracker",
+    "desc": "Monymo — 收入追踪与工作计时器，实时显示你的收入。",
+    "id": "",
+    "section": "兑换码 / 兑换链接",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Peter (DreamOn)",
+    "desc": "DreamOn: AI梦境解读 — AI 帮你记录和理解梦境。",
+    "id": "",
+    "section": "兑换码 / 兑换链接",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "快扫 - 更快更全能 限免",
+    "desc": "智能二维码扫描跳转工具，秒级识别和精准解码，支持微信、支付宝、淘宝等常用APP。",
+    "id": "6736847099",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Haplo AI: Offline & Private AI 限免",
+    "desc": "无需联网、保护隐私的 AI 助手，完全运行在你的设备上。",
+    "id": "6746702574",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Text Parser Pro 限免",
+    "desc": "快速文本清理与转换工具，粘贴或扫描文本，秒级完成格式清理。",
+    "id": "6757296874",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Deep Movie - 专业摄像机 限免",
+    "desc": "专业视频拍摄App，支持4K 60FPS、手动控制曝光、快门、ISO等参数。",
+    "id": "1611565383",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Own Your Life — 日记·手账 限免",
+    "desc": "不是今天的待办，而是呈现你一年、五年、十年人生全貌的日记。一次买断，无订阅。",
+    "id": "6762076638",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "iCleanShot - 懒人专用 限免",
+    "desc": "极简照片清理工具，用「滑动」的方式帮你快速给相册瘦身。",
+    "id": "6756064954",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "TripleShot Recorder 限免",
+    "desc": "同时从三个iPhone摄像头录制视频，一次录制获取三个同步视频。",
+    "id": "6761472164",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "VidVid - Split Video 限免",
+    "desc": "视频分割剪辑工具，轻松将视频分割为多个部分。",
+    "id": "6670189660",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "YgcUnitConvert - 单位换算 限免",
+    "desc": "支持数据存储、带宽、时间、频率、长度等多种单位换算。",
+    "id": "6751214624",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "YgciPerf3 限免",
+    "desc": "功能强大的 iPerf3 客户端，网络性能测试工具。",
+    "id": "6751851134",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "LastCup - Caffeine Tracker 限免",
+    "desc": "精美设计的咖啡因追踪器，用药物动力学预测咖啡因代谢时间。",
+    "id": "6763885302",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Karmafit: Weight & BMI Tracker 限免",
+    "desc": "体重和BMI追踪器，帮你建立健康习惯。",
+    "id": "6756579641",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Ms Paint 限免",
+    "desc": "复刻经典 Windows 画图软件，支持 BMP、JPEG、GIF、PNG、TIFF 格式。",
+    "id": "1619725004",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "WaveFast - Fasting Tracker 限免",
+    "desc": "Reach your intermittent fasting goals with WaveFast. 间歇性禁食追踪器，视觉精美的断食记录工具。",
+    "id": "6764770817",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Kōhaku: AI壁纸与主题 限免",
+    "desc": "AI精选的精美壁纸，海量4K壁纸，支持AI情绪搜索和每日推荐。",
+    "id": "6758962099",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Bluetooth Speaker Microphone 限免",
+    "desc": "将你的手机变成无线蓝牙麦克风，连接蓝牙音箱播放。",
+    "id": "6756393371",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Baby Bedtime Routines 限免",
+    "desc": "帮助宝宝入睡的安抚应用，包含摇篮曲和白噪音，专为0-3岁宝宝设计。",
+    "id": "6751823595",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "OneBoard - 快捷语、剪贴板与输入法插件 15元→免费",
+    "desc": "把常用短语、剪贴板和实用插件都装进键盘的自定义输入工具，原价15元→免费。",
+    "id": "1263389963",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Photowipe 68元→免费",
+    "desc": "快速滑动删除照片，节省手机空间，原价68元→免费。",
+    "id": "1137129781",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "啪嗒投屏 8元→免费",
+    "desc": "漂亮的投屏软件，支持视频录制和实时相机监视器，原价8元→免费。",
+    "id": "6751741848",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Dungeons & Such $4.99→免费",
+    "desc": "Simple and nostalgic dungeon RPG for iOS. 怀旧风格地牢RPG游戏，原价$4.99→免费。",
+    "id": "351939099",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "FILCA - SLR Film Camera 22元→免费",
+    "desc": "单反风格的胶片相机应用，35种胶片滤镜和电影效果，原价22元→免费。",
+    "id": "1436429074",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "VIBE CAM 58.0元→29.9元 (5折)",
+    "desc": "",
+    "id": "",
+    "section": "限时折扣精选",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "英语读书 428.0元→328.0元 (7.7折)",
+    "desc": "",
+    "id": "",
+    "section": "限时折扣精选",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "OmniPlayer 68.0元→55.0元 (8折)",
+    "desc": "",
+    "id": "",
+    "section": "限时折扣精选",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "解压专家Oka 58.0元→45.0元 (7.8折)",
+    "desc": "",
+    "id": "",
+    "section": "限时折扣精选",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Todo计划 98.0元→59.0元 (6折)",
+    "desc": "",
+    "id": "",
+    "section": "限时折扣精选",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "OmniConverter 108.0元→88.0元 (8.1折)",
+    "desc": "",
+    "id": "",
+    "section": "限时折扣精选",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Found It: Home Box Organizer",
+    "desc": "「钥匙放哪了？」「保修什么时候到期？」「这东西还要不要？」—— 一次拍照，永远找得到，到期有人提醒，闲置还能换钱。\nFound It（放哪了） 是一款专为家庭设计的物品管理 App，帮你记住每样东西放在哪、何时该处理，让家不再越住越满。\n拍一次，找一辈子。 拍照即可录入，AI 自动识别物品名称和分类",
+    "id": "6758232814",
     "section": "内购限免 · 重点推荐",
     "date": "2026-06-15",
     "url": "daily/2026-06-15.html"
   },
   {
-    "name": "{APP_NAME} {PRICE}→免费",
-    "desc": "{DESCRIPTION}",
+    "name": "zZz Widgets: Sleep Tracker",
+    "desc": "zZz Widgets is a simple sleep tracker built around widgets.\nLog sleep in one tap without opening the. 睡眠追踪器小组件，监测你的睡眠质量",
+    "id": "6772411346",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "马到成功",
+    "desc": "这款鞭炮与烟花模拟器采用了实景录制和专业级别的音放效果，所有的鞭炮声音和烟花视频全部为我们的团队原创制作，加上马年专属的喜气洋洋设计风格，只为给您带来更浓厚的喜庆体验！\n您可以在这款App中模拟多款生活中常见的鞭炮和烟花效果，包括大地红、万响鞭炮岁岁红、震大地，以及升级为PRO后解锁的小摔炮、黑虎、",
+    "id": "6758988996",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Siplife-Capture life in coffee",
+    "desc": "用咖啡记录生活\n「记咖啡」让你轻松记录每次饮用的咖啡，包括 种类（美式/拿铁/手冲等）、品牌、冷热、糖分、价格，让你的咖啡习惯一目了然。\n\n 智能月度账单 &amp; 消费分析\n自动生成 月度消费报表，清晰查看你的咖啡开支趋势，帮你找到最爱的咖啡品牌，优化消费习惯，省钱又省心！\n\n 简洁易用，快速上手\n极简",
+    "id": "6749577164",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "StepBloc: Screen Time Blocker",
+    "desc": "StepBloc lets you earn your screen time by doing Push-ups, Squats and other workouts. For example, y. 锻炼解锁应用，通过运动来管理屏幕使用时间",
+    "id": "6480580480",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Finishly -Beat Procrastination",
+    "desc": "Finishly is a to-do app that helps you start and finish tasks by reminding you why they matter.\n\nHow. 激励式任务提醒器，战胜拖延症",
+    "id": "6692608504",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "ClassifySnap-ClassifyCamera",
+    "desc": "主要功能:\n\t•\t无缝拍摄体验：集成系统相机，支持前置和后置摄像头拍摄照片及视频，轻松记录精彩瞬间。\n\t•\t连续拍摄：拍摄完成后，自动重新打开相机，方便连续拍摄。\n\t•\t桌面小组件：支持多种尺寸的小组件，轻松从主屏幕快速进入指定相册拍摄。\n\t•\t个性化小组件：支持10种小组件背景主题，让桌面充满色彩",
+    "id": "6743779432",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Light Sleep – White Noise",
+    "desc": "极简轻眠是一款致力于提升身心健康的应用，它为用户提供了睡眠、冥想、放松和专注等多种场景下的白噪音，帮助用户在繁忙的生活中获得短暂的宁静。每一条白噪音都经过了精心挑选，确保其能够有效地缓解压力、改善睡眠质量和提高专注力。\n\n极简轻眠内置了丰富的声音库，其中包括了来自生活和自然中的各种声音，如雨滴敲打窗",
+    "id": "6449638248",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Wifi Analyser &amp; Speed Test",
+    "desc": "WiFi Analyzer &amp; Speed Test\n\nCheck your internet speed instantly with a modern and accurate Wi-Fi spe. Wi-Fi 分析测速工具，网络诊断利器",
+    "id": "6767159194",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Ascent: Screen Time Control",
+    "desc": "The main goal of Ascent is to build healthy phone usage habits in the long term. Ascent pauses distr. 应用锁限制器，管理屏幕使用时间",
+    "id": "6670786673",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Dual Video Recorder – Duocamly",
+    "desc": "Record once. Create everywhere.\n\nDuocamly lets you record video in both vertical and horizontal form. 双摄录制提词器应用，同时录制双摄像头",
+    "id": "6763061466",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "GenPad: Contacts Generator",
+    "desc": "GENPAD — PHONE NUMBER GENERATOR AND ORGANIZER\n\nGenerate formatted phone numbers for 170 plus countri. 全球电话号码格式生成器，联系人工具",
+    "id": "6771131626",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "TheirTime 兑换码",
+    "desc": "TheirTime helps you stay connected with friends and family across timezones. See everyone’s local ti. 时间管理工具（前3个月免费）",
+    "id": "6756242715",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Monymo: Income Time Tracker 兑换码",
+    "desc": "Turn your work time into visible income.\n\nMonymo is an income tracker and work timer that shows your. 收入时间追踪器（前6个月免费）",
+    "id": "6473834966",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Peter 兑换码",
+    "desc": "梦很快就会淡去。DreamOn 给你一个安静的地方记录梦境，用 AI 理解梦境，并发现那些一夜又一夜反复出现的模式。\n\n你可以把 DreamOn 当作个人梦境日记。输入或语音记录梦境，离线保存，添加情绪、象征、睡眠背景、月相，以及可能影响夜晚的日常因素。\n\n当你想寻找含义时，DreamOn 会把每条",
+    "id": "6756430690",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "TheirTime",
+    "desc": "TheirTime helps you stay connected with friends and family across timezones. See everyone’s local ti. 时间管理应用，Promies 平台促销码，需输入邮箱领取",
     "id": "",
+    "section": "兑换码 / 兑换链接",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Monymo: Income Time Tracker",
+    "desc": "Turn your work time into visible income.\n\nMonymo is an income tracker and work timer that shows your. 收入时间追踪器，Promies 平台促销码，需输入邮箱领取",
+    "id": "",
+    "section": "兑换码 / 兑换链接",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Peter",
+    "desc": "梦很快就会淡去。DreamOn 给你一个安静的地方记录梦境，用 AI 理解梦境，并发现那些一夜又一夜反复出现的模式。\n\n你可以把 DreamOn 当作个人梦境日记。输入或语音记录梦境，离线保存，添加情绪、象征、睡眠背景、月相，以及可能影响夜晚的日常因素。\n\n当你想寻找含义时，DreamOn 会把每条",
+    "id": "",
+    "section": "兑换码 / 兑换链接",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Ms Paint ¥8→免费",
+    "desc": "复刻 Windows 经典画图软件，简单有趣",
+    "id": "1619725004",
     "section": "本体限免",
     "date": "2026-06-15",
     "url": "daily/2026-06-15.html"
   },
   {
-    "name": "{APP_NAME} {OLD_PRICE}→{NEW_PRICE} ({DISCOUNT})",
-    "desc": "{DESCRIPTION}",
-    "id": "",
+    "name": "WaveFast – Fasting Tracker ¥8→免费",
+    "desc": "禁食追踪计时器，帮助你管理间歇性断食",
+    "id": "6764770817",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Kōhaku : AI Wallpaper. No Ads ¥8→免费",
+    "desc": "AI 壁纸生成器，无广告，打造专属壁纸",
+    "id": "6758962099",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Bluetooth Speaker Microphone ¥8→免费",
+    "desc": "扬声器蓝牙麦克风，手机变身扩音设备",
+    "id": "6756393371",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Baby Bedtime Routines ¥8→免费",
+    "desc": "宝宝安睡夜灯白噪音，帮助宝宝入睡",
+    "id": "6751823595",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "US Military Pay Calculator ¥8→免费",
+    "desc": "美国军人薪资计算器，军旅财务工具",
+    "id": "6745111356",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "MBOX Viewer ¥8→免费",
+    "desc": ".mbox 邮件存档文件查看器，支持 iOS 和 macOS",
+    "id": "6758815371",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "啪嗒投屏 ¥8→免费",
+    "desc": "漂亮的投屏软件，帮你简单快速分享手机屏幕，无需账号无需联网即可使用",
+    "id": "6751741848",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Gowow APP ¥38→免费",
+    "desc": "将您的帐户连接到 Ori 或 Alpha 车型，体验前所未有的骑行冒险",
+    "id": "6443576078",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "TeraFractal ¥58→免费",
+    "desc": "TeraFractal is an immersive way to explore fractal geometry. 探索分形几何的沉浸式交互艺术",
+    "id": "451021057",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "我的奇幻乐园 - 精彩探索 ¥18→免费",
+    "desc": "健达专为亲子互动打造的数字世界，角色扮演、创造和学习",
+    "id": "1670294930",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "NanoJet: Save &amp; Organize Files ¥28→免费",
+    "desc": "NanoJet is a fast and flexible file management tool. 快速灵活的文件管理工具",
+    "id": "6754451655",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "WorkOther - 自定义Watch健身项目 ¥15→免费",
+    "desc": "在Apple Watch上创建自定义运动项目，让你的手表成为全能运动记录器",
+    "id": "1560528781",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "KOYI ¥8→免费",
+    "desc": "小众文化原创设计平台，更赋艺术和创造力的文化和意识",
+    "id": "1635540493",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "AI Painter: Empowered Artistry ¥3→免费",
+    "desc": "AI Painter app helps users harness the power of AI to create stunning digital art. AI绘画创作工具",
+    "id": "1638817077",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "MTG Trades $0.99→免费",
+    "desc": "MTG Trades gives you the tools for trading Magic cards. 《魔法风云会》卡牌交易工具",
+    "id": "736701892",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Orbit: Walk around the World $0.99→免费",
+    "desc": "Orbit turns your lifetime step data into an epic journey. 将步数数据转化为史诗旅程",
+    "id": "6758318684",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "HearthStone Asset Registry $0.99→免费",
+    "desc": "HearthStone is a secure digital asset registry for homeowners. 家庭数字资产安全注册表",
+    "id": "6772206878",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Anzan Sense $0.99→免费",
+    "desc": "数字一个接一个地闪现，你需要在脑海中将它们相加，训练心算能力",
+    "id": "6772697971",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Tower of Hanoi-Pro $0.99→免费",
+    "desc": "汉诺塔经典数学益智游戏，锻炼逻辑思维",
+    "id": "430261581",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Raildar $0.95→免费",
+    "desc": "实时查看英国铁路网络，追踪列车位置",
+    "id": "1339325092",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Clippo - Clipboard Manager $1.99→免费",
+    "desc": "Clippo is a tasteful clipboard manager. 有品位的剪贴板管理器",
+    "id": "1092865336",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Soccer - Stickers $0.99→免费",
+    "desc": "将世界最受欢迎运动的激情带入每次对话，足球贴纸",
+    "id": "1206106837",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Smart Recorder Transcriber AF $13.99→免费",
+    "desc": "轻松创建录音并使用高质量功能进行转录，专业录音转录工具",
+    "id": "764902372",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Home, Planet &amp; Hunters $0.29→免费",
+    "desc": "一款像素废土风格的策略即时战斗游戏",
+    "id": "6478843819",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "8bitWar: Apokalyps $3.99→免费",
+    "desc": "像素风格塔防游戏，180个关卡，支持双人对战",
+    "id": "937788787",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Lo-Op - Create animated videos $34.99→免费",
+    "desc": "Lo-Op gives you all tools to create professional animated videos. 几秒钟创建专业动画视频",
+    "id": "1375539591",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Rise - Archery Scoring Tracker $4.99→免费",
+    "desc": "射箭计分应用，帮助追踪射箭成绩和进步",
+    "id": "1469501855",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "FILCA - SLR Film Camera ¥22→免费",
+    "desc": "Filca 是一款单反风格的胶片相机应用，提供35种胶片滤镜和电影效果",
+    "id": "1436429074",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "实时天气雷达Pro - 降雨预报 ¥98→免费",
+    "desc": "实时天气雷达应用，降雨、风暴和降水地图，风暴追踪",
+    "id": "488674899",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "totododo ¥6→免费",
+    "desc": "专为ADHD人群设计的极简待办事项应用，由ADHD独立开发者设计",
+    "id": "6756238255",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "转盘做决定 ¥1→免费",
+    "desc": "随机决策工具，通过趣味转盘帮你快速做出选择",
+    "id": "6760802436",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "度量衡单位换算器 ¥8→免费",
+    "desc": "全功能单位换算应用，支持30种分类700多种单位换算",
+    "id": "6444185100",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "高清计算器 ¥8→免费",
+    "desc": "语音计算器，包含男女声真人语音，支持深色模式",
+    "id": "448246366",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Photowipe ¥68→免费",
+    "desc": "Photowipe 让你快速滑动删除照片，滑上即可删除，节省手机空间",
+    "id": "1137129781",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "ZOMO: Disposable Camera 免费·无内购",
+    "desc": "ZOMO 一次性相机，将复古摄影的永恒之美带到 iPhone 上",
+    "id": "6760967878",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Trace: Symptom Tracker 免费·无内购",
+    "desc": "快速且设计精美的症状追踪器，帮助用户获得清晰健康洞察",
+    "id": "6756234011",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Dodo: Notes &amp; Voice Memos 免费·无内购",
+    "desc": "极简笔记应用，集笔记、待办清单、语音备忘录和提醒于一体",
+    "id": "6767999000",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Football Today - Top matches $4.99→免费",
+    "desc": "获取最新顶级联赛的实时足球比赛、结果、赛程和新闻",
+    "id": "1527509385",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Tomb of the Color Mask $0.99→免费",
+    "desc": "在彩色面具之墓中，在无尽迷宫中涂色前进！快节奏迷宫解谜游戏",
+    "id": "1497149252",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "ScannerGuy - Photo to PDF $0.99→免费",
+    "desc": "扫描工具，将照片、图片、文档快速转换为 PDF 格式",
+    "id": "1546567286",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Cinemin by Tinrocket $4.99→免费",
+    "desc": "用 Cinemin 捕捉你的想象力，创意动画和视频制作工具",
+    "id": "1518176287",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "MaggiDiet $1.99→免费",
+    "desc": "专为厌倦复杂减肥方法的人设计的饮食管理应用",
+    "id": "1472250755",
+    "section": "本体限免",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "爱拍剪辑 ¥198.0→¥148.0 (25%OFF)",
+    "desc": "专业视频剪辑工具，支持录屏、剪辑、特效",
+    "id": "588937742",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "GitMind思乎 ¥399.0→¥239.0 (40%OFF)",
+    "desc": "AI 思维导图和学习笔记工具，全平台同步",
+    "id": "1566810191",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "墨刀 ¥199.0→¥179.0 (10%OFF)",
+    "desc": "原型设计工具，快速创建产品原型和交互演示",
+    "id": "1050565468",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "UPDF ¥268.0→¥218.0 (19%OFF)",
+    "desc": "AI 驱动的 PDF 编辑工具，阅读、编辑、注释、转换",
+    "id": "1595826623",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "MagicCam ¥48.0→¥19.9 (59%OFF)",
+    "desc": "MagicCam 是一款专业滤镜相机，支持 LUT 导入和自定义水印",
+    "id": "6761681828",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "Folo (Follow) ¥128.0→¥99.0 (23%OFF)",
+    "desc": "RSS 订阅工具 Follow 的 iOS 版，订阅一切，完全免费",
+    "id": "6739802604",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "CandyMind ¥28.0→¥9.9 (65%OFF)",
+    "desc": "模块化番茄钟专注自律计时器，自由组合功能模块",
+    "id": "6740718060",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "随口记 ¥298.0→¥98.0 (67%OFF)",
+    "desc": "AI 语音待办清单与提醒，说话就能记",
+    "id": "6757683912",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "SnapToss ¥88.0→¥38.0 (57%OFF)",
+    "desc": "相册整理助手，帮你一张一张轻松整理照片",
+    "id": "6756002164",
+    "section": "限时折扣精选",
+    "date": "2026-06-15",
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "name": "解压专家Oka ¥58.0→¥45.0 (22%OFF)",
+    "desc": "最好的 zip rar 7z 文件解压工具，macOS 平台",
+    "id": "1441507725",
     "section": "限时折扣精选",
     "date": "2026-06-15",
     "url": "daily/2026-06-15.html"
