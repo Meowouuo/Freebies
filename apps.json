@@ -120,7 +120,7 @@
     "url": "daily/2026-06-16.html"
   },
   {
-    "name": "Haplo AI: Offline & Private AI 限免",
+    "name": "Haplo AI: Offline & Private AI $5.99→免费",
     "desc": "无需联网、保护隐私的 AI 助手，完全运行在你的设备上。",
     "id": "6746702574",
     "section": "本体限免",
@@ -152,7 +152,7 @@
     "url": "daily/2026-06-16.html"
   },
   {
-    "name": "iCleanShot - 懒人专用 限免",
+    "name": "iCleanShot - 懒人专用 8元→免费",
     "desc": "极简照片清理工具，用「滑动」的方式帮你快速给相册瘦身。",
     "id": "6756064954",
     "section": "本体限免",
@@ -192,7 +192,7 @@
     "url": "daily/2026-06-16.html"
   },
   {
-    "name": "LastCup - Caffeine Tracker 限免",
+    "name": "LastCup - Caffeine Tracker $3.99→免费",
     "desc": "精美设计的咖啡因追踪器，用药物动力学预测咖啡因代谢时间。",
     "id": "6763885302",
     "section": "本体限免",
@@ -203,6 +203,14 @@
     "name": "Karmafit: Weight & BMI Tracker 限免",
     "desc": "体重和BMI追踪器，帮你建立健康习惯。",
     "id": "6756579641",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Get To Fitness 限免",
+    "desc": "健身锻炼追踪器，帮你建立运动习惯，达成健身目标。",
+    "id": "6761389158",
     "section": "本体限免",
     "date": "2026-06-16",
     "url": "daily/2026-06-16.html"
@@ -243,6 +251,46 @@
     "name": "Baby Bedtime Routines 限免",
     "desc": "帮助宝宝入睡的安抚应用，包含摇篮曲和白噪音，专为0-3岁宝宝设计。",
     "id": "6751823595",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "US Military Pay Calculator $1.99→免费",
+    "desc": "随时了解最新的薪酬更新，掌握美军薪酬动态。",
+    "id": "6745111356",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "日日新 8元→免费",
+    "desc": "为重要日子添加标语和倒计时的生活应用，让每一天都充满期待。",
+    "id": "6473467143",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "实时天气雷达Pro - 降雨预报 98元→免费",
+    "desc": "提供实时天气雷达地图、风暴追踪和降雨预报的天气应用。",
+    "id": "488674899",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "Monitor and Manage Search Ads 168元→免费",
+    "desc": "用于管理 Apple Search Ads 活动的专业工具，原价168元→免费。",
+    "id": "1526274521",
+    "section": "本体限免",
+    "date": "2026-06-16",
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "name": "totododo 6元→免费",
+    "desc": "专为 ADHD 人群设计的极简待办事项应用，简洁高效。",
+    "id": "6756238255",
     "section": "本体限免",
     "date": "2026-06-16",
     "url": "daily/2026-06-16.html"
