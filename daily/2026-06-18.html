@@ -1,0 +1,1432 @@
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  每日 App Store 限免速报 · 标准模板                       ║
+  ║  版本: 2.1 (2026.06.12)                                  ║
+  ║  更新: 新增搜索功能                                        ║
+  ║  基于: 限免速报-2026-05-27.html (已验证正确)               ║
+  ║                                                            ║
+  ║  ⚠️ 严格规则：                                            ║
+  ║  1. 生成每日 HTML 时，必须完整复制此模板的 CSS 部分        ║
+  ║  2. 不得修改任何 CSS 类名、样式值或 HTML 结构层级           ║
+  ║  3. 只替换占位符内容（日期、统计数字、App 数据）            ║
+  ║  4. App Store 链接格式: https://apps.apple.com/app/idXXXX  ║
+  ║     （不带 /cn/ 前缀，所有链接必须 target="_blank"）       ║
+  ║  5. 兑换码链接格式: https://apps.apple.com/redeem/        ║
+  ║     ?ctx=offercodes&id=XXX&code=XXX                       ║
+  ║  6. 不得包含任何 GitHub Pages 相关文字或链接               ║
+  ║  7. 所有图标 URL 必须来自 iTunes Search API 的            ║
+  ║     artworkUrl100 字段                                    ║
+  ║  8. 同一 App 在不同板块出现时，图标 URL 必须完全一致       ║
+  ║                                                            ║
+  ║  卡片类型：                                                ║
+  ║  - .iap-card: 内购限免（红色左边框）                       ║
+  ║  - .code-card: 兑换码（黄色左边框）                       ║
+  ║  - .free-card: 本体限免（无左边框，白色背景）             ║
+  ║  - .deal-card: 折扣精选（绿色左边框）                     ║
+  ║  - .bundle-card: 捆绑/合集（可选紫色或蓝色变体）           ║
+  ║                                                            ║
+  ║  徽章类型：                                                ║
+  ║  - .badge-free: 本体限免价格（蓝色）                       ║
+  ║  - .badge-deal: 折扣价格（绿色）                           ║
+  ║  - .code-badge: 内购区兑换码提示（黄色）                   ║
+  ║  - .code-box: 兑换码区一键兑换按钮（深色背景+金色文字）   ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
+  <link rel="shortcut icon" href="../icons/favicon.ico">
+  <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+  <link rel="manifest" href="../icons/site.webmanifest">
+  <meta name="theme-color" content="#667eea">
+  <!-- 占位符: 每日 App Store 限免速报 - 2026.06.18 = "每日 App Store 限免速报 - YYYY.MM.DD" -->
+  <title>每日 App Store 限免速报 - 2026.06.18</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: #333;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 12px 30px;
+    }
+    .header {
+      position: relative;
+      text-align: center;
+      padding: 40px 20px 30px;
+      color: #fff;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .header .date {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .stat-item {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .stat-item:hover {
+      background: rgba(255,255,255,0.35);
+      transform: translateY(-1px);
+    }
+    .stat-item:active {
+      transform: scale(0.96);
+    }
+    .stat-item span {
+      font-size: 18px;
+      font-weight: 700;
+      display: block;
+    }
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+    }
+    .header-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+    }
+    .header-btn:hover {
+      background: rgba(255,255,255,0.28);
+      transform: scale(1.1);
+    }
+    .header-btn:active {
+      transform: scale(0.9);
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      transform: scale(1.1);
+    }
+    .back-to-top:active {
+      transform: scale(0.9);
+    }
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 16px;
+      margin-top: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .section-header .icon {
+      font-size: 24px;
+    }
+    .section-header h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+    }
+    .section-header .count {
+      font-size: 13px;
+      color: #999;
+      margin-left: auto;
+    }
+    .iap-card, .code-card, .free-card, .deal-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: #fafafa;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .iap-card:hover, .code-card:hover, .free-card:hover, .deal-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .iap-card {
+      background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+      border-left: 3px solid #e53e3e;
+    }
+    .code-card {
+      background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+      border-left: 3px solid #d69e2e;
+    }
+    .deal-card {
+      background: linear-gradient(135deg, #f0fff4 0%, #fff 100%);
+      border-left: 3px solid #38a169;
+    }
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .app-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .app-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .app-desc {
+      font-size: 13px;
+      color: #718096;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .store-link {
+      display: inline-block;
+      font-size: 12px;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .store-link:hover {
+      text-decoration: underline;
+    }
+    .qr {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      margin-top: 6px;
+      display: block;
+    }
+    .badge-free {
+      display: inline-block;
+      background: #ebf8ff;
+      color: #3182ce;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .badge-deal {
+      display: inline-block;
+      background: #f0fff4;
+      color: #38a169;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .code-badge {
+      display: inline-block;
+      background: #fefcbf;
+      color: #975a16;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .code-box {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      color: #f6e05e;
+      font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: transform 0.15s;
+      position: relative;
+      z-index: 1;
+    }
+    .code-box:hover {
+      transform: scale(1.03);
+    }
+    .footer {
+      text-align: center;
+      color: rgba(255,255,255,0.8);
+      font-size: 12px;
+      padding: 24px 16px;
+      margin-top: 16px;
+    }
+    .footer a {
+      color: rgba(255,255,255,0.9);
+    }
+    .footer .sources {
+      margin-top: 8px;
+      font-size: 11px;
+      opacity: 0.7;
+    }
+    .iframe-note {
+      display: none;
+      background: #fffbeb;
+      border: 1px solid #f6e05e;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #975a16;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    /* 捆绑/合集卡片（无图标） */
+    .bundle-card {
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: #fafafa;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .bundle-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .bundle-purple {
+      background: linear-gradient(135deg, #f3e5f5 0%, #fff 100%);
+      border-left: 3px solid #9c27b0;
+    }
+    .bundle-blue {
+      background: linear-gradient(135deg, #e8eaf6 0%, #fff 100%);
+      border-left: 3px solid #3f51b5;
+    }
+    .bundle-desc {
+      font-size: 13px;
+      color: #718096;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .bundle-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    /* 搜索功能 - 简洁白底风格 */
+    .search-wrap {
+      overflow: visible;
+      position: relative;
+      max-width: 600px;
+      margin: 16px auto 0;
+      padding: 0 16px;
+    }
+    .search-inner {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-inner:focus-within {
+      border-color: #4285f4;
+      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
+    }
+    .search-input {
+      flex: 1;
+      padding: 12px 16px 12px 6px;
+      border: none;
+      background: transparent;
+      color: #333;
+      font-size: 15px;
+      outline: none;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    .search-input::placeholder {
+      color: #999;
+    }
+    .search-wrap .search-icon {
+      flex-shrink: 0;
+      margin-left: 14px;
+      pointer-events: none;
+      display: block;
+    }
+    .search-results {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      max-height: 360px;
+      overflow-y: auto;
+      z-index: 9999;
+      border: 1px solid #f0f0f0;
+    }
+    .search-results.show {
+      display: block;
+    }
+    .search-result-item {
+      display: block;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #f8f8f8;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .search-result-item:last-child {
+      border-bottom: none;
+    }
+    .search-result-item:hover {
+      background: #f8f9fa;
+    }
+    .search-result-item .result-name {
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .search-result-item .result-section {
+      font-size: 12px;
+      color: #999;
+    }
+    .search-result-item .result-match {
+      color: #4285f4;
+      font-weight: 700;
+    }
+    .search-no-results {
+      padding: 16px;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+    .highlight-card {
+      animation: highlightPulse 1.2s ease-in-out 2;
+    }
+    @keyframes highlightPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(66,133,244,0.6); }
+      70%  { box-shadow: 0 0 0 8px rgba(66,133,244,0); }
+      100% { box-shadow: 0 0 0 0 rgba(66,133,244,0); }
+    }
+
+
+    .highlight-card {
+      animation: highlightPulse 1.2s ease-in-out 2;
+    }
+    @keyframes highlightPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(102,126,234,0.6); }
+      70%  { box-shadow: 0 0 0 8px rgba(102,126,234,0); }
+      100% { box-shadow: 0 0 0 0 rgba(102,126,234,0); }
+    }
+    @media (max-width: 480px) {
+      .app-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+      }
+      .iap-card, .code-card, .free-card, .deal-card, .bundle-card {
+        padding: 12px 10px;
+        gap: 10px;
+      }
+      .app-name {
+        font-size: 14px;
+      }
+      .app-desc {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ===== Header ===== -->
+    <div class="header">
+      <h1>每日 App Store 限免速报</h1>
+      <!-- 占位符: 2026.06.18 如 "2026.05.28" -->
+      <div class="date">2026.06.18</div>
+      <!-- 占位符: 统计数字，每项一个可点击跳转的 .stat-item -->
+      <!-- 格式: <a class="stat-item" href="#section-xxx"><span>{数字}</span>{标签}</a> -->
+      <div class="stats">
+        <a class="stat-item" href="#section-iap"><span>25</span>内购免</a>
+        <a class="stat-item" href="#section-free"><span>38</span>本体免</a>
+        <a class="stat-item" href="#section-deal"><span>10</span>折扣</a>
+        <a class="stat-item" href="#section-code"><span>5</span>兑换码</a>
+        <a href="../index.html" class="header-btn" title="返回首页"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9,21 9,13 15,13 15,21"/></svg></a>
+        <a class="header-btn" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;" href="#"><svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></a>
+      </div>
+
+    </div>
+
+    <!-- 搜索框（放在 header 外部，避免 overflow:hidden 裁剪下拉框） -->
+    <div class="search-wrap">
+      <div class="search-inner">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="iframe-note" id="iframeNote">
+      ⚠️ 检测到在 iframe 中运行，部分链接可能无法正常跳转。建议用 Safari 打开或扫码访问～
+    </div>
+
+    <!-- ===== 🔥 内购限免 · 重点推荐 ===== -->
+    <div class="section" id="section-iap">
+      <div class="section-header">
+        <span class="icon">🔥</span>
+        <h2>内购限免 · 重点推荐</h2>
+        <span class="count">25款</span>
+      </div>
+
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f7/20/7d/f7207dba-355f-7b9c-a3c2-f45b826e5a1b/HolidayAlarmIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/100x100bb.jpg" alt="Alarm Pro: Shift Work" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Alarm Pro: Shift Work</div>
+            <div class="app-desc">智能排班闹钟应用，专为倒班工作者设计，支持轮班提醒和智能闹钟。</div>
+            <a href="https://apps.apple.com/app/id6751812975" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6751812975" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ab/19/35/ab193598-aea7-8339-9cd3-3dcf6220ba74/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/100x100bb.jpg" alt="VitalQuest: Medication Tracker" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">VitalQuest: Medication Tracker</div>
+            <div class="app-desc">服药提醒追踪器，帮助管理用药计划，按时服药不遗漏。</div>
+            <a href="https://apps.apple.com/app/id6761392460" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6761392460" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c1/aa/ff/c1aaff9d-3173-7c48-e90e-2acf8ad6ef41/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="BrainFit: Brain Training Games" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">BrainFit: Brain Training Games</div>
+            <div class="app-desc">脑力记忆训练游戏，通过趣味挑战提升记忆力和认知能力。</div>
+            <a href="https://apps.apple.com/app/id6751512104" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6751512104" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b9/bb/49/b9bb49d3-540f-ccb2-e7f7-8a0c873319df/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="QuickFix: Fast Reflex Games" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">QuickFix: Fast Reflex Games</div>
+            <div class="app-desc">快速反应游戏，测试你的反应速度，挑战极限。</div>
+            <a href="https://apps.apple.com/app/id6757825991" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6757825991" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e0/4a/32/e04a323c-40fc-d4d8-cb17-d11e53af3b4e/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Slice It: Cut Puzzle Logic" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Slice It: Cut Puzzle Logic</div>
+            <div class="app-desc">切割逻辑谜题游戏，运用巧妙的切割技巧完成每个关卡。</div>
+            <a href="https://apps.apple.com/app/id6770234304" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6770234304" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/06/83/5a/06835a8f-abb1-c8ff-42bf-46280e7c0977/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Soccer Referee Whistle & Cards" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Soccer Referee Whistle & Cards</div>
+            <div class="app-desc">足球裁判哨声和红黄牌模拟器，适合裁判训练和娱乐使用。</div>
+            <a href="https://apps.apple.com/app/id6772938639" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6772938639" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2e/07/69/2e07698a-0746-a934-dc5e-30d7dfe3ec1c/Hair_Color-0-0-1x_U007epad-0-1-sRGB-85-220.png/100x100bb.jpg" alt="Hairstyle Try On – AI" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Hairstyle Try On – AI</div>
+            <div class="app-desc">AI 发型生成器，上传照片即可预览各种发型效果。应用内有 bug 等待修复中。</div>
+            <a href="https://apps.apple.com/app/id6763931913" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6763931913" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/5e/fa/0b5efaba-5888-84d6-f481-60f6238289ac/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/100x100bb.jpg" alt="Ring Sizer: Find Your Size" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Ring Sizer: Find Your Size</div>
+            <div class="app-desc">戒指尺寸测量工具，通过手机轻松测量手指尺寸，网购戒指必备。</div>
+            <a href="https://apps.apple.com/app/id6739887211" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6739887211" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/37/62/d0/3762d0f8-87e8-d005-a56b-00edcb66cc51/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="Holiday Packing List Checklist" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Holiday Packing List Checklist</div>
+            <div class="app-desc">旅行打包清单助手，帮你规划行李，出行不再遗漏物品。</div>
+            <a href="https://apps.apple.com/app/id6778458426" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6778458426" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1f/7a/df/1f7adf84-f295-2a89-938e-df80d48bded7/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="People Counter: Party, Events" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">People Counter: Party, Events</div>
+            <div class="app-desc">活动人数计数器，派对、活动现场轻松统计人数。</div>
+            <a href="https://apps.apple.com/app/id6751030676" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6751030676" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/36/7c/fa/367cfa90-0d88-22c7-f042-53e1c199100f/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="Parking Timer & Car Finder" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Parking Timer & Car Finder</div>
+            <div class="app-desc">停车计时和找车工具，记录停车位置和时长，随时一键找车。</div>
+            <a href="https://apps.apple.com/app/id6768015615" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6768015615" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d6/25/20/d62520aa-33af-21f8-cc06-98db0c42321f/AppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/100x100bb.jpg" alt="Pill Reminder: Med-Alarm" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Pill Reminder: Med-Alarm</div>
+            <div class="app-desc">服药提醒和追踪应用，设置定时提醒，记录服药历史。</div>
+            <a href="https://apps.apple.com/app/id6762496584" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6762496584" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/09/95/d0/0995d0bc-5ee9-5821-7eae-fd4d8e882faa/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="CalendarSpeak: Voice Planner" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">CalendarSpeak: Voice Planner</div>
+            <div class="app-desc">语音日历工具，动口不动手，语音添加日程安排。</div>
+            <a href="https://apps.apple.com/app/id6768933110" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6768933110" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/25/8a/8a/258a8a9b-4d61-0593-35b1-cce974d45ec1/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/100x100bb.jpg" alt="ReMind: Message Diary" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">ReMind: Message Diary</div>
+            <div class="app-desc">消息日记应用，记录每日心情与感悟。</div>
+            <a href="https://apps.apple.com/app/id6769179581" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6769179581" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2f/93/76/2f937612-d033-eca7-f811-a715c96fad6c/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/100x100bb.jpg" alt="RandomLife Lotto" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">RandomLife Lotto</div>
+            <div class="app-desc">彩票随机数生成器，为购彩提供随机号码选择。</div>
+            <a href="https://apps.apple.com/app/id1631737454" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id1631737454" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/79/a3/b0/79a3b08d-f0e8-1307-6990-575d417b7c92/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Wusee" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Wusee</div>
+            <div class="app-desc">个人和家庭物品清单管理器，帮你理清家中物品。</div>
+            <a href="https://apps.apple.com/app/id6773035130" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6773035130" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/22/84/ff/2284ff7d-cbdc-7353-b950-61fcd3bc5291/AppIcon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="Eye Measure – PD Ruler" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Eye Measure – PD Ruler</div>
+            <div class="app-desc">瞳距测量工具，通过手机前置摄像头快速测量瞳距，配镜必备。</div>
+            <a href="https://apps.apple.com/app/id6758764611" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6758764611" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d9/24/5e/d9245ed6-3be5-30d1-e4f3-7b1bd8f71583/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Rome Italy Audio Guide" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Rome Italy Audio Guide</div>
+            <div class="app-desc">罗马博物馆语音导览，带你探索罗马历史名胜和文化遗迹。</div>
+            <a href="https://apps.apple.com/app/id6747927740" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6747927740" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/65/dd/07/65dd07ff-2201-cdae-a0e1-a5fa43599d0d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="Bewise: Social Intelligence" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Bewise: Social Intelligence</div>
+            <div class="app-desc">每日提升社交智慧，汇聚万余条生活技巧和冷知识。</div>
+            <a href="https://apps.apple.com/app/id1633081567" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id1633081567" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ed/06/f0/ed06f0b6-02aa-8792-6fff-3595c52859be/AppIcon-0-0-1x_U007emarketing-0-9-0-85-220.png/100x100bb.jpg" alt="听读宝 - 英语听力播放器" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">听读宝 - 英语听力播放器</div>
+            <div class="app-desc">音频变速播放和复读工具，支持变速播放、AB复读，方便练习英语听力。</div>
+            <a href="https://apps.apple.com/app/id1133575767" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id1133575767" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2e/ed/6c/2eed6c3a-c95a-d95b-4261-2ca6fb7b1b9a/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Countdown: Christmas Widget" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Countdown: Christmas Widget <span class="code-badge">兑换码: REDDITGIVEAWAY</span></div>
+            <div class="app-desc">圣诞节倒数日小组件，精美倒数日桌面小工具。</div>
+            <a href="https://apps.apple.com/app/id6772236024" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6772236024" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/60/7f/40/607f40a0-820f-eb2e-7f54-0db7c4168c6f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="Brain Games & IQ Booster" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Brain Games & IQ Booster <span class="code-badge">兑换码: BRAINGAMESLIFETIME</span></div>
+            <div class="app-desc">记忆力训练和脑力游戏应用，多种益智挑战提升认知能力。</div>
+            <a href="https://apps.apple.com/app/id6779731479" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6779731479" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ad/d0/f3/add0f3f0-036f-44b6-2b6c-131b291fcbe5/TheirTime-0-0-1x_U007epad-0-1-sRGB-85-220.png/100x100bb.jpg" alt="TheirTime" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">TheirTime <span class="code-badge">含兑换码</span></div>
+            <div class="app-desc">时间管理和追踪工具，帮助你高效利用每一天。</div>
+            <a href="https://apps.apple.com/app/id6756242715" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6756242715" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1b/f3/c9/1bf3c9bc-4ba8-5a2e-5140-35a6f7a47fbf/AppIcon-0-0-1x_U007ephone-0-11-0-sRGB-85-220.png/100x100bb.jpg" alt="Monymo: Income Time Tracker" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Monymo: Income Time Tracker <span class="code-badge">含兑换码</span></div>
+            <div class="app-desc">收入和工时追踪管理工具，自由职业者和小企业主管理账目。</div>
+            <a href="https://apps.apple.com/app/id6473834966" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6473834966" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/4f/a3/d94fa301-b03a-67cb-1960-24b7f4865a7e/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="Peter / DreamOn: AI Dream Interpreter" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Peter / DreamOn: AI Dream Interpreter <span class="code-badge">含兑换码</span></div>
+            <div class="app-desc">AI 梦境解读应用，记录和分析梦境。</div>
+            <a href="https://apps.apple.com/app/id6756430690" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/id6756430690" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+
+    </div>
+
+    <!-- ===== 🔑 兑换码 / 兑换链接 ===== -->
+    <div class="section" id="section-code">
+      <div class="section-header">
+        <span class="icon">🔑</span>
+        <h2>兑换码 / 兑换链接</h2>
+        <span class="count">5个</span>
+      </div>
+
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2e/ed/6c/2eed6c3a-c95a-d95b-4261-2ca6fb7b1b9a/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Countdown: Christmas Widget" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Countdown: Christmas Widget</div>
+            <div class="app-desc">圣诞节倒数日小组件，精美倒数日桌面小工具。<br><strong>免费时长：</strong>内购终身免费 | <strong>剩余：</strong>限量</div>
+            <a href="https://apps.apple.com/redeem/?ctx=offercodes&id=6772236024&code=REDDITGIVEAWAY" target="_blank" class="code-box">一键兑换: REDDITGIVEAWAY</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/60/7f/40/607f40a0-820f-eb2e-7f54-0db7c4168c6f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="Brain Games & IQ Booster" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Brain Games & IQ Booster</div>
+            <div class="app-desc">记忆力训练和脑力游戏应用，多种益智挑战。<br><strong>免费时长：</strong>内购终身免费 | <strong>剩余：</strong>限量</div>
+            <a href="https://apps.apple.com/redeem/?ctx=offercodes&id=6779731479&code=BRAINGAMESLIFETIME" target="_blank" class="code-box">一键兑换: BRAINGAMESLIFETIME</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ad/d0/f3/add0f3f0-036f-44b6-2b6c-131b291fcbe5/TheirTime-0-0-1x_U007epad-0-1-sRGB-85-220.png/100x100bb.jpg" alt="TheirTime" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">TheirTime</div>
+            <div class="app-desc">时间管理和追踪工具，高效利用每一天。<br><strong>免费时长：</strong>3个月免费 | <strong>剩余：</strong>剩余时间581小时</div>
+            <a href="https://www.promies.net/promotion/6f069410-b6d8-4887-ad18-5629d4cd63dd" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1b/f3/c9/1bf3c9bc-4ba8-5a2e-5140-35a6f7a47fbf/AppIcon-0-0-1x_U007ephone-0-11-0-sRGB-85-220.png/100x100bb.jpg" alt="Monymo: Income Time Tracker" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Monymo: Income Time Tracker</div>
+            <div class="app-desc">收入和工时追踪管理工具。<br><strong>免费时长：</strong>前6个月免费 | <strong>剩余：</strong>481/500</div>
+            <a href="https://www.promies.net/promotion/23f3ae9b-9be4-4f26-96e9-f98a4ee69b2b" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/4f/a3/d94fa301-b03a-67cb-1960-24b7f4865a7e/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="Peter / DreamOn: AI Dream Interpreter" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Peter / DreamOn: AI Dream Interpreter</div>
+            <div class="app-desc">AI 梦境解读应用，记录和分析梦境。<br><strong>免费时长：</strong>首月免费 | <strong>剩余：</strong>651/665</div>
+            <a href="https://www.promies.net/promotion/b710f706-d765-4a3c-b9fe-95d356c150ea" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- ===== 🆓 本体限免 ===== -->
+    <div class="section" id="section-free">
+      <div class="section-header">
+        <span class="icon">🆓</span>
+        <h2>本体限免</h2>
+        <span class="count">38款</span>
+      </div>
+
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a2/e8/3a/a2e83afe-ca54-29f0-56db-af03c4b226e9/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Mandelbrot Metal" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Mandelbrot Metal <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">曼德博集合色彩艺术展示，探索分形数学的视觉之美。</div>
+            <a href="https://apps.apple.com/app/id6749807290" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b7/5c/97/b75c9775-0362-9bdd-aa26-10e525873b3d/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/100x100bb.jpg" alt="ID Photo: Passport Photo" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">ID Photo: Passport Photo <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">证件照制作工具，一键制作标准证件照。</div>
+            <a href="https://apps.apple.com/app/id6741071388" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/00/28/86/00288626-3249-9e3f-894c-76c74c68d6ef/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Kompressor – Compress images" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Kompressor – Compress images <span class="badge-free">¥15→免费</span></div>
+            <div class="app-desc">RAW 图像转换和压缩工具，支持多种图像格式批量压缩。</div>
+            <a href="https://apps.apple.com/app/id1011979611" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ec/2c/78/ec2c78f6-b614-8f27-1db4-84bedf071d49/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/100x100bb.jpg" alt="Speed Up Video" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Speed Up Video <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">视频速度调节器，自由调整视频播放速度。</div>
+            <a href="https://apps.apple.com/app/id6470886230" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/04/52/c4/0452c463-9dc6-0bf8-b3fd-497fe18d812e/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Golf Car Caddy" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Golf Car Caddy <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">高尔夫球车骑行仪表盘应用，记录速度和里程。</div>
+            <a href="https://apps.apple.com/app/id1401506376" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/12/31/71/12317157-eceb-2968-0d01-0dc50bba87d7/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="BG Remover AI" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">BG Remover AI <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">AI 抠图去背景工具，自动识别并去除图片背景。</div>
+            <a href="https://apps.apple.com/app/id1561485452" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c1/16/25/c116253b-bc2e-35b9-f791-3aff99394d3a/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/100x100bb.jpg" alt="Spectrum: Color Detector" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Spectrum: Color Detector <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">摄像头取色工具，通过相机识别周围物体的精确颜色值。</div>
+            <a href="https://apps.apple.com/app/id6741385583" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a0/95/ee/a095ee75-cef2-3133-17f8-3146fa62aba1/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Pocket AI – Edge Gallery" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Pocket AI – Edge Gallery <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">本地模型 AI 助手，离线运行 AI 模型，保护隐私。</div>
+            <a href="https://apps.apple.com/app/id6762418988" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/99/e9/86/99e9865e-d9d8-482b-2248-ba888afbddb0/AppIcon-0-0-1x_U007epad-0-1-P3-85-220.png/100x100bb.jpg" alt="LocalToolbox" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">LocalToolbox <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">离线多功能工具箱，集合多种实用工具。</div>
+            <a href="https://apps.apple.com/app/id6761979934" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e1/cf/f0/e1cff01a-8afb-3f29-d166-cf4c8cea83d3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="JPEG Convert – HEIC to JPG" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">JPEG Convert – HEIC to JPG <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">图片格式转换压缩器，HEIC 转 JPG 等格式。</div>
+            <a href="https://apps.apple.com/app/id6475955513" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/f7/c5/3cf7c5da-3331-a97a-dd99-6b2d4f746249/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/100x100bb.jpg" alt="AI Resume Creator – CV Builder" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">AI Resume Creator – CV Builder <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">AI 简历生成器，智能生成专业简历。</div>
+            <a href="https://apps.apple.com/app/id6745129451" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/64/8b/56648baf-d21c-84cd-c68f-b7486f069672/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="0rb – Orbit Survival Arcade Game" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">0rb – Orbit Survival Arcade Game <span class="badge-free">¥6→免费</span></div>
+            <div class="app-desc">旋转轨道生存街机游戏，在轨道上躲避障碍物。</div>
+            <a href="https://apps.apple.com/app/id6778482818" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1d/97/a5/1d97a535-ebdf-2c05-8453-4d2b622b3915/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/100x100bb.jpg" alt="Spell the Beans" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Spell the Beans <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">咖啡豆主题拼词游戏，考验你的词汇量。</div>
+            <a href="https://apps.apple.com/app/id1457163103" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/05/12/23/0512235b-01d7-b311-914d-29e578a8fbdf/AppIcon-0-0-1x_U007ewatch-0-1-85-220.png/100x100bb.jpg" alt="Parallel Rest Timer" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Parallel Rest Timer <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">Apple Watch 健身快速计时器，训练间歇计时好帮手。</div>
+            <a href="https://apps.apple.com/app/id6762067074" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/78/50/db/7850dbd6-b62b-6755-925e-ac3d4da3a48c/AppIcon-1x_U007epad-0-1-85-220-0.png/100x100bb.jpg" alt="MarkdownSnap" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">MarkdownSnap <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">将 Markdown 内容生成为精美图片。</div>
+            <a href="https://apps.apple.com/app/id6742334227" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0b/e2/12/0be212f2-6930-4a90-00db-98d4cd9deffe/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="Goosi – Backblaze B2 client" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Goosi – Backblaze B2 client <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">Backblaze B2 云存储客户端，管理和备份云端文件。</div>
+            <a href="https://apps.apple.com/app/id1437620819" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9a/15/87/9a158765-3613-0ad5-0689-a0356f75effb/AppIconProd-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="75 Hard" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">75 Hard <span class="badge-free">¥38→免费</span></div>
+            <div class="app-desc">75天硬核自我挑战计划，培养自律和坚韧精神。</div>
+            <a href="https://apps.apple.com/app/id1502228408" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f8/81/11/f8811143-9f0a-e882-4aee-f88ba4ff5fe7/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="Convo | Live Transcribe & Talk" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Convo | Live Transcribe & Talk <span class="badge-free">¥15→免费</span></div>
+            <div class="app-desc">实时语音转录和对话工具，边说边看文字。</div>
+            <a href="https://apps.apple.com/app/id1568864400" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f5/0e/d7/f50ed70d-6abb-457b-dfdf-1abd2bb933cd/AppIcon-0-0-1x_U007emarketing-0-9-0-85-220.png/100x100bb.jpg" alt="Cashflow Calendar" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Cashflow Calendar <span class="badge-free">¥15→免费</span></div>
+            <div class="app-desc">财务现金流日历，提前掌握资金动向。</div>
+            <a href="https://apps.apple.com/app/id1573469723" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c5/80/6f/c5806f95-73c7-3cdb-bf4d-aba7979b0072/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/100x100bb.jpg" alt="Big Bang - Multiverse" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Big Bang - Multiverse <span class="badge-free">¥15→免费</span></div>
+            <div class="app-desc">黑洞吞噬宇宙街机游戏，拖动黑洞吞噬万物。</div>
+            <a href="https://apps.apple.com/app/id6776590920" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/18/a3/0c/18a30cd5-4805-cec6-8a32-a6609e37aafa/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="Pre-Algebra Fundamentals" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Pre-Algebra Fundamentals <span class="badge-free">¥68→免费</span></div>
+            <div class="app-desc">预代数基础学习应用，互动式数学教材。</div>
+            <a href="https://apps.apple.com/app/id551027794" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f7/0a/80/f70a805a-37ea-e562-1cf2-24bed6f704d5/gotBottle-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="gotBottle: Wine Notes" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">gotBottle: Wine Notes <span class="badge-free">¥22→免费</span></div>
+            <div class="app-desc">葡萄酒品鉴笔记应用，AI 辅助记录品酒体验。</div>
+            <a href="https://apps.apple.com/app/id1160223362" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c2/09/2d/c2092d9e-0c9d-5b94-48eb-8d031e8f5252/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/100x100bb.jpg" alt="MyLyrics" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">MyLyrics <span class="badge-free">¥22→免费</span></div>
+            <div class="app-desc">根据歌词发现歌曲名称和歌手。</div>
+            <a href="https://apps.apple.com/app/id1264911434" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a5/f1/09/a5f10910-25dc-df31-458a-12d1aaf71911/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/100x100bb.jpg" alt="Word Spell ABC phonics Gwimpy" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Word Spell ABC phonics Gwimpy <span class="badge-free">¥6→免费</span></div>
+            <div class="app-desc">儿童自然拼读学习应用，互动式 ABC 启蒙。</div>
+            <a href="https://apps.apple.com/app/id1264768732" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4a/aa/8a/4aaa8a20-261f-13c5-0281-6abf1aa05289/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/100x100bb.jpg" alt="Dungeons & Such" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Dungeons & Such <span class="badge-free">¥25→免费</span></div>
+            <div class="app-desc">经典复古地牢 RPG 游戏，回味经典。</div>
+            <a href="https://apps.apple.com/app/id351939099" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/94/79/4e/94794e5c-fe21-fe5d-212d-2321dfa2ad6d/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/100x100bb.jpg" alt="Medito: Mindfulness Meditation" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Medito: Mindfulness Meditation <span class="badge-free">¥15→免费</span></div>
+            <div class="app-desc">冥想和睡眠应用，帮助放松身心。</div>
+            <a href="https://apps.apple.com/app/id1500780518" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple69/v4/b6/a7/8d/b6a78d8d-d2bc-8bfc-5251-28f28fe86e39/pr_source.png/100x100bb.jpg" alt="Master Scanner" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Master Scanner <span class="badge-free">¥198→免费</span></div>
+            <div class="app-desc">文档扫描仪，支持名片、文档、收据扫描。</div>
+            <a href="https://apps.apple.com/app/id1071602606" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c5/10/2b/c5102b77-8760-e91a-e9ee-ffa3e3e82db7/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="Calm Arcade – Relaxing Games" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Calm Arcade – Relaxing Games <span class="badge-free">¥6→免费</span></div>
+            <div class="app-desc">便携式解压工具合集，通过小游戏放松心情。</div>
+            <a href="https://apps.apple.com/app/id6756086676" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/68/af/ac/68afaca8-4616-f459-a2ab-6bdcf0d369f7/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="我的刀盾 - 赛博神兽木鱼功德解压" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">我的刀盾 - 赛博神兽木鱼功德解压 <span class="badge-free">¥12→免费</span></div>
+            <div class="app-desc">电子木鱼敲击解压应用，和赛博神兽一起解压。</div>
+            <a href="https://apps.apple.com/app/id6760925662" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/05/25/6f/05256f0f-fc32-fe61-f633-dd1a96779ed0/AppIcon-0-0-1x_U007epad-0-1-85-220.jpeg/100x100bb.jpg" alt="中英输入法" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">中英输入法 <span class="badge-free">¥26→免费</span></div>
+            <div class="app-desc">通过输入英文来检索中文候选，中英输入轻松切换。</div>
+            <a href="https://apps.apple.com/app/id6756459946" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fb/e4/4d/fbe44dda-e321-3893-abd4-c1d205158a67/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="寻画参考" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">寻画参考 <span class="badge-free">¥28→免费</span></div>
+            <div class="app-desc">情绪板、参考图、智能素材管理，App Store 编辑推荐。</div>
+            <a href="https://apps.apple.com/app/id6742316732" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/64/7f/1b/647f1b40-e0f4-fe47-0ea0-cca5e10405de/AppIcon-0-0-1x_U007ephone-0-0-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="StressBook: Watch实时压力监测" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">StressBook: Watch实时压力监测 <span class="badge-free">¥1→免费</span></div>
+            <div class="app-desc">借助 Apple Watch HRV 数据监测压力水平。</div>
+            <a href="https://apps.apple.com/app/id6738070448" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/41/42/95/41429590-9689-9673-d7f9-40bf9ad51d59/AppIcon-0-1x_U007emarketing-0-0-85-220-0-7.png/100x100bb.jpg" alt="AppFusion - 6 in 1!" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">AppFusion - 6 in 1! <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">六合一经典娱乐应用合集。</div>
+            <a href="https://apps.apple.com/app/id463266435" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a0/16/2e/a0162eec-509c-e0bf-5d63-f2f90aac3378/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="FILCA - SLR Film Camera" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">FILCA - SLR Film Camera <span class="badge-free">¥22→免费</span></div>
+            <div class="app-desc">单反风格胶片相机，35种胶片滤镜，手动控制。</div>
+            <a href="https://apps.apple.com/app/id1436429074" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d3/f7/29/d3f729af-1431-bc02-9b62-0852ddb7f669/AppIcon-Full-0-0-1x_U007epad-0-1-0-85-220.png/100x100bb.jpg" alt="实时天气雷达Pro - 降雨预报" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">实时天气雷达Pro - 降雨预报 <span class="badge-free">¥98→免费</span></div>
+            <div class="app-desc">实时天气雷达地图，查看降雨风暴预报。</div>
+            <a href="https://apps.apple.com/app/id488674899" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/33/4f/69/334f69b7-4a30-e323-23e9-ea4ab45c01ef/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/100x100bb.jpg" alt="小时刻-时间线日记" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">小时刻-时间线日记 <span class="badge-free">¥22→免费</span></div>
+            <div class="app-desc">以时间线管理事件的日记应用。</div>
+            <a href="https://apps.apple.com/app/id1114389016" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ab/82/48/ab82482e-5353-6aa6-50aa-83d471cf6395/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/100x100bb.jpg" alt="安全监控照片+视频Pro" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">安全监控照片+视频Pro <span class="badge-free">¥38→免费</span></div>
+            <div class="app-desc">零知识加密安全保险箱，保护私密照片视频。</div>
+            <a href="https://apps.apple.com/app/id456637671" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6e/6e/1d/6e6e1d09-6f46-b12a-0631-c6f85f236b1c/AppIconDefault-0-0-1x_U007epad-0-1-0-0-sRGB-85-220.png/100x100bb.jpg" alt="日日新" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">日日新 <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">倒计时应用，为重要日子设置倒计时。</div>
+            <a href="https://apps.apple.com/app/id406170251" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+
+    </div>
+
+    <!-- ===== 💰 限时折扣精选 ===== -->
+    <div class="section" id="section-deal">
+      <div class="section-header">
+        <span class="icon">💰</span>
+        <h2>限时折扣精选</h2>
+        <span class="count">10款</span>
+      </div>
+
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/45/8a/f9/458af9a9-cb62-2b2f-9bae-3ae944c83736/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="OmniPlayer" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">OmniPlayer <span class="badge-deal">¥68→¥55 (19%)</span></div>
+            <div class="app-desc">全能视频播放器，支持多种格式流畅播放。</div>
+            <a href="https://apps.apple.com/app/id1172659513" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d5/6c/9a/d56c9aa8-6439-92d8-30f5-bf95095f83f9/AppIcon-0-0-1x_U007ephone-0-11-0-0-85-220.png/100x100bb.jpg" alt="牛油果轻断食" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">牛油果轻断食 <span class="badge-deal">¥128→¥68 (47%)</span></div>
+            <div class="app-desc">间歇性断食追踪、健康饮食食谱。</div>
+            <a href="https://apps.apple.com/app/id6504002067" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4e/5a/80/4e5a80e1-5718-ba07-4d90-38e7e7543aca/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/100x100bb.jpg" alt="叮咚AI记账" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">叮咚AI记账 <span class="badge-deal">¥298→¥98 (67%)</span></div>
+            <div class="app-desc">语音拍照一键自动录入，AI 智能分类记账。</div>
+            <a href="https://apps.apple.com/app/id6755501884" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/eb/59/de/eb59deb6-d8d3-6fd1-677d-387cd03ac3d1/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/100x100bb.jpg" alt="CLocker" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">CLocker <span class="badge-deal">¥58→¥29 (50%)</span></div>
+            <div class="app-desc">应用锁和专注学习计时器，防沉迷管理。</div>
+            <a href="https://apps.apple.com/app/id6470714036" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bc/48/93/bc48932a-1286-04c1-de84-acf405a4e32d/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/100x100bb.jpg" alt="小芽计划" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">小芽计划 <span class="badge-deal">¥78→¥38 (51%)</span></div>
+            <div class="app-desc">周计划日程记事待办，一站式计划管理。</div>
+            <a href="https://apps.apple.com/app/id6754510813" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/83/64/238364af-9c53-3086-87fd-980aa1359ee9/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/100x100bb.jpg" alt="Kiro - 日记笔记ToDo" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Kiro - 日记笔记ToDo <span class="badge-deal">¥148→¥39 (74%)</span></div>
+            <div class="app-desc">日记笔记待办三合一，简洁记录工具。</div>
+            <a href="https://apps.apple.com/app/id6759667059" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/0d/e0/66/0de0660e-222b-b9bc-66d8-5fb98d4567a0/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/100x100bb.jpg" alt="笼中窥梦" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">笼中窥梦 <span class="badge-deal">¥25→¥18 (28%)</span></div>
+            <div class="app-desc">视错觉解谜游戏，每个面都是一个独立世界。</div>
+            <a href="https://apps.apple.com/app/id1584313012" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/71/3c/68/713c68e1-39ad-c3e3-b99a-cbebbbe55ede/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="人类跌落梦境" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">人类跌落梦境 <span class="badge-deal">¥18→¥12 (33%)</span></div>
+            <div class="app-desc">物理交互解谜游戏，支持8人联机。</div>
+            <a href="https://apps.apple.com/app/id1458460469" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/d4/4b/36/d44b36e0-485f-1806-ea9e-f48787bb549f/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="双子 Gemini" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">双子 Gemini <span class="badge-deal">¥6→¥3 (50%)</span></div>
+            <div class="app-desc">情感体验游戏，和小星一起飞舞点亮世界。</div>
+            <a href="https://apps.apple.com/app/id1159266744" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7d/d1/76/7dd1760e-85eb-10de-ed46-c50b4427a7dd/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="化学 - 元素周期表 2026" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">化学 - 元素周期表 2026 <span class="badge-deal">¥148→¥68 (54%)</span></div>
+            <div class="app-desc">3D 元素周期表，可视化探索元素性质。</div>
+            <a href="https://apps.apple.com/app/id1576004936" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+      <p>数据来源：OODATA · Mergeek · iPhone Giveaway of the Day · GoFans · promies.net · 反斗限免</p>
+      <p class="sources">生成时间：2026-06-18 14:50 | 数据抓取自各限免信息平台</p>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop" title="回到顶部" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24"><polyline points="18,15 12,9 6,15"/></svg>
+  </button>
+
+  <script>
+    // 动态显示星期几（从 URL 路径中的日期解析）
+    (function() {
+      if (window.self !== window.top) {
+        var note = document.getElementById('iframeNote');
+        if (note) note.style.display = 'block';
+      }
+      // 从 URL 或 .date 元素解析日期，显示星期几
+      var dateEl = document.querySelector('.header .date');
+      if (dateEl) {
+        var text = dateEl.textContent.trim();
+        // 匹配 YYYY.MM.DD 或 YYYY-MM-DD
+        var m = text.match(/(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})/);
+        if (m) {
+          var d = new Date(parseInt(m[1]), parseInt(m[2]) - 1, parseInt(m[3]));
+          var weekdays = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+          var weekday = weekdays[d.getDay()];
+          // 格式化日期为 "YYYY 年 M 月 D 日 · 星期X"
+          var yy = m[1];
+          var mo = parseInt(m[2]);
+          var da = parseInt(m[3]);
+          dateEl.textContent = yy + ' 年 ' + mo + ' 月 ' + da + ' 日 · ' + weekday;
+        }
+      }
+    })();
+    // 回到顶部按钮
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          btn.classList.add('show');
+        } else {
+          btn.classList.remove('show');
+        }
+      });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+    // 搜索功能
+    (function() {
+      var input = document.getElementById('searchInput');
+      var resultsEl = document.getElementById('searchResults');
+      if (!input || !resultsEl) return;
+
+      // 收集所有 App 数据（去重）
+      var apps = [];
+      var seen = {};
+      document.querySelectorAll('.iap-card, .code-card, .free-card, .deal-card').forEach(function(card) {
+        var nameEl = card.querySelector('.app-name');
+        var descEl = card.querySelector('.app-desc');
+        var sectionEl = card.closest('.section');
+        if (!nameEl) return;
+        // 只取第一个文本节点作为 app 名称（排除 .code-badge 等子元素文字）
+        var rawName = '';
+        for (var i = 0; i < nameEl.childNodes.length; i++) {
+          if (nameEl.childNodes[i].nodeType === 3) {
+            rawName = nameEl.childNodes[i].textContent.trim();
+            break;
+          }
+        }
+        if (!rawName) rawName = nameEl.textContent.trim().split(/\s+/)[0];
+        if (seen[rawName]) return;
+        seen[rawName] = true;
+        var sectionName = sectionEl ? sectionEl.querySelector('.section-header h2') : null;
+        apps.push({
+          name: rawName,
+          desc: descEl ? descEl.textContent.trim() : '',
+          section: sectionName ? sectionName.textContent.trim() : '',
+          card: card
+        });
+      });
+
+      // 高亮匹配文字（简单正则，忽略大小写）
+      function highlightMatch(text, q) {
+        if (!q) return text;
+        var idx = text.toLowerCase().indexOf(q.toLowerCase());
+        if (idx === -1) return text;
+        return text.slice(0, idx) + '<span class="result-match">' + text.slice(idx, idx + q.length) + '</span>' + text.slice(idx + q.length);
+      }
+
+      // 渲染下拉结果
+      function showResults() {
+        var q = input.value.trim();
+        resultsEl.innerHTML = '';
+        if (!q) {
+          resultsEl.classList.remove('show');
+          document.querySelectorAll('.highlight-card').forEach(function(c) {
+            c.classList.remove('highlight-card');
+          });
+          return;
+        }
+        var lowerQ = q.toLowerCase();
+        var matched = apps.filter(function(a) {
+          return a.name.toLowerCase().indexOf(lowerQ) !== -1 ||
+                 a.desc.toLowerCase().indexOf(lowerQ) !== -1;
+        });
+        if (matched.length === 0) {
+          resultsEl.innerHTML = '<div class="search-no-results">未找到匹配的 App</div>';
+          resultsEl.classList.add('show');
+          return;
+        }
+        matched.forEach(function(app) {
+          var item = document.createElement('div');
+          item.className = 'search-result-item';
+          item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
+                           '<div class="result-section">' + app.section + '</div>';
+          item.addEventListener('click', function() {
+            var card = app.card;
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            card.classList.add('highlight-card');
+            setTimeout(function() { card.classList.remove('highlight-card'); }, 2600);
+            input.value = '';
+            resultsEl.classList.remove('show');
+          });
+          resultsEl.appendChild(item);
+        });
+        resultsEl.classList.add('show');
+      }
+
+      input.addEventListener('input', showResults);
+      // 点击页面其它区域时关闭下拉
+      document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !resultsEl.contains(e.target)) {
+          resultsEl.classList.remove('show');
+        }
+      });
+      // 键盘交互：↑↓ 选择，Enter 确认，Esc 关闭
+      input.addEventListener('keydown', function(e) {
+        var items = resultsEl.querySelectorAll('.search-result-item');
+        if (!items.length) return;
+        var active = resultsEl.querySelector('.search-result-item.active');
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (active) active.classList.remove('active');
+          var next = active ? Array.from(items).indexOf(active) + 1 : 0;
+          if (next >= items.length) next = 0;
+          items[next].classList.add('active');
+          items[next].scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (active) active.classList.remove('active');
+          var prev = active ? Array.from(items).indexOf(active) - 1 : items.length - 1;
+          if (prev < 0) prev = items.length - 1;
+          items[prev].classList.add('active');
+          items[prev].scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'Enter' && active) {
+          e.preventDefault();
+          window.open(active.dataset.url, '_blank');
+        } else if (e.key === 'Enter' && !active && input.value.trim()) {
+          e.preventDefault();
+          window.open('../search.html?q=' + encodeURIComponent(input.value.trim()), '_blank');
+        } else if (e.key === 'Escape') {
+          resultsEl.classList.remove('show');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
