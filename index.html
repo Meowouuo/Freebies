@@ -278,14 +278,14 @@ body {
 
 
     /* 搜索功能 - 简洁白底风格 */
-    .header .search-wrap {
+    .search-wrap {
       overflow: visible;
       position: relative;
       max-width: 600px;
       margin: 16px auto 0;
       padding: 0 16px;
     }
-    .header .search-inner {
+    .search-inner {
       display: flex;
       align-items: center;
       background: #fff;
@@ -294,11 +294,11 @@ body {
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .header .search-inner:focus-within {
+    .search-inner:focus-within {
       border-color: #4285f4;
       box-shadow: 0 2px 12px rgba(66,133,244,0.2);
     }
-    .header .search-input {
+    .search-input {
       flex: 1;
       padding: 12px 16px 12px 6px;
       border: none;
@@ -308,16 +308,16 @@ body {
       outline: none;
       min-width: 0;
     }
-    .header .search-input::placeholder {
+    .search-input::placeholder {
       color: #999;
     }
-    .header .search-wrap .search-icon {
+    .search-wrap .search-icon {
       flex-shrink: 0;
       margin-left: 14px;
       pointer-events: none;
       display: block;
     }
-    .header .search-results {
+    .search-results {
       display: none;
       position: absolute;
       top: calc(100% + 8px);
@@ -331,10 +331,10 @@ body {
       z-index: 9999;
       border: 1px solid #f0f0f0;
     }
-    .header .search-results.show {
+    .search-results.show {
       display: block;
     }
-    .header .search-result-item {
+    .search-result-item {
       display: block;
       padding: 12px 16px;
       font-size: 14px;
@@ -344,26 +344,26 @@ body {
       cursor: pointer;
       transition: background 0.15s;
     }
-    .header .search-result-item:last-child {
+    .search-result-item:last-child {
       border-bottom: none;
     }
-    .header .search-result-item:hover {
+    .search-result-item:hover {
       background: #f8f9fa;
     }
-    .header .search-result-item .result-name {
+    .search-result-item .result-name {
       font-weight: 600;
       color: #1a1a1a;
       margin-bottom: 2px;
     }
-    .header .search-result-item .result-section {
+    .search-result-item .result-section {
       font-size: 12px;
       color: #999;
     }
-    .header .search-result-item .result-match {
+    .search-result-item .result-match {
       color: #4285f4;
       font-weight: 700;
     }
-    .header .search-no-results {
+    .search-no-results {
       padding: 16px;
       font-size: 14px;
       color: #999;
