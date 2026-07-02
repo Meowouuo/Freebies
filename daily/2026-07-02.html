@@ -1,0 +1,2636 @@
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  每日 App Store 限免速报 · 标准模板                       ║
+  ║  版本: 2.2 (2026.06.22)                                  ║
+  ║  更新: 简介+详情展开/收起                                    ║
+  ║  基于: 限免速报-2026-05-27.html (已验证正确)               ║
+  ║                                                            ║
+  ║  ⚠️ 严格规则：                                            ║
+  ║  1. 生成每日 HTML 时，必须完整复制此模板的 CSS 部分        ║
+  ║  2. 不得修改任何 CSS 类名、样式值或 HTML 结构层级           ║
+  ║  3. 只替换占位符内容（日期、统计数字、App 数据）            ║
+  ║  4. App Store 链接格式: https://apps.apple.com/app/idXXXX  ║
+  ║     （不带 /cn/ 前缀，所有链接必须 target="_blank"）       ║
+  ║  5. 兑换码链接格式: https://apps.apple.com/redeem/        ║
+  ║     ?ctx=offercodes&id=XXX&code=XXX                       ║
+  ║  6. 不得包含任何 GitHub Pages 相关文字或链接               ║
+  ║  7. 所有图标 URL 必须来自 iTunes Search API 的            ║
+  ║     artworkUrl100 字段                                    ║
+  ║  8. 同一 App 在不同板块出现时，图标 URL 必须完全一致       ║
+  ║                                                            ║
+  ║  卡片类型：                                                ║
+  ║  - .iap-card: 内购限免（红色左边框）                       ║
+  ║  - .code-card: 兑换码（黄色左边框）                       ║
+  ║  - .free-card: 本体限免（无左边框，白色背景）             ║
+  ║  - .deal-card: 折扣精选（绿色左边框）                     ║
+  ║  - .bundle-card: 捆绑/合集（可选紫色或蓝色变体）           ║
+  ║                                                            ║
+  ║  徽章类型：                                                ║
+  ║  - .badge-free: 本体限免价格（蓝色）                       ║
+  ║  - .badge-deal: 折扣价格（绿色）                           ║
+  ║  - .code-badge: 内购区兑换码提示（黄色）                   ║
+  ║  - .code-box: 兑换码区一键兑换按钮（深色背景+金色文字）   ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="../icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
+  <link rel="shortcut icon" href="../icons/favicon.ico">
+  <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+  <link rel="manifest" href="../icons/site.webmanifest">
+  <meta name="theme-color" content="#667eea">
+  <!-- 占位符: 每日 App Store 限免速报 - 2026.07.02 = "每日 App Store 限免速报 - YYYY.MM.DD" -->
+  <title>每日 App Store 限免速报 - 2026.07.02</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow-x: hidden;
+      width: 100%;
+      color: #333;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 12px 30px;
+    }
+    .header {
+      position: relative;
+      text-align: center;
+      padding: 40px 20px 30px;
+      color: #fff;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .header .date {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .stat-item {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .stat-item:hover {
+      background: rgba(255,255,255,0.35);
+      transform: translateY(-1px);
+    }
+    .stat-item:active {
+      transform: scale(0.96);
+    }
+    .stat-item span {
+      font-size: 18px;
+      font-weight: 700;
+      display: block;
+    }
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+    }
+    .header-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+    }
+    .header-btn:hover {
+      background: rgba(255,255,255,0.28);
+      transform: scale(1.1);
+    }
+    .header-btn:active {
+      transform: scale(0.9);
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      transform: scale(1.1);
+    }
+    .back-to-top:active {
+      transform: scale(0.9);
+    }
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 16px;
+      margin-top: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .section-header .icon {
+      font-size: 24px;
+    }
+    .section-header h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+    }
+    .section-header .count {
+      font-size: 13px;
+      color: #999;
+      margin-left: auto;
+    }
+    .iap-card, .code-card, .free-card, .deal-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: #fafafa;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .iap-card:hover, .code-card:hover, .free-card:hover, .deal-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .iap-card {
+      background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+      border-left: 3px solid #e53e3e;
+    }
+    .code-card {
+      background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+      border-left: 3px solid #d69e2e;
+    }
+    .deal-card {
+      background: linear-gradient(135deg, #f0fff4 0%, #fff 100%);
+      border-left: 3px solid #38a169;
+    }
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .app-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .app-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .app-desc {
+      font-size: 13px;
+      color: #718096;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .desc-label {
+      font-weight: 600;
+      color: #4a5568;
+    }
+    .desc-detail {
+      overflow: hidden;
+      max-height: 1.5em;
+      transition: max-height 0.3s ease;
+    }
+    .desc-detail.open {
+      max-height: 500px;
+    }
+    .desc-toggle {
+      display: inline-block;
+      font-size: 12px;
+      color: #667eea;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 2px;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .desc-toggle:hover {
+      text-decoration: underline;
+    }
+    .store-link {
+      display: inline-block;
+      font-size: 12px;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 4px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .store-link:hover {
+      text-decoration: underline;
+    }
+    .qr {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      margin-top: 6px;
+      display: block;
+    }
+    .badge-free {
+      display: inline-block;
+      background: #ebf8ff;
+      color: #3182ce;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .badge-deal {
+      display: inline-block;
+      background: #f0fff4;
+      color: #38a169;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .code-badge {
+      display: inline-block;
+      background: #fefcbf;
+      color: #975a16;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .code-box {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      color: #f6e05e;
+      font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: transform 0.15s;
+      position: relative;
+      z-index: 1;
+    }
+    .code-box:hover {
+      transform: scale(1.03);
+    }
+    .footer {
+      text-align: center;
+      color: rgba(255,255,255,0.8);
+      font-size: 12px;
+      padding: 24px 16px;
+      margin-top: 16px;
+    }
+    .footer a {
+      color: rgba(255,255,255,0.9);
+    }
+    .footer .sources {
+      margin-top: 8px;
+      font-size: 11px;
+      opacity: 0.7;
+    }
+    .iframe-note {
+      display: none;
+      background: #fffbeb;
+      border: 1px solid #f6e05e;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #975a16;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    /* 捆绑/合集卡片（无图标） */
+    .bundle-card {
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: #fafafa;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .bundle-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .bundle-purple {
+      background: linear-gradient(135deg, #f3e5f5 0%, #fff 100%);
+      border-left: 3px solid #9c27b0;
+    }
+    .bundle-blue {
+      background: linear-gradient(135deg, #e8eaf6 0%, #fff 100%);
+      border-left: 3px solid #3f51b5;
+    }
+    .bundle-desc {
+      font-size: 13px;
+      color: #718096;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .bundle-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    /* 搜索功能 - 简洁白底风格 */
+    .search-wrap {
+      overflow: visible;
+      position: relative;
+      max-width: 600px;
+      margin: 16px auto 0;
+      padding: 0 16px;
+    }
+    .search-inner {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-inner:focus-within {
+      border-color: #4285f4;
+      box-shadow: 0 2px 12px rgba(66,133,244,0.2);
+    }
+    .search-input {
+      flex: 1;
+      padding: 12px 16px 12px 6px;
+      border: none;
+      background: transparent;
+      color: #333;
+      font-size: 15px;
+      outline: none;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    .search-input::placeholder {
+      color: #999;
+    }
+    .search-wrap .search-icon {
+      flex-shrink: 0;
+      margin-left: 14px;
+      pointer-events: none;
+      display: block;
+    }
+    .search-results {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      max-height: 360px;
+      overflow-y: auto;
+      z-index: 9999;
+      border: 1px solid #f0f0f0;
+    }
+    .search-results.show {
+      display: block;
+    }
+    .search-result-item {
+      display: block;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #f8f8f8;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .search-result-item:last-child {
+      border-bottom: none;
+    }
+    .search-result-item:hover {
+      background: #f8f9fa;
+    }
+    .search-result-item .result-name {
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .search-result-item .result-section {
+      font-size: 12px;
+      color: #999;
+    }
+    .search-result-item .result-match {
+      color: #4285f4;
+      font-weight: 700;
+    }
+    .search-no-results {
+      padding: 16px;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+    .highlight-card {
+      animation: highlightPulse 1.2s ease-in-out 2;
+    }
+    @keyframes highlightPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(66,133,244,0.6); }
+      70%  { box-shadow: 0 0 0 8px rgba(66,133,244,0); }
+      100% { box-shadow: 0 0 0 0 rgba(66,133,244,0); }
+    }
+
+
+    .highlight-card {
+      animation: highlightPulse 1.2s ease-in-out 2;
+    }
+    @keyframes highlightPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(102,126,234,0.6); }
+      70%  { box-shadow: 0 0 0 8px rgba(102,126,234,0); }
+      100% { box-shadow: 0 0 0 0 rgba(102,126,234,0); }
+    }
+    @media (max-width: 480px) {
+      .app-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+      }
+      .iap-card, .code-card, .free-card, .deal-card, .bundle-card {
+        padding: 12px 10px;
+        gap: 10px;
+      }
+      .app-name {
+        font-size: 14px;
+      }
+      .app-desc {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ===== Header ===== -->
+    <div class="header">
+      <h1>每日 App Store 限免速报</h1>
+      <!-- 占位符: 2026.07.02 如 "2026.05.28" -->
+      <div class="date">2026.07.02</div>
+      <!-- 占位符: 统计数字，每项一个可点击跳转的 .stat-item -->
+      <!-- 格式: <a class="stat-item" href="#section-xxx"><span>{数字}</span>{标签}</a> -->
+      <div class="stats">
+        
+        <a class="stat-item" href="#section-iap"><span>11</span>内购免</a>
+        <a class="stat-item" href="#section-free"><span>32</span>本体免</a>
+        <a class="stat-item" href="#section-deal"><span>5</span>折扣</a>
+        <a class="stat-item" href="#section-code"><span>10</span>兑换码</a>
+        <a href="../index.html" class="header-btn" title="返回首页"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9,21 9,13 15,13 15,21"/></svg></a>
+        <a class="header-btn" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;" href="#"><svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></a>
+      </div>
+
+    </div>
+
+    <!-- 搜索框（放在 header 外部，避免 overflow:hidden 裁剪下拉框） -->
+    <div class="search-wrap">
+      <div class="search-inner">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="iframe-note" id="iframeNote">
+      ⚠️ 检测到在 iframe 中运行，部分链接可能无法正常跳转。建议用 Safari 打开或扫码访问～
+    </div>
+
+    <!-- ===== 🔥 内购限免 · 重点推荐 ===== -->
+    
+    <div class="section" id="section-iap">
+      <div class="section-header">
+        <span class="icon">🔥</span>
+        <h2>内购限免 · 重点推荐</h2>
+        <span class="count">11款</span>
+      </div>
+      
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/44/33/66/443366e5-2007-6fb2-e879-0994dc510351/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Picmori: Gallery Cleaner" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Picmori: Gallery Cleaner</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>相册清理工具，智能识别并清理重复照片
+              <div class="desc-detail" id="detail-iap-6761053947">
+                <span class="desc-label">详情：</span>留下美好 / 滑走烦恼
+
+手机里 1000+ 张照片。
+你上次认真翻看是什么时候?
+
+Picmori 是一款照片清理工具,帮你用一次滑动,重新发现被遗忘的回忆。
+
+右滑 — 保留。
+左滑 — 删除。
+就这么简单。
+
+使用方法
+在熟悉的滑动界面中,一张一张浏览相册。
+重温每一个瞬间,快速做出选择,释放存储空间。
+
+相似照片与重复
+Picmori 自动识别相似照片和重复项,并智能归类。
+在每一组里挑出最佳那张 — 其他的,放手吧。
+
+会话统计
+记录你浏览、保留和删除的照片数量。
+看着相册一次比一次更轻。
+
+隐私优先
+所有操作都在本机完成。
+你的照片绝不上传、分享或发送到任何地方。
+
+选择 PICMORI 的理由
+• 清理相册,不丢失重要回忆
+• 瞬间找出重复和相似照片
+• 几分钟释放存储空间,而不是几小时
+• 完全离线运行
+
+少一点杂乱,多一份珍贵回忆。
+下载 Picmori,重新爱上你的相册。
+
+© 2026 Aleksandrs Voz. 版权所有。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6761053947')" id="toggle-iap-6761053947">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6761053947" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6761053947" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e1/65/37/e1653788-c37e-ae95-f495-cd710a4ec68b/AppIcon-0-1x_U007epad-0-1-0-85-220-0.png/100x100bb.jpg" alt="Sparq Quick Messages" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Sparq Quick Messages</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>快捷消息发送工具，快速发送预设消息
+              <div class="desc-detail" id="detail-iap-6743850240">
+                <span class="desc-label">详情：</span>Sparq is the fastest way to send messages when you don’t have time to type.
+With Sparq, you create your own quick replies and use them instantly with your contacts — making conversations fast, easy, and effortless. Whether you’re on the go, in a meeting, or just need to respond right away, Sparq keeps you connected in seconds.
+
+- Create and customize your favorite quick replies
+- Send them instantly with just a tap
+- Optimized for iOS and watchOS so you can reply right from your wrist
+- Quick &amp; secure message shortcuts
+- Stay connected without the hassle of typing or long chats
+
+Sparq is all about lightning-fast, secure communication that fits seamlessly into your busy life. With a sleek, intuitive design optimized for both iOS and watchOS, Sparq makes staying in touch simple, convenient, and reliable.
+
+Currently, Sparq works seamlessly with Apple Messages, WhatsApp, Telegram, and Viber, unifying your favorite chats in one place. And we’re just getting started: support for more services is on the way, so you can connect however and wherever you like.
+
+Download Sparq today and experience messaging without limits!
+
+Privacy Policy: https://patsis.github.io/sparqapp/privacy
+Terms of Use: https://patsis.github.io/sparqapp/terms
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6743850240')" id="toggle-iap-6743850240">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6743850240" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6743850240" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/35/54/af/3554af11-c112-b901-2aa8-294b2978f7da/AppIcon-1x_U007ephone-0-1-85-220-0.png/100x100bb.jpg" alt="TimePulse" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">TimePulse</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>时脉：时间洞察习惯矩阵，追踪时间使用和分析习惯
+              <div class="desc-detail" id="detail-iap-6761639932">
+                <span class="desc-label">详情：</span>时脉帮助你看见，时间是如何一点点变成生活轨迹的。
+
+  它把实时钟表、每日习惯和轻量情绪记录放在同一个界面里，让你用更平静的方式观察自己的节奏，而不是被复杂面板打扰。
+
+  免费功能：
+  • 翻页感时钟首页
+  • 每日习惯与连续记录
+  • 快速情绪打卡与短备注
+  • 情绪时间线与最近记录
+
+  时脉 Pro 解锁：
+  • 无限习惯
+  • 时脉洞察
+  • iCloud 同步
+  • 更清晰的长期节奏视图
+
+  时脉强调快速、清晰和克制，让记录成为日常的一部分，而不是额外负担。
+
+  购买和订阅由你的 Apple ID 管理。
+  使用条款：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+  隐私政策：https://timepulse-app.newtree.tech/zh-Hans/privacy.html
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6761639932')" id="toggle-iap-6761639932">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6761639932" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6761639932" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cc/10/39/cc1039aa-494a-d4cf-1554-3d96165afe70/AppIcon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="FlipAnswer – The Book of Answers" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">FlipAnswer – The Book of Answers</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>答案之书，随机获取生活启示和答案
+              <div class="desc-detail" id="detail-iap-6763525728">
+                <span class="desc-label">详情：</span>问爱情、问运势、问人生，也能定制你的专属答案之书。
+
+
+你可以在这里找到：
+・爱情与关系：关于喜欢、失恋、暧昧、关系里的不确定。
+・职场与日常选择：关于压力、犹豫、迷茫，以及那些还没想清楚的小事。
+・生活与情绪：关于夜晚的心事、反复内耗、低落时刻，以及需要被轻轻接住的时候。
+
+
+你还可以：
+・收藏那些刚好击中你的回应
+・解锁更多适合不同心情和时刻的内容
+・更换自定义皮肤，让每一次翻阅更有仪式感
+・和朋友一起提问，把翻翻变成轻松有趣的互动
+・在情绪起伏的时候，回来获得一个安静的停顿
+
+
+适合这些时刻打开：
+・关系里有点不确定，想整理自己的感受
+・压力很大，想要一句轻轻的鼓励
+・反复纠结，想让心里的声音浮出来
+・情绪有点重，想先缓一口气
+・夜深人静，想被一句话温柔地接住
+・只是想给今天一个小小的停顿
+
+联系我们: xyzzy.baz@icloud.com
+用户条款: https://www.notion.so/likexin/FlipAnswer-Terms-of-Uses-35bf7757046f808d8f63db03a54a75b9
+隐私政策: https://www.notion.so/likexin/FlipAnswer-Privacy-Policy-35af7757046f80b48071f41dfa5fb794
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6763525728')" id="toggle-iap-6763525728">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6763525728" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6763525728" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5b/d8/27/5bd827f1-50ba-ebfd-6fef-9041ee1494f8/AppIcon-0-0-85-220-0-5-0-2x-0-0-0.png/100x100bb.png" alt="DeskBoard2 - Draw on Your Desktop" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">DeskBoard2 - Draw on Your Desktop</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>桌面绘制演示工具，在桌面上涂鸦和标注 [macOS]
+              <div class="desc-detail" id="detail-iap-6758047889">
+                <span class="desc-label">详情：</span>直接在桌面上绘制
+DeskBoard2 将讲解、演示和展示所需的工具整合到一个 macOS 应用中。
+你可以直接在屏幕上绘制、突出重点、进行屏幕捕获和录制，并同时使用摄像头浮层和按键输入浮层。
+
+绘图工具
+使用多种画笔和形状，直接在桌面上绘制草图和添加注释。
+- 画笔、细笔和荧光笔
+- 直线、矩形、圆形、箭头、文本和标记
+- 编辑模式、线条粗细、线条样式等丰富选项
+
+视觉屏幕效果
+通过专业的视觉效果吸引注意力，并引导观众关注重点内容。
+- 屏幕覆盖效果
+- 屏幕模糊效果
+- 聚光灯和焦点效果
+
+光标效果
+通过交互式光标动画，让每一次点击都更清晰易懂。
+- 点击效果
+- 光标轨迹效果
+- 多种点击和轨迹样式
+
+屏幕捕获与录制
+捕获或录制屏幕，并立即使用生成的内容。
+- 支持屏幕捕获和录制
+- 可固定和编辑图片与视频
+- 使用 AI 自动分类捕获图片标签
+- 实时捕获翻译
+- 文本提取与翻译
+
+摄像头浮层
+将摄像头画面显示在屏幕上，让演示和讲解更直观、更有效。
+- 在屏幕上显示摄像头视频
+- 可调整位置和大小
+
+按键输入浮层
+在屏幕上显示你输入的键盘快捷键，方便说明操作方法和工作流程。
+- 显示键盘快捷键浮层
+- 多种键帽颜色和浮层动画
+- 支持显示屏蔽模式
+
+深度集成 macOS
+自然融入 macOS 环境，提供流畅一致的使用体验。
+- 支持单显示器和单空间
+- 支持多显示器和多空间
+- 支持全屏模式
+
+专为 Mac 高级用户打造
+DeskBoard2 不只是一个演示工具。它能为日常 Mac 使用带来更清晰、更高效、更愉快的体验。
+
+权限说明
+- 使用捕获和录制功能时，需要 macOS 屏幕录制权限。
+- 使用摄像头浮层时，需要摄像头权限。
+- 若要在按键输入浮层中显示键盘快捷键，需要输入监控权限。
+- 所有功能仅在用户授予所需权限后才会启用。
+- 捕获内容和屏幕录制文件会本地保存到用户允许的位置。
+- 按键输入仅在设备本地处理，不会存储或传输到外部。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6758047889')" id="toggle-iap-6758047889">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6758047889" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6758047889" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d0/ea/50/d0ea5089-71a8-2989-6563-8188c4374046/AppIcon.lsr/100x100bb.jpg" alt="Pulse of Time" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Pulse of Time</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>时间的脉搏之恐龙末日，AR沉浸式体验 [Apple Vision]
+              <div class="desc-detail" id="detail-iap-6770068403">
+                <span class="desc-label">详情：</span>Step inside history brought to life as immersive 3D experiences built for Apple Vision Pro.
+This is not a video on a screen. Each experience surrounds you with life-sized environments, spatial sound, realistic scale, and cinematic storytelling. Instead of watching from the outside, you are placed at the center of defining moments as they unfold around you.
+
+Explore real events recreated with atmosphere, realism, and a powerful sense of presence. Look around freely, feel the scale of the world, and witness characters, creatures, and dramatic scenes as if you were there.
+
+Some characters and creatures can sense your presence, making each world feel more alive, personal, and immersive. Every scene is designed to feel memorable, emotional, and cinematic in a way only Apple Vision Pro can deliver.
+
+Experience the past in a way you do not simply watch.
+
+Step inside it.
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6770068403')" id="toggle-iap-6770068403">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6770068403" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6770068403" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c6/ab/0c/c6ab0ccf-8dde-84f5-2216-906edaafb94d/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/100x100bb.jpg" alt="Learn Piano Fast With Numbers" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Learn Piano Fast With Numbers <span class="code-badge">一键兑换: PIANOFREE</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>数字钢琴学习，用数字标注快速弹奏钢琴
+              <div class="desc-detail" id="detail-iap-6474135691">
+                <span class="desc-label">详情：</span>Learn piano from scratch with numbers and letter notes songs.
+Learn piano notes ABC Do Re Mi notes.
+Click to yellow key to learn Piano step by step.
+Real Piano sound and Acoustic Simply Guitar sound to play.
+
+Piano number - learn piano fast with numbers. You don´t need to learn the music theory! You follow a brilliant number system that we developed and thanks to it you can play famous songs immediately. Learn piano with numbers - Learn piano fast is for anyone looking to learn the piano from scratch or those who have prior knowledge and want to continue learning by practicing playing along with their favorite songs. The app is ideal to improve your memory, coordination, concentration, peripheral vision and last but not least fast reaction and sharp eye. Learn Piano with numbers on the keys.
+
+Unlike other piano apps out there, this Simple Piano learning app provides the hassle free experience to freely express your love for the music. Is piano your favorite musical instrument that you feel out of touch with now? For many piano lovers like you in the world who either can&#x27;t afford a real instrument or are hesitant to start learning, this game Learn Piano musical keyboard is an ideal solution for both cases!
+
+Features of Learn Piano App Offline:
+• Learn piano from scratch step by step ABC.
+• Learn lots of Piano songs with the help of Piano letter notes and beginners friendly piano keyboard. 
+• Learn Piano Lessons Free App.
+• Real Piano sound and Acoustic Guitar sound to play.
+
+
+Terms of Use (EULA):
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6474135691')" id="toggle-iap-6474135691">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6474135691" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6474135691" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/49/48/4b/49484bb0-27b0-eb41-d568-b9174b2e3709/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/100x100bb.jpg" alt="Match-3 Puzzle: Snake Color" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Match-3 Puzzle: Snake Color <span class="code-badge">一键兑换: SNAKEFREE</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>三消贪吃蛇方块拼图，策略消除益智游戏
+              <div class="desc-detail" id="detail-iap-6761673910">
+                <span class="desc-label">详情：</span>▶ Guide falling snakes and match colors to clear blocks, trigger powerful combos, and survive as long as you can.
+▶ Every move matters. Plan your placement, create massive chain reactions, and activate special blocks to clear the board before it fills up.
+▶ As the speed increases and new colors appear, the challenge keeps growing.
+
+▶ FEATURES
+▷ Unique gameplay combining snake movement, block stacking, and Match-3 puzzles.
+▷ Create satisfying combo chains and high-scoring plays.
+▷ Activate Fire and Lightning blocks to clear multiple rows.
+▷ Endless gameplay with increasing speed and difficulty.
+▷ Compete on the global Game Center leaderboard.
+
+Terms of Use (EULA):
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6761673910')" id="toggle-iap-6761673910">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6761673910" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6761673910" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3a/75/fa/3a75fa0d-acc7-d81a-ba74-106b052cc01b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Couple games" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Couple games <span class="code-badge">应用内输入: QLYXONE</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>情侣游戏，增进感情的互动小游戏
+              <div class="desc-detail" id="detail-iap-6762446813">
+                <span class="desc-label">详情：</span>Clover Couple Games is a collection of interactive mini-games made for date nights, two-player fun, and friends&#x27; parties.
+
+Not sure what to do tonight? Break the ice, start a conversation, and enjoy one round at a time.
+
+GAMES IN ONE APP
+• Truth — from playful to heartfelt, get to know each other
+• Dare — interactive tasks that keep the game moving
+• Truth or Dare — the classic random mix, for two or a group
+• Couple&#x27;s Ludo — roll, move, and take on fun dares together
+• Couple Minesweeper — hit a mine, do a task
+• Capsule Machine — draw a random surprise
+• Pose Challenge — strike a pose for playful photos
+• Tonight&#x27;s Script — a guided round, from icebreakers to shared moments
+
+PICK YOUR VIBE
+Beginner · Advanced · Challenge · Random. Set the mode that fits your mood — easy icebreakers or playful dares.
+
+MADE FOR TWO (AND MORE)
+• Add nicknames so tasks feel personal
+• Write your own custom truths and dares
+• Daily couple challenges, share cards, and little love tools
+• Play side by side, or connect two phones for nearby play
+
+GREAT FOR
+Date nights · long-distance video calls · anniversaries · birthdays · parties · road trips · game nights
+
+No account required. No subscription — a one-time purchase unlocks the full pack forever.
+
+———
+Everything is just a suggestion for fun between partners and friends. Use with mutual respect and clear boundaries, and skip anything that doesn&#x27;t feel right. Always put safety first.
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-6762446813')" id="toggle-iap-6762446813">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6762446813" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id6762446813" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/a3/16/44/a31644ae-b00e-5d01-ebff-a6e1f7076b40/AppIcon-ASL-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/100x100bb.jpg" alt="The ASL App" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">The ASL App</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>由聋人社区打造的美式手语学习应用，通过视频学习日常手语
+              <div class="desc-detail" id="detail-iap-921030207">
+                <span class="desc-label">详情：</span>The ASL App is made by Deaf people for you! Learn conversational ASL right now, on the go, with all phrases and signs organized to make it easy for you to learn. 
+
+The ASL App is designed to help you learn a new visual language in a way that is easy, intuitive, and well paced. You can drag your finger on the videos to control the speed - totally at your pace. There is a search index (when you need to know a sign right away), slow-motion option, info (tips), and a favorites folder. 
+
+You can save the signs you want to review again in your own favorites folder where you can go back to it and practice more; and even better - you can upload different what signs you&#x27;ve learned to Twitter and Facebook. Share with your friends, make learning ASL fun, and progressive!!
+
+Get started NOW - download and get your first bundle of signs today! 
+
+The ASL App Pack offers you everything - the entire collection - of current available bundles and future releases! Everything for $9.99. This also removes ads.
+
+Bundles:
+• Know Your ABCs - Learn the ASL alphabet (included, FREE!)
+• Know Your Numbers - Learn all the numbers (included, FREE!)
+• Universal Gestures - Review what you already know (included, FREE!)
+• Handshape Exercises - Warm up your hands, and get used to the different handshape positions. Get your muscles to become fluently aware. (included, FREE!)
+• The Basics! A good way to get started! (included, FREE!)
+• More Basic Signs! Again, a collection of more basic signs. (Paid)
+• Looking Good Today! A collection of signs that is related to looks, fashion, and different complimenting phrases. (Paid) 
+• Mood Swings! A collection of signs for different moods, emotions, feelings. (Paid)
+• Life of the Party! A collection of signs/phrases designed to fit what will be said at social events, or at bars. (Paid)
+• Dining &amp; Signing! Signs and phrases for eating out, for the restaurant industry. (Paid)
+• Foodies, Rejoice! Signs and phrases covering food, dishes, drinks, and different ways related to eating. (Paid) 
+• The Wilderness Beckons! Different signs and phrases of our natural environment. Perfect if you like camping, hiking, or road trips a lot. (Paid)
+• Great Timing! Signs related to time, scheduling, calendars, days of the week, and more. (Paid)
+• Dollar and Signs! Everything related to money, budgeting, invoicing, making payments and so on. (Paid)
+• Country Name Signs! Learn the name signs of countries around the world. 
+• Colors! Learn all the signs for colors with some phrases! (Free)
+•Nyle&#x27;s Sampler! Features Nyle DiMarco, winner of American&#x27;s Next Top Model and ABC&#x27;s Dance With The Stars. (Free)
+• Sign That! with Nyle. Many fun signs and phrases you want to ask Nyle, or ask through social media! (Paid)
+• Celebrations! Nyle loves holidays and celebrations, especially Halloween and Valentine.  He will teach you how to be festive in ASL!  This bundle include a variety of signed words and beneficial phrases to help your season greetings look authentic. (Paid)
+• Family Signs! This bundle will teach you the signs for family members: immediate and extended, loved ones and even your nosy neighbors!
+• Family Milestones &amp; Life Events! You&#x27;ll learn signs for marriage, wedding, divorce, children, adoption, pregnancies, and much more!
+• Pop Culture and Social Media! What&#x27;s current, popular and trending? Here, Nyle shows you the signs from 3D movies to buying tickets for Broadway!
+• Sign and Vote! Learn how to say &quot;register to vote&quot; and how to sign President, blue or red states, and many more!
+• All About Sports!  Learn signs to use with your fellow sports fans!
+• Education &amp; Higher Education!  Learn all about those signs used in Education!
+• LGBT &amp; Pride!  Learn all about Pride and LGBT signs!
+• Emergency Signs! Learn signs to use in first responder or emergency situations.
+
+
+Got questions, comments, or ideas - contact us at hello@theaslapp.com!
+
+Start signing!
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-921030207')" id="toggle-iap-921030207">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id921030207" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id921030207" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+        <div class="iap-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/40/e0/64/40e06475-9783-5ad1-8856-d90c6a7d2309/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="KORG Module" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">KORG Module</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>专业级移动声音模块，高品质钢琴和键盘音色
+              <div class="desc-detail" id="detail-iap-1048875111">
+                <span class="desc-label">详情：</span>The best sounds, available to everyone. FREE version lets you experience the high-quality piano &amp; keyboard sound. Announcing a new high-quality mobile sound module app for iOS!
+
+• KORG Module Pro (Full version): Achieved the #1 position on Ideal for performance and music production, KORG Module is a high-quality sound module app for iOS that contains a professional sound library. With just your iPad/iPhone and a MIDI keyboard such as the KORG microKEY, you can play studio-quality keyboard and grand piano sounds anywhere.
+
+FEATURE HIGHLIGHTS
+● With just an iPad/iPhone and the new microKEY, you can enjoy great sound anywhere
+● Stunningly high-quality piano for free.
+● Customize your sound set: Available over 30 sound libraries from the Store page.
+● AUv3 support
+● Ultra-low latency sound engine
+● Unlock additional 4 sounds by connecting Korg MIDI controllers/synthesizers. Check the details from www.korg.com/bundle.
+
+More info at https://www.korg.com/products/software/korg_module/ !
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-iap-1048875111')" id="toggle-iap-1048875111">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1048875111" target="_blank" class="store-link">App Store 下载</a>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A//apps.apple.com/app/id1048875111" alt="QR" class="qr" loading="lazy" />
+          </div>
+        </div>
+    </div>
+
+    <!-- ===== 🔑 兑换码 / 兑换链接 ===== -->
+    
+    <div class="section" id="section-code">
+      <div class="section-header">
+        <span class="icon">🔑</span>
+        <h2>兑换码 / 兑换链接</h2>
+        <span class="count">10款个</span>
+      </div>
+      
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c6/ab/0c/c6ab0ccf-8dde-84f5-2216-906edaafb94d/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/100x100bb.jpg" alt="Learn Piano Fast With Numbers" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Learn Piano Fast With Numbers</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>数字钢琴学习，用数字标注快速弹奏钢琴</div>
+            
+            <a href="https://apps.apple.com/redeem/?ctx=offercodes&amp;id=6474135691&amp;code=PIANOFREE" target="_blank" class="code-box">一键兑换: PIANOFREE</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/49/48/4b/49484bb0-27b0-eb41-d568-b9174b2e3709/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/100x100bb.jpg" alt="Match-3 Puzzle: Snake Color" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Match-3 Puzzle: Snake Color</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>三消贪吃蛇方块拼图，策略消除益智游戏</div>
+            
+            <a href="https://apps.apple.com/redeem/?ctx=offercodes&amp;id=6761673910&amp;code=SNAKEFREE" target="_blank" class="code-box">一键兑换: SNAKEFREE</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3a/75/fa/3a75fa0d-acc7-d81a-ba74-106b052cc01b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Couple games" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Couple games</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>情侣游戏，增进感情的互动小游戏。含4个兑换码：情人节礼包(QLYXONE)、无限自定义(WXZDYCODE)、深度挑战包(TBZYHCODE)、全功能永久包(QGNBCODE)</div>
+            
+            <a href="" target="_blank" class="code-box">应用内输入: QLYXONE/WXZDYCODE/TBZYHCODE/QGNBCODE</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d3/96/db/d396dbd4-d4c1-6405-69ca-1507fa55afef/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="SpendFlex" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">SpendFlex</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>收支追踪器，轻松管理个人财务和预算规划</div>
+            <span style="display:block;font-size:12px;color:#975a16;margin-bottom:4px;">⏱ 终身Premium免费 · 剩余147/810</span>
+            <a href="https://www.promies.net/promotion/31cd391c-9ebd-4be4-be03-58a5be375ba1" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d3/96/db/d396dbd4-d4c1-6405-69ca-1507fa55afef/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="SpendFlex (2 Months)" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">SpendFlex (2 Months)</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>SpendFlex Premium — iOS 上 2 个月免费试用</div>
+            <span style="display:block;font-size:12px;color:#975a16;margin-bottom:4px;">⏱ 前2个月免费 · 剩余491/500</span>
+            <a href="https://www.promies.net/promotion/78ea7129-826e-407b-aa4e-f675cecdbc8d" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1e/3d/7a/1e3d7a4a-406c-2054-4687-89bbfbf011f6/OffKit_AppLogo-0-0-1x_U007epad-0-1-sRGB-85-220.png/100x100bb.jpg" alt="App Blocker OffKit" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">App Blocker OffKit</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>专注工作/学习，屏蔽干扰应用，提升效率</div>
+            <span style="display:block;font-size:12px;color:#975a16;margin-bottom:4px;">⏱ Pro 版终身免费 · 剩余3686/5000</span>
+            <a href="https://www.promies.net/promotion/64584b8f-4e02-4cc1-92ae-ae762ede4460" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1b/f3/c9/1bf3c9bc-4ba8-5a2e-5140-35a6f7a47fbf/AppIcon-0-0-1x_U007ephone-0-11-0-sRGB-85-220.png/100x100bb.jpg" alt="Monymo: Income Time Tracker" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Monymo: Income Time Tracker</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>收入时间追踪器，管理多来源收入和支出</div>
+            <span style="display:block;font-size:12px;color:#975a16;margin-bottom:4px;">⏱ 前6个月免费 · 剩余471/500</span>
+            <a href="https://www.promies.net/promotion/23f3ae9b-9be4-4f26-96e9-f98a4ee69b2b" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ad/d0/f3/add0f3f0-036f-44b6-2b6c-131b291fcbe5/TheirTime-0-0-1x_U007epad-0-1-sRGB-85-220.png/100x100bb.jpg" alt="TheirTime" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">TheirTime</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>情侣/朋友时间同步工具，共享日历和计划</div>
+            <span style="display:block;font-size:12px;color:#975a16;margin-bottom:4px;">⏱ 前3个月免费 · 剩余95/100</span>
+            <a href="https://www.promies.net/promotion/6f069410-b6d8-4887-ad18-5629d4cd63dd" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f3/43/26/f34326d2-0e78-b5d9-92d5-a594f0f31089/Launchie_Dots-0-0-85-220-0-6-0-2x.png/100x100bb.png" alt="Launchie - The Launchpad Alternative" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Launchie - The Launchpad Alternative</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>macOS 启动器替代工具，快速启动应用和管理窗口</div>
+            <span style="display:block;font-size:12px;color:#975a16;margin-bottom:4px;">⏱ 折扣价 $9.99（原价 $24.99） · 剩余973/1000</span>
+            <a href="https://www.promies.net/promotion/6360fe3a-1ae4-4565-99f9-e51b571b70d8" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+        <div class="code-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b0/9b/f1/b09bf1aa-df9c-f287-6620-ae4f251c0def/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="Peter" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Peter</div>
+            <div class="app-desc"><span class="desc-label">简介：</span>首月免费的应用订阅服务</div>
+            <span style="display:block;font-size:12px;color:#975a16;margin-bottom:4px;">⏱ 首月免费 · 剩余646/665</span>
+            <a href="https://www.promies.net/promotion/b710f706-d765-4a3c-b9fe-95d356c150ea" target="_blank" class="code-box">promies.net → 领取页面</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- ===== 🆓 本体限免 ===== -->
+    
+    <div class="section" id="section-free">
+      <div class="section-header">
+        <span class="icon">🆓</span>
+        <h2>本体限免</h2>
+        <span class="count">32款</span>
+      </div>
+      
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9c/0e/55/9c0e5588-247f-8921-ed3d-d0a4fd412e8d/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/100x100bb.jpg" alt="Colorzzle - easy color puzzle" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Colorzzle - easy color puzzle</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>配色花园游戏，通过颜色拼图放松身心
+              <div class="desc-detail" id="detail-free-1320446970">
+                <span class="desc-label">详情：</span>容易和缓慢的颜色益智享受
+
+2017年城南印地游戏大赛大奖得主
+
+颜色是一种颜色匹配的游戏。
+当你匹配相同的颜色，树木生长，鲜花盛开。
+如果你种植所有的树木和花朵，舞台是清晰的！
+
+有100个美丽的谜题。
+
+上手容易，更多的应用程序可用。
+尝试混合鲜花和鲜花。
+
+
+这个游戏是基于“大荣工作室”与一对夫妇和一个婴儿
+这是第一件作品。
+
+谢谢。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-1320446970')" id="toggle-free-1320446970">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1320446970" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/91/25/77/9125772e-9a1b-b855-fcd7-ef6df4a43e12/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="FastZen - Fasting Tracker" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">FastZen - Fasting Tracker</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>间歇性禁食计时器，科学管理饮食习惯
+              <div class="desc-detail" id="detail-free-6761484595">
+                <span class="desc-label">详情：</span>FastZen helps you track intermittent fasting with a focused timer, clear fasting zones, Live Activities, flexible plans, and private on-device history.
+
+START FASTING IN ONE TAP
+Choose 16:8, 18:6, 20:4, OMAD, or a custom duration. Start, stop, or cancel a fast without account setup or extra clutter.
+
+FOLLOW YOUR FAST FROM THE LOCK SCREEN
+Live Activities keep your active fast visible on the Lock Screen and Dynamic Island, with remaining time, progress, and your current fasting zone.
+
+SEE YOUR PROGRESS
+Follow elapsed time, remaining time, target duration, and your current fasting zone from a clean visual timeline.
+
+BUILD CONSISTENCY
+Review completed fasts, completion percentages, total fasting time, and your current streak.
+
+STAY PRIVATE
+FastZen does not require an account, server sync, or external analytics. Your fasting data stays on your device.
+
+FastZen is designed for people who want a simple, private, and visually calm way to make intermittent fasting easier to follow.
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6761484595')" id="toggle-free-6761484595">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6761484595" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/cd/e0/eacde084-872e-fc49-c53c-179d13c131b8/AppIcon-1x_U007epad-0-1-85-220-0.png/100x100bb.jpg" alt="DualCam AI" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">DualCam AI</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>前后双摄同时拍摄，创造独特的双视角照片和视频
+              <div class="desc-detail" id="detail-free-6769659110">
+                <span class="desc-label">详情：</span>DualCam AI是一款为 iPhone 打造的前后双摄拍摄工具。你可以在一次拍摄中同时记录眼前画面和自己的反应，让旅行、探店、运动、宠物、亲子和日常瞬间拥有两个视角。
+为什么使用 DualCam：
+- 前后双摄同时预览与录像
+- 多种布局，适合画中画、分屏和反应视频
+- 拍摄后可保存到系统相册，方便继续剪辑或分享
+- 支持横竖屏拍摄，适合不同场景
+- 无需登录，打开即可开始拍摄
+
+适合这些场景：
+
+- 旅行记录：拍下风景，也留下当下的表情
+- Vlog 创作：一次记录画面和讲述者
+- 反应视频：同步捕捉内容与反应
+- 生活分享：更快完成有现场感的短视频素材
+- 亲友时刻：同时记录正在发生的事和你看到它的样子
+
+DualCam AI是一款由 AI协助开发的原生双摄应用。
+它并不是第一款双摄相机，市面上也已经有不少相似的应用；DualCam AI的出现，只是希望在这些选择之外，给你多一个简单、轻量、顺手的选择。
+从想法诞生到第一个可用版本，只用了短短一天；
+但为了带来更顺畅、更稳定的使用体验，我们又花了一周认真打磨交互、性能和细节。由于真机测试覆盖有限，首发版本可能仍有不足。
+欢迎你体验DualCam AI，并把遇到的问题或建议反馈给我们。你的反馈会帮助它继续进化。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6769659110')" id="toggle-free-6769659110">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6769659110" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a4/0a/bc/a40abcc8-42a5-9a88-6a90-3a4ed528070d/AppIcon-0-0-1x_U007epad-0-1-85-220.jpeg/100x100bb.jpg" alt="Chillio Cleaning App" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Chillio Cleaning App</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>清洁区域规划追踪器，轻松管理家庭清洁任务
+              <div class="desc-detail" id="detail-free-6760094766">
+                <span class="desc-label">详情：</span>Chillio Cleaning App empowers you to effortlessly organize a home cleaning schedule for every area of your space. With a beautifully designed home cleaning checklist, the app intuitively tracks your progress, so you always know which tasks are done and which are next. Experience a seamless, organized approach to cleaning, keeping your environment pristine and your mind at ease.”
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6760094766')" id="toggle-free-6760094766">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6760094766" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f7/02/87/f70287a6-887d-58c7-3d9d-211b37fab9c3/AppIcon-0-0-1x_U007emarketing-0-6-85-220.jpeg/100x100bb.jpg" alt="Kaihe DIY Bartending" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Kaihe DIY Bartending</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>开喝 DIY 调酒应用，在家轻松调制鸡尾酒
+              <div class="desc-detail" id="detail-free-6743700208">
+                <span class="desc-label">详情：</span>开喝 App 是一款由大语言模型与风格化图像生成模型驱动的「情绪饮品」应用。向开喝倾诉你的心情、口味与场景，开喝 AI 会为你生成一杯专属饮品——配方、命名、插画、文案一应俱全。
+
+在这个碎片化、情绪过载的时代，我们想为你保留一处小小的仪式感：
+让每一种情绪，都能化作一杯可以喝下去、可以收藏、也可以被理解的饮品/数字卡片。以饮品为媒介，把「当下的你」定格为一个被记录、被记得的瞬间——一种把情绪数字化、视觉化、仪式化的轻型自我关照方式。
+
+核心功能亮点
+AI 调酒师：能记住你喜好的调酒师 Agent, 推荐酒单、创作配方。
+用日常语言描述心情、口味偏好、颜色与场景，获得只属于你的配方与故事。
+
+在家也能玩的【DIY 调酒】
+自动生成酒卡与详细步骤，零门槛复刻新花样。
+
+10+ 风格饮品卡
+多种视觉风格可选，支持下载、分享、打印；在家也能做出“酒吧级”酒单。
+
+智能库存识别
+拍照识别你现有原料与酒具，自动呈现可做清单与基础介绍。
+
+调酒笔记 / 品鉴记录
+记录每一次口感与心情，让微醺体验被长期看见。
+
+品类延展
+从「酒」走向更广义的情绪饮品：咖啡、茶、气泡饮、睡前奶、疗愈热饮等，帮你以更轻松、更有趣的方式“为情绪端上一杯”。
+
+即可用开喝微醺调一杯吧~
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6743700208')" id="toggle-free-6743700208">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6743700208" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/94/4e/09/944e0907-9b8a-37d8-9a1f-6006d1ca147e/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Sidebar | Fast Notes" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Sidebar | Fast Notes</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>侧边栏快速笔记，随时随地记录灵感
+              <div class="desc-detail" id="detail-free-6450434079">
+                <span class="desc-label">详情：</span>Open. Type. Done.
+
+Sidebar opens fast, keyboard ready for your ideas. No folders, no document names, no organizing. Just get the idea down before it&#x27;s gone.
+
+Entries are timestamped logs, not documents. But some logs do more. Tag an entry as a todo and it joins your lightweight task list. Tag it as a personal win or loss and it goes to your scoreboard, ranked by topic.
+
+What&#x27;s inside:
+Cross-device sync across iOS and macOS, custom themes, and stealth mode for sensitive notes.
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6450434079')" id="toggle-free-6450434079">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6450434079" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f6/79/6d/f6796ddc-f3de-5f49-1c86-fa1d7789df2d/AppIcon-0-0-85-220-0-5-0-2x.png/100x100bb.png" alt="DIY Hypnotism" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">DIY Hypnotism</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>DIY 催眠应用，自我放松和减压 [macOS]
+              <div class="desc-detail" id="detail-free-1331447267">
+                <span class="desc-label">详情：</span>Create your own hypnosis sessions with DIY Hypnotism.
+
+DIY Hypnotism lets you turn your own scripts into spoken hypnosis sessions using text to speech. Bring your own scripts, or get started with a small selection of examples from our website.
+
+Features:
+• Create custom hypnosis sessions from your own text
+• Built-in text-to-speech playback
+• Starter scripts to help you begin
+• Support for hypnotic visualisations
+
+Scripts:
+https://www.diyhypnotism.com/hypnosis-scripts/
+
+Visualisations:
+https://github.com/DIY-Hypnotism/hypnotic-visualizations
+
+Getting Started:
+https://www.diyhypnotism.com/getting-started/
+
+Disclaimer:
+DIY Hypnotism is provided for entertainment purposes only and is not intended to diagnose, treat, or prevent any condition. Use only in a safe and comfortable environment. Do not use while driving, operating machinery, or in any situation that requires your full attention. If you have any medical or mental health concerns, consult a qualified professional before use.
+
+You are responsible for any scripts you add to the app.
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-1331447267')" id="toggle-free-1331447267">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1331447267" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6e/c0/6b/6ec06baf-027e-41ea-517b-812ace92d21e/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="BarcodeClip" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">BarcodeClip</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>会员卡类管理器，集中管理各类条码卡片
+              <div class="desc-detail" id="detail-free-6782431475">
+                <span class="desc-label">详情：</span>BarcodeCliip
+
+Keep your membership cards, loyalty cards, and medical cards all in one place.
+
+BarcodeCliip is an easy-to-use app that lets you store and manage membership cards with barcodes or QR codes. Digitize the cards in your wallet and access them instantly whenever you need them.
+
+Key Features
+
+• Easily add membership and loyalty cards
+• Display barcodes and QR codes clearly
+• Quick access with Favorites
+• Organize cards by category
+• Simple and user-friendly design
+• Access your cards even offline
+
+Perfect For
+
+• Anyone who wants to reduce wallet clutter
+• Frequent loyalty card users
+• People who want to manage membership and medical cards digitally
+• Anyone who needs quick access to barcodes and QR codes
+
+With BarcodeCliip, there&#x27;s no need to carry a stack of cards. Keep your important cards at your fingertips and enjoy a simple, convenient digital card management experience.
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6782431475')" id="toggle-free-6782431475">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6782431475" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/44/7f/48/447f48be-292e-9c32-0e60-27760f2c7419/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="XYZMoney" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">XYZMoney</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>玲珑记账，简单好用的个人记账工具
+              <div class="desc-detail" id="detail-free-1519408304">
+                <span class="desc-label">详情：</span>玲珑记账是一款智能化的个人财务管理工具。
+无论是日常花销、旅行开支还是家庭预算，都能轻松记录与分析，帮助你养成更清晰的理财习惯。
+
+主要功能：
+
+语音记账：通过语音快速记录支出或收入，减少手动输入。
+
+图片识别：拍摄发票、账单或收据，辅助识别金额、内容与类别。
+
+AI 智能分析：可接入大模型能力，帮助整理账单内容，分析消费结构，提供更智能的记账体验。
+
+多账本管理：支持个人、家庭、旅行、工作等多个账本，分类清晰，切换方便。
+
+预算提醒：提前设置预算，及时了解预算使用情况，帮助控制支出。
+
+数据分析：通过月度、年度收支图表，直观查看资金流向和消费趋势。
+
+自定义分类：可灵活添加支出与收入类别，让记账方式更贴近你的生活习惯。
+
+数据管理：支持本地数据保存，并可根据配置使用同步能力，方便管理不同设备上的记录。
+
+适用场景：
+
+日常记账：随手语音或拍照，快速完成记录。
+
+旅行花销：使用独立账本管理旅途支出。
+
+家庭预算：整理家庭收入与支出，了解整体消费情况。
+
+学生记账：记录零花钱、学习开销和日常消费。
+
+玲珑记账致力于让记账变得更轻松、更智能。借助语音、图片识别与 AI 分析，你不仅能快速录入数据，也能更好地理解自己的财务状况。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-1519408304')" id="toggle-free-1519408304">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1519408304" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/04/3e/57/043e57c9-2820-0890-e29b-cf25a058fae8/AppIcon-1x_U007epad-0-1-85-220-0.png/100x100bb.jpg" alt="Ivy Notes" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Ivy Notes</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>青藤笔记，简洁美观的笔记应用
+              <div class="desc-detail" id="detail-free-6760211433">
+                <span class="desc-label">详情：</span>青藤笔记把学习计划、Markdown 笔记、专注记录与简历整理放进同一个安静的学习空间。
+
+轻量规划每天与每周
+- 安排今日任务与每周计划
+- 添加学科、时间与预估时长
+- 用清晰的进度反馈保持节奏
+
+用 Markdown 记录学习内容
+- 记录课堂笔记、阅读摘记与草稿
+- 按分类整理学习资料
+- 用 WikiLinks、反向链接和 Markdown 目录连接相关想法
+- 在需要时分享笔记或导出学习卡片
+
+保持稳定专注
+- 使用番茄钟风格的专注计时
+- 为上课、阅读与写作建立稳定节奏
+- 结合任务进度回顾已完成的专注轮次
+
+把积累整理成简历
+- 让简历草稿与计划、笔记保持在一起
+- 需要投递时可导出整洁的 PDF 简历
+
+为 Apple 设备而设计
+- 在 iPhone、iPad 与 Mac 上连续使用
+- 在可用时通过 iCloud 保持同步
+- 两台设备靠近时可传递笔记
+
+青藤笔记适合想要安静规划、持续记录并稳步前进的学生与年轻学习者。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6760211433')" id="toggle-free-6760211433">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6760211433" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/be/e6/95/bee69542-5db3-56b4-4112-f1370e33daf0/AppIcon-1x_U007ephone-0-1-85-220-0.png/100x100bb.jpg" alt="Paws Care" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Paws Care</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>萌爪：宠物健康管理工具，记录宠物健康数据
+              <div class="desc-detail" id="detail-free-6757299163">
+                <span class="desc-label">详情：</span>用一个应用管理宠物提醒与健康记录，日常护理更省心。
+
+萌爪（Paws Care）帮助你安排疫苗、驱虫、用药、美容和就诊复查等关键事项，减少遗漏。
+
+你可以用萌爪：
+- 为每只宠物建立清晰的健康档案
+- 记录就诊、疫苗、症状、体重与护理备注
+- 设置每天、每周、每月或自定义天数的周期提醒
+- 一键完成提醒，并自动写入时间轴
+- 支持多宠物独立管理
+- 为记录添加照片，信息更完整
+- 默认本地存储，隐私更安心
+
+适合场景：
+- 狗狗和猫咪的日常护理管理
+- 疫苗与用药提醒
+- 积累完整的宠物健康时间轴
+
+一次付费下载即可使用全部功能，无需订阅。
+
+支持简体中文与英文。
+
+萌爪用于宠物日常管理，不替代专业兽医诊疗建议。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6757299163')" id="toggle-free-6757299163">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6757299163" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2c/3c/93/2c3c93f4-7d6f-3ef9-e78d-2a2014750163/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="The Solar System VL2 Storybook" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">The Solar System VL2 Storybook</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>英语手语故事书《太阳系》，了解星座和行星
+              <div class="desc-detail" id="detail-free-950418754">
+                <span class="desc-label">详情：</span>The Solar System is an educational narrative in both ASL and English about our eight planets, moons, and the sun. The illustrations and the video narrative provides enhanced visual aids to create an interactive, self-directed reading and learning experience for young deaf children. The Solar System is full of scientific facts along with a fantastic collection of vocabulary words and definitions in ASL. 
+
+This is made by the same team who created the award-winning ASL/English bilingual storybook app, The Baobab. VL2 Storybook Apps are designed based on research in visual learning and language acquisition for an optimal reading experience.
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-950418754')" id="toggle-free-950418754">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id950418754" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e4/63/40/e4634057-62c6-576e-9a48-4a0f745f5016/AppIcon-0-0-1x_U007emarketing-0-9-0-0-85-220.png/100x100bb.jpg" alt="AI趣记账" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">AI趣记账</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>动嘴记账3秒完成，AI助手自动归类，让记账像聊天一样轻松
+              <div class="desc-detail" id="detail-free-6740400622">
+                <span class="desc-label">详情：</span>【AI趣记账】—— 让记账变得像聊天一样轻松！
+
+► 还在为繁琐的记账头疼吗？
+「AI趣记账」来拯救你啦！
+这是一款让记账变得不再是负担的智能记账工具，专为懒人、忙人和记账小白设计。
+无论是文字输入还是语音记录，AI 都能秒懂你的意思，自动分类、自动保存，再也不用纠结该选什么类别、选择时间。
+只需一句话，账单瞬间搞定，轻松又高效！
+
+► 为什么选择「AI趣记账」？
+◼ 语音记账，动动嘴就能搞定账单
+懒得打字？没问题！只需对着手机说一句 “今天中午吃了火锅花了200元”，AI 立马帮你记录并自动分类为“餐饮”。
+无论是购物、交通、娱乐还是日常开销，一句话就能搞定，记账从未如此简单！
+
+◼AI自动分类，智能又精准
+再也不用手动选择类别啦！AI 会根据你的消费内容自动分类，精准识别每一笔开销。
+无论是“咖啡”还是“房租”，AI 都能轻松搞定，让你的账本井井有条。
+
+◼多人账本，共享记账更轻松
+和朋友合租？和家人一起管理开销？
+「AI趣记账」支持多人共享账本，大家一起记、一起看，账目清晰透明，再也不用为 “谁付了多少钱” 而烦恼。
+
+◼多语言、多汇率，全球通用
+出国旅游、海淘购物？「AI趣记账」支持多语言识别和多汇率转换，
+无论你身处何地，都能轻松记录每一笔消费，再也不用为汇率换算头疼。
+
+◼缤纷主题，记账也能很有趣
+记账也可以很时尚！我们为你准备了十多种精心设计的主题，清新、简约、可爱、酷炫……总有一款适合你。
+每天换一个主题，记账也能变成一种享受！
+
+► 良好生活，从轻松记账开始！
+「AI趣记账」不仅是一款工具，更是你生活中的智能小助手。它帮你告别繁琐的手动记账，让每一笔开销都清晰可见，轻松掌握自己的财务状况。
+无论是日常开销、旅行花费，还是团队共享账本，「AI趣记账」都能满足你的需求。
+
+现在就下载「AI趣记账」，开启你的智能记账之旅吧！让记账变得像聊天一样简单，让生活更加轻松有趣！
+
+
+------------------
+
+订阅与自动续费说明：
+
+- 订阅类型：月度，年度（应用内也提供永久会员选项）
+- 付款：订阅费用将从您的 Apple ID 账户扣除
+- 自动续费：订阅周期结束前24小时内，将自动续费并扣款
+- 取消续费：如需取消，请在当前周期结束前至少 24 小时，前往 Apple ID 账户设置中关闭自动续费
+- 管理订阅：您可以在购买后随时通过 Apple ID 账户管理或取消订阅
+
+隐私政策: https://mergeek.com/privacy
+使用条款: https://apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6740400622')" id="toggle-free-6740400622">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6740400622" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/87/7d/f3/877df3be-f014-3d96-21c9-3dee4c77b77a/AppIcon-0-0-1x_U007ephone-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="胶囊备忘录 - AI智能笔记" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">胶囊备忘录 - AI智能笔记</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>聊天式记录灵感、待办与工作，极简备忘录应用
+              <div class="desc-detail" id="detail-free-6755114900">
+                <span class="desc-label">详情：</span>胶囊备忘录 - AI智能笔记
+
+一款为追求简洁高效的你打造的极简备忘录应用。告别繁杂，专注记录。
+
+【AI 语音笔记，说完就整理】
+开口说，AI 自动转文字并智能整理。无需打字，灵感即刻变成结构化笔记。
+
+【图片便签，AI 智能分类】
+拍照或截图自动归类：聊天记录、地址、票据、文档...找图片再也不用翻相册。
+
+【分类记录，一目了然】
+三种笔记类型，满足不同场景：
+- 想法 - 捕捉灵感火花、随想、金句
+- 待办 - 列出任务清单，逐项完成
+- 工作 - 追踪项目进度，整理工作资料
+
+【聊天气泡，自然流畅】
+独特的对话式界面，像发消息一样记录想法。每条笔记都是一段对话，回顾时更有上下文感。
+
+【时间轴整理，快速回溯】
+笔记按&quot;今天&quot;、&quot;昨天&quot;、月份自动归类，轻松找到过往记录，无需翻找。
+
+【Pro 会员专享】
+- 无限笔记、语音、便签数量
+- 自由切换键盘音效
+- 持续更新更多高级功能
+
+简约而不简单，胶囊备忘录让记录回归纯粹。立即下载，开启高效记录之旅！
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6755114900')" id="toggle-free-6755114900">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6755114900" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/fd/a7/7efda73f-766e-9f9a-31a4-157d6b48bbda/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/100x100bb.jpg" alt="心生一计 - 你的计数日记" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">心生一计 - 你的计数日记</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>用计数的方式记录生活点滴，你的计数日记
+              <div class="desc-detail" id="detail-free-6744323651">
+                <span class="desc-label">详情：</span>梦的计数，便便计数，月经计数……那些生理周期值得「计一下」的琐事。
+运动计数，购物计数，咖啡与奶茶计数……那些生活习惯值得「计一下」的琐事。
+emo 计数，心动计数，贱人惹我生气计数……那些情绪波动值得「计一下」的琐事。
+旅行打卡计数，年度电影/读书/游戏计数，周末活动计数……那些个人爱好值得「计一下」的琐事。
+人生第一次计数，去过的城市计数，lucky day 计数……那些人生经历值得「计一下」的琐事。
+好看的天空计数，花花草草计数，四季流转计数……那些观察世界时值得「计一下」的琐事。
+约会计数，和男朋友吵架计数，爱爱计数……那些情侣相处值得「计一下」的琐事。
+加班计数，工作成果计数，傻逼同事计数……那些工作中值得「计一下」的琐事。
+
+心念一动时，计一下。
+人生手帐+1。
+
+相关协议
+- 用户协议：https://lifecounting.sorasoftware.com/user.html
+- 隐私协议：https://lifecounting.sorasoftware.com/privacy.html
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6744323651')" id="toggle-free-6744323651">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6744323651" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dd/03/2c/dd032c20-8183-577e-faab-241827f82c4b/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="MindJot - 心语日记" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">MindJot - 心语日记</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>智能日记，AI解读、多端同步、隐私保护强
+              <div class="desc-detail" id="detail-free-6741102879">
+                <span class="desc-label">详情：</span>MindJot 重新定义智能时代的日记方式：
+- AI情感解读：自动分析心情波动，智能归类日记内容，每次记录都能获得个性化洞察
+- 任务管理：自动提取日记中的待办事项，集中管理和提醒
+- 高级隐私保护：数据仅存于您的个人iCloud，端到端加密，连开发者都无法查看
+- 全设备无缝衔接：支持 iPhone、iPad、Mac 多端实时同步，灵感随时记录不中断
+- 专属 AI 伙伴：可自定义机器人的性格和对话风格，打造懂你的数字知己
+- 智能对话：AI 交互解答所有日记相关问题
+- 数据完全自主：支持一键导出完整日记库，记忆永远属于你
+
+* 新增：AI智能任务追踪
+- AI 交互解答所有日记相关问题
+- 自动识别日记中的待办事项（如&quot;要买/记得/需做&quot;等关键词）  
+- 任务看板支持优先级标记与提醒  
+
+
+----
+
+使用条款（EULA）： https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6741102879')" id="toggle-free-6741102879">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6741102879" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ec/8d/5d/ec8d5d1e-7a1b-dd11-ebc2-7bbaad24db89/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="Yovo – 任务" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Yovo – 任务</div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>用简短清单保持专注，一次一项完成任务
+              <div class="desc-detail" id="detail-free-6756287088">
+                <span class="desc-label">详情：</span>Yovo
+一天。一份清单。
+
+Yovo 是一款生产力应用，帮助你保持专注，一次完成一项任务。
+
+不同于冗长的待办清单和令人疲惫的规划，Yovo 采用简短、临时的每日清单。每天都是新的开始，帮助你专注于真正重要的事情，在无压力的情况下建立习惯。
+
+主要功能
+
+• 每日任务清单  
+每天创建一份简单的清单，专注于当前的优先事项。
+
+• 临时任务  
+任务仅持续一天，减少心理负担和过度规划。
+
+• 循序渐进  
+通过小而可控的步骤保持清晰和动力。
+
+• 进度追踪与归档  
+已完成的任务会被归档，清楚地看到你的成果。
+
+• 小组件  
+直接从主屏幕访问你的每日清单。
+
+• 极限模式  
+在专注时间内限制分散注意力的应用。
+
+• 简洁极简的界面  
+平静的设计，支持清晰思考和有意识的行动。
+
+Yovo 适合希望清晰工作、养成更好习惯、每天稳步前进的人——没有压力，没有干扰。
+
+无杂乱。  
+无压力。  
+只有进步。
+
+一天。一份清单。每天都很重要。
+
+---
+
+应用可能提供订阅或应用内购买以解锁更多功能。
+付款将在确认购买时通过 Apple ID 账户扣除。
+订阅将自动续订，除非在当前周期结束前至少 24 小时取消。
+订阅可随时在 App Store 账户设置中管理或取消。
+
+Privacy Policy:
+https://legal.ghostoli.com/
+
+Terms of Use (EULA):
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6756287088')" id="toggle-free-6756287088">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6756287088" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/98/73/39/987339c7-e538-3049-28e0-9b02d518ba1c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="我的待办-清单四象限日历提醒小组件" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">我的待办-清单四象限日历提醒小组件 <span class="badge-free">¥3→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>简洁高效的待办清单，以天/周/月规划计划
+              <div class="desc-detail" id="detail-free-1294530516">
+                <span class="desc-label">详情：</span>「我的待办」，一款简洁高效的待办清单(Todo)、日程管理(GTD)应用。在工作学习中，它可以帮你更好的制定任务清单、项目计划；在日常生活中还能用于记录备忘、整理购物清单等。「我的待办」集提醒事项、日历管理、四象限、日程清单、备忘录、闹钟、协同工具为一体，是您办公学习、日常生活中的得力助手。
+
+「我的待办 效率神器」
+- 待办列表：两列排版，简洁高效
+- 四象限视图：管理事项重要性
+- 日历视图：总览本月待办安排
+- 桌面小组件：在小组件快捷查看和完成待办事项
+- 标签分类：让你的工作、学习、生活都井井有条
+- 进度圆环：关注你的待办进度，每完成一项带来一份成就感
+- 周期视图：按周期查看待办事项，每天、每周、每月都有目标 
+- 持续提醒：每分钟提醒一次，无需担心重要的事被遗忘
+- iCloud自动同步：在您的iOS设备间实现无缝对接
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-1294530516')" id="toggle-free-1294530516">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1294530516" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/5d/12/7a/5d127a7f-81af-e0b1-4a9f-3093894128bd/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/100x100bb.jpg" alt="EasyGoDutch - 账单分割" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">EasyGoDutch - 账单分割 <span class="badge-free">¥6→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>账单分割从未如此简单，轻量便捷的分账工具
+              <div class="desc-detail" id="detail-free-1630700673">
+                <span class="desc-label">详情：</span>有关「EasyGoDutch」:
+
+#操作
+&quot;轻&quot;的理念贯穿「EasyGoDutch」的整体设计，我们相信您已经被一些眼花缭乱的数据和操作学习成本恐吓，在「EasyGoDutch」中，我们尽可能地提供给您一些快捷操作，您可以通过各种快速选择器来进行数据输入。得益于iPhone内置的震动马达，您的每次点击，都有着令人愉悦的反馈。
+
+#隐私
+「EasyGoDutch」不会收集和向第三方机构泄露您的任何信息，「EasyGoDutch」不请求任何的网络权限，意味着在无网络环境下您也可以畅通无阻。您的账单记录只会保存在本地，安装App更新不会丢失任何数据，但卸载App后，您的本地数据将一并删除。
+
+#Why「EasyGoDutch」?
+我在生活中偶尔会遇到一些需要AA制账单的场景，但苦恼于在多人参与，多人付款下的账单计算。于是我开发了「EasyGoDutch」，我们当然赞美您的慷慨，但如果您是一场活动的组织者，借助「EasyGoDutch」，您可以更好地进行账单分割，以免慷他人之慨。
+
+# 部分图像资源 powered by:
+https://www.freepik.com/vectors/group Group vector created by pikisuperstar - www.freepik.com
+https://www.freepik.com/vectors/head-portrait Head portrait vector created by pikisuperstar - www.freepik.com
+https://www.freepik.com/vectors/group Group vector created by pikisuperstar - www.freepik.com
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-1630700673')" id="toggle-free-1630700673">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1630700673" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e2/d4/76/e2d476e5-b303-6cfd-0ab7-cda4af34831f/AppIcon-0-0-1x_U007epad-0-10-0-0-85-220.png/100x100bb.jpg" alt="荒岛的王-开心锤锤正版授权手游" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">荒岛的王-开心锤锤正版授权手游 <span class="badge-free">¥1→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>生存策略文字剧情游戏，每个决定关乎生死
+              <div class="desc-detail" id="detail-free-6444142143">
+                <span class="desc-label">详情：</span>《荒岛的王》是一款扣人心弦的生存策略文字剧情游戏。玩家将置身于荒岛之上，面对接踵而至的未知与挑战。在这里，每一个瞬间都充满了不确定性，而您的每一个决定都关乎生死存亡。
+
+游戏特色
+【随机事件频发】游戏中充满了各种各样的随机事件，没有固定的模式，让您时刻保持紧张与警觉，不断应对新的状况。
+【丰富关卡多样通关】超多的游戏关卡，每一关都有不同的通关方式，为您带来无尽的新鲜感和挑战。
+【策略至上考验智慧】极度考验玩家的策略能力，如何合理运用道具，怎样巧妙安排人员进行探险，都需要您精心谋划。
+【生死瞬间惊险刺激】在探险过程中，生死冒险往往只在一瞬间，让您充分体验到紧张刺激的游戏氛围。
+【剧情丰富道具多样】有着丰富的剧情内容等待您去探索，还能解锁全新的道具和挑战，关键的制胜选择由您把控。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6444142143')" id="toggle-free-6444142143">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6444142143" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/18/8d/91/188d911d-27de-e143-3f2b-a09808d3bf1d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Workflowy: Note, List, Outline" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Workflowy: Note, List, Outline <span class="badge-free">¥68→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>极简笔记和待办清单工具，零干扰的专注写作体验
+              <div class="desc-detail" id="detail-free-551139514">
+                <span class="desc-label">详情：</span>Workflowy is a simple, distraction-free app for capturing notes, managing tasks, and organizing your thinking. 
+Infinitely nestable, surprisingly powerful - it helps you manage all the information in your life.
+
+With Workflowy you can:
+• Capture notes and ideas in an instant
+• Organize complex thinking with infinite nesting
+• Ask AI to summarize, rewrite, or brainstorm with your notes
+• Plan and manage tasks with kanban boards
+• #Tag and @assign items to stay on top of things
+• Link items across lists - edit once, update everywhere
+• Share and collaborate in real-time
+• Upload photos, files, and embed videos
+• Search and filter your entire Workflowy in seconds
+
+Workflowy syncs across all your devices and auto-saves everything. No more missing notes or lost files.
+
+Trusted by teams and thinkers at: Atlassian, Slack, The New York Times, and thousands of entrepreneurs, writers, engineers, scientists, and students worldwide.
+
+Feature highlights:
+• Infinitely nested lists
+• Workflowy AI (chat with notes, AI nodes, quick actions)
+• Calendar
+• Kanban boards
+• Mirrors (live synced copies)
+• #Tags and @mentions
+• Date organization with /date shortcuts
+• Global text search and filtering
+• Simple sharing and permissions
+• Works offline
+• Syncs with desktop and web
+• One-swipe task completion
+• File uploads and image attachments
+• Highlight text and color tags
+• Item starring
+• YouTube and X embeds
+• MFA (Multi-factor authentication)
+• Expand and collapse lists
+• Mobile keyboard shortcuts
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-551139514')" id="toggle-free-551139514">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id551139514" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9a/2b/f7/9a2bf7c4-1508-0053-1c45-e57cfb029a38/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="基础法语口语" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">基础法语口语 <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>简单实用的法语口语学习，7大场景覆盖日常对话
+              <div class="desc-detail" id="detail-free-717812777">
+                <span class="desc-label">详情：</span>基础法语口语是一款面向法语初学者和日常出行场景的口语学习应用，精选常用法语短句与生活表达，帮助你轻松积累实用法语。
+
+应用覆盖问候交流、购物、旅行、酒店、餐馆、交通等常见生活场景，内容简洁清晰，适合通勤、出行和碎片时间学习。
+
+主要功能：
+
+- 场景化法语口语：按生活场景分类学习，查找更方便
+- 法语听句练习：边听边学，提升听力理解和语感
+- 录音跟读练习：对照原句反复练习，改善发音表达
+- 每日精选句子：每天学习一句实用法语，持续积累
+- AI 解析辅助：理解句子含义、表达用法和学习重点
+- 搜索、收藏与学习记录：快速找到常用句，复习更高效
+
+无论你是法语入门学习、出国旅行准备，还是想提升日常法语口语表达，基础法语口语都可以成为你的随身法语学习助手。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-717812777')" id="toggle-free-717812777">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id717812777" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8e/1a/59/8e1a59a9-0d8a-b24f-7eb2-34c0dbd7a213/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/100x100bb.jpg" alt="KRed阅读器" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">KRed阅读器 <span class="badge-free">¥8→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>极简设计全能电子书阅读器，支持EPUB/PDF/MOBI等格式
+              <div class="desc-detail" id="detail-free-6746400449">
+                <span class="desc-label">详情：</span>KRed阅读器：极简设计 · 全能格式支持 · 你的随身图书馆。KRed阅读器支持 EPUB、PDF、MOBI、AZW3、TXT、CBZ、CBR 等主流电子书格式，无论是小说、漫画、学术文献还是扫描版文档，都能流畅阅读！无需复杂转换，一键导入即可享受沉浸式阅读体验。
+
+
+多格式兼容，一网打尽
+KRed阅读器支持 EPUB、PDF、MOBI、TXT 等主流电子书格式，无论是小说、漫画、学术文献还是扫描版文档，都能流畅阅读！无需复杂转换，一键导入即可享受沉浸式阅读体验。
+
+专注阅读，无扰体验
+极简界面：无广告、无冗余功能，专注内容本身。
+自定义排版：字体、字号、间距、背景色自由调节，夜间模式保护双眼。
+智能书架：自动分类图书，支持标签管理，快速找到你的收藏。
+
+强大工具，高效阅读
+听书功能：支持TXT文本转语音，通勤也能“读”书。
+
+适配所有场景
+学生党：PDF教材批注、论文阅读利器。
+小说爱好者：EPUB自适应排版，长时间阅读不累眼。
+漫画迷：PDF高清加载，缩放翻页流畅。
+
+支持多种小说书的导入方式，便捷高效
+无需数据线，通过WiFi直接上传电子书到手机，电脑、NAS文件轻松传输。
+支持批量上传，大文件快速导入，管理图书更自由。
+支持网页下载pdf，text，pdf，epub等资源，下载后一键导入。
+支持相册多选照片组合成书，像翻书一样的翻阅照片。
+支持通过二维码一键分享图书。
+
+隐私政策地址：https://privacy.kingjetapps.com/privacy/reader/ios_privacy_reader.html
+用户协议：https://privacy.kingjetapps.com/privacy/reader/ios_term_reader.html
+
+有任何问题，欢迎邮件反馈：support@kingjetapps.com
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6746400449')" id="toggle-free-6746400449">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6746400449" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/db/11/42/db114208-694b-b87c-db13-8d8a3ae45c17/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/100x100bb.jpg" alt="YouNote-笔记本PDF编辑" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">YouNote-笔记本PDF编辑 <span class="badge-free">¥48→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>数字笔记应用，支持PDF编辑、无限画布和脑图
+              <div class="desc-detail" id="detail-free-6769743144">
+                <span class="desc-label">详情：</span>重要信息：所有功能无需订阅且没有广告，适配 iPhone、iPad 与 Mac，满足不同场景下的记录需求。
+YouNote 是一款为学习、工作与创意整理打造的数字笔记应用，
+无论是课堂记录、会议纪要、灵感草图，还是资料整理与知识梳理，YouNote 都能帮你把想法清晰地保存下来。你可以创建精美笔记本，在自由画布上书写、绘图、插入图片与素材，也可以使用白板展开头脑风暴，或通过思维导图快速梳理复杂内容。
+YouNote 支持钢笔、荧光笔、橡皮擦、文本、形状、箭头、激光笔、套索选择等常用创作工具，让手写、标注、排版和整理都更加自然。你还可以选择不同尺寸、封面颜色、纸张模板与页面样式，打造属于自己的专属笔记空间。
+主要功能：
+* 创建个性化笔记本，支持封面、纸张颜色与多种模板
+* 自由手写与绘图，适合课堂笔记、会议记录和灵感创作
+* 白板模式，支持大画布缩放、背景切换与自由表达
+* 思维导图，帮助你快速拆解想法、规划任务和整理知识
+* 图片、素材、文本、形状与箭头工具，让内容表达更丰富
+* 套索选择、复制、移动、删除与颜色调整，编辑更灵活
+从一个想法、一页笔记，到完整的知识体系，YouNote 都希望成为你安静、顺手、可靠的创作伙伴。让每一次记录，都更自由、更清晰。
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6769743144')" id="toggle-free-6769743144">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6769743144" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="" alt="邮件" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">邮件 <span class="badge-free">¥22→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>
+              <div class="desc-detail" id="detail-free-2037">
+                <span class="desc-label">详情：</span>
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-2037')" id="toggle-free-2037">展开全部</span>
+            </div>
+            <a href="#" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c9/9b/a4/c99ba48c-e218-1288-2ec7-8b3bcbf8e2ac/AppIcon-0-1x_U007emarketing-0-11-0-85-220-0.png/100x100bb.jpg" alt="AWC Faces" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">AWC Faces <span class="badge-free">$0.99→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>为 Apple Watch 创建个性化表盘，支持文字、图片和表情
+              <div class="desc-detail" id="detail-free-1186317560">
+                <span class="desc-label">详情：</span>Create watch faces for your Apple Watch.
+
+Insert text, save image and sync. That&#x27;s it! :)
+
+Why not insert your name or even your favorite quote as a watch face?
+
+With AWC Faces app you can make Apple Watch Photo Faces using colored or image background, custom text and emojis. Also you can create monthly calendar faces.
+
+4 Brilliant Ways To Use AWC Faces:
+- Text Faces
+- Photo Faces
+- Calendar Faces
+- Emoji Faces
+
+Get inspired!
+You can upload your watch faces and inspire other users.
+
+Have fun!! :)
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-1186317560')" id="toggle-free-1186317560">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1186317560" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4d/bb/78/4dbb7835-cd19-3e44-9404-7cf2ba9e3ebb/AppIcon-1x_U007epad-0-1-0-sRGB-85-220-0.jpeg/100x100bb.jpg" alt="Tech Billionaire Jump + Run" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Tech Billionaire Jump + Run <span class="badge-free">$0.99→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>复古像素风格的科技富豪跳跃闯关游戏
+              <div class="desc-detail" id="detail-free-6727009383">
+                <span class="desc-label">详情：</span>You always wanted to be a tech billionaire? 
+Now is your chance! 
+Experience the average day of a tech billionaire by jumping over progress-hating opponents and by getting more money wherever you can! 
+
+Available for watch, phone and tablet.
+
+Features include: 
+- Awesome retro graphics
+- Endless levels
+- Cool grayscale mode available
+- Play offline (no internet connection required for playing)
+- More games you can unlock inside
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6727009383')" id="toggle-free-6727009383">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6727009383" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a8/af/cd/a8afcdcf-b6f2-e914-3560-1e3b87ac5ed0/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/100x100bb.jpg" alt="Italian Verbs Quiz" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Italian Verbs Quiz <span class="badge-free">$0.99→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>意大利语动词学习，包含196个动词的全部18种时态
+              <div class="desc-detail" id="detail-free-1087151566">
+                <span class="desc-label">详情：</span>Master Italian verbs in real sentences — 196 verbs across all 18 tenses, audio pronunciation, and contextual quizzes that go beyond drill. Free to try, Premium to unlock.
+WHAT MAKES IT DIFFERENT
+Most Italian verb apps drill conjugations in isolation. Italian Verbs Quiz tests you in real sentences — the way you&#x27;ll actually use the language. That contextual quiz, combined with audio pronunciation by native speakers, is what brings conjugation off the page.
+WHAT&#x27;S INSIDE
+• 196 of the most used Italian verbs — regular, irregular, and auxiliary.
+• All 18 tenses and moods: indicative (presente, passato prossimo, imperfetto, trapassato, passato remoto, futuro), subjunctive, conditional, imperative, plus non-finite forms.
+• Two quiz modes: classic conjugation drill, and contextual quiz with verbs embedded in complete sentences.
+• Audio pronunciation for every verb form.
+• Choose 1–10 verbs manually, or let the app pick at random.
+• Visual progress tracking with modern Apple Charts: see exactly which tenses you&#x27;ve mastered and which need more work.
+• Fully offline — no connection needed.
+• Available in four interface languages: English, French, Italian, Spanish. Study Italian in your native tongue.
+FREE &amp; PREMIUM
+Download free and try the core experience. Premium unlocks the full catalogue, the contextual quiz, advanced statistics, and removes any limits.
+• Lifetime Premium: one-time purchase, never pay again.
+• Annual Premium: lower upfront cost if you prefer.
+• Already bought the app before the freemium switch? You keep full access automatically. No ads. Ever.
+WHO IT&#x27;S FOR
+Italian learners at any level — from beginners discovering essere and avere to advanced students drilling the congiuntivo trapassato. Useful for travelers, language students, expats, and anyone who&#x27;s tired of generic flashcard apps that skip the verb system.
+Got feedback or a verb to add? Reach out through the in-app contact — every suggestion gets read.
+
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-1087151566')" id="toggle-free-1087151566">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1087151566" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="" alt="Golf Tally" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Golf Tally <span class="badge-free">$1.99→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>高尔夫记分卡，记录四人小组的总杆数和稳定杆分数
+              <div class="desc-detail" id="detail-free-6743351457">
+                <span class="desc-label">详情：</span>高尔夫记分卡，记录四人小组的总杆数和稳定杆分数
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6743351457')" id="toggle-free-6743351457">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6743351457" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/df/cf/b8/dfcfb807-095a-9b84-a2d9-f8313217960c/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/100x100bb.jpg" alt="French Verbs Quiz" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">French Verbs Quiz <span class="badge-free">$1.99→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>法语动词变位学习，1014个动词覆盖所有时态和语态
+              <div class="desc-detail" id="detail-free-1189770403">
+                <span class="desc-label">详情：</span>Master French conjugation in real sentences — 1014 verbs across every tense and mood, audio pronunciation, contextual quizzes that go beyond drill. Free to try, Premium to unlock.
+WHAT MAKES IT DIFFERENT
+Most French verb apps drill conjugations in isolation. French Verbs Quiz tests you in real sentences — the way you&#x27;ll actually use the language. The contextual quiz, combined with audio pronunciation, is what makes verbs stick.
+WHAT&#x27;S INSIDE
+• 1014 of the most-used French verbs — regular, irregular, and auxiliary.
+• Every tense and mood: présent, passé composé, imparfait, plus-que-parfait, futur, conditionnel, subjonctif présent and imparfait, impératif, plus non-finite forms.
+• Two quiz modes: classic conjugation drill, and contextual quiz with verbs embedded in complete sentences.
+• Audio pronunciation for every verb form.
+• Pick 1–10 verbs manually, or let the app choose at random.
+• Visual progress tracking with modern Apple Charts: see which tenses you&#x27;ve mastered and which need more work.
+• Fully offline — no connection needed.
+• Available in four interface languages: English, French, Italian, Spanish. Study French in your native tongue.
+FREE &amp; PREMIUM
+Download free and try the core experience. Premium unlocks the full catalogue, the contextual quiz, advanced statistics, and removes any limits.
+• Lifetime Premium: one-time purchase, never pay again.
+• Annual Premium: lower upfront cost if you prefer.
+• Already bought the app before the freemium switch? You keep full access automatically. No ads. Ever.
+WHO IT&#x27;S FOR
+French learners at any level — from beginners discovering être and avoir to advanced students drilling the subjonctif imparfait. Useful for travelers, language students, expats, and anyone who&#x27;s tired of generic flashcard apps that skip the verb system.
+Got feedback or a verb to add? Reach out through the in-app contact — every suggestion gets read.
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-1189770403')" id="toggle-free-1189770403">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1189770403" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6e/8a/08/6e8a083f-cb20-14b3-2f51-317dc27573bb/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="FuseBeadMaker: Bead Pattern" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">FuseBeadMaker: Bead Pattern <span class="badge-free">$0.99→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>将照片转换成拼豆图案，支持颜色计数和A4 PDF导出
+              <div class="desc-detail" id="detail-free-6760588364">
+                <span class="desc-label">详情：</span>FuseBeadMaker is a bead pattern maker for turning photos and images into clear, buildable grids. Import a pet photo, portrait, illustration, or craft idea, then generate a pattern with color counts, editable cells, project progress, pegboard references, and high-resolution exports.
+
+FuseBeadMaker works without an account. Projects, inventory, and pattern data stay on your device and are not uploaded; exports can be previewed before saving or sharing.
+
+It is designed for makers who need more than a quick pixel effect. FuseBeadMaker helps you prepare the pattern, review colors, count beads, adjust details, follow the build by color or section, and keep each project ready for making.
+
+Key features:
+- Turn photos and images into bead patterns
+- Review color codes, color counts, and bead totals
+- Edit the grid manually when details need cleanup
+- Work by color or by section while tracking progress
+- Check project size, color count, and total beads
+- Keep material and inventory references with the project
+- Export A4 PDF pattern sheets for printing or sharing
+- Use 52/104-style pegboard split references for larger projects
+- Import a reference pattern image and recognize common color codes for guided building
+- Preview high-resolution pattern images before saving or sharing
+- Save projects and continue later
+- Use local project, inventory, and pattern storage without an account
+
+Great for:
+- Pet portraits and avatar crafts
+- Handmade gifts and keepsakes
+- Pixel art references for bead projects
+- Larger patterns that need step-by-step progress
+- Makers who want color counts before starting
+
+FuseBeadMaker focuses on the full path from image to making: not just converting a photo, but preparing the pattern, colors, counts, editing flow, and build guidance you need before you start placing beads.
+
+Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6760588364')" id="toggle-free-6760588364">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6760588364" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="free-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/39/41/d9394107-db76-bc6c-4aae-b88da8903620/AppIcon-1x_U007ephone-0-1-0-85-220-0.png/100x100bb.jpg" alt="HazeLens - Mood film camera" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">HazeLens - Mood film camera <span class="badge-free">$2.99→免费</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>滤镜相机应用，打造韩式奶油感胶片风格照片
+              <div class="desc-detail" id="detail-free-6763457050">
+                <span class="desc-label">详情：</span>无广告、无弹窗；启动轻快，长期更新。基础拍摄与滤镜免费，开通 VIP 订阅即可解锁全部高级特效。
+
+雾镜相机是一款专注滤镜表达的相机应用。我们用自研影像引擎，从色彩科学到颗粒质感独立打磨，只为带来更有辨识度的画面风格。
+独特的光影层次与氛围表达，让成片更有辨识度，日常随手拍也离「废片」再远一点。
+不偏灰、不发青，肤色表达更干净自然。显气色但不显假，让素颜感与精致感同时成立，自拍、人像、静物都能轻松出片。
+无论是约会、下午茶、窗边自拍，还是日常记录，雾镜相机 都能一键带来柔和、温暖、耐看的韩系奶油风氛围。
+
+滤镜将持续更新。
+小红书账号：@雾境相机 欢迎把好看的照片，想要的效果at给我。
+
+-----VIP 会员订阅（App 内购买）-----
+基础拍摄与基础滤镜免费。雾镜相机 VIP 为自动续期订阅，可解锁全部高级特效：光斑光效（阳光/丁达尔光束）、梦幻树影光斑、一键逆光抠像与逆光氛围、色彩分离、12 种专业混合模式，以及无限高清导出。
+
+价格方案：
+· 季度会员：$3.99/季（新用户享 7 天免费试用）
+· 年度会员：$9.99/年
+
+确认购买后将从 Apple ID 扣款。订阅会自动续期，除非在当前周期结束前至少 24 小时关闭自动续订。可随时在「设置 &gt; Apple ID &gt; 订阅」中管理或取消。开通付费订阅后，剩余免费试用期随即结束。
+
+服务条款：https://tuneify999.com/user_hazelens.html
+隐私政策：https://tuneify999.com/privacy_hazelens.html
+订阅条款：https://tuneify999.com/subsubscription_hazelens.html
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-free-6763457050')" id="toggle-free-6763457050">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6763457050" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- ===== 💰 限时折扣精选 ===== -->
+    
+    <div class="section" id="section-deal">
+      <div class="section-header">
+        <span class="icon">💰</span>
+        <h2>限时折扣精选</h2>
+        <span class="count">5款</span>
+      </div>
+      
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/05/c4/ef/05c4ef75-5bf0-9e53-3a5b-9bf452312512/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/100x100bb.jpg" alt="Zndo: Screen Time for Focus" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Zndo: Screen Time for Focus <span class="badge-deal">¥298→¥38 (87%)</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>屏幕时间管理工具，帮你专注于重要事务
+              <div class="desc-detail" id="detail-deal-6751610604">
+                <span class="desc-label">详情：</span>借助 Zndo，重塑您的数字习惯 – 这款智能专注应用能屏蔽干扰，并对高效行为给予奖励。
+
+屏蔽应用，保持专注
+- 在定时专注期间屏蔽容易分心的应用
+- 自定义屏蔽的应用及时间段
+- 多种专注模式：标准、习惯与深度工作
+- 基于 Apple 原生技术，屏蔽稳定可靠
+
+游戏化效率体验
+- 保持专注即可赚取心流积分
+- 持续使用，解锁禅意等级
+- 挑战备受推崇的晋升等级体系
+- 连续打卡奖励，持续保持动力
+
+智能专注模式
+- 标准专注：在指定时间内屏蔽应用
+- 习惯专注：完成待办任务前持续屏蔽应用
+- 深度工作：全力专注，享受额外奖励加成
+
+追踪您的成长
+- 监控专注时长与效率指标
+- 全球排行榜，与其他用户同台竞技
+- 深度分析您的专注规律
+- 数据本地存储，隐私优先
+
+专业版功能
+- 高级专注模式（习惯与深度工作）
+- 心流积分额外加成（+25%）
+- 支持多个同时进行的专注计划
+- 完整排行榜访问权限
+- 晋升等级解锁
+
+无论您是学生、知识工作者，还是希望摆脱数字干扰、养成专注习惯的任何人，Zndo 都是您的理想之选。
+
+立即免费开启您的第一次专注，升级至专业版后可享受无限专注计划及全部高级功能。
+
+使用条款（EULA）：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-deal-6751610604')" id="toggle-deal-6751610604">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6751610604" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b9/c0/84/b9c0843d-5313-541c-c307-39982f455f58/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="Todo计划" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Todo计划 <span class="badge-deal">¥98→¥59 (40%)</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>时间管理与学习打卡工具，高效规划每一天
+              <div class="desc-detail" id="detail-deal-1623308204">
+                <span class="desc-label">详情：</span>【我要做计划】内设计划表、番茄钟、笔记、日程视图、小组件、日历、倒数日、待办事项清单等多项实用必备效率功能，无论是制定项目计划、管理行程日程，亦或是专注学习高效工作，皆能让你轻松上手得心应手。
+【我要做计划】揽获多类荣誉奖项，多次获得Appstore精品推荐及编辑推荐，获选Vivo【极光奖】、oppo【至美奖】及华为《开发者说》栏目特荐。
+
+【目标悉数达成】
+目标拆解：减肥、考证考试、自我提升…全场景目标皆可阶段式自动拆解，分段达成更易成
+灵感指南：自我疗愈、与自己约会、人生重启等，补给站时刻放送趣事清单，治愈有趣更有益
+
+【方法妙趣横生】
+任务挑战：变好不必枯燥，游戏式挑战功能玩学兼顾，高峰体验任务达成成就感
+装扮纷呈：缤纷主题、图标、贴纸…随心更换，好用当然可以好美
+创意组件：疲劳时敲木鱼原谅世界，专属小鸭时刻鼓励相伴
+
+【功能全面配齐】
+主次有序：四象限主任务样式明晰先后主次，并有单列表等适配你的习惯
+装扮奖励：完成计划可获限定装扮，努力理应嘉奖
+简快录入：支持文本、语音等多种录入方式 
+周密控时：单个计划可直接绑定专注番茄钟，且可自定义计划提醒、完成期限、是否重复
+可视日程：周、月、年日程视图，效率识别管理当下及历史行为记录
+专注时钟：科学番茄钟保持精力，高效专注
+复盘笔记：随手可记每日所感所获
+统计数据：多种数据指标分析每日完成情况，优化改进有方向
+小组件：倒数日、计划表等桌面小组件＆锁屏小组件极致缩短待办处理路径
+
+*更多功能玩法，与你App内见
+
+您可以选择每月支付￥9.00元订阅我要做计划会员。一旦您确认订阅高级会员，您的iTunes账户将被收取相应的费用。订阅将自动续费，除非您在当前订阅结束前24小时以上取消自动续订。订阅成功后，您可在 iTunes Store 中管理订阅。
+
+隐私政策：https://plan.gangduotech.com/web/apppage/article/view.html?id=68
+用户协议：https://plan.gangduotech.com/web/apppage/article/view.html?id=67
+会员服务协议：https://plan.gangduotech.com/web/apppage/article/view.html?id=79
+自动订阅续费服务协议：https://plan.gangduotech.com/web/apppage/article/view.html?id=106
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-deal-1623308204')" id="toggle-deal-1623308204">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1623308204" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/53/f6/7b/53f67b46-8cc4-73e9-2460-572ea7327d14/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/100x100bb.jpg" alt="优效日历 - AI日程" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">优效日历 - AI日程 <span class="badge-deal">¥399→¥378 (5%)</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>AI日程·待办·黄历·纪念日，智能日历管理
+              <div class="desc-detail" id="detail-deal-1621678880">
+                <span class="desc-label">详情：</span>优效日历是一款围绕时间管理和个人效率打造的综合日历应用，涵盖日历查询、日程安排、待办管理、便签记录、习惯追踪、排班助手和 AI 智能助手。
+
+【专业日历与日期工具】
+支持公历与农历联动显示，内置法定节假日、调休安排、节气、宜忌等信息，配合黄历详情、吉日查询和日期计算工具，日常查看和查询更顺手。
+
+【日程安排与提醒】
+支持日 / 三日 / 周 / 月 / 年多种日历视图，可为日程设置重复规则和自定义提醒。支持连接 iCloud、Outlook、QQ 邮箱、企业微信、钉钉、飞书、腾讯会议日历及 CalDAV 等外部日历账户，把各处安排统一在一起管理。
+
+【待办与任务管理】
+提供今天、星标、收集箱等快速视图，支持四象限、看板、清单、标签和优先级分组，还支持子任务和循环任务，适合工作与生活的双线管理需求。
+
+【便签与习惯追踪】
+便签支持富文本编辑、颜色标记和标签整理；追踪模块支持打卡和数值记录，配合图表与热力图，帮你量化自己的进步和积累。
+
+【生日、纪念日与倒数日】
+支持记录亲友生日、重要纪念日和关键倒计时，自动计算距今天数、周年和剩余天数，并可设置提醒，不再错过重要时刻。
+
+【AI 智能助手】
+支持文字、语音和图片多种方式输入，可快速创建日程和待办、查询安排、规划行程，还能帮你做节假日拼假攻略、日程冲突检查和工作总结。
+
+【主屏幕小组件】
+支持在主屏幕和锁屏页放置日历、待办、近期事件、纪念日、倒数日等多种小组件样式，重要信息随时可见，不必打开应用。
+
+【跨平台同步协同】
+支持 iOS、Windows、macOS 等多端使用，日程、待办、便签和追踪记录均可在设备间保持同步，电脑和手机上的安排始终一致。
+
+---
+
+【优效日历使用协议】
+https://www.yxcal.com/about/agreement.html
+【优效日历隐私政策】
+https://www.yxcal.com/about/privacy.html
+【最终用户许可协议(EULA)】
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-deal-1621678880')" id="toggle-deal-1621678880">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1621678880" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a2/d0/30/a2d030d4-8d88-49d2-45b4-8a4e5002f977/icon1-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="Tracck！自媒体商单管理" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">Tracck！自媒体商单管理 <span class="badge-deal">¥48→¥19.9 (59%)</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>自媒体商单排期收入管理，创作者必备工具
+              <div class="desc-detail" id="detail-deal-6743366923">
+                <span class="desc-label">详情：</span>自媒体之路上最好的搭子(^-^)
+Tracck！是一款专为内容创作者、自媒体博主打造的商单管理、排期工具；相比于常见的记账、任务、笔记App，Tracck！拥有收入计算、订单记录、排期等更多针对性的功能，能够帮助你减少繁琐的记录，专注创作本身；
+
+如果你是博主、up主、画师、设计师等内容创作者，Tracck！一定会是最符合需求的应用！
+
+#核心功能
+- 表格快速导入历史商单，无痛迁移
+- 清晰的合作商单列表，一键流转状态，不遗漏任何一个
+- 多帐号分类，不同平台/帐号区分管理
+- 排期日历，详细日程与结算日程双视角切换
+- 多维度数据分析，收入热力图、趋势图、类型分布等多维度呈现
+还有小组件、品牌头像设置、排期、返点/分成自动计算…超多实用功能
+
+#后续更新计划
+- 好看的排期分享海报
+- 更多实用精美的小组件
+- 制作周期、阶段进度设置
+….
+
+#开发故事
+同为内容创作者，一直无法找到一款合适的工具记录商单；无法追踪结算回款、想记录或分享收入、排期管理不够清晰，都是真实存在的痛点。
+因此，Tracck！源于我的博主经历所打造，希望她也可以成长为你自媒体之路上最好的搭子～
+
+#联系我们
+你的反馈是Tracck！持续成长的动力，欢迎大家对产品的使用体验提出建议
+邮箱 jason2k@126.com
+开发者小红书 @2kk
+
+使用条款：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+隐私协议：https://jason2kkk.github.io/Tracck-Privacy-Policy
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-deal-6743366923')" id="toggle-deal-6743366923">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id6743366923" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d5/62/47/d5624760-81a6-d809-9db2-149b6eb40fe3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="青蛙Todo-番茄钟待办" class="app-icon" loading="lazy" />
+          <div class="app-info">
+            <div class="app-name">青蛙Todo-番茄钟待办 <span class="badge-deal">¥78→¥68 (13%)</span></div>
+            <div class="app-desc">
+              <span class="desc-label">简介：</span>番茄钟待办清单，高效专注的时间管理工具
+              <div class="desc-detail" id="detail-deal-1533377329">
+                <span class="desc-label">详情：</span>青蛙Todo是一款极简、快速的跨平台清单、待办软件。
+
+它可以帮助您进行时间管理和时间规划、并帮您记录清单和待办事项，帮您提高办事效率和执行力。
+
+同样、它也拥有清单类软件的标配：番茄钟和白噪声功能，您不但可以用番茄工作法提高工作效率，还能够通过白噪音背景音让自己更加专注。
+
+在白噪音的滴答声中体验番茄todo清单等功能给您带来的效率提升。
+
+【当前功能】
+- 多平台同步：在手机、平板、电脑等多个设备间无缝同步。
+- 清单分类：无论是工作、生活、学习，都能够做清晰的时间规划。
+- 任务细节：您可以为任务设置优先级、日期、子任务、图片附件等。
+- 多级子任务：让您能够随意拆分每个任务，让您处理起清单来井井有条。
+- 日历视图：在日历视图中查看日程计划。
+- 番茄专注：使用番茄工作法保持专注，提高工作效率。
+- 白噪音：多款白噪音，让您在工作时更加专注。
+- 多主题：这里一定有你喜欢的主题和色彩。
+- 图表分析：记录每一项工作的使用时间，量化自己的工作成果。
+- 共享清单：与家人或朋友共享一份清单，一起实现愿望（即将上线）。
+
+
+官网：www.shuge888.com
+邮箱：support@shuge888.com
+              </div>
+              <span class="desc-toggle" onclick="toggleDesc('detail-deal-1533377329')" id="toggle-deal-1533377329">展开全部</span>
+            </div>
+            <a href="https://apps.apple.com/app/id1533377329" target="_blank" class="store-link">App Store 下载</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <div class="footer">
+      <!-- 占位符: 列出实际使用的数据源 -->
+      <p>数据来源：OODATA · apps.oodata.net · Mergeek · iPhone Giveaway of the Day · 极简限免 · GoFans · promies.net · 反斗限免</p>
+      <!-- 占位符: 生成时间 -->
+      <p class="sources">生成时间：2026年07月02日 14:30 | 数据抓取自各限免信息平台</p>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop" title="回到顶部" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24"><polyline points="18,15 12,9 6,15"/></svg>
+  </button>
+
+  <script>
+    // 展开/收起详情
+    function toggleDesc(id) {
+      var el = document.getElementById(id);
+      var toggle = document.getElementById('toggle-' + id.replace('detail-', ''));
+      if (!el || !toggle) return;
+      if (el.classList.contains('open')) {
+        el.classList.remove('open');
+        toggle.textContent = '展开全部';
+      } else {
+        el.classList.add('open');
+        toggle.textContent = '收起';
+      }
+    }
+    // 动态显示星期几（从 URL 路径中的日期解析）
+    (function() {
+      if (window.self !== window.top) {
+        var note = document.getElementById('iframeNote');
+        if (note) note.style.display = 'block';
+      }
+      // 从 URL 或 .date 元素解析日期，显示星期几
+      var dateEl = document.querySelector('.header .date');
+      if (dateEl) {
+        var text = dateEl.textContent.trim();
+        // 匹配 YYYY.MM.DD 或 YYYY-MM-DD
+        var m = text.match(/(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})/);
+        if (m) {
+          var d = new Date(parseInt(m[1]), parseInt(m[2]) - 1, parseInt(m[3]));
+          var weekdays = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+          var weekday = weekdays[d.getDay()];
+          // 格式化日期为 "YYYY 年 M 月 D 日 · 星期X"
+          var yy = m[1];
+          var mo = parseInt(m[2]);
+          var da = parseInt(m[3]);
+          dateEl.textContent = yy + ' 年 ' + mo + ' 月 ' + da + ' 日 · ' + weekday;
+        }
+      }
+    })();
+    // 回到顶部按钮
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          btn.classList.add('show');
+        } else {
+          btn.classList.remove('show');
+        }
+      });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+    // 搜索功能
+    (function() {
+      var input = document.getElementById('searchInput');
+      var resultsEl = document.getElementById('searchResults');
+      if (!input || !resultsEl) return;
+
+      // 收集所有 App 数据（去重）
+      var apps = [];
+      var seen = {};
+      document.querySelectorAll('.iap-card, .code-card, .free-card, .deal-card').forEach(function(card) {
+        var nameEl = card.querySelector('.app-name');
+        var descEl = card.querySelector('.app-desc');
+        var sectionEl = card.closest('.section');
+        if (!nameEl) return;
+        // 只取第一个文本节点作为 app 名称（排除 .code-badge 等子元素文字）
+        var rawName = '';
+        for (var i = 0; i < nameEl.childNodes.length; i++) {
+          if (nameEl.childNodes[i].nodeType === 3) {
+            rawName = nameEl.childNodes[i].textContent.trim();
+            break;
+          }
+        }
+        if (!rawName) rawName = nameEl.textContent.trim().split(/\s+/)[0];
+        if (seen[rawName]) return;
+        seen[rawName] = true;
+        var sectionName = sectionEl ? sectionEl.querySelector('.section-header h2') : null;
+        apps.push({
+          name: rawName,
+          desc: descEl ? descEl.textContent.trim() : '',
+          section: sectionName ? sectionName.textContent.trim() : '',
+          card: card
+        });
+      });
+
+      // 高亮匹配文字（简单正则，忽略大小写）
+      function highlightMatch(text, q) {
+        if (!q) return text;
+        var idx = text.toLowerCase().indexOf(q.toLowerCase());
+        if (idx === -1) return text;
+        return text.slice(0, idx) + '<span class="result-match">' + text.slice(idx, idx + q.length) + '</span>' + text.slice(idx + q.length);
+      }
+
+      // 渲染下拉结果
+      function showResults() {
+        var q = input.value.trim();
+        resultsEl.innerHTML = '';
+        if (!q) {
+          resultsEl.classList.remove('show');
+          document.querySelectorAll('.highlight-card').forEach(function(c) {
+            c.classList.remove('highlight-card');
+          });
+          return;
+        }
+        var lowerQ = q.toLowerCase();
+        var matched = apps.filter(function(a) {
+          return a.name.toLowerCase().indexOf(lowerQ) !== -1 ||
+                 a.desc.toLowerCase().indexOf(lowerQ) !== -1;
+        });
+        if (matched.length === 0) {
+          resultsEl.innerHTML = '<div class="search-no-results">未找到匹配的 App</div>';
+          resultsEl.classList.add('show');
+          return;
+        }
+        matched.forEach(function(app) {
+          var item = document.createElement('div');
+          item.className = 'search-result-item';
+          item.innerHTML = '<div class="result-name">' + highlightMatch(app.name, q) + '</div>' +
+                           '<div class="result-section">' + app.section + '</div>';
+          item.addEventListener('click', function() {
+            var card = app.card;
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            card.classList.add('highlight-card');
+            setTimeout(function() { card.classList.remove('highlight-card'); }, 2600);
+            input.value = '';
+            resultsEl.classList.remove('show');
+          });
+          resultsEl.appendChild(item);
+        });
+        resultsEl.classList.add('show');
+      }
+
+      input.addEventListener('input', showResults);
+      // 点击页面其它区域时关闭下拉
+      document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !resultsEl.contains(e.target)) {
+          resultsEl.classList.remove('show');
+        }
+      });
+      // 键盘交互：↑↓ 选择，Enter 确认，Esc 关闭
+      input.addEventListener('keydown', function(e) {
+        var items = resultsEl.querySelectorAll('.search-result-item');
+        if (!items.length) return;
+        var active = resultsEl.querySelector('.search-result-item.active');
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (active) active.classList.remove('active');
+          var next = active ? Array.from(items).indexOf(active) + 1 : 0;
+          if (next >= items.length) next = 0;
+          items[next].classList.add('active');
+          items[next].scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (active) active.classList.remove('active');
+          var prev = active ? Array.from(items).indexOf(active) - 1 : items.length - 1;
+          if (prev < 0) prev = items.length - 1;
+          items[prev].classList.add('active');
+          items[prev].scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'Enter' && active) {
+          e.preventDefault();
+          window.open(active.dataset.url, '_blank');
+        } else if (e.key === 'Enter' && !active && input.value.trim()) {
+          e.preventDefault();
+          window.open('../search.html?q=' + encodeURIComponent(input.value.trim()), '_blank');
+        } else if (e.key === 'Escape') {
+          resultsEl.classList.remove('show');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
