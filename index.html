@@ -51,6 +51,13 @@ body {
   position: relative;
   z-index: 1;
 }
+.subtitle-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
 .subtitle-row p {
   font-size: 14px;
   opacity: 0.85;
@@ -379,21 +386,22 @@ body {
 <div class="header">
   <h1>📱 每日 App Store 限免速报</h1>
   <div class="subtitle-row">
-    <p>内购限免 · 本体限免 · 折扣精选 · 兑换码</p>
-    <button class="header-btn" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;">
-      <svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-    </button>
-  </div>
-
-  <!-- 搜索框 -->
-  <div class="search-wrap">
-    <div class="search-inner">
-      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+    <div class="subtitle-top">
+      <p>内购限免 · 本体限免 · 折扣精选 · 兑换码</p>
+      <button class="header-btn" title="强制刷新" onclick="window.location.href=window.location.href.split('?')[0]+'?v='+Date.now();return false;">
+        <svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      </button>
     </div>
-    <div class="search-results" id="searchResults"></div>
+      <!-- 搜索框 -->
+      <div class="search-wrap">
+        <div class="search-inner">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
   </div>
-</div>
 
     <div class="container" id="app">
       <!-- JS will render content here -->
