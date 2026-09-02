@@ -392,16 +392,16 @@ body {
         <svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
       </button>
     </div>
-  </div>
-  <!-- 搜索框：必须独立于 .subtitle-row，禁止放入 flex 容器 -->
-  <div class="search-wrap">
-    <div class="search-inner">
-      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+      <!-- 搜索框 -->
+      <div class="search-wrap">
+        <div class="search-inner">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
     </div>
-    <div class="search-results" id="searchResults"></div>
   </div>
-</div>
 
     <div class="container" id="app">
       <!-- JS will render content here -->
@@ -421,9 +421,13 @@ body {
 // ── 卡片数据（由 push_to_github.py 生成） ──
 const CARDS_DATA = [
   {
-    "date": "2026-09-01",
-    "stats": "内购限免22 · 本体限免27 · 折扣10 · 兑换码14",
+    "date": "2026-09-02",
+    "stats": "内购限免16 · 本体限免25 · 折扣11 · 兑换码7",
     "isLatest": true
+  },
+  {
+    "date": "2026-09-01",
+    "stats": "内购限免22 · 本体限免27 · 折扣10 · 兑换码14"
   },
   {
     "date": "2026-08-27",
