@@ -392,18 +392,19 @@ body {
         <svg viewBox="0 0 24 24"><polyline points="23,4 23,10 17,10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
       </button>
     </div>
-      <!-- 搜索框 -->
-      <div class="search-wrap">
-        <div class="search-inner">
-          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
-        </div>
-        <div class="search-results" id="searchResults"></div>
-      </div>
-    </div>
   </div>
 
-    <div class="container" id="app">
+  <!-- 搜索框：必须是 header 下的独立块级元素，严禁放入 .subtitle-row（flex 会挤压） -->
+  <div class="search-wrap">
+    <div class="search-inner">
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" placeholder="搜索 App 名称或描述..." id="searchInput" />
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="container" id="app">
       <!-- JS will render content here -->
     </div>
 
@@ -422,8 +423,7 @@ body {
 const CARDS_DATA = [
   {
     "date": "2026-09-03",
-    "stats": "内购限免10 · 本体限免29 · 折扣7 · 兑换码5",
-    "isLatest": true
+    "stats": "内购限免10 · 本体限免29 · 折扣7 · 兑换码5"
   },
   {
     "date": "2026-09-02",
