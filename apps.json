@@ -1,5 +1,589 @@
 [
   {
+    "name": "AppStop 把关 - 屏幕时间与防沉迷",
+    "desc": "简介：用扫码或口令给 App 上锁，管住刷手机的时间。\n              \n                详情：在打开容易分心的应用前，先停一停。AppStop 使用 Apple 的屏幕使用时间功能，保护你选择的应用和网站。完成一个简短挑战后，即可获得临时访问权限，休息时间结束后自动重新保护。\n\n用「意图提示」写下这次打开应用的原因，或用「平静倒数」做一次呼吸暂停。终身 Pro 还提供倾斜平衡和五次深蹲挑战，并可为不同应用设置不同挑战。\n\n通过活动记录、连续专注天数、专注积分和主屏幕小组件查看进度。保持专注或完成挑战可获得积分，积分可兑换额外紧急通行证。等级按累计获得的积分计算，花费积分不会降低等级。\n\n免费版可保护最多三个所选项目，每天提供一张紧急通行证。终身 Pro 为一次性购买，包含无限保护项目、无限紧急通行证、单独应用挑战规则、体感挑战和完整活动记录。购买与恢复购买均由 Apple 处理。\n\nAppStop 无需注册应用账号，不含广告，也不使用开发者分析服务。专注记录和设置保存在设备上。挑战中的动作数据即时处理，不保存或上传。仅存于设备的钥匙串积分备份可能在重新安装后保留；iOS 备份由系统设置管理。\n\n隐私政策：https://appstop.owl-dev.cloud/privacy.html\n使用条款：https://appstop.owl-dev.cloud/terms.html\n支持：https://appstop.owl-dev.cloud/support.html",
+    "id": "6824852483",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Condita: Recipe Keeper",
+    "desc": "简介：收藏菜谱并按菜谱自动生成购物清单。\n              \n                详情：Condita is a recipe keeper, meal planner and grocery list in one app. Save recipes from websites, screenshots and cookbook pages, plan your week, and shop from one list.\n\nSAVE RECIPES\n• Paste a link from a recipe site, or share the page from Safari.\n• Pick up to 20 screenshots at once. Condita joins them and drops the repeats.\n• Photograph cookbook pages, up to 30 in one go.\n• There is no limit on how many recipes you import, and no account to create.\n\nCHECK WHAT WAS SAVED\n• Condita keeps the or  收藏菜谱并按菜谱自动生成购物清单。",
+    "id": "6828910480",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Couples Games: Spicy Challenge",
+    "desc": "简介：情侣真心话大冒险，抽卡式互动小游戏。\n              \n                详情：Ready to Play?\nRediscover fun and connection with 100+ Couple Games — a collection of interactive activities created for couples who want to spend quality time together, feel closer, and enjoy shared moments.\nThis app is designed to help partners relax, laugh, communicate, and explore new ways of connecting through games and guided experiences.\n\n—— FEATURES ——\n\nDID OR DIDN’T\nLearn more about each other through thoughtful and engaging questions that reveal preferences, habits, and fun facts.\n\nCOU  情侣真心话大冒险，抽卡式互动小游戏。",
+    "id": "6476441461",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Decibel Meter dB Noise · Tacet",
+    "desc": "简介：实时测环境噪音分贝，记录噪音曲线。\n              \n                详情：Tacet is a decibel meter and a noise log in one: measure the sound level in dB, log every incident, and hand over a PDF report when you complain about the noise.\n\nMEASURE\n• A-, C- and Z-weighted sound level (dBA/dBC/dBZ), Fast and Slow response\n• Leq, Lmax, Lmin, Peak, L10 and L90 — the values noise rules refer to\n• 60-second chart, colour scale from quiet to painful, keeps measuring with the screen locked\n• Live Activity on the Lock Screen and in the Dynamic Island\n• Calibrate once against a re  实时测环境噪音分贝，记录噪音曲线。",
+    "id": "6832698534",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Diary Lock: My Journal",
+    "desc": "简介：带锁的私人日记本，指纹与密码双重保护。\n              \n                详情：Your All-in-One Private Notes &amp; Planner\n\nWrite, organize, and protect your thoughts with powerful tools in one simple app.\n\nRich Text Editor\n• Bold, italic, underline &amp; strikethrough\n• Bullet &amp; numbered lists\n• Multiple fonts\n• Highlight &amp; text color options\n• Add stickers\n• Insert images\n• Organize with tags\n\nVoice Notes\n• Record audio directly inside notes\n• Capture ideas instantly\n• Perfect for meetings &amp; quick thoughts\n\nPrivate &amp; Secure\n• Lock individual notes with PIN\n• Protect personal jou  带锁的私人日记本，指纹与密码双重保护。",
+    "id": "6759005602",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Emoji 电池小组件 · Wattie",
+    "desc": "简介：用表情包显示电量的桌面小组件，充电有动画。\n              \n                详情：给电池一张脸。\n\nWattie 把你一天要看好多次的电量数字，变成一个可爱的小伙伴。它会像杯子一样慢慢装满，充满时开心地笑，20% 时紧张不安，10% 时哭出来，一接上电源就立刻亮起来。\n\n会反应的小组件\n• 主屏幕小组件两种尺寸，锁定屏幕小组件三种，支持待机显示\n• 八种心情，跟随真实电量、充电状态和低电量模式变化\n• 轻点小伙伴，立即刷新电量\n\n21 个小伙伴，全部原创\n电池 Wattie、猫咪、小熊、青蛙、幽灵、奶茶杯、狐狸、熊猫、六角恐龙等等。每一个都是原创的亮面 3D 玩偶，各有八种心情。\n\n打造你的专属风格\n• 身体颜色，以及低、中、满电量时的电量颜色\n• 背景：纯色、渐变和图案\n• 蝴蝶结、皇冠、棒球帽、派对帽等配饰\n• 拖动电量滑块，保存前预览每一种心情\n\n充电秀\n全屏充电动画，展示你的小伙伴、电量百分比和时钟。在快捷指令中设置一次，之后每次接上充电器都会自动开始。可以选择接电提示音，也可以保持静音。\n\n灵动岛\n充电时，小伙伴会出现在灵动岛和锁定屏幕上，并显示已充电时长。\n\n状态栏墙纸\n制作一张墙纸，让小伙伴挂在电池图标旁边。Wattie 知道你的 iPhone 状态栏在哪里，你也可以拖动小伙伴来对齐位置。\n\n须知\n• 没有任何 App 能替换系统电池图标，Wattie 也不会。它只在图标周围做装饰，并提供真正跟随电量变化的小组件。\n• iOS 以 5% 为单位向小组件报告电量，并按自己的时间表刷新。\n• 无广告。无需账户。任何数据都不会离开你的 iPhone。\n\nWATTIE PRO\n解锁所有小伙伴、充电秀、背景、色板和配饰。可选按周订阅、按年订阅或一次性购买；订阅会自动续期，直至取消。\n\n使用条款: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隐私政策: https://globapps.netlify.app/wattie/privacy/",
+    "id": "6833700925",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Nexty: ADHD Planner &amp; Focus",
+    "desc": "简介：为注意力分散人群设计的任务拆解与专注计时。\n              \n                详情：Make a little room for your day. Nexty is a daily planner designed with ADHD in mind, with clear tasks, small steps and time you can see.\n\nPLAN TODAY AND BEYOND\nKeep your tasks in Now, Later and Not today. Swipe through calendar weeks or choose a date to plan ahead. Break a task into steps and give it the time it needs.\n\nSPIN FOR A STARTING POINT\nLet the Wheel choose a routine. Mark it as done or add it to your calendar for today. Customize your choices and spin whenever you like.\n\nFIND A ROUTIN  为注意力分散人群设计的任务拆解与专注计时。",
+    "id": "6806080693",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "No Contact Tracker: Move On",
+    "desc": "简介：分手后断联打卡，记录天数与心情起伏。\n              \n                详情：No Contact Tracker – Move On\n\nBreak free from unhealthy relationships and take control of your healing journey. Whether you&#x27;re starting no contact, struggling with urges, or building a new life, this app provides everything you need to stay strong, track your progress, and grow every day.\n\nTrack Your No-Contact Streak\n\n- See your streak at a glance\n- Watch your progress grow day by day\n- Get motivated with milestones and achievements\n- Never lose sight of how far you&#x27;ve come\n\nDaily Check-Ins\n\n-   分手后断联打卡，记录天数与心情起伏。",
+    "id": "6790085548",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Notchet：剪贴板管理器",
+    "desc": "简介：剪贴板历史全留存，还能搜到截图里的字。\n              \n                详情：Notchet 会保存你在 iPhone 和 iPad 上拷贝的所有内容。打开它，你拷贝的东西已经存成了卡片：文本、链接、颜色、图片和文件，排列在可以搜索的网格中。\n\n在任何 App 中输入卡片\n添加 Notchet 键盘后，你的卡片会出现在信息、邮件、备忘录或任何文本框中。轻点卡片即可输入。可在“最近”“已置顶”和“片段”之间切换，也可以直接在键盘里搜索。\n\n找出图片中的文字\nNotchet 在设备上识别截屏和照片里的文字。搜索一个词，包含它的图片就会出现。打开图片，即可将其中的文字拷贝为纯文本。\n\n随处存储\n在任何 App 中，都能通过共享表单将文本、链接、图片和文件存到 Notchet。可将存储按钮添加到控制中心、锁定屏幕或操作按钮。键盘打开时会自动存下新拷贝的内容，快捷指令操作则在后台存储。\n\n置顶、片段和合集\n把每天都用的内容置顶。把常发的回复做成片段（可自动填入当天日期），也可以把签名、标志等图片做成片段，在 Notchet 或键盘中都能创建。还可以把卡片归入合集，例如“邮件回复”或“客户地址”。\n\n妥善处理密钥和密码\n从未将其标记为密码的 App 中拷贝的 API 密钥、令牌和密码，只显示首尾几位。你可以选择让 Notchet 从不存储、5 分钟后删除或保留它们。可在设置或控制中心暂停存储 15 分钟、1 小时，或直到你重新开启。旧内容可在 30 天、7 天或 1 天后自动清除。密钥和密码从不同步。\n\niPhone 和 iPad 同步\n打开 iCloud 同步，卡片就会在你的设备之间同步。此功能在你开启前保持关闭，使用你自己的 iCloud，每张卡片都用存放在 iCloud 钥匙串中的密钥加密，只有你的设备能读取。\n\n同样为 iPad 设计\n边栏、网格和预览并排显示，支持全屏、分屏浏览和台前调度。\n\n隐私为本\n历史记录在设备本身加密，密钥永不离开设备。无需账户，没有分析，没有广告，没有跟踪。历史记录保存在你的设备上，开启同步后则保存在你自己的 iCloud 中。\n\n免费试用全部功能 7 天，之后选择方案：年度版（再享 14 天免费）、3 个月版，或一次付费的终身版。终身版也适用于同一 Apple 账户下的 Mac 版 Notchet。订阅会自动续订，直到你在 设置 › Apple 账户 › 订阅 中取消。\n\n使用条款：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隐私政策：https://aqibjaved.dev/privacy/",
+    "id": "6821904286",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Okaydoo 欧卡：提醒事项、清单、待办+日历",
+    "desc": "简介：说一句话就生成结构化待办，配日历提醒。\n              \n                详情：待办清单越列越长,越看越慌?OkayDoo 用 AI 帮你把脑子里的事,变成清晰、做得完的一天。\n\n随口说出来就行——&quot;周三带孩子打疫苗、周五前交报告、有空背单词&quot;,AI 自动拆成一条条带日期、列表、标签的任务,还能帮你排进时间表。你只需专注眼前最重要的几件事。\n\n【AI 帮你记 · 随口一说就成清单】\n· 自然语言输入:一句话,AI 自动提取标题、日期、列表、标签、预计时长\n· 语音速记:动动嘴就能记,自动断句成文\n· 智能拆解:一段话里的多件事,自动拆开并归类\n· 自动归类:AI 建议每条任务该放进哪个列表\n\n【视角 · 强大筛选,精准锁定此刻该做的事】\n视角是 OkayDoo 最强大的功能——一个属于你的&quot;任务筛选引擎&quot;。把任意条件自由叠加,瞬间从成百上千条任务里,精准捞出当下真正该看的那一批。\n· 多维条件随意组合、AND 精确匹配:日期(今天 / 本周 / 自定义区间 / 激活日 / 完成日)、群组与列表、标签、6 种状态、是否重点、预计时长、重复规则……想筛什么就筛什么\n· 存成专属智能列表、反复调用:「本周必做」「等待别人回复的」「标了重点的」「半小时内能搞定的碎片事」——各存一个,侧边栏一点直达\n· 灵活分组与排序:按 列表 / 状态 / 日期 / 标签 分组,按 创建 / 到期 / 优先级 / 时长 排序\n· 每个视角还记住自己的显示范围(看不看已完成、时间区间),互不干扰\n\n【每天只盯 3 件事 · 今日聚焦】\n· AI 每天从你的所有任务里挑出最该做的,你只需选 1–3 件专注完成\n· 仪表盘一屏看全:今日到期、临期逾期、碎片小任务、备选清单、今日时间线、每周复盘\n· 告别&quot;列了一长串,却不知从哪下手&quot;\n\n【排进时间 · 真正做得完】\n· 日 / 周 / 月 日历视图,时间安排一目了然\n· 拖一下就把任务排进时间块,AI 也能帮你自动排满一天\n· 同步系统日历,工作和家庭日程一起看,不撞车\n· 灵动岛 &amp; 锁屏实时活动:正在做的任务实时计时,锁屏就能结束\n· 记录实际用时,看清时间都花在了哪\n\n【想怎么组织都行】\n· 群组 → 列表 两级分类,配合多标签、嵌套标签,怎么归都顺手\n· 6 种任务状态(待处理 · 计划中 · 可行动 · 进行中 · 等待中 · 完成),进度清清楚楚\n· 子任务、重复任务、提醒、重点星标、负责人委派\n· 收件箱先收后理;删错了,回收站还能找回\n\n【睡前日清 · 清爽收尾】\n· 一分钟回顾今天、清空杂念,带着轻松感收工\n· 每周复盘 + 完成统计,看见自己的进步\n\n【主屏直达 · 越用越顺手】\n· 桌面小组件:快速记任务 + 今日时间线,主屏直接记、直接看\n· 浅色 / 深色 / 自定义背景换肤,字号、行距都能调\n· 微信绑定:在微信里也能随手把事丢进收件箱\n· 多设备同步:手机、电脑、网页随时无缝接着用\n\n—— 订阅说明 ——\nOkayDoo 高级功能可选订阅:\n· 月度会员 ¥12 / 月\n· 年度会员 ¥88 / 年\n· 一次买断 ¥98(永久解锁)\n订阅自动续期:在当前周期到期前 24 小时内不取消即自动续费,费用记入你的 Apple 账户;可随时在「设置 - Apple ID - 订阅」中关闭。\n隐私政策与使用条款:https://okaydoo.cn",
+    "id": "6761721288",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "OmniDex: Field Guides",
+    "desc": "简介：野外图鉴合集，离线查物种特征与分布。\n              \n                详情：OmniDex is a library of field guides in one app. Each guide, called a Dex, covers one subject with its own look and its own details.\n\nBuy a Dex on its own, or buy Everything to unlock every paid Dex, including ones added later. Each is a one-time purchase. Before you buy, a locked Dex shows what it covers and a few of its entries. Restore Purchases is in Settings. More Dexes will be coming soon.\n\nLAID OUT LIKE A FIELD CARD\n• Every entry has its name, scientific name and classification at the top  野外图鉴合集，离线查物种特征与分布。",
+    "id": "6830266167",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Plant Identifier · PlantKey",
+    "desc": "简介：拍照识别花草树木，附养护要点。\n              \n                详情：PlantKey tells you what a plant is from a photo — right on your iPhone, with no account and even without internet.\n\nIDENTIFY PLANTS IN A SECOND\n• Houseplants, garden flowers, trees, herbs, weeds and wildflowers — more than 7,900 of the world&#x27;s most common species\n• Point the camera at a leaf, a flower or the whole plant, or pick a photo from your library\n• Honest answers: up to three likely matches, how sure PlantKey is, and reference photos to compare\n• Not sure? Add a close-up of a leaf or a f  拍照识别花草树木，附养护要点。",
+    "id": "6833565635",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "ScrubMate: Nursing Study App",
+    "desc": "简介：护理专业题库与考点速记，按章节刷题复盘。\n              \n                详情：ScrubMate is a study companion for nursing students. It&#x27;s built for the in-between moments — the bus ride before clinical, the half hour before a sim lab, the night before an exam — when you need a quick refresher and not another textbook.\n\nReferences\n• Drug cards with plain-language nursing considerations\n• Vitals and normal ranges by age group (neonatal, peds, adult, OB, geriatric)\n• Acronyms and definitions for the alphabet soup of nursing\n• A short daily tip on the home screen\n\nCalculators\n•  护理专业题库与考点速记，按章节刷题复盘。",
+    "id": "6755907448",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "TimeBox – 计划、执行、复盘与习惯",
+    "desc": "简介：计划、执行、复盘三栏推进，配习惯打卡。\n              \n                详情：关于 TimeBox\n\nTimeBox 是一款帮助你规划一天、保持专注，并复盘时间去向的时间管理应用。\n\n任务、时间块、习惯、专注记录、活动日志和总结报告会自然连接在一起，\n帮助你更清晰地安排今天要做的事，把注意力放在真正重要的事情上。\n\n不只是制定计划，TimeBox 还能记录你的实际执行情况，\n通过每日、每周和每月回顾，帮助你看清自己的时间使用方式。\n\n主要功能\n1. 用时间块规划一天\n把任务安排到具体时间段，在一天开始前理清节奏和重点。\n\n2. 管理任务与项目\n按项目整理任务，让待办事项更有条理，保持收件箱清爽。\n\n3. 养成习惯\n创建每日、每周、每月习惯，跟踪进度，并保持连续完成记录。\n\n4. 保持专注\n使用专注模式投入单个任务，并记录真实的专注时间。\n\n5. 记录实际用时\n对比计划时间与实际完成情况，了解自己的执行节奏。\n\n6. 回顾进展\n通过每日总结和周/月统计，清楚看到时间都花在了哪里。\n\n7. 分享成就\n生成习惯打卡卡片和总结卡片，记录并分享你的进步。\n\n8. iCloud 同步\n在 iPhone、iPad 和 Mac 之间同步数据，多设备无缝使用。\n\n有意识地规划每一天。\n清晰记录时间的去向。\n用 TimeBox 建立更好的习惯与节奏。\n\n- Terms of use\nhttps://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+    "id": "6759322366",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "WeightSync: 运动员体重记录",
+    "desc": "简介：运动员体重与体脂记录，趋势曲线一目了然。\n              \n                详情：让 Strava 上的体重始终保持最新，无需操心。WeightSync 读取“健康”App 中的体重并自动发送到 Strava，让你的 W/kg、功率和卡路里估算始终准确，无需手动输入。\n\n使用方法\n只需连接一次“健康”App 和 Strava。之后照常称重即可：智能体重秤及其 App、iPhone 或 Apple Watch 都可以记录。WeightSync 会检测到新记录，即使 App 已关闭也会在后台同步。\n\n为什么重要\nStrava 根据体重估算功率、卡路里和功体比。如果资料中的体重是几个月前的，这些数据也一样过时。专为关注 W/kg 的骑行者、管理比赛体重的跑者，以及需要可靠数据的铁人三项运动员打造。\n\n主要功能\n• 从“健康”App 到 Strava 的后台自动同步\n• 失败重试队列和完整的同步历史\n• 支持复杂功能和数码表冠输入的 Apple Watch App\n• 主屏幕小组件和实时活动\n• 连续称重天数和里程碑，帮你保持习惯\n• Siri 和快捷指令：用语音记录体重或立即同步\n• 额外重量配置，可将装备重量加到同步数值中\n• 智能提醒，当天已称重时自动跳过\n\nPREMIUM\n• 带 7 日移动平均线和趋势线的体重变化图表\n• 每周一的周报\n• 以 CSV 导出全部历史记录\n• 通过 iCloud 在设备间同步\n• 多个可命名的额外重量配置\n\n免费版\n• 从“健康”App 读取体重\n• 手动输入体重\n• 将体重写回“健康”App\n• 在 Apple Watch 上记录\n\nStrava 同步和 Premium 功能包含在订阅中，可先免费试用。\n\n隐私\n你的体重数据只在“健康”App 和 Strava 之间传输，无需额外注册账户。\n\n注意事项\n受 Strava API 限制，体重会按发送当天的日期记录，而不是原始称重日期。这是 Strava 平台的限制。\n\n系统要求\n需要 iOS 16.6 或更高版本的 iPhone。Apple Watch App 需要 watchOS 11.6 或更高版本。需要 Strava 账户。\n\n订阅说明\n确认购买时将通过你的 Apple 账户付款。除非在当前周期结束前至少 24 小时取消，订阅将自动续期。你可以随时在 Apple 账户设置中管理或取消订阅。\n\n使用条款：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隐私政策：https://weightsync.app/ios/privacy-policy.html\n\nWeightSync 是一款独立 App，与 Strava 无关联。",
+    "id": "6757109803",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "ZenWalker-步履生花",
+    "desc": "简介：走路养植物，步数换成长，正念散步。\n              \n                详情：*步履生花* 是一款专注计步、追踪、步行导航和正念放松的步行应用。\n通过散步、步行、通勤等日常活动，您可以记录步数、管理健康习惯，并通过培育虚拟花园获得持续的成长反馈。\n\n核心功能\n\n计步与追踪\n自动计步，实时查看今日步数与目标进度。\n支持散步、步行、通勤、慢跑等日常场景。\n结合系统健康和运动传感器，稳定记录步数。\n\n步行导航与路线规划\n支持步行导航、路线规划、预估时间及距离显示。\n提供推荐与备选路线，让地图探索更清晰。\n支持一键无缝切换至系统地图，满足日常出行与探索需求。\n\n世界探索与地图发现\n在世界探索页面查看您的专属网格足迹。\n通过步行不断解锁新区域，形成可视化的探索记录。\n打造运动、探索与健康习惯的闭环。\n\n植物花园培育\n将日常步数转化为植物生长能量。\n解锁包含向日葵、玫瑰、樱花、荷花等在内的植物图鉴。\n通过培育与成长反馈，提升步行与运动的持续性。\n\n白噪音、冥想与放松\n内置适合减压、放松、正念与专注的白噪音。\n适用于通勤、散步、公园漫步等日常场景。\n帮助建立更放松的正念步行体验。\n\n锁屏小组件与实时更新\n直接在锁屏界面查看步数进度。\n支持实时活动更新与主屏幕小组件。\n一目了然，快速获取步行数据与每日目标。\n\n隐私与安全\n无需注册或登录。\n隐私优先，尽量减少不必要的数据收集。\n清晰的隐私政策与服务条款入口。\n\n如果您正在寻找一款集计步、记录、导航、白噪音放松、植物培育和地图探索于一体的健康应用，*步履生花* 将帮助您让每一步都更有意义。\n\n使用条款 (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隐私政策: https://zcnt04z98lwf.feishu.cn/docx/LJiYdgnHgo2fPjxiWYIcvivjnug",
+    "id": "6757518749",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "专注渔夫 - 钓鱼专注与番茄钟",
+    "desc": "简介：钓鱼玩法包装的番茄钟，专注越久鱼获越多。\n              \n                详情：放下手机，今天的收获不止一点点。\n专注渔夫把番茄钟变成一场小岛垂钓。读书、备考、工作时，让钓手替你静静守着鱼竿，把认真度过的时间，变成一条值得收藏的鱼。\n\n【为 iPhone Duo 优化】\n已适配 iPhone Duo 的合拢与展开体验。展开后，小岛与专注图表并排展示，好友、鱼缸和小组件入口触手可及，让大屏专注更从容。\n\n【认真专注，才有鱼上钩】\n选好任务与时长，开始今天的垂钓。完成目标，就能收获鱼类贴纸；提前收竿，就只能空手而归。下一条会是什么鱼？留到专注结束再揭晓。\n\n【约上好友，一起钓鱼】\n交换小岛名片就能添加好友，隔空投送也可以。拜访好友开放的小岛，或相约同岛专注，最多四人一起垂钓。各自忙碌，也有人陪你坚持。\n\n【当心，盗贼惦记着你的小岛】\n你不在的时候，盗贼会悄悄带走岛上的资源。回来保持专注，让小岛慢慢恢复生机。今天也来守护自己的小天地吧。\n\n【找到舒服的学习节奏】\n自定义专注、短休息与长休息，给读书、学习和工作安排合适的节奏。实时活动让你在锁屏或灵动岛查看计时，支持的设备上随时掌握进度。\n\n【把小岛装成喜欢的样子】\n挑一块喜欢的地形，摆上树木、房屋和会动的奇幻伙伴。积累专注进度，解锁更多装饰，让小岛留下你的生活气息。\n\n【每一份努力，都看得见】\n查看专注统计、记录心情，收藏鱼获，分享属于你的专注报告。听着环境音沉浸下来，在浅色与深色主题之间找到舒服的氛围。\n\n基础专注与鱼获收藏免费。部分功能需 Pro，可选月度、年度自动续订或一次购买的永久方案；订阅可在 App Store 设置中管理或取消。\n\n从一段专注开始，看看今天能钓到什么。\n\n隐私政策：https://boobar.app/stillfin/zh-Hans/privacy.html\n使用条款：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+    "id": "6799313682",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "专注空间 - 沉浸式自习室番茄钟",
+    "desc": "简介：动态场景配环境音，联动 Apple Music 做番茄钟。\n              \n                详情：每个场景，都有适合它的音乐。\n雨夜、咖啡馆、海边，专注空间搭配了不同的 Apple Music 预设歌单。选个喜欢的视频场景，听环境音，也可以让音乐一起陪你读书、写作或工作。\n\n【选一个喜欢的场景】\n雨夜、咖啡馆、海岸、溪流、列车、壁炉，每个场景都有视频画面和环境音。想听雨声，或是换个地方读书，打开一个场景就可以开始。\n\n【环境音和音乐一起听】\n在 App 内浏览音乐资料库中的歌曲、专辑、播放列表和已下载音乐，点选即可播放。也可以使用每天轮换的 Apple Music 场景歌单，让音乐与环境音一起陪伴专注。\n支持列表循环、随机播放和单曲循环，并可分别调节音乐与环境音的音量。\n访问音乐资料库需要授权，曲目能否播放取决于其来源、下载状态与使用权限。Apple Music 场景歌单需要有效的 Apple Music 订阅；Pro 不包含该订阅。\n\n【按自己的节奏计时】\n用番茄钟安排专注与休息，用倒计时设定时长，或用正计时记录自己花了多久。\n\n【回看专注记录 · Pro】\n用标签区分学习、工作、阅读等活动，通过统计和时间线回看专注记录。\n自定义标签，以及查看个人统计和时间线，需要 Pro。\n\n部分内容和功能需要付费解锁，具体以 App 内展示为准。\n\n隐私政策: https://www.hbcstudio.cn/privacy-policy.html\n使用条款: https://www.hbcstudio.cn/terms-of-service.html",
+    "id": "6811534796",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "余岛记账",
+    "desc": "简介：萌宠陪记账，收支、预算与存钱心愿一本账。\n              \n                详情：今天还能花多少？余岛把每日预算变成一缸看得见的小日常，让记账多一点轻松，也多一点陪伴。\n\n新增 10 款桌面小组件，跟随你选择的动物伙伴。快速记账和记一笔小组件免费，展示数据的小组件为会员权益。\n\n看见今天的预算\n按周或按月设置生活预算，也可以从发薪日开始。余岛根据周期天数分配每日额度，首页直接显示「今日可花」。记下的消费化成带分类图案的小物件，点一下就能查看明细。\n\n把每一笔生活记清楚\n记录支出与收入，选择分类、日期、备注和感受。支持编辑、删除、复制、搜索和筛选；租金、订阅等固定支出在到期后下次打开应用时补记。\n\n翻一翻，看看生活的节奏\n在日历里查看每天的预算结余，在周、月、年回顾中查看收支、分类与结余变化。已结束的预算日会计入回顾，今天仍在进行中。\n\n给小心愿留一点位置\n建立心愿清单，选择一个当前心愿，或记录自由储蓄。在储蓄中记下已留存和取用的金额，查看目标进度；也可以按本期或上期预算净结余的建议，确认一笔留存记录。达成目标时，让小伙伴为你庆祝。\n\n忍住没买，也值得记下\n把没有发生的购买单独记录，回头看看自己的选择。这些记录不会增加预算结余或储蓄余额。\n\n零钱猫、记账、预算、储蓄目标和图表均可免费使用。会员可解锁点点狗、团子仓鼠、小叶兔、栗栗小熊猫、麦麦柴犬5位伙伴、对应消费物件和可选 iCloud 同步。\n\n记录先保存在自己的设备\n无需注册，不接入银行，不含广告或分析追踪。可以导出完整 JSON 备份用于恢复，也可以导出 CSV 用于阅读和分析。iCloud 同步需会员权益，由你使用自己的 Apple 账户主动开启；同步不能代替主动备份。\n\n使用前了解\n余岛是个人记账与预算记录工具，不保管资金，不执行转账，也不连接银行余额。「预算已省」依据你的预算与记录估算，并非真实银行存款；漏记支出会使估算偏高。储蓄与心愿进度依据你填写的存取记录。支持多种币种，新账本默认跟随设备地区；每个账本使用一种币种，不提供汇率换算。\n\n可选择按月或按年自动续费订阅，或一次购买永久解锁。有效方案享有相同会员权益，已有买断权益继续有效。价格与计费周期在购买前显示，费用由 Apple 账户支付。订阅自动续费；如需取消，请至少在当前周期结束前 24 小时通过 Apple 订阅设置操作。删除应用不会取消订阅。使用原 Apple 账户可恢复有效购买。\n\n支持 iPhone 和 iPad，需 iOS 18 或更新版本。\n\nApple EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+    "id": "6810765166",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "叠影",
+    "desc": "简介：把两张照片叠成一张双重曝光，做出电影感画面。\n              \n                详情：叠影是一款无广告、简单直观的照片、Live Photo 与视频拼图工具。\n\n工具不重要，重要的是记录，感谢你选择ONANY，请记录并开始拼接你的时刻！\n\n选择 1–9 个照片、Live Photo 或视频，快速切换多种版式与画布比例；调整素材顺序、位置、缩放、旋转、间距、圆角和背景，拼出来就好了。\n\n全新的素材选择器可按照片、Live Photo、视频与截图分类浏览，清楚展示已选顺序。遇到尚未下载到设备的 iCloud 素材时，会直接显示下载状态与真实进度，完成后再进入编辑。\n\n你还可以选择包含人物或宠物的照片，由设备自动识别主体并放进拼图。每个主体都能独立拖动、缩放、旋转、调整图层，并添加阴影或白边。白边支持实线、虚线、点线和发光样式，也能调整粗细、颜色、边缘与密度。\n\n完成后可将作品导出为静态图片、Live Photo 或视频并保存到系统相册。所有照片、视频与主体识别都在设备本地完成，无需上传云端。\n\n免费使用：\n- 1–4 张静态照片与常规版式\n- 单主体与基础编辑\n- 1080p 导出\n- 最多 3 个自动保存作品\n- 不限次数、无广告、无水印\n\nONANY Pro：\n- 一次购买，永久解锁，不是订阅\n- 解锁 5–9 个素材、Live Photo 与视频、多主体、创意版式、自由网格、主体遮挡、透明 PNG 与无限作品\n- 支持 Apple 家庭共享\n\n主要功能：\n- 1–9 个照片、Live Photo 与视频自由组合\n- 多种规则与创意版式\n- 常用社交平台画布比例\n- 裁切、换图、排序、翻转、旋转、适配与位置调整\n- 间距、圆角、边距与背景调整\n- 人物与宠物自动识别\n- 多种主体白边、阴影、遮挡与图层顺序调整\n- 作品自动保存与版本快照\n- 静态图片、Live Photo、视频与透明 PNG 导出\n- 无广告、无水印",
+    "id": "6796258553",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "复古相机 CCD相机 数码相机 · Flashpix",
+    "desc": "简介：Y2K 复古 CCD 滤镜相机，直出胶片颗粒感。\n              \n                详情：让手机变成一台2005年的数码相机。Flashpix不是滤镜合集，而是一台口袋数码卡片机：屏幕就是相机的背面，小小的LCD就是取景器，每一张照片都有同样的Y2K质感：直闪光、浓郁的CCD色彩，以及角落里的橙色日期水印。\n\n一台相机，一种质感。\n• 直闪效果：人像跳到前面，背景沉入黑暗，高光泛起光晕。\n• CCD色彩：深邃的蓝、浓烈的红，暗部带一点颗粒，镜头柔软、带点廉价感。\n• 烧进照片里的橙色日期水印，可选 YY MM DD、DD MM YY 或 MM DD YY。\n• 后置摄像头使用真实的LED闪光灯，自拍使用明亮的屏幕补光。\n• 像老相机菜单一样的白平衡和我的色彩：钨丝灯偏蓝、荧光灯偏粉，还有复古褐、黑白。\n• 自拍定时、变焦、对焦提示音和快门声。\n\n真正的相机手感\n• 拍完在小屏幕上回看，翻看9张索引页，不要的直接删除。\n• 照片自动保存到相册（可以关闭）。\n• 分享照片本身，或分享“LCD截图”：带着机身边框、显示在相机屏幕上的那张照片，发朋友圈或照片合集正合适。\n\n冲洗你的老照片\n从相册里选照片，就能得到仿佛用DC-5拍下的效果，水印上是照片真实的拍摄日期。\n\nFLASHPIX PRO\n• 视频模式：640×480 片段，同样的质感、声音和日期。\n• 日期水印可选 &#x27;00 至 &#x27;12 的任意年份。\n• 相册照片无限次冲洗（前3张无需 Pro）。\n• 夜景模式、500万像素照片和6种机身颜色。\nFlashpix Pro 提供按周或按年自动续期的订阅，或一次性购买的终身版；周订阅以3天免费试用开始，年订阅以1周免费试用开始。确认购买时，款项将从你的 Apple 账户中扣除。除非在当前订阅期结束前至少24小时取消，否则订阅将自动续期。你可以在 Apple 账户设置中管理或取消订阅。\n\n无广告。无需账号。照片只保存在你的手机里。\n\n使用条款: https://flirta.app/terms-flirta\n隐私政策: https://flirta.app/privacy-flirta",
+    "id": "6834137171",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "数学实验台 - 解方程函数图像",
+    "desc": "简介：输入方程直接出函数图像，支持多曲线对比。\n              \n                详情：数学实验台把数学题做成可以动手的推理关卡：在天平两边做同一件事，直到只剩下 x；拖动参数，让抛物线穿过目标点；只用圆规和直尺，作出角平分线。每一步都由引擎实时检查是否等价。\n\n【四个学科，95 关】\n代数天平：一元一次方程、方程组、一元二次方程、不等式。乘以负数要变号，除以含 x 的式子可能丢根，烧脑关专门考这些陷阱。\n函数图像：一次函数、二次函数、反比例函数、绝对值函数，平移与伸缩，用图像解方程和不等式。\n尺规作图：中垂线、角平分线、垂线、平行线、正六边形、外心与内心、圆的切线。\n概率实验台：抛硬币、掷骰、摸球与几何概率，比较理论概率和模拟频率。\n40 关可直接游玩，其余 55 关随 Pro 解锁。首页每日挑战一关，复习列表带你重做用过提示的关卡。\n\n【原理卡】\n通关后，原理卡会用你这一关的真实数值讲清为什么成立，例如 x = (3 ± √17)/4，或 3² + 4² = 25。\n\n【六个工具，随手可用】\n• 精确分数：约分、通分、带分数，识别循环小数，质因数分解\n• 解方程：一元一次与一元二次（精确根式）、不等式区间、二元与三元一次方程组\n• 函数作图：最多三条曲线，零点、交点、顶点\n• 三角形求解：已知三项求其余边角与面积，含两解情形\n• 统计计算：平均数、中位数、方差等，另有频数分布直方图与箱线图\n• 排列组合：排列、组合、阶乘和二项式系数\n工具结果不限次数；提示不消耗、可无限撤销。\n\n【Pro，一次买断】\n解锁全部 95 关、原理卡完整推导、工具逐步过程，以及可保存的自由实验台（天平台、图像台、作图台、概率台）。\n\n【完整答案包含在 Pro】\nPro 包含全部答案与所有 Pro 功能。每类前三道固定样题可直接查看，其余答案随 Pro 解锁。一次买断，无订阅。\n\n【隐私】\n全部计算在本机完成，离线可用；无账号、无分析 SDK；进度通过你自己的 iCloud 私有空间同步。\n\n说明：本 App 用于原理演示与推理练习，题目为原创，不对应任何教材版本，不承诺考试成绩。\n\n联系方式、隐私政策和使用条款见设置页。",
+    "id": "6824338641",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "旅迹 TripTrace",
+    "desc": "简介：把旅行路线、照片与花销串成一条可回看的轨迹。\n              \n                详情：旅迹 TripTrace 是一款为旅行者设计的行程记录与协作工具。无论是短途周末出行，还是多人同行的长途旅行，你都可以把目的地、日期、每日安排、备注、灵感和同行成员整理到同一段旅程里。\n用旅迹，你可以创建旅行计划，按日期管理每日安排，把零散想法保存成描述卡片，并邀请同行者一起查看和维护行程。它适合出发前规划，也适合旅途中随手记录，让旅行信息不再散落在聊天记录、备忘录和相册之间。",
+    "id": "6764863090",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "物隅 ObjU - 生活资产记录",
+    "desc": "简介：凭证、保修与订阅到期提醒，家里的东西都有账。\n              \n                详情：物隅 ObjU 是一款为真实生活物品而做的个人资产档案。你可以记录物品的购买日期、价格、凭证、保修、附件、图片、备注和当前状态，把散落的信息整理到一个清楚的位置。\n\n主要功能：\n- 资产关联：关联相机与镜头、设备与配件、主件与附属物。\n- 物品生命周期：记录使用中、闲置、已转手、已赠出、已退货、已报废或已用完。\n- 心愿单：先记录想买的东西，给冲动消费一点缓冲。\n- 订阅管理：单独管理持续付费服务，和一次性买断的物品区分开。\n- 自定义整理：自定义分类、标签和主题颜色。\n- 统计口径：按自己的方式查看总资产、日均成本、分类统计和离手物品统计。\n\n当前版本无需注册账号，所有数据保存在本机和 iCloud。物隅不包含广告或第三方统计 SDK。\n\n用户协议：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隐私政策：https://obju.ctfanstudio.com/privacy",
+    "id": "6772833076",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "随时记 - 你的极简记账助手",
+    "desc": "简介：三秒记一笔，预算与定期付款一眼掌握。\n              \n                详情：极简记录每一笔收支，预算进度、资产变化与消费趋势一目了然。无论是日常开销、信用卡还款、周期订阅，还是攒钱目标与待报销款项，都能清晰管理。\n随时记支持票据、支付截图和文本智能识别，也可以通过快捷指令快速记账。开箱即用、无广告、无需注册，数据本地优先保存，让记账回归简单、安心与可控。\n核心功能与亮点\n- 极速记账\n  支持分类、子分类、备注、账本、钱包与多种货币，配合快捷记账模板，随手记录每一笔收支。\n- 智能录入 [Pro]\n  拍照扫描票据，识别支付截图或文本中的金额与商户信息，确认后即可入账。支持通过快捷指令识别银行动账短信，识别过程在设备本地完成。\n- 订阅与周期提醒\n  统一管理订阅、周期扣费、信用卡还款、贷款及周期收入，按需设置提醒，避免遗漏重要款项。免费支持最多 3 个周期项目，Pro 解锁无限追踪。\n- 预算与消费洞察\n  查看月度收支、预算进度、分类与子分类明细，掌握消费节奏。Pro 支持本年度总览及任意自定义时间段的财务报表与趋势分析。\n- 资产全景\n  管理现金、银行卡、电子钱包与信用卡，查看账户余额、信用额度、月度变化和历史流水；支持资产之间转账、信用卡还款及报销款跟踪。\n- 攒钱目标\n  为旅行、设备、应急金等目标设定金额，持续记录存入与取出进度。Pro 解锁多个攒钱目标。\n- 多账本管理 [Pro]\n  按个人、家庭、旅行或其他用途创建和管理多个账本，并可自定义账本顺序与默认记录位置。\n- 搜索与快捷入口\n  快速搜索历史流水，调整分类排序和快捷记账模板；支持从 iPhone 主屏幕小组件直接记账、查看预算、消费趋势与记账打卡。\n- 多端协同 [Pro]\n  基于个人私有 iCloud 在 iPhone 与 Apple Watch 之间同步账本，支持在手表上快速记账、查看预算、近期消费和待付款项目。\n- 数据迁移与备份 [Pro]\n  支持导入 CSV、支付宝账单和微信账单，也可以创建带密码保护的本地加密备份并恢复账本。CSV 流水导出永久免费提供。\n- 纯粹体验\n  无广告、无需注册，账本默认保存在本地设备。启用同步后，iCloud 仅作为你的个人私有同步通道；还可使用 Face ID、Touch ID 或设备密码保护账本访问。\n注：Apple Watch 端需与已激活 Pro 的 iPhone 配对，并开启 iCloud 同步。\n\n关于 Pro 会员\n- 灵活方案：提供月度、季度、年度自动续订订阅，以及一次购买、永久可用的 Lifetime 买断选项，具体价格以 App 内展示为准。\n- 管理与取消：确认购买后，费用将计入 Apple 账户。订阅会自动续订；如需取消，请在当前订阅周期结束至少 24 小时前，前往系统「设置」→「Apple ID」→「订阅」中关闭。\n- 数据安全声明：账本数据默认保存在你的本地设备。启用 iCloud 后，数据仅通过你的个人私有 iCloud 同步，不会上传至开发者服务器。\n- 隐私政策：https://www.lutratally.xyz/apps/lutratally/privacy.html\n- 使用条款（EULA）：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n- 支持与反馈：https://www.lutratally.xyz/apps/lutratally/support.html",
+    "id": "6810081730",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "BaudHub: Modbus Assistant",
+    "desc": "简介：手机当 Modbus 调试器，读写寄存器看报文。\n              \n                详情：BaudHub: Connect devices. Find the problem. Save the data.\n\nRead Modbus values, inspect charts, check original communication frames and keep a field record. BaudHub is a portable device inspection and debugging tool for engineers. Mac is the main work platform; when it is not at hand, iPhone and iPad can perform the read-only checks supported by the current version or provide an independent reading alongside a Mac.\n\nMain features\n• Pin key readings and see when they were last updated. Stale valu  手机当 Modbus 调试器，读写寄存器看报文。",
+    "id": "6809827203",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Brumi : Photo&amp;Storage Cleaner",
+    "desc": "简介：一键清理重复照片、截图与占内存的大文件。\n              \n                详情：Brumi tidies your iPhone photo library and reviews the iCloud Drive folders you choose, to find large files, files not modified in over a year, and likely duplicates.\nPhotos are analyzed on your device, and every deletion asks for confirmation first. No account needed.\n\nPHOTO CLEANUP\nBrumi sorts your library into duplicates, similar photos, blurry shots, closed-eye shots, screenshots, screen recordings, large videos, bursts and low-scoring photos. Deleted photos go to Recently Deleted, where you  一键清理重复照片、截图与占内存的大文件。",
+    "id": "6832240115",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Calendar in Motion: DaySpin",
+    "desc": "简介：3D 转动的日历视图，日程与提醒一眼看清。\n              \n                详情：DaySpin brings your calendar and reminders to life in a unique spatial view. Rotate the seven-sided calendar cylinder through days or calendar weeks and bring exactly the panel you want to the front.\n\nSwitch between day and week mode for a quick overview. Tap the front panel to open a clear day or week list, while the two-column week view keeps all seven days compact and easy to scan. The month view lets you spot busy days at a glance.\n\nMake DaySpin your own: choose color schemes and backgrounds  3D 转动的日历视图，日程与提醒一眼看清。",
+    "id": "6808622622",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "FoodIQ：AI 卡路里计算器",
+    "desc": "简介：拍照估算热量，自动记下一天吃了多少。\n              \n                详情：拍照识食物 一键获取卡路里\nCalorie Cam让饮食记录更简单 拍下餐盘 AI识别菜肴 估算份量和卡路里 一键确认即可\n\n如何使用\n1 拍下食物\n2 AI估算份量和卡路里\n3 点击添加 或快速调整\n\n为什么更快\n\n一键记录 无需搜索或填写\n\n一张照片识别混合菜品\n\n快速修改份量或卡路里\n\n清晰的每日总量和记录\n\nFoodIQ提供自动续订订阅\n月度计划 9.99美元\n年度计划 标准 29.99美元 含3天免费试用\n年度计划 优惠 19.99美元 含3天免费试用 节省约83%\n\n购买确认后从Apple ID账户扣款 订阅将在到期前24小时自动续订 管理或取消请前往App Store账户设置\n\n隐私政策 https://foodiq.pro/privacy\n\n使用条款 https://foodiq.pro/terms",
+    "id": "6751585624",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Games We Played",
+    "desc": "简介：把小时候玩过的棋盘游戏搬进手机，单机可玩。\n              \n                详情：Rediscover the games you played with friends and family. Games We Played brings 34 board, paper-and-pencil and puzzle games to one iPhone or iPad.\n\nPLAY TOGETHER\nShare one device for a quick local match. On iPad, face-to-face presentation makes supported games feel like a shared tabletop.\n\nFAMILIAR GAMES, CLEAR RULES\nExplore Gomoku, Reversi, Tic-Tac-Toe, Dots and Boxes, Animal Chess, Chinese Chess, Chess, Huarong Dao and more. Read illustrated rules and choose the available rule variants before   把小时候玩过的棋盘游戏搬进手机，单机可玩。",
+    "id": "6824175108",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Intergalactic Desk Toys",
+    "desc": "简介：桌面上的星际小玩具，随手拨弄解压。\n              \n                详情：Intergalactic Desk Toys is a collection of six tiny interactive worlds, for anyone who finds the regular-sized universe a bit much\n\nSplash liquid mercury, explore a miniature city, shoot pool through portals, stir the stars, help a frog cross traffic, or grow an island of your own\n\nLeave them running and watch their little worlds go about their business. Tap to interfere\n\nMercury and Mini City are free. Unlock the remaining four toys with a one-time purchase. No subscription. The universe is com  桌面上的星际小玩具，随手拨弄解压。",
+    "id": "6825425468",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Kokoro Ryo: Journal &amp; Planner",
+    "desc": "简介：手作感日记本，一天一页配计划与心情。\n              \n                详情：Your thoughts and your to-dos, in one place. Say it and it&#x27;s saved. Drag it and it&#x27;s sorted.\n\n• Too tired to type? Hold the button and talk — saved in seconds, before you forget\n• No drawing skills needed to make pages as pretty as a magazine\n• Plans changed? One drag fixes it — nothing to rewrite\n• Leave a letter for yourself next year — it arrives on this day, one year from now\n• On a foldable iPhone, unfold it and turn it sideways: journal on the left, planner on the right\n• Everything stays   手作感日记本，一天一页配计划与心情。",
+    "id": "6815899323",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "MediaUtilityPro - 视频剪辑工具",
+    "desc": "简介：时间线式剪辑，裁切、拼接、加字幕与配乐。\n              \n                详情：Media Utility Pro — Timeline Video Editor for Filmmakers &amp; Creators on iPhone, iPad and Mac\nEdit videos on your phone, tablet, or Mac. Media Utility Pro is a multi-track timeline video editor for cutting and finishing clips, then exporting HD video—fast.\n\nFree forever\n• Timeline editing — Arrange clips and build your story.\n• Cut, trim &amp; split — Core tools to shape each shot.\n• Speed — Change clip speed (constant speed).\n• Crop, rotate, flip &amp; reverse — Adjust framing and playback.\n• Transitions  时间线式剪辑，裁切、拼接、加字幕与配乐。",
+    "id": "6762476764",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "PDF Editor and Viewer",
+    "desc": "简介：打开、标注与合并 PDF，支持手写签名后导出。\n              \n                详情：&quot;PDF Editor and Viewer&quot; is your all-in-one tool to manage PDF files easily and quickly. With &quot;PDF Editor and Viewer&quot;, you can open, read, and edit any PDF right from your device, no internet needed.\n\nEdit your PDFs just the way you want! You can add or remove pages, highlight important text, underline key points, and write or draw notes directly on the page. The app also lets you save and share your edited PDFs instantly.\n\nWhether you’re reviewing documents, filling forms, or studying notes, &quot;PD  打开、标注与合并 PDF，支持手写签名后导出。",
+    "id": "6755155755",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Phomus - 整理相册，照见时光",
+    "desc": "简介：按时间线回顾旧照片，边看边清理。\n              \n                详情：还记得多久没好好翻过你的相册了吗？手机里的相册，明明装满了回忆，却常常变成杂乱无章的“垃圾桶”。Phomus，帮你重新找回照片的意义 —— 这里藏着你的人生亮点，应该被看见、被珍藏、被好好保存。\n\n一张接一张，回忆悄然流动\n\nPhomus 用智能排序，自动识别出值得回看的时刻。每一次翻开相册，都不只是翻看照片，而是在重遇过去的自己。比起枯燥的相册列表，这是一条只为你定制的回忆流。\n\n顺手清理，迎接更新的生活\n\n当你沉浸在回忆里时，也能轻轻一滑，顺手删除那些不想留的照片。\n不需要专门找时间去清理，刷着刷着，相册就轻松干净了，给新的回忆腾出空间。\n\n批量整理，省时又省心\n\n想要更快？进入批量模式，勾选多张照片一键操作。\n不必一张张点，不用反复确认，几秒钟就能完成高效清理，节省更多时间去享受生活。\n\n时光相册，回忆井然有序\n\n按回忆周、时间线生成专属相册，帮你记录每一段生活的起伏。\n无论是去年那次旅行，还是去年的家庭聚会，只需轻轻一滑，都能快速找到那些温暖时光。\n \n真正安全，回忆只属于你\n\n坚持本地处理，不上传、不追踪、不做任何远端训练。\n所有回忆只存在你的设备里，没人能偷窥、没人能分析，彻底告别数据焦虑，放心安心整理相册。\n\n相册，不该成为数字垃圾场。\n翻开 Phomus，让回忆流动起来，让美好再次被看见。\n今天就开始整理，不为清理而烦恼，只为更轻松地热爱生活。\n\n\n＃关于订阅\n- ﻿﻿Phomus 当前提供按月和按年会员选项供您购买；\n- ﻿费用将在确认购买时向您的iTunes 账号收取；\n- ﻿您的订阅会自动更新，除非您在已付费期间结束前至少 24小时关闭自动更新；\n- ﻿您的账号会在已付费期间结束前24小时内被再次收费；\n- ﻿您可以在购买后前往账号设置管理订阅并关闭自动更新；\n- ﻿如果您的试用还未结束，剩余的天数在您开始订阅后会自动失效；\n\n# 服务条款: https://sprout-garlic-658.notion.site/Phomus-2392c252c47e81fe80f6e4f11c2b00c7\n\n# 所有私人数据都会遵守 Phomus 隐私政策及条款处理。\n请点击链接参见更多详情：https://sprout-garlic-658.notion.site/Phomus-2392c252c47e811990acfd919a1c2f41",
+    "id": "6748335312",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Search Panel - Search Console",
+    "desc": "简介：手机上查网站搜索表现，关键词与点击趋势。\n              \n                详情：适用于 iPhone 和 Mac 的原生 Google Search Console 客户端。\n\n为随时处理工作的 SEO 专家和网站所有者打造。\n• 监控网站的展示次数和点击次数\n• 按搜索查询、网页、国家和设备分析点击率及平均排名\n• 按日期范围、设备和数据类型筛选\n• 对网站进行分组和整理\n• 添加和移除网站\n• 添加、查看和移除站点地图\n• 在 Google Search Console 中检查 URL\n• 自定义图表和界面\n• 使用 Pro，在 Mac 上将你的 AI 工具连接到 Google Search Console\n\n可免费试用，购买 Pro 以解锁更多功能。\n可在应用内选择语言。电子邮件支持仅提供英语服务。\n\nSearch Panel 与 Google 没有任何关联，这是一款第三方应用。\n需要 Google 账号。\n\nhttps://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+    "id": "6745721627",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "ShotPin - 把照片钉在地图上",
+    "desc": "简介：按拍摄地点把照片钉在地图上，回看走过的地方。\n              \n                详情：ShotPin 是一座桥：一头是你走过的路，一头是相册里那些没有位置的照片。\n\n■ 走过一遍，照片就有了位置\n出门时点一下首页的图钉，它就开始记轨迹，锁屏、切到后台都接着记，中途不用管。回家后把这段时间拍的照片选出来，ShotPin 按每张照片的拍摄时间在轨迹里找位置，写进去。相机拍的、别人发来的、从截图存下来的，都一样处理。\n· 记录时锁屏与灵动岛显示轨迹名、距离与时长，点一下就能结束\n· 一次可以处理几十张\n· 轨迹能暂停、合并、改名、收藏、按日期筛选\n\n■ 位置是精确的，而且真的写进了照片\n系统相册只能按地名给一个大概的位置，落不到那个路口或那栋楼。ShotPin 写的是经纬度：来自当天的轨迹，或你在全屏地图上点下的那一点。\n· 只改原照片的位置字段，不复制、不重新编码，画质与文件大小不变\n· 需要文件本身带位置时（发网盘、导进电脑、交给别的软件），可以勾选另存一份带 GPS 的 JPEG 副本，原图仍然不动\n· 照片原本已有位置时，会先问要不要覆盖\n\n■ 机位可以连同照片一起发出去\n摄影师、模特要告诉别人「在哪儿拍的」，过去只能截一张地图拼上去。ShotPin 把这套动作做成了模板：\n· 四套模板：平铺、即时成像、明信片、地图册，模板页上标着每套能用的照片比例\n· 卡片上可以放二维码，或一串十位位置口令，也可以什么都不放\n· 对方扫一下，或在 ShotPin 主页右上角输入口令，就能看到这个位置，并直接开始导航\n· 位置是坐标，不是「某某路附近」\n\n■ 其他\n· 轨迹可导出 GPX / KML，也可导出一个备份文件，换机后名称、收藏与合并分段都会回来\n· 支持简中、繁中、英文与日文\n· 没有账号、没有服务器、没有分析 SDK；轨迹和照片都留在你的手机里\n\n■ 关于收费\n记录轨迹、匹配照片、备份、平铺分享卡、二维码与位置口令，一直免费。完整版包含另外三套模板、樱花配色与主题、从「文件」选照片、专业格式的导入导出，以及此后新增的模板与主题：一次买断，或按月持续支持（订阅按月自动续期，可随时在系统设置里取消）。\n\n■ 条款\n使用条款（EULA）：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隐私政策：",
+    "id": "6825411577",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "SnipMark：截图标注与压缩",
+    "desc": "简介：截图后直接标注、打码，顺手把体积压小。\n              \n                详情：SnipMark 是为每天都要发送截图的人打造的原生截图工作台。截取、标注、压缩、重命名都在一个应用里完成——不会上传任何内容。\n\n截取\n• 在 Mac 上按 SnipMark 的区域快捷键 ⌘⇧2，就能截取任意显示器上的任意区域。\n• 在 iPhone 和 iPad 上，轻点几下即可把截图加入会话，也能通过共享扩展从其他 App 直接送进来。\n• 每次截取都会进入有序会话；来源应用会一并记录到图片上（仅 Mac）。\n\n标注\n• 箭头、矩形、手绘、文字、印章、步骤编号和打码（模糊）。\n• 所有笔迹都是矢量的，在任何导出尺寸下都保持清晰。\n• 用模糊或打码遮住一块区域——分享前请先检查效果。\n\n发送\n• 用画质滑块和长边上限（Original／3840／2560／1920）把整批截图压到方便发送的大小。\n• 按规则批量重命名，不用再手动敲 01-final-final。\n• 导出 JPG、PNG、HEIC 或多页 PDF，也能把长截图拼接成一张竖图，或在 Mac 上直接复制到剪贴板。\n\n从架构上保护隐私\n• 无需账号、不用登录、没有服务器、没有上传队列。\n• 没有第三方分析、广告 SDK 或跨应用追踪。\n• 你的截图保存在应用的本地存储里，直到你导出或删除。\n\n免费版与 Pro 终身版\n• 免费版适合短会话：每次会话最多 3 张图，导出时带有小型“Marked with SnipMark”水印。\n• Pro 终身版是在应用内一次性买断：移除水印、会话图片无限制，并解锁自定义印章与 PDF、Long Stitch 导出。\n• Pro 在同一 Apple 账户下于 Mac 和 iPhone 通用。\n• 所有交易都由 Apple 通过 App Store 处理，SnipMark 收不到你的付款信息；你所在地区的货币价格会在购买前显示在应用内。\n\n系统要求\nmacOS 14 或更高版本，iOS／iPadOS 17 或更高版本，支持 iPhone 与 iPad。\n\n技术支持：https://snipmark.starlingtech.vn/support — 每一条消息都有真人阅读。",
+    "id": "6827030851",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "SunPetal：花园日照时长",
+    "desc": "简介：扫描花园位置算出每天日照几小时，安排种什么。\n              \n                详情：站在你想种东西的地方，把手机举起来，对着天空扫一遍。SunPetal 会算出这个位置每天能晒到几小时直射阳光——不是整个花园，也不是你住的小区，就是这一个位置。\n\n所有计算都在手机上完成。无需注册账号，不联网，任何数据都不会离开你的设备。\n\n第一次扫描免费。之后只需购买一次，就能无限次扫描：一次付费，不是订阅。已经保存的位置，无论是否购买都会一直保留。\n\n【为什么要扫视天空，而不是输入地址】\n\n种得出番茄的苗床和种不出的苗床，差别往往只是一棵树、一道围栏，或者房子的一个墙角。这些在地图上都看不到。用摄像头扫视，测的是这个位置上方真实的天际线，所以结果会把真正挡住阳光的东西都算进去。\n\n【你能得到什么】\n\n• 每天的直射日照时数，按你的生长季取平均值\n• 一年中每个月的日照，一眼看出哪块苗床六月阳光充足、到了九月却晒不到\n• 上午和下午的日照分开计算——从园艺角度看，两者并不相同\n• 任意一天的日照，即时给出：几点开始有阳光、几点结束，以及最长的连续日照时段\n• 扫描时看到的天空，配一个可以拖过全年的滑块：看太阳的轨迹升高又降低，看落叶树长叶、落叶\n\n【一张花园光照地图】\n\n从一个苗床走到下一个苗床，逐一扫视。手机用自身的运动追踪测出它们之间的步距——这么短的距离，GPS 测不准——SunPetal 再把阳光画在这些位置之间的地面上。点任意一处，就能看到那一片的日照时数。改天再来，还可以在同一条路线上继续添加位置。\n\n【按植物的高度来算】\n\n手机会测出你拿着它的高度。把手机放低到苗床附近再扫视一次，结果就能按土壤、苗床、腰部或胸部的高度来读——生菜和爬藤的豆角看到的不是同样的天空。\n\n【告诉你结果有多可靠】\n\n每个结果都附带一个范围，并说明这个范围由什么构成：北方定得有多准、这次扫视实际覆盖了多少太阳轨迹、有多少开阔的天空能照到这个位置。有误差范围的数字，才算是正式的测量结果。\n\n【常绿树、落叶树，和可能要砍掉的树】\n\n扫视时，SunPetal 会自己分辨针叶树和阔叶树，并为每个树冠标注是常绿还是落叶。在北纬 30 度以北，阔叶树算作冬天落叶；在北纬 30 度以南（重庆、长沙及更南的地方），大多数阔叶树四季常绿，SunPetal 便假定它们冬天不落叶：扫视时用“落叶”画笔涂上木棉、银杏、紫薇、桃树这类冬天落叶的树，它就知道冬天的阳光能透过这棵树。如果它认错了哪棵树——比如会落针的落叶松——用另一支画笔涂一下就能改正。把一棵你正考虑砍掉的树涂掉，它会告诉你没有这棵树时这个位置能晒到多少阳光——屏幕上的每一个数字都会跟着变，而不只是总数。不会真的砍树，这只是一个假设。\n\n【它做不到什么】\n\n它不预报天气。这里所有的数字都是晴天数值：万里无云的日子里，这个位置能晒到的阳光。云只会让它变少，所以请把它看作某一天的上限，而不是预报。\n\n它也看不穿树。如果你涂掉的树后面还有别的东西，它仍然在地图上，仍然挡着阳光——这才是正确的答案。\n\n【隐私】\n\nSunPetal 完全没有联网代码。你的定位只用来计算太阳在你头顶天空中走过的轨迹，从不发送到任何地方。扫视记录、地图和位置名称都只保存在你的手机上，除非你自己选择分享。",
+    "id": "6814693609",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Utly: Everyday Tools",
+    "desc": "简介：单位换算、随机数、计时等日常小工具合集。\n              \n                详情：Utly puts everyday tools within easy reach. Convert a value, make a random choice, calculate a date, or keep a useful record—all in a native iPhone app with no account and no ads.\n\nFIND A TOOL FAST\n• Browse grouped tools, search names and aliases, and keep favorites close.\n• Return to recently used tools or your saved records.\n• Try local commands such as “random 1-100”, “coin flip”, and “1 m to ft”.\n\nDECIDE AND CALCULATE\n• Spin a wheel with your own options and saved presets.\n• Flip a coin, rol  单位换算、随机数、计时等日常小工具合集。",
+    "id": "6824127297",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Voice Notes: 语音转文字",
+    "desc": "简介：录音同时转成文字，笔记与会议纪要都快。\n              \n                详情：Voice Notes：语音转文字是一款简洁实用的语音转写应用，帮助您将语音内容转换为易于阅读、搜索和导出的文本。\n\n无论是快速录制语音备忘录、从照片图库导入视频、从“文件”中选择音频，还是使用媒体文件的直接链接，Voice Notes 都能帮助您轻松获取语音内容、转换为文字、查看转写结果，并将所有记录集中管理。\n\n录音、导入、转写、编辑、播放、搜索和导出，一站式完成。无论是日常笔记、会议、课程、采访、视频，还是随时产生的灵感，都能轻松记录和整理。\n\n核心功能\n\n◉ 语音录制\n直接在应用中录制语音备忘录。录音完成后，Voice Notes 可以将语音转换为文字，并自动保存到转写记录库中。\n\n◉ 音频与视频导入\n从照片图库或“文件”应用中导入支持的音频和视频文件。Voice Notes 可以提取媒体中的语音，并将其转换为易于阅读的文本。\n\n◉ 直接媒体链接\n粘贴音频或视频文件的 HTTPS 直接链接，即可转写受支持的媒体文件。此功能仅适用于直接指向媒体文件的链接，不支持普通网页链接或 YouTube 链接。\n\n◉ 边听边读\n在播放音频的同时查看转写文字。通过播放控制、快进、快退和播放速度调整，更方便地回顾原始录音。\n\n◉ 可编辑的转写文本\n语音识别结果可能并不总是完全准确。您可以手动编辑转写文字，纠正识别错误，补充遗漏内容，并保存修改后的文本。\n\n◉ 重命名与整理笔记\n为录音和导入的转写记录设置清晰的名称，方便日后查找和管理。\n\n◉ 可搜索的转写记录库\n将所有转写记录集中保存在一个资料库中。支持按标题、转写内容、语言、来源类型、处理状态或日期进行搜索。\n\n◉ TXT 与 PDF 导出\n复制转写文字，分享到其他应用，或将转写内容导出为 TXT 或 PDF 文件。导出前还可以查看和修改文件名称。\n\n◉ 转写语言选择\n在录音或导入文件前选择转写语言。支持自动检测、英语、简体中文、繁体中文、日语、韩语、法语、德语、西班牙语、葡萄牙语、俄语及其他受支持的语言。\n\n◉ 注重隐私的本机处理\n无需注册账户。您的录音、导入的媒体文件、生成的音频文件及转写文字均在设备本地处理和保存。应用不会将音频、视频或转写内容上传到转写服务器。\n\n◉ 适用场景\n\n• 语音备忘录\n• 会议记录\n• 课堂与讲座笔记\n• 采访记录\n• 学习笔记\n• 视频转文字\n• 音频转文字\n• 内容创作\n• 快速语音转文字\n• 整理口述想法与灵感\n• 回顾与导出语音内容\n\n◉ 为什么选择 Voice Notes？\n\nVoice Notes 专为希望拥有简单而实用的语音转写工具的用户设计。它不仅是一款录音工具，也不仅是一个文字查看器，而是帮助您将语音转换为有条理的文字，并在条件允许时保留原始音频以供回顾。\n\n您可以随时录下一个想法，将会议内容转写为文字，导入短视频，边听录音边阅读转写结果，修正文字内容，之后通过资料库搜索记录，并将最终结果导出为 TXT 或 PDF 文件。\n\nVoice Notes：语音转文字，为您提供一个专注、高效的工作空间，让语音内容轻松变成实用的文字记录。",
+    "id": "6761639037",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "iScript: intelligent Script",
+    "desc": "简介：外语学习脚本 AI 助手，生成对话与跟读稿。\n              \n                详情：iScript is a local-first language learning app built for studying from your own scripts and text materials.\n\nUpload your own text or spreadsheet-based scripts, study sentence by sentence, track what you have learned, and review efficiently with a simple SRS-based workflow. You can listen with TTS, bookmark important sentences, and monitor your learning progress over time.\n\nKey features:\n• Upload and organize your own study scripts\n• Sentence-based learning with UNKNOWN / KNOWN states\n• SRS-style  外语学习脚本 AI 助手，生成对话与跟读稿。",
+    "id": "6758364468",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "选一下 - 随机小工具",
+    "desc": "简介：转盘、抽签、掷骰子，把纠结交给随机。\n              \n                详情：今晚吃什么？周末做什么？朋友聚会怎么玩？\n打开选一下，给生活一点随机！\n\n【超多款实用与互动工具】\n转盘、摇骰子、抛硬币、随机数、帮我选、随机分组、抽签、转瓶、扫雷、指尖互动、空枪、海盗刺桶、计分板、比大小、翻牌。工具持续更新...\n\n【按自己的想法设置】\n自定义转盘与帮我选的类目和选项，编辑抽签内容，调整随机数范围，让工具适合你的日常场景。\n\n【一部设备，围桌互动】\n比大小支持比大、比小、单数和双数模式。\n翻牌支持2至6人，每人1至5张标准扑克牌。\n计分板支持2至12人，可编辑昵称和饮品，当前计分在退出后仍会保留。\n\n【本机保存，离线可用，持续更新】\n工具内容、设置和历史记录保存在本机，无需注册账号。\n工具持续更新....\n\n【免费体验与选一下 Pro】\n整个App共用10次免费体验，每次完成一次工具操作计1次。体验次数用完后，需要购买选一下 Pro 继续操作。\n\n提供月度订阅、年度订阅和一次购买永久解锁计划。月度及年度订阅自动续订，可在Apple账户中管理或取消。价格以购买页面显示为准。购买、恢复购买及获取商品信息需要联网。\n\n隐私政策：\n\n\n使用条款：\nhttps://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+    "id": "6830170969",
+    "section": "内购限免 · 重点推荐",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "我的待办 - 清单四象限日历提醒 美区限免→免费",
+    "desc": "简介：四象限待办清单，配日历与桌面小组件。\n              \n                详情：「我的待办」，一款简洁高效的待办清单(Todo)、日程管理(GTD)应用。在工作学习中，它可以帮你更好的制定任务清单、项目计划；在日常生活中还能用于记录备忘、整理购物清单等。「我的待办」集提醒事项、日历管理、四象限、日程清单、备忘录、闹钟、协同工具为一体，是您办公学习、日常生活中的得力助手。\n\n「我的待办 效率神器」\n- 待办列表：两列排版，简洁高效\n- 四象限视图：管理事项重要性\n- 日历视图：总览本月待办安排\n- 桌面小组件：在小组件快捷查看和完成待办事项\n- 标签分类：让你的工作、学习、生活都井井有条\n- 进度圆环：关注你的待办进度，每完成一项带来一份成就感\n- 周期视图：按周期查看待办事项，每天、每周、每月都有目标 \n- 持续提醒：每分钟提醒一次，无需担心重要的事被遗忘\n- iCloud自动同步：在您的iOS设备间实现无缝对接",
+    "id": "1294530516",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Ricochet Rewind $0.99→免费",
+    "desc": "简介：弹球打砖块小游戏，反弹角度全靠算。\n              \n                详情：Break bricks through a vertical tube. Climb level by level, smash the ceiling barrier, and watch the next stage scroll in from above. Miss the ball on higher levels and you don’t game over—you fall back through the tube until you catch the ball or land on level 1. Your progress stays: every brick you’ve destroyed stays destroyed, so you can plan your run and use power-ups wisely.\n\nUp: Destroy the red barrier at the top, then the ball keeps moving up into the next level. New level scrolls in; the  弹球打砖块小游戏，反弹角度全靠算。",
+    "id": "6758536549",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Iteca Shoot &#x27;Em Up $0.99→免费",
+    "desc": "简介：像素战机空战小游戏，纵向弹幕闯关。\n              \n                详情：Relive the golden age of vertical shooters with this brutally difficult, retro-inspired space combat experience. Inspired by legendary computer gaming from the late 80s and early 90s, ITECA Shoot &#x27;Em Up delivers uncompromising difficulty wrapped in vibrant neon visuals and pulse-pounding action.  像素战机空战小游戏，纵向弹幕闯关。",
+    "id": "6756216222",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "BlackCam - Black&amp;White Camera ¥15→免费",
+    "desc": "简介：实时预览黑白滤镜相机，可加底片颗粒与晕影。\n              \n                详情：BlackCam the Professional Black&amp;White Camera\n\nBlackCam 具备实时预览功能，让你可以拍出惊艳的黑白照片\n\n功能特性:\n- 使用非常简单\n- 不同颜色的滤镜\n- 多种专业转换滤镜\n- 相机界面实时显示滤镜效果\n- 通过滑块来实时调整对比、亮度和曝光度\n- 添加模拟底片颗粒\n- 添加黑色晕影\n- 自定义 EXIF 艺术家信息\n- 可将你的照片导出到 Instagram、Twitter、Facebook，亦可通过电子邮件发送\n- 全分辨率输出图像\n- 为你现有的照片添加黑白滤镜\n\nYou like BlackCam!? Please give us 5 stars! Your feedback is very important to our work. \n\nHelp us to improve BlackCam! by sending your bugs or requests on contact@xnview.com\n\nFacebook: http://www.facebook.com/xnview\nTwitter: http://www.twitter.com/xnview\nG+: http://plus.google.com/+xnview/",
+    "id": "943901190",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Membership Navi 限免",
+    "desc": "简介：会员卡与条码集中管理，结账时一秒调出。\n              \n                详情：Tired of hunting for this shop&#x27;s app, that program&#x27;s barcode, and the other membership card?\n\nI was, so I made this app.\n\nMembership Navi saves all your barcodes, QR codes, and even plain member numbers in one app. So when someone asks you to &quot;open the app&quot;: no surprise &quot;login again please&quot;, no bad-signal drama, no &quot;you need to update&quot;. No digging for that one app you use once in a million years. Just launch Membership Navi — all your codes are waiting for you.\n\nHow do you add them?\n\nScan a phys  会员卡与条码集中管理，结账时一秒调出。",
+    "id": "6794593891",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "BarBlock: Barcode App Blocker $0.99→免费",
+    "desc": "简介：扫条形码才能解锁指定 App，靠麻烦管住手。\n              \n                详情：BarBlock reduces screen time by adding real-world friction to app blocking. Instead of relying on willpower or screen time limits, you lock distracting apps by scanning a barcode you already have, like one on a book or a food package. Those apps stay blocked until you scan the same barcode again.\n\nSetup is super easy: choose the apps you want to block, scan any barcode, and they stay locked until you rescan it. No extra devices, nothing new to buy, no subscriptions, no accounts, no sign-ups. You  扫条形码才能解锁指定 App，靠麻烦管住手。",
+    "id": "6757250972",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "视频防抖 ¥38→免费",
+    "desc": "简介：一键稳定抖动视频，跑步拍摄也能顺滑。\n              \n                详情：Video Stabilizer can make your video look smooth and stabilized.\n\nIf you usually records video while running or moving, the video can get very shaky and this app can fix just that!\n\nHow It Works\n\n- Advanced Stabilization Technology: Our app utilizes cutting-edge algorithms to analyze and stabilize your videos frame by frame, ensuring a steady and polished result\n- Easy-to-Use Interface: Just simply import your video, and within a few seconds, you&#x27;ll witness the magic as your video transforms int  一键稳定抖动视频，跑步拍摄也能顺滑。",
+    "id": "6479000660",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "PopZen：减压放松 ¥8→免费",
+    "desc": "简介：捏泡泡解压，配呼吸引导与白噪音。\n              \n                详情：PopZen 采用一次性买断制——一次付费，永久拥有。无广告、无订阅、无内购，只为你提供纯粹的解压泡泡体验。\n\n捏破泡泡，释放压力\n10×10 网格铺满彩色 3D 泡泡，手指触碰即刻捏破——清脆音效、细腻触觉震动、浮起的 +1 动画，每一颗泡泡的破裂都是一次小小的释放。50 种泡泡排列形状，从经典方格到心形、星形、圆形。捏完一整盘触发庆祝动画，让心情立刻变好。\n\n8 种精美视觉主题\n一键切换整个 App 的氛围——每款主题自带配色方案、背景色、3D 材质质感（经典、磨砂、金属、玻璃）和泡泡音调：\n• 经典透明 — 柔和淡紫色，经典之美（默认解锁）\n• 治愈马卡龙 — 粉嫩甜美，如马卡龙般可爱（默认解锁）\n• 雨后 — 清新灰蓝，如雨后初晴（默认解锁）\n• 森语 — 自然草木绿，回归森林（累计 500 泡泡解锁）\n• 樱花 — 浪漫粉樱，春日气息（累计 1000 泡泡解锁）\n• 初雪 — 纯净冰蓝，静谧冬日（累计 2000 泡泡解锁）\n• 星空 — 深邃夜空蓝，星光点点（累计 5000 泡泡解锁）\n• 极光 — 梦幻紫绿渐变，北欧极光（连续 7 天解锁）\n\n引导式正念呼吸\n全屏沉浸式呼吸环动画，引导你「吸气…屏住…呼气…」。可选 TTS 语音引导，每次呼吸切换伴随细腻触觉震动，可搭配白噪音营造沉浸氛围。每次练习自动计入统计。\n\n6 种算法白噪音\n无需音频文件，纯数字信号处理实时生成：\n• 白噪音 — 均匀全频，专注力提升\n• 粉红噪音 — 比白噪音柔和，更适合放松\n• 棕色噪音 — 深沉低频，如远方的雷声\n• 雨声 — 淅淅沥沥，助眠首选\n• 海浪 — 潮起潮落，海边即视感\n• 篝火 — 噼啪作响，温暖围炉感\n独立音量控制，可与泡泡音效同时播放。\n\n稀有泡泡惊喜\n普通泡泡中藏着稀有款——黄金、爱心、星星、彩虹。捏破稀有泡泡会触发专属粒子动画、特别音效和不同触感。连续捏破几个稀有泡泡，还会触发全屏幸运时刻特效。每一次捏破都可能给你惊喜。\n\n连续打卡与复活卡\n每天至少打开并捏一次，连续天数就加一，首页顶部的火焰随之攀升。断一天会清零——但每 7 天赠送一张复活卡，可抵消一次断签，让你永不掉队。开启温和的每日提醒，让 PopZen 在你通勤路上轻轻提醒你。\n\n情绪记录\n使用前/后分别选择情绪（开心/平静/难过），直观对比情绪变化。情绪趋势图展示每周/每月波动曲线——让数据证明，捏泡泡真的能让你心情变好。\n\n我的数据\n总捏破数、总会话数概览，每周/每月趋势图，情绪变化曲线，成就解锁进度——所有数据本地存储，卸载重装不丢失。你的数据永远不会离开你的手机。\n\n为什么选择 PopZen？\n• ¥6 买断制 — 无广告、无订阅、无内购\n• 8 种精美主题，各有独特 3D 材质与音调\n• 引导式呼吸 + 6 种白噪音，正念冥想\n• 情绪追踪 + 可视化趋势图\n• 14 项成就等你解锁\n• 10 种语言，跟随系统自动切换\n• 离线可用 — 无需联网\n• 隐私优先 — 所有数据仅存于本地\n\n每日累计自动追踪，跨天归零，连续记录一目了然。\n\n捏破一颗泡泡 → 释放一丁点压力 → 积少成多，回归内心平静。\n\n立即下载 PopZen — ¥6 终身解压伴侣。",
+    "id": "6785342715",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "记办猫 ¥8→免费",
+    "desc": "简介：卡通风格待办清单，猫咪陪你把事做完。\n              \n                详情：记办猫，随心记——让可爱陪伴日常，让专注融入生活。\n记办猫是一款简洁实用的待办清单应用，用可爱的卡通风格，帮你轻松安排工作、生活与学习。会呼吸、会眨眼的猫猫，让每一次记录都多一点乐趣。\n【轻松记录，有序安排】\n随手添加任务，灵活编辑、完成或删除，把日常琐事、工作安排和学习计划一一记下。完成时轻轻打勾，感受每一步的小小成就。\n【重复提醒，贴合日常】\n支持单次提醒，以及每天、每周、每月、每年和自定义周期。无论是每日学习、每月安排，还是每 7 周一次的事项，都能按需设置。修改任务后同步更新提醒，完成后自动停止后续通知。\n【猫猫相伴，专注当下】\n轻点猫爪，开启默认 25 分钟的专注倒计时，也可按需调整时长。在支持的设备和系统上，通过锁屏与灵动岛随时查看剩余时间，让猫猫陪你认真做好眼前的一件事。\n【可爱随行，随时查看】\n搭配可爱的小组件与待机显示，让待办融入你的日常。支持简体中文、繁体中文、英语、日语和韩语，使用更自在。\n从记下一件小事，到完成一个计划，记办猫陪你按自己的节奏，过好每一天。",
+    "id": "1590485332",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "QR Creator Mini 美区 ¥15→免费",
+    "desc": "简介：快速生成二维码，可设分辨率并保存图片。\n              \n                详情：QR Creator Mini – is a quick and effective solution to create QR-Codes.\n\nFeatures:\n– Live creation QR-Codes;\n– Save to image file;\n– Resolution setting.  快速生成二维码，可设分辨率并保存图片。",
+    "id": "1185353935",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "上学易 - 小学信息平台 ¥1→免费",
+    "desc": "简介：小学学区划分、招生入口与学校评价查询。\n              \n                详情：一款全国小学综合信息的平台软件\n\n功能列表:\n# 学区查询，小学学区划分信息\n# 小学地图\n# 教育局、招生入学、幼升小报名入口\n# 学校评论点赞，支持添加修改学校信息\n# 汇集全国小学的综合信息，如地址、电话、教育局、报名入口、图片等\n\nAPP无广告,无内购,一次下载持续可用\n\n学区查询目前支持以下城市:\n\n上海\n\n北京\n\n吉林\n  吉林\n  长春\n\n四川\n  成都\n  乐山\n  南充\n  广元\n  广安\n  德阳\n  攀枝花\n  泸州\n  眉山\n  自贡\n  阿坝藏族羌族自治州\n\n天津\n\n宁夏\n  银川\n\n安徽\n  合肥\n  安庆 \n  宣城\n  池州\n  滁州 \n  芜湖 \n  黄山 \n  亳州\n  淮南\n  铜陵\n  阜阳\n  \n山东\n  临沂  \n  德州  \n  济南 \n  滨州 \n  潍坊\n  青岛 \n  日照\n  烟台\n  济宁\n  淄博\n  聊城\n  \n山西\n  太原 \n  晋城\n  运城\n  长治\n  吕梁\n  \n广东\n  东莞  \n  中山 \n  佛山  \n  广州\n  惠州\n  揭阳\n  江门\n  深圳\n  清远\n  湛江\n  珠海\n  肇庆\n  茂名\n  阳江  \n  梅州\n  潮州\n  韶关\n  \n广西\n  南宁\n  柳州\n  桂林\n  梧州\n  百色\n  贵港\n  贺州\n  钦州 \n  防城港\n\n新疆\n  巴音郭楞蒙古自治州\n  \n江苏\n  南京\n  南通\n  常州\n  杨州\n  泰州\n  苏州  \n  连云港\n  无锡\n  徐州\n \n江西\n  九江\n  南昌\n  吉安\n  赣州\n  宜春\n  新余\n\n河北\n  石家庄\n  邯郸 \n  唐山\n \n河南\n  郑州\n  三门峡\n  新乡\n  濮阳\n  商丘\n  开封\n  驻马店\n\n浙江\n  杭州\n  丽水\n  台州\n  嘉兴\n  宁波\n  杭州\n  温州\n  湖州\n  绍兴\n  衢州\n  金华  \n  舟山\n\n云南\n  德宏傣族景颇族自治州\n  昆明\n  红河哈尼族彝族自治州\n  文山壮族苗族自治州\n\n内蒙古\n  包头\n  呼和浩特\n  赤峰\n  呼伦贝尔\n  \n海南\n  海口\n  文昌\n  陵水黎族自治县\n \n \n湖北\n  天门\n  宜昌\n  武汉\n  襄阳\n  黄岗\n  黄石  \n  孝感\n  \n湖南\n  长沙\n  吉首\n  娄底\n  常德\n  张家界 \n  怀化 \n  株洲\n  湘潭\n  衡阳\n  邵阳\n  郴州\n  益阳\n\n甘肃\n  庆阳  \n  \n福建\n  三明\n  南平\n  厦门\n  宁德\n  泉州\n  漳州  \n  福州\n  莆田  \n  龙岩\n\n贵州\n  贵阳 \n  六盘水\n  安顺\n  毕节\n  遵义\n  \n辽宁\n  大连\n  沈阳  \n  营口\n  \n重庆\n \n陕西\n  西安\n  咸阳\n  宝鸡\n  延安\n  榆林\n  汉中\n  安康\n  渭南\n  铜川\n\n黑龙江\n 哈尔滨\n 齐齐哈尔\n\n以上城市支持全部或部分区县,由于各省市区学区划分不统一,无法保证学区信息完全准确,请理解. 具体区县及最新支持情况请电邮 lanbing-it@qq.com 或App【反馈】中留言咨询\n\n\n平台包含全国小学信息7万余条, 小学学区划分信息近3万条, 并不断更新中\n\n平台包含各地市教育局及招生入学网站信息, 方便及时了解教育动态和幼升小报名\n\n如有学校学区相关信息提供, 或需要平台提供哪些市区学校信息, 请在App【反馈】中留言",
+    "id": "1520331171",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "mySolar - 我的宇宙 ¥98→免费",
+    "desc": "简介：扮演上帝建立星系，收集神力扩张宇宙。\n              \n                详情：扮演上帝，建立自己的星系。\n\n漫游宇宙，收集GP（神力）和MP（质量），来发展你的星系。\n\n击败所有敌人，吸收它们资源。\n\n创建你自己梦幻的星系",
+    "id": "1237470522",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Speed Up Video ¥38→免费",
+    "desc": "简介：视频变速最高 10 倍，分段调速无水印。\n              \n                详情：Speed Up Video helps you changing the playback speed with ease, and with NO WATERMARK. You can adjust the speed to create a time lapse or a slow motion masterpiece in seconds.\n\nKey Features\n- Speed up video upto 10x and slow down to 1/10 video speed\n- Edit the speed of each part of your video independently, ensuring seamless transitions between different elenments in your video\n- Support different video formats\n- Unrestricted video length\n- Effortless video trimming\n- Export WITHOUT WATERMARK\n-   视频变速最高 10 倍，分段调速无水印。",
+    "id": "6470886230",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "日日新 ¥8→免费",
+    "desc": "简介：给重要日子贴标语并倒计时，婚礼节日一屏看全。\n              \n                详情：给你的重要日子贴上标语，倒计时到你的重要日子，婚礼或周年纪念日，假期，假期，圣诞节，体育赛事，新年，派对，音乐会等等！",
+    "id": "1125898114",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Cruisers of the US Navy $0.99→免费",
+    "desc": "简介：美国海军巡洋舰图鉴，舰史与参数详解。\n              \n                详情：Every cruiser the United States Navy has commissioned, from the protected cruiser USS Atlanta of 1884 to the Ticonderoga-class Aegis cruisers, in one reference: 204 cruisers with 746 photographs and the service history of each ship.\n\nCRUISERS\nBrowse by class, alphabetically or in timeline order, from the protected cruisers of the 1880s through the heavy and light cruisers of World War II to the Aegis cruisers of today, including USS Indianapolis, which delivered atomic bomb components to Tinian   美国海军巡洋舰图鉴，舰史与参数详解。",
+    "id": "397705938",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "French Verb Blitz $0.99→免费",
+    "desc": "简介：法语动词变位刷题，按人称与时态练。\n              \n                详情：Build confidence with French verbs through five practice games, clear conjugation tables and progress tracking. Explore over 300 verbs, choose the tenses you want to practise and discover which verbs need another look.\n\nPlay with essential verbs and tenses straight away, no purchase required. A one-time Full Access purchase unlocks all 305 French verbs and every game tense.\n\nLOOK IT UP, THEN PUT IT INTO PRACTICE\n\nCheck a conjugation in the verb reference, then test what you remember through acti  法语动词变位刷题，按人称与时态练。",
+    "id": "1249802749",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "ImpulsePause $0.99→免费",
+    "desc": "简介：冲动来之前先停一下，记录并复盘消费冲动。\n              \n                详情：想买什么？先挂到柜台上。\n\n「先放着」是一个话不多、站在你这边的小店柜台。每件想买的东西挂一张牛皮纸吊牌，写好取货日。到了那天你再决定：取走、放回去，或者再挂一周。大部分你会放回去；取走的，会买得值。\n\n两步挂上\n- 写个名字或价格就够了。粘贴链接、从淘宝京东拼多多分享，或者分享一张截图：价格在手机上读出来。\n- 挂多久按价格和它值多少工时来定。点「为什么这么久？」每一条理由都写着。\n- 三周前挂过同一件？柜台会告诉你。\n\n取货日\n- 当时写下的理由，和现在的心情放在一起。\n- 一张问题卡，五个朴素的问题：买回家放哪儿？原价你还会买吗？\n- 放回去时棉绳剪断，留在口袋里的钱用绿色显示。\n\n店规\n- 自己写，或者从大家在用的店规开始：一个月不买、衣橱冻结 30 天、低消费一年、空瓶计划。\n- 碰到店规的东西挂得更久，提前取走要有人当面签字。破戒记下来，不清零。\n- 店规可以分享成链接，别人一键套用、改成自己的。\n\n结账前拦一下\n- 屏幕使用时间盾牌：打开你选的购物 app 先看到一张吊牌——先放着、按清单买，或者离开。\n- Safari 扩展：淘宝、京东、拼多多、亚马逊等 10 个网站的结账页也会出现这张吊牌。\n- 大促季：双 11、618、年货节、黑五提前知道，先写清单，清单就是通行证。\n\n诚实账本\n- 放回去 14 天后：「还记得那盏台灯吗？」忘了，还是还惦记。\n- 取走 30 天、90 天后：用了几次、还喜欢吗、后悔吗。\n- 你的眼光、按品类/种草来源/时段的后悔率、冲动地图。挂单时长会跟着学。\n- 每月一页挂单登记簿，可以分享，金额可隐藏。\n\n免费：挂单不限件数、问题卡、到期提醒、30 天回访、1 条店规、1 个盾牌 app、1 个搭子。没有广告，不用注册。\n「先放着」Pro（年付或买断）：店规和盾牌 app 不限、店规期封锁、Safari 结账拦截、按后悔记录调整的挂单时长、90 天回访、完整账本和年度复盘、大促季、全部模板和小组件。\n\n数据只在你的设备上，或在你自己的 iCloud 里。「先放着」不是医疗或金融服务。\n\n使用条款：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隐私政策：https://anymk.app/privacy/impulsepause",
+    "id": "6761416859",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Kyle Countdown Calendar $0.99→免费",
+    "desc": "简介：倒计时日历，重要日子配主题贴纸。\n              \n                详情：See what&#x27;s coming up, and how much time is left.\n\n暮らしの時刻表 (formerly Kyle) brings the calendars set up on your iPhone into a chronological list, with countdowns to upcoming events and elapsed time since past events.\n\nBROWSE YOUR PLANS\nSee upcoming and past events in order. Extend the displayed date range to look further ahead or back.\n\nCOUNT DOWN, OR COUNT UP\nCheck the days, hours, minutes and seconds until an event, or the time since it happened. Tap the time on the countdown screen to switch display units.\n\nLONG-PRESS TO RECORD THE MOMENT\nLong-press an event to open a new event with the same title and calendar, set to the current time.\nLong-press a calendar name to open a new event using that name. Review the details and save.\nUse it to record reading, exercise, everyday activities or a quick note.\n\nUSE YOUR EXISTING CALENDARS\nChoose from the calendars set up on your iPhone. View event details, add or edit events, and use the app alongside other calendar apps.\nChanging which calendars are displayed does not delete their events.\n\nONE CALENDAR, FREE\nChoose one calendar to display, with no time limit. Switch to a different calendar as often as you like.\n\nMULTIPLE CALENDARS TOGETHER\nDisplay your own combination of calendars, such as work and family.\nUnlock this feature with a one-time in-app purchase. There is no monthly or annual subscription.\nYou can still choose to display only one calendar after purchasing.\n\nCHOOSE YOUR COLORS\nChoose orange, blue, green or purple as your accent color. Dark Mode is supported too.\n\nFOR EXISTING USERS\nIf you acquired the app before the switch to free with in-app purchase, including during a free promotion, you can continue using multiple calendars at no extra charge when your earlier access is verified.\nBefore purchasing, open Access Plan and try &quot;Restore earlier access / purchases&quot; using the Apple Account you used previously.\n\nIf access cannot be verified and this device has no previously verified entitlement, you can display one calendar. Your saved multiple-calendar selection is retained.\nOn iOS 15, the app cannot verify acquisition history from before the switch. Without a previously verified entitlement, display is limited to one calendar.\n\nCalendar permission is required to view, add and edit events. Purchases and restoration require an Apple Account and an internet connection.",
+    "id": "739078626",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Lyrica: Drunken Moon $1.99→免费",
+    "desc": "简介：跟着诗句与画面读古诗，月下意境配乐。\n              \n                详情：《Lyrica》is a rhythm game combined classic poems and modern musics, in addition to classic styled narratives.\n \nThe story portrays a young man Chun who wants to become a musician. One night he has a dream of traveling to the ancient past in China and encounters a mysterious poet. \n\nThe game combined music notes and classic poems, gamers experience the beauty of Chinese calligraphies and poems by tapping on the lyric that sync with the rhythm, or draw a calligraphy through the music notes.\n\n===Fea  跟着诗句与画面读古诗，月下意境配乐。",
+    "id": "1286609624",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Mind Reader+ | RPS vs AI $0.99→免费",
+    "desc": "简介：猜拳读心小游戏，AI 会摸你的出拳规律。\n              \n                详情：You&#x27;re more predictable than you think.\n\nAsk anyone to be random and they fall into habits: avoiding repeats, switching after a loss, leaning on a favorite throw. Mind Reader+ is rock-paper-scissors against an AI that studies every throw you make and predicts your next one. Beat it, and you&#x27;ve learned how you think. Then turn the tables and learn to read others.\n\nTHE READER: AN AI THAT READS YOU\n• Seven pattern-spotting strategies watch your throws, each tried at three levels of second-guessing.  猜拳读心小游戏，AI 会摸你的出拳规律。",
+    "id": "1141892292",
+    "section": "本体限免",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "精灵扫描仪-OCR拍照识字朗读 ¥12→¥1",
+    "desc": "简介：拍照识字并朗读，OCR 提取文字可复制。\n              \n                详情：产品源于现实生活中一个切身需求：快速准确地将书页或图片上的大段文字转到手机上可编辑，后来扩展到用人工智能语音朗诵。。。\n\n【功能亮点】\nAI加持，最新人工智能文字、语音技术即时拍图识字；\n识别精准，可编辑、易校对、轻松转语音；\n支持多种语言，多种发音；\n简便易上手，一分钟即会；\n无嵌入广告，舒心使用。\n\n\n【我们的其他产品】\n *轻日记----极间极私密的个人日记本\n\n【联系我们】\n任何疑问请联系 QQ 371374487.",
+    "id": "1435857951",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Table Score ¥15→¥8",
+    "desc": "简介：乒乓球、台球与桌游通用记分板，带计时器。\n              \n                详情：- The score board with easy operation \n- Names, numbers, points and bars are displayable\n- Stopwatch/timer feature (add-on)\n\nThis app is a score board for table tennis, billiards, and every board games.\nIt&#x27;s possible to use by easy operation.  乒乓球、台球与桌游通用记分板，带计时器。",
+    "id": "398335225",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "洗 - 洗衣符号 ¥15→¥8",
+    "desc": "简介：57 个洗涤符号全图解，23 种语言对照。\n              \n                详情：你了解服装标签上的符号的含义吗？\n您是否曾因洗涤不当而多次损坏衣服？\n这场噩梦必须结束！\n\n现在，有了这个应用程序，您将获得有关服装符号的完整指南，您将能够安全地护理您的衣服，延长它们的使用寿命并保持它们的最佳状态。\n\n[ 特征 ]\n• 查阅洗涤符号的详细说明\n• 5个类别（水洗、漂白、干洗、烘干、熨烫）\n• 57 个洗涤符号\n• 支持 23 种语言\n\n[ 兼容性 ]\n• 设备：所有 iPhone、iPad 和 iPod\n• iOS：16.0 或更高版本\n• watchOS：9.0 或更高版本\n•macOS 13.0 或更高版本\n\n[ 联系方式 ]\n如需帮助、建议或新功能请求，请联系我们并访问官方网站：\nwww.lionsapp.com",
+    "id": "434699707",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "家底儿 ¥38→¥19",
+    "desc": "简介：家庭资产盘点，伴侣共同维护净资产变化。\n              \n                详情：不用每天记下每笔开销，也能知道家里的钱正在变多还是变少。\n\n家底儿是一款为情侣、夫妻和家庭设计的资产盘点工具。把存款、投资、房产、贷款等账户整理在同一个家庭空间，定期更新余额，就能看清总资产、总负债、净资产变化和共同目标进度。\n\n你可以邀请伴侣或家人共同维护。每次盘点后，家底儿会整理家庭财务全景，呈现净资产趋势、资产分布和目标完成情况，让重要的财务信息不再散落在不同账户和不同人的脑子里。\n\n【主要功能】\n\n• 家庭资产、负债与净资产总览\n• 存款、投资、房产、贷款等多账户盘点\n• 多币种资产统一换算\n• 家庭成员共同维护\n• 短期、中期与长期目标规划\n• 资产与目标绑定，查看完成进度\n• 净资产趋势与资产分布分析\n• 导出家庭资产报告\n• 支持中文和英文界面\n\n【适合这些家庭】\n\n• 想和伴侣一起管理家庭财务\n• 不想每天记账，但想定期看清资产变化\n• 存款、投资、房产和贷款分散在多个账户\n• 正在为买房、买车、旅行、教育或养老做准备\n• 想知道“我们家有多少钱、欠多少钱、目标还差多少”\n\n不用逐笔记账，也能定期看清家的底气。",
+    "id": "6757951397",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Numio ¥38→¥18",
+    "desc": "简介：本地优先的账户、信用卡与订阅资产管理。\n              \n                详情：看清你拥有的、欠下的、持续付费的，以及每天在用的。\n\nNumio 是一个本地优先的个人资产管理工具，将账户、信用卡、投资、订阅和重要物品整理在一个地方。你不需要每天记录每一笔消费，也能掌握自己的资产结构、续费安排和物品状态。\n\n资产管理\n\n- 查看净资产、总资产、总负债，以及账户和币种结构\n- 管理现金、银行卡、平台钱包、储值卡、存单和多币种账户\n- 管理信用卡、共享额度、账单日、还款日和年费进度\n- 按期确认信用卡账单，分清待还与未出账，还款可对应到具体账单\n- 轻量记录余额变化、消费、收入、充值和还款\n- 记录应收与应付款项及预计收款、还款日期\n- 使用分组、排序和自定义卡面整理账户\n- 记录房产与车辆的购入资料，手动维护当前估值并关联贷款\n- 管理房贷、车贷和普通贷款，查看剩余期数、记录实际还款并设置提醒\n- 整理保障保单、被保人与保障内容，维护保障期限、缴费和续保安排，支持终身保障与缴清状态\n- 管理股票、ETF、基金、固收理财、投资保险、黄金、白银和加密资产\n- 用投资账户汇总同一券商或平台的多币种现金与持仓\n- 预估存单到期利息与本息并在到期前提醒，记录投资保险的当前价值及领取预估\n- 为支持的股票、ETF、基金和贵金属更新低频估值与持仓盈亏\n\n订阅管理\n\n- 管理自动续费、手动续费、第三方会员、免费试用和买断项目\n- 记录付款历史、服务周期、套餐升级、降级和价格变化\n- 管理联合会员及各成员的服务有效期\n- 查看日均、月均和年均支出\n- 在续费、扣费或到期前收到本地提醒\n- 从 App Store 分享应用到 Numio，快速创建订阅\n\n物品管理\n\n- 记录重要物品的购买价格、日期、渠道、保修和使用状态\n- 管理维修、保养、清洁、升级、出售和回收记录\n- 分别管理物品的维修保养、配件与耗材，将相关投入归入物品成本\n- 通过使用天数和日均成本了解物品的长期价值\n- 管理消耗品库存、保质期，以及心愿与避雷清单\n- 粘贴淘宝、天猫、京东或拼多多链接，辅助填写购买信息\n- 在支持的设备上，通过 Apple Intelligence 在本机识别订单截图中的可确认信息\n\nNumio Pro\n\n符合条件的用户可免费试用全部 Pro 功能 7 天，试用到期自动结束，不自动扣费。也可选择一次买断，永久使用 Pro 功能。\n\n更多能力\n\n- 使用桌面小组件查看资产、账户、信用卡、订阅和消耗品\n- 数据默认保存在设备本地，无需注册账号\n- 支持 Numio 备份包导出与恢复、ZIP 与 CSV 导出，以及本地诊断导出\n- 可选择通过 iCloud 或 WebDAV 保存和同步快照\n- 支持后台隐私遮罩\n- 支持简体中文、繁体中文和英文\n\nNumio 不提供实时行情、交易功能或投资建议，也不要求你维护完整消费流水。它帮助你用更少的记录，看清自己的账户、投资、订阅和重要物品。",
+    "id": "6774508554",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "WellnovaSport $49.99→$17.99",
+    "desc": "简介：健康与运动数据追踪，终身版 65% off。\n              \n                详情：Wellnova Sport是你的私密训练日志和每日准备度教练——适用于网球、板式网球、跑步、骑行、力量训练等。\n\n每天早晨，查看由HRV、静息心率和睡眠计算出的清晰准备度分数，知道何时全力以赴、何时放松恢复。记录每次训练的强度、心情、对手和笔记——或让Apple Watch锻炼自动导入——再通过日历和趋势图表跟踪进步。\n\n永久免费 • 每日准备度分数 • 今日健康背景——HRV、静息心率、睡眠、步数、能量等 • 带强度、心情、标签和笔记的训练日志 • iCloud 备份（可选）：将日志副本存入你的私人 iCloud 云盘——手动或自动 • 文件备份：导出训练、目标和路线，在任何设备上恢复 • 历史日历、运动筛选和指标趋势图表 • 分享工作室——把任何锻炼变成可分享的图片或视频 • 训练日的天气背景\n\nWELLNOVA PREMIUM • 高级统计——体能年龄、压力和恢复估计 • 目标和个人排行榜——与过去的自己较量 • 探索地图——揭开你训练过的地方的战争迷雾地图，路线可着色 • 心率区间和客观训练负荷（TRIMP） • 成就和每日洞察 • 分享工作室全部主题及无水印导出 • 完整的Apple Watch仪表盘\n\n隐私为本的设计 你的健康和训练数据属于你。Wellnova实时读取Apple健康数据，绝不存储在服务器上。无广告、无分析、无第三方SDK、无需账户——一切都在你的设备上运行。\n\nAPPLE WATCH 在手腕上快速查看今天的准备度；Premium增加完整仪表盘——步数、心率和能量直接在手表上实时读取，外加HRV、静息心率、睡眠和近期趋势。\n\nWellnova Sport提供基于可穿戴设备数据的估计，用于一般健身和健康。它不是医疗设备，不提供诊断或医疗建议。\n\n支持简体中文、英语、西班牙语、德语、法语、意大利语、葡萄牙语、日语、韩语和乌克兰语。\n\n— 订阅详情 — Wellnova Premium提供按月（$4.99）或按年（$29.99）自动续订订阅，或一次性终身购买（$49.99）。新订阅用户享有14天免费试用。确认购买时将通过你的Apple账户扣款。除非在当前周期结束前至少24小时取消，否则订阅将自动续订；可随时在账户设置中管理或取消。购买订阅后，免费试用的未使用部分将失效。 隐私政策: https://wellnovasport.ekapps.xyz/privacy 使用条款: https://wellnovasport.ekapps.xyz/terms",
+    "id": "6780065717",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Mote: Lock Screen Notes $9.99→$4.99",
+    "desc": "简介：把便签钉在锁屏，抬眼就能看到待办。\n              \n                详情：Mote keeps the note you need right now close at hand. Capture a thought in seconds, edit it anytime, and move finished notes to History. No account needed.\n\nNOTES AT A GLANCE\nAdd a widget to your Home Screen or StandBy and choose the context it shows. You can also put one note from any context on your Lock Screen with a Live Activity.\n\nA CONTEXT FOR EACH PART OF LIFE\nCreate contexts for work, home, personal tasks, or anything else. Each context has its own current note.\n\nMOTE PLUS\nShow notes fro  把便签钉在锁屏，抬眼就能看到待办。",
+    "id": "6816222222",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Tallied - Score Keeper €7.99→€1.99",
+    "desc": "简介：桌游计分器，自动算分、排名与年度统计。\n              \n                详情：Mitgezählt rechnet für dich. Du erfasst nur das Spielgeschehen: Stiche, Würfelaugen oder Treffer auf dem Dartboard. Punkte, Platzierungen und Zwischenstände ermittelt die App automatisch – selbst wenn niemand am Tisch die genauen Wertungsregeln kennt.\n\nSpiele:\n• Kartenspiele: Doppelkopf, Skat, Schafkopf, Watten, Jass, Sechsundsechzig, Canasta, Rommé, Phasen-Rommé, Karten-Golf, Herzen, Schwimmen, Mau-Mau, Wie viele Stiche?, Ablegen!\n• Würfel-, Brett- und Legespiele: Würfelspaß, Schocken, Mäxchen,  桌游计分器，自动算分、排名与年度统计。",
+    "id": "6824289370",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Reverie: Slowed &amp; Reverb Music $9.99→$4.99",
+    "desc": "简介：把歌做成 slowed + reverb 版本，自带混响。\n              \n                详情：Music you can feel.\n\nMake slowed + reverb, sped-up and pitch-shifted versions of your own songs, by hand, on a deck that feels like real hardware.\n\nReverie turns your phone into a tactile music deck. Instead of a flat progress bar, you get a brushed-metal wheel that you spin with your thumb. It clicks under your finger, pushes back at the end of a track, and catches the light as you tilt your phone.\n\nSPIN TO SCRUB\nTurn the wheel to move through a song. Turn it slowly to scratch like a record, or  把歌做成 slowed + reverb 版本，自带混响。",
+    "id": "6829723858",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
+    "name": "Golden Thread - Memory Journal $19.99→$4.99",
+    "desc": "简介：把日常片段串成时间线的人生记录本。\n              \n                详情：A private archive of your life, woven from the moments that shaped you.\n\nGolden Thread is a timeline for the milestones and memories you want to keep: the first apartment, the long drive, the day the dog came home. No feed, no followers, no account. Your archive lives on your device, and nothing leaves it unless you choose.\n\nCAPTURE WHAT MATTERS\n• Memories with notes, a photo, a date or a time, a category and tags\n• Tag the people and pets who were there\n• Add a place by searching or dropping a   把日常片段串成时间线的人生记录本。",
+    "id": "6763853416",
+    "section": "限时折扣精选",
+    "date": "2026-11-16",
+    "url": "daily/2026-11-16.html"
+  },
+  {
     "name": "Hanlingo: Learn Chinese HSK",
     "desc": "简介：按 HSK 等级学中文，字词、例句与听力一起练。\n              \n                详情：From hello to HSK 6 — learn Chinese on one guided path.\n\nHanlingo takes you from your very first 你好 to real exam readiness:\nstructured HSK 1–6 lessons, stroke-order handwriting, native-audio\nlistening, spaced-repetition review, graded stories, mini-games, and\noriginal mock exams — all in one calm, beautiful app.\n\n◆ A PATH, NOT A PILE\nFollow a clear HSK 1–6 curriculum: chapters, lessons, and boss\nchallenges that always show you exactly what to learn next. A placement\ncheck finds your level in minutes.\n\n◆ MASTERY, NOT JUST COMPLETION\nFSRS spaced repetition and your Memory Garden mix old knowledge into\nevery new lesson — so words, characters, and grammar actually stick.\n\n◆ PERFECT EVERY STROKE\nCalligraphy Canvas teaches real stroke order with animated guides,\nghost outlines, and accuracy scoring. Write characters, don&#x27;t just\nrecognize them.\n\n◆ CATCH EVERY TONE\nListening Lab trains your ear with native audio at 0.8×, 1.0× and 1.2×\nspeeds — plus realistic environments like teahouse chatter and market\nnoise.\n\n◆ PRACTICE THAT FEELS LIKE PLAY\nCharacter, vocabulary, listening, and grammar mini-games. Daily Lantern\nQuests, streaks, XP, and a competitive Cultural Arena keep the habit\nalive.\n\n◆ YOUR SCORE, BEFORE TEST DAY\nOriginal HSK mock exams built on official specifications — timed\ndrills, score tracking, and a plan that tells you when you&#x27;re ready.\n\n◆ LEARN ANYWHERE\nOffline-first. Your lessons, review, and dictionary work with no\nconnection; progress syncs when you&#x27;re back online.\n\nPREMIUM SUBSCRIPTION\nFree to start. Premium unlocks unlimited practice, all games, and full\nmock exams. Weekly, monthly, 6-month, and annual plans available, with\na 7-day free trial on annual. Subscriptions renew automatically and can\nbe cancelled anytime in App Store settings.\n\nHanlingo is not affiliated with any official HSK examination body.\n\nSupport: chuongdev97@gmail.com\nTerm of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacy Policy: https://hanlingo.chuongle.dev/privacy\nTerms of Use: https://hanlingo.chuongle.dev/terms",
     "id": "6818394649",
